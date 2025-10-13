@@ -1,2 +1,1 @@
-# daan-portfolio-site
-Site to show portfolio/CV
+Portfolio site for Daan
