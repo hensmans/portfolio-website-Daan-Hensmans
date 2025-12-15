@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import globalStyles from './globals.module.css';
 import './global.css';
+import LoadingStartpage from "./loadingStartpage";
 
 // The Windows XP css
 // https://botoxparty.github.io/XP.css/
@@ -30,16 +31,19 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+        {/* Preload the background image */}
+        <link
+          rel="preload"
+          href={'windows-xp-background.jpeg'}
+          as="image"
+          type="image/jpeg"
+          crossOrigin="anonymous"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className={`${globalStyles.backgroundContainer} `}>
-          <main className={`${globalStyles.content}`}>
-            {children}
-          </main>
-        </div>
-
+        <LoadingStartpage />
       </body>
     </html>
   );

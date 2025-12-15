@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import globalStyles from './globals.module.css';
 import { Dispatch, SetStateAction } from "react";
 import './global.css';

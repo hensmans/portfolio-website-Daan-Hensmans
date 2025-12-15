@@ -16,7 +16,9 @@ const PopupButton = ({ setSelectedButton, iconName, title }: ButtonSelectionProp
                 <Image src={`/icons/${iconName}.png`}
                     alt={`Button to ${iconName}`}
                     fill
-                    className={`${globalStyles.clickableImage}`} />
+                    className={`${globalStyles.clickableImage}`}
+                    priority // preloads
+                />
             </div>
             <p className={`${globalStyles.iconFont}`}>{title}</p>
         </div>
