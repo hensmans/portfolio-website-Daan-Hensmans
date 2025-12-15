@@ -13,7 +13,7 @@ const ButtonSelection = ({ setSelectedButton }: ButtonSelectionProps) => {
   return (
     <div className={`${globalStyles.buttonsBox}`}>
       <PopupButton setSelectedButton={setSelectedButton} iconName={'aboutme'} title={'aboutMe.html'} />
-      <PopupButton setSelectedButton={setSelectedButton} iconName={'cv'} title={'cv.pdf'} />
+      <a href='cv.pdf' target="_blank" className={globalStyles.pdfLink}><PopupButton setSelectedButton={setSelectedButton} iconName={'cv'} title={'cv.pdf'} /></a>
       <PopupButton setSelectedButton={setSelectedButton} iconName={'projects'} title={'projects'} />
       <PopupButton setSelectedButton={setSelectedButton} iconName={'pictures'} title={'pictures'} />
     </div>

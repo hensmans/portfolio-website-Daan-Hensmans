@@ -2,12 +2,15 @@ import Image from "next/image";
 import globalStyles from './globals.module.css';
 import { Dispatch, SetStateAction } from "react";
 import './global.css';
+import Projects from "./projects";
 
 interface ButtonSelectionProps {
   setSelectedButton: Dispatch<SetStateAction<string>>;
+  // Will be HTML content for the body of the popup
+  content: any;
 }
 
-const Popup = ({ setSelectedButton }: ButtonSelectionProps) => {
+const Popup = ({ setSelectedButton, content }: ButtonSelectionProps) => {
 
 
   return (
@@ -23,17 +26,7 @@ const Popup = ({ setSelectedButton }: ButtonSelectionProps) => {
         </div>
       </div>
       <div className={` window-body ${globalStyles.popupBody}`}>
-
-        <iframe
-          className={`${globalStyles.popupIframe}`}
-          src={"./old-site/index.html"}
-          width="100%"
-          height="100%"
-          title="External Content"
-
-        >
-          <p>Your browser does not support iframes.</p>
-        </iframe>
+        {content}
       </div>
     </div>
   );

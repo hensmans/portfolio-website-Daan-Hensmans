@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import globalStyles from './globals.module.css';
 import './global.css';
 
+// The Windows XP css
+// https://botoxparty.github.io/XP.css/
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
