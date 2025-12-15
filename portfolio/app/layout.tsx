@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import globalStyles from './globals.module.css';
-import './global.css';
+import globalStyles from './css/globals.module.css';
+import './css/global.css';
 import LoadingStartpage from "./loadingStartpage";
 
 // The Windows XP css

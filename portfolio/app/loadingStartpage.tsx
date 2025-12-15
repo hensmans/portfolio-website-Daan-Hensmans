@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import globalStyles from './globals.module.css';
+import globalStyles from './css/globals.module.css';
 import Image from "next/image";
 import dynamic from 'next/dynamic';
 

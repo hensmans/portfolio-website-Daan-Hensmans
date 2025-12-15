@@ -1,5 +1,5 @@
 import Image from "next/image";
-import globalStyles from './globals.module.css';
+import globalStyles from './css/globals.module.css';
 import React, { Dispatch, SetStateAction } from 'react';
 import PopupButton from './popupButton';
 
