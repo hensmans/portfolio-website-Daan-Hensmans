@@ -1,0 +1,13 @@
+html, body, #root{
+  /* Set both the HTML and body to take up the full height of the browser window */
+  height: 100%;
+  width: 100%;
+  margin: 0; /* Remove default browser margin/padding */
+  padding: 2;
+}
+
+
+/* Apply the border-box model globally */
+*, *::before, *::after {
+  box-sizing: border-box;
+}

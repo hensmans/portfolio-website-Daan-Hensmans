@@ -1,6 +1,10 @@
+
+
+
 .backgroundContainer {
   background-image: url('/windows-xp-background.jpeg'); 
   min-height: 100vh; 
+  height: 100%;
   width: 100%;
   background-size: cover; 
   background-position: center; 
@@ -8,6 +12,86 @@
 }
 
 .content {
-  padding: 20px;
-  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex; 
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+}
+
+.popupScreen {
+  box-sizing: border-box;
+  width: 60vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonsBox {
+  width: 100vh;
+  display: flex; 
+  flex-direction: row;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+
+}
+
+.iconFont{
+  font-family: "Pixelated MS Sans Serif";
+  font-size: 3vh; /* Standard size */
+  color: white; /* White text is key */
+  
+  margin-top: 1vh;
+  margin-bottom: 0;
+  
+  /* Create the sharp, 4-directional black shadow outline */
+  text-shadow: 
+    -1px 1px 0 #000000,
+    0px 1px 0 #000000,
+    -1px 0px 0 #000000;
+  
+    /* font-weight: bold; */
+}
+
+.buttonBox {
+
+  /* Center the text if needed */
+  text-align: center;
+  width: 20vh;
+  height: 20vh;
+
+  background-color: transparent;
+
+  margin-left: 1vw;
+  margin-right: 1vw;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+}
+
+.iconBox {
+  width: 100%;
+  height: 100%;
+  
+  /* Needed for the image scalign down */
+  position: relative; 
+}
+
+.clickableImage {
+  object-fit: contain;
+}
+
+.popupBody {
+  height: auto;    /* Correct: Takes 100% of the parent (.window-body) */
+  max-height: 100%;
+  max-width: 100%;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.popupIframe{
+  height: 100%;    /* Correct: Takes 100% of the parent (.popupBody) */
+  width: 100%;
+  display: block;
 }

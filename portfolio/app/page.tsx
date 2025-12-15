@@ -1,19 +1,18 @@
-import Image from "next/image";
+'use client';
+import { useState } from 'react';
 import globalStyles from './globals.module.css';
+import ButtonSelection from './buttonSelection';
+import Popup from './popup';
+import './global.css';
 
+export default function CenteredBox() {
+  const [selectedButton, setSelectedButton] = useState('home');
+  switch (selectedButton) {
+    case 'home':
+      return <ButtonSelection setSelectedButton={setSelectedButton}></ButtonSelection>;
+    default:
+      return <Popup setSelectedButton={setSelectedButton}></Popup>;
 
-export default function Home() {
-  return (
-    <div className="window" >
-      <div className="title-bar">
-        <div className="title-bar-text">
-          My First Program
-        </div>
-      </div>
-      <div className="window-body">
-        <p>Hello, world!</p>
-      </div>
-    </div>
-  );
+  }
 }
 
