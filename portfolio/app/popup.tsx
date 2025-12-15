@@ -21,8 +21,8 @@ const Popup = ({ setSelectedButton, content, title }: ButtonSelectionProps) => {
           {title}
         </div>
         <div className="title-bar-controls">
-          <button aria-label="Minimize" />
-          <button aria-label="Maximize" />
+          <button aria-label="Minimize" onClick={() => setSelectedButton('home')} />
+          <button aria-label="Maximize" onClick={() => setSelectedButton('home')} />
           <button aria-label="Close" onClick={() => setSelectedButton('home')} />
         </div>
       </div>
