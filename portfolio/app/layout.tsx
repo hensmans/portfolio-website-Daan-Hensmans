@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import globalStyles from './css/globals.module.css';
+import crtStyles from './css/crt.module.css';
 import './css/global.css';
 import LoadingStartpage from "./loadingStartpage";
 
@@ -41,7 +42,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${crtStyles.crt}`}
       >
         <LoadingStartpage />
       </body>

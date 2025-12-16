@@ -1,0 +1,80 @@
+
+/* Create CRT lines by using a lineair gradient */
+.crt::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* Create alternating transparent and semi-transparent lines */
+    background: linear-gradient(
+        to bottom, 
+        rgba(18, 16, 16, 0) 50%, 
+        rgba(0, 0, 0, 0.25) 50%
+    );
+    /* Size of the repeating gradient pattern */
+    background-size: 100% 4px; 
+    /* Lines above most elements */
+    z-index: 2; 
+    /* Lines are non clickable */
+    pointer-events: none;
+    /* Make the lines a certain opacity */
+    opacity: 0.8;
+}
+
+/* Create a glow effect for the texct*/
+.crt {
+    /* Set background and overall text style */
+    background-color: black;
+    /* Green colour for the text */
+    /* color: #00ff41;  */
+    font-family: 'Courier New', monospace; /* Monospace for that retro look */
+    
+    /* Create the "glow" effect */
+    text-shadow: 0 0 7px #00ff41;
+    /* Outer screen glow */
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.5); 
+
+    /* No scrollbars */
+    overflow: hidden;
+    
+}
+
+/* Distortion for the CRT, it will warp the screen */
+.crt {
+    /* Subtle blur for older, less crisp screens */
+    filter: blur(0.5px); 
+    
+    /* Slight barrel distortion using the skew and scale transforms */
+    transform: perspective(150px) rotateX(1deg) skewX(1deg) scale(1.1); 
+}
+
+ 
+/* Flicker animation of the screen, not so pretty and annoying */
+/* .crt::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(18, 16, 16, 0.14); 
+    z-index: 3;
+    pointer-events: none;
+    animation: flicker 0.3s infinite alternate; 
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 0; 
+    }
+    50% {
+        opacity: 0.35;
+    }
+    75% {
+        opacity: 0.25;
+    }
+}  */
