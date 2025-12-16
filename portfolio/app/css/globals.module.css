@@ -95,7 +95,7 @@
   display: block;
 }
 
-
+/* Remove all styles from the pdf link   */
 .pdfLink, .pdfLink:link, .pdfLink:focus, .pdfLink:active, .pdfLink:focus:not(:focus-visible) {
     outline: none;
     box-shadow: none; 
@@ -123,9 +123,11 @@
   /* Full opacity at start */
   opacity: 1;
   z-index: 9998;
+
+  pointer-events: none;
 }
 
-
+/* Loading screen fades out after a duration */
 .loadingBackgroundFadeOut{
   /* Set the duration for the whole animation */
   animation: autoFadeOut 3s forwards; 

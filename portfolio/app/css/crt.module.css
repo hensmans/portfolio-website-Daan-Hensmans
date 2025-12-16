@@ -11,8 +11,8 @@
     /* Create alternating transparent and semi-transparent lines */
     background: linear-gradient(
         to bottom, 
-        rgba(18, 16, 16, 0) 50%, 
-        rgba(0, 0, 0, 0.25) 50%
+        rgba(18, 16, 16, 0) 70%, 
+        rgba(0, 0, 0, 0.25) 70%
     );
     /* Size of the repeating gradient pattern */
     background-size: 100% 4px; 
@@ -21,7 +21,7 @@
     /* Lines are non clickable */
     pointer-events: none;
     /* Make the lines a certain opacity */
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 /* Create a glow effect for the texct*/
