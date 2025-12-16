@@ -10,42 +10,22 @@ const PreloadContent = dynamic(() => import('./page'), {
   loading: () => null,
 });
 
-
 export default function LoadingStartpage() {
-  const [isDomLoaded, setIsDomLoaded] = useState(false);
-
-
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsDomLoaded(true);
-    }, 750); // A small delay is often useful to prevent quick flicker
-
-    return () => clearTimeout(timer); // Cleanup
-  }, []);
-
-  // Show loadbar if loading
-  if (!isDomLoaded) {
-    return (
-      <div className={globalStyles.loadingBackground}>
-        <Image
-          src={'/loading.gif'}
-          alt={'loading gif'}
-          className={globalStyles.loadingGif}
-          width={1}
-          height={1}
-          layout="responsive"
-          priority
-        />
-      </div>
-    );
-  }
-
-
   return (
     <div className={`${globalStyles.backgroundContainer} `}>
       <main className={`${globalStyles.content}`}>
         <PreloadContent />
+        <div className={`${globalStyles.loadingBackground} ${globalStyles.loadingBackgroundFadeOut}`}>
+          <Image
+            src={'/loading.gif'}
+            alt={'loading gif'}
+            className={globalStyles.loadingGif}
+            width={1}
+            height={1}
+            layout="responsive"
+            priority
+          />
+        </div>
       </main>
     </div>
 

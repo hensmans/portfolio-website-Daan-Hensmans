@@ -16,8 +16,8 @@
     );
     /* Size of the repeating gradient pattern */
     background-size: 100% 4px; 
-    /* Lines above most elements */
-    z-index: 2; 
+    /* Lines above all elements */
+    z-index: 9999; 
     /* Lines are non clickable */
     pointer-events: none;
     /* Make the lines a certain opacity */
