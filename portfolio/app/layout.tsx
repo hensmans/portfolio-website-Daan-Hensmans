@@ -1,22 +1,14 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import globalStyles from './css/globals.module.css';
-import crtStyles from './css/crt.module.css';
 import './css/global.css';
 import LoadingStartpage from "./loadingStartpage";
 
 // The Windows XP css
 // https://botoxparty.github.io/XP.css/
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -28,6 +20,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <head>
@@ -41,11 +34,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased ${crtStyles.crt}`}
-      >
-        <LoadingStartpage />
-      </body>
-    </html>
+      <LoadingStartpage />
+    </html >
   );
 }

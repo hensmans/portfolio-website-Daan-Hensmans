@@ -24,6 +24,15 @@
   height: min(70vh, 100vw);
   display: flex;
   flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popupScreenMaximized {
+  width: 100vw;
+  height: 100vh;
 }
 
 .buttonsBox {
@@ -147,3 +156,5 @@
   max-width: min(50vh,50vw);
   max-height: min(50vh,50vw);
 }
+
+

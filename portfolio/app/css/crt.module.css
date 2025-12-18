@@ -1,6 +1,6 @@
 
 /* Create CRT lines by using a lineair gradient */
-.crt::before {
+.crtLines::before {
     content: " ";
     display: block;
     position: absolute;
@@ -42,8 +42,11 @@
     
 }
 
+.crtStyle{}
+
+
 /* Distortion for the CRT, it will warp the screen */
-.crt {
+.crtFishEye{
     /* Subtle blur for older, less crisp screens */
     filter: blur(0.5px); 
     

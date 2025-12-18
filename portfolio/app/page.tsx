@@ -5,28 +5,46 @@ import ButtonSelection from './buttonSelection';
 import Popup from './popup';
 import './css/global.css';
 import Projects from './projects';
-import { equal } from 'assert';
 import AboutMe from './aboutMe';
+import { Dispatch, SetStateAction } from "react";
 
-export default function CenteredBox() {
+interface Parameters {
+  // For taggling max and min state
+  setMaximizeState: Dispatch<SetStateAction<boolean>>;
+  maximizeState: boolean;
+}
+
+export default function CenteredBox({ setMaximizeState, maximizeState }: Parameters) {
   const [selectedButton, setSelectedButton] = useState('home');
 
-  switch (selectedButton) {
-    case 'cv':
-    case 'home':
-      console.log('home');
-      return <ButtonSelection setSelectedButton={setSelectedButton}></ButtonSelection>;
-    case 'projects':
-      console.log('opening projects');
-      return <Popup setSelectedButton={setSelectedButton} content={<Projects />} title={'projects folder'}></Popup>;
-    case 'photos':
-      // TODO
-      return <Popup setSelectedButton={setSelectedButton} content={<Projects />} title={'photos folder'}></Popup>;
-    case 'aboutme':
-      return <Popup setSelectedButton={setSelectedButton} content={<AboutMe />} title={'aboutMe.html'}></Popup>;
-    default:
-      return <Popup setSelectedButton={setSelectedButton} content={<div />} title={'ERROR'}></Popup>;
+
+  const ComponentMap = {
+    loading: <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<Projects />} title={'projects folder'}></Popup>,
+    success: <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<AboutMe />} title={'aboutMe.html'}></Popup>,
+    error: <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<div />} title={'ERROR'}></Popup>,
+  };
+
+  function getSelectedPopupComponent() {
+    switch (selectedButton) {
+      case 'cv':
+      case 'home':
+        return null;
+      case 'projects':
+        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<Projects />} title={'projects folder'}></Popup>;
+      case 'photos':
+        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<Projects />} title={'photos folder'}></Popup>;
+      case 'aboutme':
+        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<AboutMe />} title={'aboutMe.html'}></Popup>;
+      default:
+        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<div />} title={'ERROR'}></Popup>;
+    };
 
   }
+
+  return <div>
+    <ButtonSelection setSelectedButton={setSelectedButton}></ButtonSelection>;
+    {getSelectedPopupComponent()}
+  </div>;
+
 }
 
