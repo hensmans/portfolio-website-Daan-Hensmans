@@ -28,15 +28,16 @@ html, body, #root{
 /* Mouse arrow */
 /* https://www.rw-designer.com/cursor-set/windows-xp-1 */
 /* Smaller mouse arrow when clicked */
-html:active, body:active{
-    /* Using the classic XP finger pointer */
-  cursor: url('/mouse_pointers/xp_mouse_arrow.cur'), pointer;
-}
 html, body, #root {
   /* Using the classic XP finger pointer */
   cursor: url('/mouse_pointers/xp_mouse_arrow_large.cur'), pointer;
 }
-/* <While on waiting screen, put waiting pointer */
+html:active, body:active{
+    /* Using the classic XP finger pointer */
+  cursor: url('/mouse_pointers/xp_mouse_arrow.cur'), pointer;
+}
+
+/* While on waiting screen, put waiting pointer */
 .waitingPointer {
   cursor: url('/mouse_pointers/xp_mouse_busy_large.cur'), pointer;
 }
@@ -51,4 +52,12 @@ button, a {
 /* While clicking, change to smaller */
 button:active, a:active {
   cursor: url('/mouse_pointers/xp_mouse_link.cur'), auto;
+}
+
+/* While hovering over text */
+p {
+  cursor: url('/mouse_pointers/xp_mouse_text_large.cur'), auto;
+}
+p:active {
+  cursor: url('/mouse_pointers/xp_mouse_text_small.cur'), auto;
 }

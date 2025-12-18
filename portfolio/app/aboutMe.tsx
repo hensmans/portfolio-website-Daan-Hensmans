@@ -17,19 +17,19 @@ const AboutMe = ({ maximizeState }: Parameters) => {
         <div className={`${webpage.columns}`}>
           <div className={`${webpage.rows} ${webpage.leftColumn}`}>
             <div className={`${webpage.textBox} ${webpage.boxBorder} ${webpage.textBoxPicure}`} />
-            <div className={`${webpage.textBox} ${webpage.boxBorder} ${webpage.textVerySmall}`}>
+            <p className={`${webpage.textBox} ${webpage.boxBorder} ${webpage.textVerySmall}`}>
               {currentAge} years old
               <br />
               From Belgium-Flanders-Leuven
               <br />
               Fluent in Dutch and English
-            </div>
+            </p>
           </div>
           <div className={`${webpage.rows}`}>
-            <div className={`${webpage.textBox} ${webpage.boxBorder} ${webpage.textBig}`}>
+            <p className={`${webpage.textBox} ${webpage.boxBorder} ${webpage.textBig}`}>
               Hey! My name is Daan Hensmans, I'm a software engineer from Belgium and I'm passionate about coding, problem-solving, and emerging technologies. Currently I'm still in University but I'm graduating in June 2026:)
-            </div>
-            <div className={`${webpage.textBox} ${webpage.boxBorder} ${webpage.textSmall}`}>
+            </p>
+            <p className={`${webpage.textBox} ${webpage.boxBorder} ${webpage.textSmall}`}>
               My specialisation is programming in low-end applications. Like Compilers, low-level code (C, ASM-x86, Java, Haskell, Lisp), extending languages, etc.
               This is where I also have done a master in, "Software Engineering: Software Languages".
               Because of this I know the inner workings of all the tpye of languages, and therefore I can program in an efficient and secure way
@@ -37,7 +37,7 @@ const AboutMe = ({ maximizeState }: Parameters) => {
               <br />
               Ofcourse I'm also capable, and already done projects, in many high-end programming languages (Scala, Python, JavaScript, etc).
               More about all my projects are visible in the 'my projects' folder
-            </div>
+            </p>
           </div>
         </div>
         {/* <div>i loveeeee coding
