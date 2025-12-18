@@ -2,7 +2,7 @@ import Image from "next/image";
 import globalStyles from './css/globals.module.css';
 import { Dispatch, SetStateAction } from "react";
 import './css/global.css';
-
+import './css/global.css'
 interface ButtonSelectionProps {
     setSelectedButton: Dispatch<SetStateAction<string>>;
     iconName: string;
@@ -11,7 +11,7 @@ interface ButtonSelectionProps {
 
 const PopupButton = ({ setSelectedButton, iconName, title }: ButtonSelectionProps) => {
     return (
-        <div className={`${globalStyles.buttonBox} xp-icon-label`} onClick={() => setSelectedButton(iconName)}>
+        <a className={`${globalStyles.buttonBox} xp-icon-label`} onClick={() => setSelectedButton(iconName)}>
             <div className={`${globalStyles.iconBox}`}>
                 <Image src={`/icons/${iconName}.png`}
                     alt={`Button to ${iconName}`}
@@ -21,7 +21,7 @@ const PopupButton = ({ setSelectedButton, iconName, title }: ButtonSelectionProp
                 />
             </div>
             <p className={`${globalStyles.iconFont}`}>{title}</p>
-        </div>
+        </a>
 
 
     );

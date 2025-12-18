@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import globalStyles from './css/globals.module.css';
+import './css/global.css';
 import ButtonSelection from './buttonSelection';
 import Popup from './popup';
 import './css/global.css';

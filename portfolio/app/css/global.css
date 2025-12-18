@@ -4,10 +4,35 @@ html, body, #root{
   width: 100%;
   margin: 0; /* Remove default browser margin/padding */
   padding: 0;
+
+  /* Use a standard pointer */
+  cursor: auto; 
 }
 
 
 /* Apply the border-box model globally */
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+
+/* For buttons and links to feel like Windows XP */
+/* button, a, .clickable {
+  cursor: pointer; 
+}
+.loading {
+  cursor: wait; 
+} */
+
+
+
+
+html, body, #root {
+  /* Using the classic XP finger pointer */
+  cursor: url('/xp_mouse_arrow.cur'), pointer;
+}
+
+button, a, .clickable {
+  /* Path starts from the public folder. 'auto' is the fallback. */
+  cursor: url('/xp_mouse_link.cur'), auto;
 }
