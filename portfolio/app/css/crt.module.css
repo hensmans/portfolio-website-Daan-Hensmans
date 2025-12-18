@@ -39,6 +39,10 @@
 
     /* No scrollbars */
     overflow: hidden;
+
+    /* Subtle blur for older, less crisp screens */
+    filter: blur(0.5px); 
+    
     
 }
 
@@ -47,9 +51,7 @@
 
 /* Distortion for the CRT, it will warp the screen */
 .crtFishEye{
-    /* Subtle blur for older, less crisp screens */
-    filter: blur(0.5px); 
-    
+ 
     /* Slight barrel distortion using the skew and scale transforms */
     transform: perspective(150px) rotateX(1deg) skewX(1deg) scale(1.1); 
 }

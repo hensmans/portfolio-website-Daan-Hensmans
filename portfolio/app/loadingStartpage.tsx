@@ -33,7 +33,7 @@ export default function LoadingStartpage() {
   return (
 
     <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased ${crtStyles.crt}  ${maximizeState ? {} : `${crtStyles.crtLines} ${crtStyles.crtFishEye}`}`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased ${crtStyles.crt} ${crtStyles.crtLines}   ${maximizeState ? {} : `${crtStyles.crtFishEye}`}`}
     >
       <div className={`${globalStyles.backgroundContainer} `}>
         <main className={`${globalStyles.content}`}>
