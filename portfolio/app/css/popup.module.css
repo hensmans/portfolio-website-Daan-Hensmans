@@ -1,0 +1,30 @@
+
+.popupBody {
+display: flex;
+  flex-direction: column; /* Ensure internal items stack correctly */
+
+  overflow: auto;  
+}
+
+.popupIframe{
+  height: 100%;    /* Correct: Takes 100% of the parent (.popupBody) */
+  width: 100%;
+  display: block;
+}
+
+.popupScreen {
+  box-sizing: border-box;
+  width: min(80vw, 100vh);
+  height: min(70vh, 100vw);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popupScreenMaximized {
+  width: 100vw;
+  height: 100vh;
+}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import globalStyles from './css/globals.module.css';
+import popupButtonStyles from './css/popupButton.module.css';
 import { Dispatch, SetStateAction } from "react";
 import './css/global.css';
 import './css/global.css'
@@ -11,16 +11,16 @@ interface ButtonSelectionProps {
 
 const PopupButton = ({ setSelectedButton, iconName, title }: ButtonSelectionProps) => {
     return (
-        <a className={`${globalStyles.buttonBox} xp-icon-label ${globalStyles.noSelect}`} onClick={() => setSelectedButton(iconName)}>
-            <div className={`${globalStyles.iconBox}`}>
+        <a className={`${popupButtonStyles.buttonBox} xp-icon-label noSelect`} onClick={() => setSelectedButton(iconName)}>
+            <div className={`${popupButtonStyles.iconBox}`}>
                 <Image src={`/icons/${iconName}.png`}
                     alt={`Button to ${iconName}`}
                     fill
-                    className={`${globalStyles.clickableImage}`}
+                    className={`${popupButtonStyles.clickableImage}`}
                     priority // preloads
                 />
             </div>
-            <p className={`${globalStyles.iconFont}`}>{title}</p>
+            <p className={`${popupButtonStyles.iconFont}`}>{title}</p>
         </a>
 
 

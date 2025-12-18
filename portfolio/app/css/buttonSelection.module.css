@@ -1,0 +1,9 @@
+
+.buttonsBox {
+  width: min(100vh,100vw);
+  display: flex; 
+  flex-direction: row;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+
+}

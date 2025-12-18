@@ -9,21 +9,27 @@ html, body, #root{
   cursor: auto; 
 }
 
+.noSelect {
+  /* Dont let user select anything on the loadign screen */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none;     /* IE 10 and 11 */
+  user-select: none;         /* Standard syntax */
+}
+
+
+/* Remove all styles from the pdf link   */
+.pdfLink, .pdfLink:link, .pdfLink:focus, .pdfLink:active, .pdfLink:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none; 
+    text-decoration: none;
+    color: inherit;
+}
+
 
 /* Apply the border-box model globally */
 *, *::before, *::after {
   box-sizing: border-box;
 }
-
-
-/* For buttons and links to feel like Windows XP */
-/* button, a, .clickable {
-  cursor: pointer; 
-}
-.loading {
-  cursor: wait; 
-} */
-
 
 /* Mouse arrow */
 /* https://www.rw-designer.com/cursor-set/windows-xp-1 */

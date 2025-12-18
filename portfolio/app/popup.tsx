@@ -1,8 +1,7 @@
-import Image from "next/image";
 import globalStyles from './css/globals.module.css';
+import popupStyles from './css/popup.module.css';
 import { Dispatch, SetStateAction } from "react";
 import './css/global.css';
-import Projects from "./projects";
 import crtStyles from './css/crt.module.css';
 
 interface ButtonSelectionProps {
@@ -26,7 +25,7 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
 
 
   return (
-    <div className={`${globalStyles.popupScreen} ${maximizeState ? `${globalStyles.popupScreenMaximized}` : {}} window`}>
+    <div className={`${popupStyles.popupScreen} ${maximizeState ? `${popupStyles.popupScreenMaximized}` : {}} window`}>
       <div className="title-bar">
         <div className="title-bar-text">
           {title}
@@ -37,8 +36,8 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
           <button aria-label="Close" onClick={() => goToHomeScreen()} />
         </div>
       </div>
-      <div className={`window-body ${globalStyles.popupBody}`}>
-        <div className={` ${globalStyles.popupBodyInner} ${maximizeState ? crtStyles.crtFishEye : {}}`}>
+      <div className={`window-body ${popupStyles.popupBody}`}>
+        <div className={` ${popupStyles.popupBodyInner} ${maximizeState ? crtStyles.crtFishEye : {}}`}>
           {content}
         </div>
       </div>

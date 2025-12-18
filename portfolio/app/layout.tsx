@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import './css/global.css';
 import LoadingStartpage from "./loadingStartpage";
+import MainPage from "./mainPage";
 
 // The Windows XP css
 // https://botoxparty.github.io/XP.css/
@@ -34,7 +35,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <LoadingStartpage />
+      <MainPage />
     </html >
   );
 }

@@ -1,6 +1,4 @@
 
-import globalStyles from './css/globals.module.css';
-import { Dispatch, SetStateAction } from "react";
 import './css/global.css';
 
 
