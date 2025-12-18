@@ -30,12 +30,12 @@ export default function LoadingStartpage() {
 
   return (
     <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased ${crtStyles.crt} ${crtStyles.crtLines}   ${maximizeState ? {} : `${crtStyles.crtFishEye}`}`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased ${crtStyles.crt} ${crtStyles.crtLines} ${maximizeState ? {} : `${crtStyles.crtFishEye}`}`}
     >
       <div className={`${globalStyles.backgroundContainer} `}>
         <main className={`${globalStyles.content}`}>
           <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} />
-          <div className={`${globalStyles.loadingBackground} ${globalStyles.loadingBackgroundFadeOut}`}>
+          <div className={`${globalStyles.loadingBackground} ${globalStyles.loadingBackgroundFadeOut} waitingPointer ${globalStyles.noSelect}`}>
             <Image
               src={'/loading.gif'}
               alt={'loading gif'}

@@ -25,14 +25,30 @@ html, body, #root{
 } */
 
 
-
-
-html, body, #root {
-  /* Using the classic XP finger pointer */
+/* Mouse arrow */
+/* https://www.rw-designer.com/cursor-set/windows-xp-1 */
+/* Smaller mouse arrow when clicked */
+html:active, body:active{
+    /* Using the classic XP finger pointer */
   cursor: url('/xp_mouse_arrow.cur'), pointer;
 }
+html, body, #root {
+  /* Using the classic XP finger pointer */
+  cursor: url('/xp_mouse_arrow_large.cur'), pointer;
+}
+/* <While on waiting screen, put waiting pointer */
+.waitingPointer {
+  cursor: url('/xp_mouse_busy_large.cur'), pointer;
+}
+.waitingPointer:active {
+  cursor: url('/xp_mouse_busy.cur'), pointer;
+}
 
-button, a, .clickable {
-  /* Path starts from the public folder. 'auto' is the fallback. */
+/* When something is clickable */
+button, a {
+  cursor: url('/xp_mouse_link_large.cur'), auto;
+}
+/* While clicking, change to smaller */
+button:active, a:active {
   cursor: url('/xp_mouse_link.cur'), auto;
 }

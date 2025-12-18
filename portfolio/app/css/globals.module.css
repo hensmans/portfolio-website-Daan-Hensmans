@@ -132,7 +132,15 @@ display: flex;
   opacity: 1;
   z-index: 9998;
 
-  pointer-events: none;
+
+  /* pointer-events: none; */
+}
+
+.noSelect {
+  /* Dont let user select anything on the loadign screen */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none;     /* IE 10 and 11 */
+  user-select: none;         /* Standard syntax */
 }
 
 /* Loading screen fades out after a duration */

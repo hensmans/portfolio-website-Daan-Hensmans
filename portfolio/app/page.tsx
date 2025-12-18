@@ -37,7 +37,7 @@ export default function CenteredBox({ setMaximizeState, maximizeState }: Paramet
   }
 
   return <div>
-    <ButtonSelection setSelectedButton={setSelectedButton}></ButtonSelection>;
+    <ButtonSelection setSelectedButton={setSelectedButton}></ButtonSelection>
     {getSelectedPopupComponent()}
   </div>;
 
