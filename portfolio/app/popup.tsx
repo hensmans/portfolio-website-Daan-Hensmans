@@ -37,9 +37,10 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
           <button aria-label="Close" onClick={() => goToHomeScreen()} />
         </div>
       </div>
-      <div className={` window-body ${globalStyles.popupBody}`}>
-        <div className={`${maximizeState ? crtStyles.crtFishEye : {}}`}>
-        </div>{content}
+      <div className={`window-body ${globalStyles.popupBody}`}>
+        <div className={` ${globalStyles.popupBodyInner} ${maximizeState ? crtStyles.crtFishEye : {}}`}>
+          {content}
+        </div>
       </div>
     </div>
   );

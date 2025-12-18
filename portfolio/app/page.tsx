@@ -18,12 +18,6 @@ export default function CenteredBox({ setMaximizeState, maximizeState }: Paramet
   const [selectedButton, setSelectedButton] = useState('home');
 
 
-  const ComponentMap = {
-    loading: <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<Projects />} title={'projects folder'}></Popup>,
-    success: <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<AboutMe />} title={'aboutMe.html'}></Popup>,
-    error: <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<div />} title={'ERROR'}></Popup>,
-  };
-
   function getSelectedPopupComponent() {
     switch (selectedButton) {
       case 'cv':
@@ -34,7 +28,7 @@ export default function CenteredBox({ setMaximizeState, maximizeState }: Paramet
       case 'photos':
         return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<Projects />} title={'photos folder'}></Popup>;
       case 'aboutme':
-        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<AboutMe />} title={'aboutMe.html'}></Popup>;
+        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<AboutMe maximizeState={maximizeState} />} title={'aboutMe.html'}></Popup>;
       default:
         return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<div />} title={'ERROR'}></Popup>;
     };

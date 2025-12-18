@@ -26,12 +26,9 @@ const PreloadContent = dynamic(() => import('./page'), {
 
 
 export default function LoadingStartpage() {
-
   const [maximizeState, setMaximizeState] = useState(false);
 
-
   return (
-
     <body
       className={`${geistSans.variable} ${geistMono.variable} antialiased ${crtStyles.crt} ${crtStyles.crtLines}   ${maximizeState ? {} : `${crtStyles.crtFishEye}`}`}
     >

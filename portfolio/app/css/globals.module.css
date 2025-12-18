@@ -91,11 +91,10 @@
 }
 
 .popupBody {
-  height: auto;    /* Correct: Takes 100% of the parent (.window-body) */
-  max-height: 100%;
-  max-width: 100%;
-  flex-grow: 1;
-  overflow: auto;
+display: flex;
+  flex-direction: column; /* Ensure internal items stack correctly */
+
+  overflow: auto;  
 }
 
 .popupIframe{
