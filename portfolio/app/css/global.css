@@ -30,25 +30,25 @@ html, body, #root{
 /* Smaller mouse arrow when clicked */
 html:active, body:active{
     /* Using the classic XP finger pointer */
-  cursor: url('/xp_mouse_arrow.cur'), pointer;
+  cursor: url('/mouse_pointers/xp_mouse_arrow.cur'), pointer;
 }
 html, body, #root {
   /* Using the classic XP finger pointer */
-  cursor: url('/xp_mouse_arrow_large.cur'), pointer;
+  cursor: url('/mouse_pointers/xp_mouse_arrow_large.cur'), pointer;
 }
 /* <While on waiting screen, put waiting pointer */
 .waitingPointer {
-  cursor: url('/xp_mouse_busy_large.cur'), pointer;
+  cursor: url('/mouse_pointers/xp_mouse_busy_large.cur'), pointer;
 }
 .waitingPointer:active {
-  cursor: url('/xp_mouse_busy.cur'), pointer;
+  cursor: url('/mouse_pointers/xp_mouse_busy.cur'), pointer;
 }
 
 /* When something is clickable */
 button, a {
-  cursor: url('/xp_mouse_link_large.cur'), auto;
+  cursor: url('/mouse_pointers/xp_mouse_link_large.cur'), auto;
 }
 /* While clicking, change to smaller */
 button:active, a:active {
-  cursor: url('/xp_mouse_link.cur'), auto;
+  cursor: url('/mouse_pointers/xp_mouse_link.cur'), auto;
 }
