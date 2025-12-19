@@ -8,6 +8,7 @@ import './css/global.css';
 import Projects from './projects';
 import AboutMe from './aboutMe';
 import { Dispatch, SetStateAction } from "react";
+import pageStyles from './css/page.module.css';
 
 interface Parameters {
   // For taggling max and min state
@@ -36,7 +37,7 @@ export default function CenteredBox({ setMaximizeState, maximizeState }: Paramet
 
   }
 
-  return <div>
+  return <div className={pageStyles.content}>
     <ButtonSelection setSelectedButton={setSelectedButton}></ButtonSelection>
     {getSelectedPopupComponent()}
   </div>;

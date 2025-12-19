@@ -4,11 +4,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import './css/global.css';
 import LoadingStartpage from "./loadingStartpage";
 import MainPage from "./mainPage";
-
+import './css/global.css';
 // The Windows XP css
 // https://botoxparty.github.io/XP.css/
 
-
+import Image from "next/image";
 
 
 export const metadata: Metadata = {

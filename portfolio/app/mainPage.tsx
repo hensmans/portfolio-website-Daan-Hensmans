@@ -1,5 +1,5 @@
 'use client';
-import mainPageSystles from './css/mainPage.module.css';
+import mainPageStyles from './css/mainPage.module.css';
 import crtStyles from './css/crt.module.css';
 import './css/global.css';
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
@@ -7,6 +7,7 @@ import Image from "next/image";
 import dynamic from 'next/dynamic';
 import { Geist, Geist_Mono } from "next/font/google";
 import LoadingStartpage from './loadingStartpage';
+import Taskbar from './taskBar';
 
 
 const geistSans = Geist({
@@ -29,15 +30,19 @@ export default function Mainpage() {
   const [maximizeState, setMaximizeState] = useState(false);
 
   return (
-    <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased ${crtStyles.crt} ${crtStyles.crtLines} ${maximizeState ? {} : `${crtStyles.crtFishEye}`}`}
-    >
-      <div className={`${mainPageSystles.backgroundContainer} `}>
-        <main className={`${mainPageSystles.content}`}>
+    <body className={``} >
+
+      <div className={`${mainPageStyles.backgroundContainer} ${maximizeState ? {} : `${crtStyles.crtFishEye}`} `}>
+        <main className={`${mainPageStyles.content} `}>
+          <Image className={crtStyles.monitorScreen} fill priority alt='Monitor border screen' src="/monitor-screen-border-5.png" />
+          <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor-screen-daan-hensmans-2.png" />
           <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} />
-          <LoadingStartpage />
+          <Taskbar />
+          {/* <LoadingStartpage /> */}
         </main>
       </div>
-    </body>
+    </body >
+
+
   );
 }

@@ -33,9 +33,9 @@
     font-family: 'Courier New', monospace; /* Monospace for that retro look */
     
     /* Create the "glow" effect */
-    text-shadow: 0 0 7px #00ff41;
+    text-shadow: 0 0 2px #00ff41;
     /* Outer screen glow */
-    box-shadow: 0 0 10px rgba(0, 255, 65, 0.5); 
+    box-shadow: 0 0 4 rgba(0, 255, 65, 0.5); 
 
     /* No scrollbars */
     overflow: hidden;
@@ -51,10 +51,29 @@
 
 /* Distortion for the CRT, it will warp the screen */
 .crtFishEye{
- 
+    
     /* Slight barrel distortion using the skew and scale transforms */
-    transform: perspective(150px) rotateX(1deg) skewX(1deg) scale(1.1); 
+    transform: perspective(150px) rotateX(1deg) scaleX(1.1) translateY(-24px); 
+    /* skewX(1deg) */
+     
 }
+
+/* The monitor screen border */
+.monitorScreen {
+ position: absolute;
+ z-index: 10000;
+ pointer-events: none;
+}
+.monitorName {
+    z-index: 10001;
+    pointer-events: none;
+    position: fixed;     
+    transform: translateY(47%) scale(0.4); 
+    
+  /* Optional: add a margin if you don't want it touching the edge */
+  margin-bottom: 20px;
+}
+
 
  
 /* Flicker animation of the screen, not so pretty and annoying */
@@ -83,3 +102,5 @@
         opacity: 0.25;
     }
 }  */
+
+

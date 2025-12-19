@@ -11,7 +11,7 @@ interface ButtonSelectionProps {
 
 const PopupButton = ({ setSelectedButton, iconName, title }: ButtonSelectionProps) => {
     return (
-        <a className={`${popupButtonStyles.buttonBox} xp-icon-label noSelect`} onClick={() => setSelectedButton(iconName)}>
+        <div className={`${popupButtonStyles.buttonBox} xp-icon-label noSelect clickable`} onClick={() => setSelectedButton(iconName)}>
             <div className={`${popupButtonStyles.iconBox}`}>
                 <Image src={`/icons/${iconName}.png`}
                     alt={`Button to ${iconName}`}
@@ -21,7 +21,7 @@ const PopupButton = ({ setSelectedButton, iconName, title }: ButtonSelectionProp
                 />
             </div>
             <p className={`${popupButtonStyles.iconFont}`}>{title}</p>
-        </a>
+        </div>
 
 
     );

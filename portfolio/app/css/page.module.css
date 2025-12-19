@@ -1,0 +1,5 @@
+.content {
+    display:flex;
+    -ms-flex-align: center;
+    flex-grow: 1;
+}
