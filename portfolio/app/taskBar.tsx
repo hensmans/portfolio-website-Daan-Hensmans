@@ -1,10 +1,16 @@
 import taskBarStyles from './css/taskBar.module.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import Image from "next/image";
 
-const Taskbar = () => {
-    const [time, setTime] = useState('');
 
+interface ButtonSelectionProps {
+    toggleMutedState: () => void;
+    mutedState: boolean;
+}
+
+
+const Taskbar = ({ toggleMutedState, mutedState }: ButtonSelectionProps) => {
+    const [time, setTime] = useState('');
     useEffect(() => {
         const updateClock = () => {
             const now = new Date();
@@ -15,8 +21,9 @@ const Taskbar = () => {
         return () => clearInterval(interval);
     }, []);
 
+
     return (
-        <div className={taskBarStyles.xpTaskbar}>
+        <div className={`${taskBarStyles.xpTaskbar} noSelect`} >
             <div className={taskBarStyles.startButton}>
                 <div className={`${taskBarStyles.xpLogo}`}>
                     <Image src={`/icons/windows-xp-logo.ico`}
@@ -34,7 +41,9 @@ const Taskbar = () => {
             </div>
 
             <div className={taskBarStyles.systemTray}>
-                <span className={taskBarStyles.trayIcon}>🔊</span>
+                <span className={taskBarStyles.trayIcon} onClick={toggleMutedState}>
+                    {mutedState ? '🔇' : '🔊'}
+                </span>
                 <span className={taskBarStyles.clock}>{time}</span>
             </div>
         </div>

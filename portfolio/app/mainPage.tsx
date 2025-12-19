@@ -29,14 +29,31 @@ const PreloadContent = dynamic(() => import('./page'), {
 
 export default function Mainpage() {
   const [maximizeState, setMaximizeState] = useState(false);
+  const [mutedState, setMutedState] = useState(false);
 
   const mouseClickSoundRef = useRef<HTMLAudioElement | null>(null);
   const startUpSoundRef = useRef<HTMLAudioElement | null>(null);
+  const computerNoiseRef = useRef<HTMLAudioElement | null>(null);
+  const computerNoiseRef2 = useRef<HTMLAudioElement | null>(null);
 
+
+  const soundVolume = 0.2
   // For mouse clicks
-  const handleMouseClickSoundEffect = () => {
+  const handleMouseClick = () => {
+    if (computerNoiseRef.current && computerNoiseRef2.current) {
+      if (computerNoiseRef.current.paused) {
+        computerNoiseRef.current.volume = mutedState ? 0 : soundVolume;
+        computerNoiseRef.current.currentTime = 0;
+        computerNoiseRef.current.play().catch(err => { });
+
+        computerNoiseRef2.current.volume = mutedState ? 0 : soundVolume;
+        computerNoiseRef2.current.currentTime = 10;
+        computerNoiseRef2.current.play().catch(err => { });
+      };
+    }
+
     if (mouseClickSoundRef.current) {
-      mouseClickSoundRef.current.volume = 0.2;
+      mouseClickSoundRef.current.volume = mutedState ? 0 : soundVolume;
       mouseClickSoundRef.current.currentTime = 0;
       mouseClickSoundRef.current.play().catch(err => { });
     };
@@ -44,18 +61,27 @@ export default function Mainpage() {
 
   // For start up sound effect
   // Doesnt work because user needs to interact with screen before laying sound :(
+
+
   useEffect(() => {
-    if (startUpSoundRef.current) {
-      startUpSoundRef.current.volume = 0.2;
-      startUpSoundRef.current.currentTime = 0;
-      startUpSoundRef.current.play().catch(err => { });
-    };
+
   }, []);
+
+  // Toggle the muted state and change the volumes
+  const toggleMutedState = () => {
+    (mouseClickSoundRef.current) ? mouseClickSoundRef.current.volume = mutedState ? soundVolume : 0 : {};
+    (startUpSoundRef.current) ? startUpSoundRef.current.volume = mutedState ? soundVolume : 0 : {};
+    (computerNoiseRef.current) ? computerNoiseRef.current.volume = mutedState ? soundVolume : 0 : {};
+    (computerNoiseRef2.current) ? computerNoiseRef2.current.volume = mutedState ? soundVolume : 0 : {};
+    setMutedState(!mutedState);
+  }
 
   return (
     <body className={`${mainPageStyles.screen} ${crtStyles.crtFishEye}`}>
-      <audio ref={mouseClickSoundRef} src="/mouse-click-2.mp3" preload="auto" />
-      <audio ref={startUpSoundRef} src="/windows-xp-startup.mp3" preload="auto" />
+      <audio ref={mouseClickSoundRef} src="/sounds/mouse-click-2.mp3" preload="auto" />
+      <audio ref={startUpSoundRef} src="/sounds/windows-xp-startup.mp3" preload="auto" />
+      <audio ref={computerNoiseRef} autoPlay loop src="/sounds/computer-noise-1.mp3" preload="auto" />
+      <audio ref={computerNoiseRef2} autoPlay loop src="/sounds/computer-noise-1.mp3" preload="auto" />
 
       <main className={`${mainPageStyles.content} `}>
         <div className={`${crtStyles.monitor}`}>
@@ -63,11 +89,11 @@ export default function Mainpage() {
           <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor-screen-daan-hensmans-9.png" />
         </div>
         <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} mousePointer ${mainPageStyles.windowsXPBackground}`}
-          onMouseDown={handleMouseClickSoundEffect}>
+          onMouseDown={handleMouseClick}>
           <div className={crtStyles.crtLines} />
           <div className={mainPageStyles.contentLayout}>
             <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} />
-            <Taskbar />
+            <Taskbar toggleMutedState={toggleMutedState} mutedState={mutedState} />
           </div>
 
           <LoadingStartpage />
