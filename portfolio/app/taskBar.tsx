@@ -1,5 +1,6 @@
 import taskBarStyles from './css/taskBar.module.css';
 import React, { useState, useEffect } from 'react';
+import Image from "next/image";
 
 const Taskbar = () => {
     const [time, setTime] = useState('');
@@ -17,12 +18,19 @@ const Taskbar = () => {
     return (
         <div className={taskBarStyles.xpTaskbar}>
             <div className={taskBarStyles.startButton}>
+                <div className={`${taskBarStyles.xpLogo}`}>
+                    <Image src={`/icons/windows-xp-logo.ico`}
+                        alt={`Windows XP icon`}
+                        fill
+                        priority // preloads
+                    />
+                </div>
                 <span className={taskBarStyles.startText}>start</span>
             </div>
 
             <div className={taskBarStyles.taskItems}>
-                <div className={`${taskBarStyles.taskItem} ${taskBarStyles.active}`}>My Documents</div>
-                <div className={taskBarStyles.taskItem}>Internet Explorer</div>
+                {/* <div className={`${taskBarStyles.taskItem} ${taskBarStyles.active}`}>My Documents</div>
+                <div className={taskBarStyles.taskItem}>Internet Explorer</div> */}
             </div>
 
             <div className={taskBarStyles.systemTray}>
