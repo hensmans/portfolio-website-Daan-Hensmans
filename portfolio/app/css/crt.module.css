@@ -57,7 +57,7 @@
 
 .crtMainScreen{
     /* Transform so it fits in the monitor screen */
-     transform: scaleX(0.856) scaleY(0.831); 
+     transform: scaleX(0.858) scaleY(0.833); 
 }
 
 
@@ -82,6 +82,7 @@
  z-index: 10000;
  transform: translateX(0.2%);
 }
+
 .monitorName {
     z-index: 10001;
     position: fixed;     

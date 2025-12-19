@@ -60,7 +60,7 @@ export default function Mainpage() {
       <main className={`${mainPageStyles.content} `}>
         <div className={`${crtStyles.monitor}`}>
           <Image className={`${crtStyles.monitorScreen} noMousePointer`} fill priority alt='Monitor border screen' src="/monitor-screen-border-5.png" />
-          <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor-screen-daan-hensmans-8.png" />
+          <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor-screen-daan-hensmans-9.png" />
         </div>
         <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} mousePointer ${mainPageStyles.windowsXPBackground}`}
           onMouseDown={handleMouseClickSoundEffect}>
