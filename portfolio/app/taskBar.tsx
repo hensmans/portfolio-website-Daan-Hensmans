@@ -15,7 +15,7 @@ const Taskbar = () => {
     }, []);
 
     return (
-        <footer className={taskBarStyles.xpTaskbar}>
+        <div className={taskBarStyles.xpTaskbar}>
             <div className={taskBarStyles.startButton}>
                 <span className={taskBarStyles.startText}>start</span>
             </div>
@@ -29,7 +29,7 @@ const Taskbar = () => {
                 <span className={taskBarStyles.trayIcon}>🔊</span>
                 <span className={taskBarStyles.clock}>{time}</span>
             </div>
-        </footer>
+        </div>
     );
 };
 

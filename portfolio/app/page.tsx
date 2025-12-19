@@ -37,7 +37,7 @@ export default function CenteredBox({ setMaximizeState, maximizeState }: Paramet
 
   }
 
-  return <div className={pageStyles.content}>
+  return <div className={`${pageStyles.content}`}>
     <ButtonSelection setSelectedButton={setSelectedButton}></ButtonSelection>
     {getSelectedPopupComponent()}
   </div>;

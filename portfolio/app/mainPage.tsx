@@ -65,8 +65,11 @@ export default function Mainpage() {
         <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} mousePointer ${mainPageStyles.windowsXPBackground}`}
           onMouseDown={handleMouseClickSoundEffect}>
           <div className={crtStyles.crtLines} />
-          <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} />
-          <Taskbar />
+          <div className={mainPageStyles.contentLayout}>
+            <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} />
+            <Taskbar />
+          </div>
+
           <LoadingStartpage />
         </div>
       </main>
