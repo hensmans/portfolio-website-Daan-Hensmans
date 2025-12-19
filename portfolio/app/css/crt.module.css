@@ -26,8 +26,6 @@
 
 /* Create a glow effect for the texct*/
 .crt {
-    /* Set background and overall text style */
-    background-color: black;
     /* Green colour for the text */
     /* color: #00ff41;  */
     font-family: 'Courier New', monospace; /* Monospace for that retro look */
@@ -37,41 +35,60 @@
     /* Outer screen glow */
     box-shadow: 0 0 4 rgba(0, 255, 65, 0.5); 
 
-    /* No scrollbars */
-    overflow: hidden;
+    display:flex;
+    justify-content:center; /* center horizontally */
+    align-items: center; /* center vertically */
 
+    height:100%;
+    width: 100%;
     /* Subtle blur for older, less crisp screens */
-    filter: blur(0.5px); 
+    filter: 
+    blur(0.5px) 
+    /* brightness(115%) */
+    ; 
+
+
+    /* box-shadow: [inset] [offset-x] [offset-y] [blur-radius] [spread-radius] [color]; */
+    box-shadow: inset 0px 2vh min(5vw,10vh) rgba(0, 0, 0, 0.5);
     
     
 }
 
-.crtStyle{}
+
+.crtMainScreen{
+    /* Transform so it fits in the monitor screen */
+     transform: scaleX(0.856) scaleY(0.831); 
+}
 
 
 /* Distortion for the CRT, it will warp the screen */
 .crtFishEye{
-    
+   
     /* Slight barrel distortion using the skew and scale transforms */
     transform: perspective(150px) rotateX(1deg) scaleX(1.1) translateY(-24px); 
     /* skewX(1deg) */
      
 }
 
+
+.monitor{
+    pointer-events: none;   
+    overflow: hidden;
+}
+
 /* The monitor screen border */
 .monitorScreen {
  position: absolute;
  z-index: 10000;
- pointer-events: none;
+ transform: translateX(0.2%);
 }
 .monitorName {
     z-index: 10001;
-    pointer-events: none;
     position: fixed;     
-    transform: translateY(47%) scale(0.4); 
-    
-  /* Optional: add a margin if you don't want it touching the edge */
-  margin-bottom: 20px;
+    transform: translateY(47%) scale(0.55); 
+    object-fit: contain; 
+    object-position: center;
+    margin-bottom: 20px;
 }
 
 

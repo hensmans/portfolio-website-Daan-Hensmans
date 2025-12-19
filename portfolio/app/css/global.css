@@ -34,11 +34,11 @@ html, body, #root{
 /* Mouse arrow */
 /* https://www.rw-designer.com/cursor-set/windows-xp-1 */
 /* Smaller mouse arrow when clicked */
-html, body, #root {
+.mousePointer {
   /* Using the classic XP finger pointer */
   cursor: url('/mouse_pointers/xp_mouse_arrow_large.cur'), pointer;
 }
-html:active, body:active{
+.mousePointer:active, .mousePointer:active{
     /* Using the classic XP finger pointer */
   cursor: url('/mouse_pointers/xp_mouse_arrow.cur'), pointer;
 }
@@ -52,11 +52,11 @@ html:active, body:active{
 }
 
 /* When something is clickable */
-button, a, .clickable {
+button, a {
   cursor: url('/mouse_pointers/xp_mouse_link_large.cur'), auto;
 }
 /* While clicking, change to smaller */
-button:active, a:active, .clickable {
+button:active, a:active {
   cursor: url('/mouse_pointers/xp_mouse_link.cur'), auto;
 }
 

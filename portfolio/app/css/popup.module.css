@@ -2,7 +2,8 @@
 .popupBody {
 display: flex;
   flex-direction: column; /* Ensure internal items stack correctly */
-
+  /* If you dont want to have the bouncing scroll */
+/* overscroll-behavior: none; */
   overflow: auto;  
 }
 

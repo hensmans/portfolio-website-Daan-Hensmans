@@ -30,17 +30,21 @@ export default function Mainpage() {
   const [maximizeState, setMaximizeState] = useState(false);
 
   return (
-    <body className={``} >
+    <body className={`${mainPageStyles.screen} ${crtStyles.crtFishEye}`}>
 
-      <div className={`${mainPageStyles.backgroundContainer} ${maximizeState ? {} : `${crtStyles.crtFishEye}`} `}>
-        <main className={`${mainPageStyles.content} `}>
-          <Image className={crtStyles.monitorScreen} fill priority alt='Monitor border screen' src="/monitor-screen-border-5.png" />
-          <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor-screen-daan-hensmans-2.png" />
+
+      <main className={`${mainPageStyles.content} `}>
+        <div className={`${crtStyles.monitor}`}>
+          <Image className={`${crtStyles.monitorScreen} noMousePointer`} fill priority alt='Monitor border screen' src="/monitor-screen-border-5.png" />
+          <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor-screen-daan-hensmans-3.png" />
+        </div>
+        <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} ${crtStyles.crtLines} mousePointer ${mainPageStyles.windowsXPBackground}`}>
           <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} />
           <Taskbar />
-          {/* <LoadingStartpage /> */}
-        </main>
-      </div>
+          <LoadingStartpage />
+        </div>
+      </main>
+
     </body >
 
 

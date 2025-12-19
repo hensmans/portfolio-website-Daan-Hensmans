@@ -37,7 +37,7 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
         </div>
       </div>
       <div className={`window-body ${popupStyles.popupBody}`}>
-        <div className={` ${popupStyles.popupBodyInner} ${maximizeState ? crtStyles.crtFishEye : {}}`}>
+        <div className={` ${popupStyles.popupBodyInner} `}>
           {content}
         </div>
       </div>
