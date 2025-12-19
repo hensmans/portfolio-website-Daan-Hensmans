@@ -52,11 +52,11 @@ html, body, #root{
 }
 
 /* When something is clickable */
-button, a {
+button, a, .clickable {
   cursor: url('/mouse_pointers/xp_mouse_link_large.cur'), auto;
 }
 /* While clicking, change to smaller */
-button:active, a:active {
+button:active, a:active .clickable {
   cursor: url('/mouse_pointers/xp_mouse_link.cur'), auto;
 }
 
