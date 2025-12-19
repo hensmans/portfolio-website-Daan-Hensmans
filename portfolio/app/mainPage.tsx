@@ -34,19 +34,13 @@ export default function Mainpage() {
   const startUpSoundRef = useRef<HTMLAudioElement | null>(null);
 
   // For mouse clicks
-  useEffect(() => {
-    const playSound = () => {
-      if (mouseClickSoundRef.current) {
-        mouseClickSoundRef.current.volume = 0.2;
-        mouseClickSoundRef.current.currentTime = 0;
-        mouseClickSoundRef.current.play().catch(err => { });
-      }
+  const handleMouseClickSoundEffect = () => {
+    if (mouseClickSoundRef.current) {
+      mouseClickSoundRef.current.volume = 0.2;
+      mouseClickSoundRef.current.currentTime = 0;
+      mouseClickSoundRef.current.play().catch(err => { });
     };
-    // Attach listener
-    window.addEventListener('click', playSound);
-    // Cleanup 
-    return () => window.removeEventListener('click', playSound);
-  }, []);
+  }
 
   // For start up sound effect
   // Doesnt work because user needs to interact with screen before laying sound :(
@@ -68,7 +62,8 @@ export default function Mainpage() {
           <Image className={`${crtStyles.monitorScreen} noMousePointer`} fill priority alt='Monitor border screen' src="/monitor-screen-border-5.png" />
           <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor-screen-daan-hensmans-3.png" />
         </div>
-        <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} ${crtStyles.crtLines} mousePointer ${mainPageStyles.windowsXPBackground}`}>
+        <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} ${crtStyles.crtLines} mousePointer ${mainPageStyles.windowsXPBackground}`}
+          onMouseDown={handleMouseClickSoundEffect}>
           <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} />
           <Taskbar />
           <LoadingStartpage />
