@@ -1,7 +1,7 @@
 .downloadButton {
     position: absolute;
-    top: 2em;
-    right: 2em;
+    bottom: 1em;
+    right: 1em;
     z-index: 2;
 
 
@@ -19,18 +19,20 @@
 
 .pdfWrapper {
     display: flex;
-    align-items: center;
+    /* Vertical center */
     justify-content: center;
+    height: 100%;
     /* background-color: gray; */
     padding: 0em;
 }
 
 .pdf {
+
     width: 50%;
 }
 
 .pdfRoot {
-
     height: 100%;
     width: 100%;
+    overflow: scroll;
 }

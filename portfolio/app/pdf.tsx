@@ -14,7 +14,7 @@ interface Parameters {
 
 
 export default function Pdf({ maximizeState }: Parameters) {
-    const pdfUrl = "/cv.pdf";
+    const pdfUrl = "/cv_old.pdf";
 
     const pdfWrapperRef = useRef<HTMLDivElement | null>(null);
     const [containerWidth, setContainerWidth] = useState(0);
