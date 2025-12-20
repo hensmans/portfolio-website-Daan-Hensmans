@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "date-fns": "^4.1.0"
+    "date-fns": "^4.1.0",
+    "react-pdf": "^10.2.0"
   }
 }

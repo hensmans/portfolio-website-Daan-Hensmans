@@ -1,0 +1,36 @@
+.downloadButton {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    z-index: 2;
+
+
+}
+
+.downloadButtonSmall {
+    padding: 1em;
+    font-size: 1.2em;
+}
+
+.downloadButtonBig {
+    padding: 1.5em;
+    font-size: 1.6em;
+}
+
+.pdfWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: gray; */
+    padding: 0em;
+}
+
+.pdf {
+    width: 50%;
+}
+
+.pdfRoot {
+
+    height: 100%;
+    width: 100%;
+}

@@ -9,6 +9,15 @@ import Projects from './projects';
 import AboutMe from './aboutMe';
 import { Dispatch, SetStateAction } from "react";
 import pageStyles from './css/page.module.css';
+import Pdf from './pdf';
+
+import dynamic from 'next/dynamic';
+
+// This tells Next.js: "Only load this component in the browser"
+const PdfViewer = dynamic(() => import('./pdf'), {
+  ssr: false,
+  loading: () => <p>Loading Viewer...</p>
+});
 
 interface Parameters {
   // For taggling max and min state
@@ -22,15 +31,16 @@ export default function CenteredBox({ setMaximizeState, maximizeState }: Paramet
 
   function getSelectedPopupComponent() {
     switch (selectedButton) {
-      case 'cv':
       case 'home':
         return null;
       case 'projects':
         return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<Projects />} title={'projects folder'}></Popup>;
-      case 'photos':
+      case 'pictures':
         return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<Projects />} title={'photos folder'}></Popup>;
       case 'aboutme':
         return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<AboutMe maximizeState={maximizeState} />} title={'aboutMe.html'}></Popup>;
+      case 'cv':
+        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<PdfViewer maximizeState={maximizeState} />} title={'cv.pdf'}></Popup>;
       default:
         return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<div />} title={'ERROR'}></Popup>;
     };
