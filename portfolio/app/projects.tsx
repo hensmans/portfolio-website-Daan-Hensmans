@@ -5,9 +5,9 @@ import projectsStyles from './css/projects.module.css';
 const Projects = () => {
     return (
         <div className={`${projectsStyles.layout}`}>
-            <ul className={`tree-view ${projectsStyles.projectsTree} ${projectsStyles.projectsTreeSummary}`}>
-                <li>PROJECTS</li>
-                <li>
+            <ul className={`${projectsStyles.treeView} ${projectsStyles.tree}`}>
+                <li >PROJECTS</li>
+                <li >
                     <details open>
                         <summary>Games</summary>
                         <ul>
@@ -47,7 +47,9 @@ const Projects = () => {
                     </details>
                 </li>
             </ul>
-
+            <div className={`${projectsStyles.overview}`}>
+                project view
+            </div>
         </div>
 
     );

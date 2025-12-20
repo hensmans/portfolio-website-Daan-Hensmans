@@ -26,7 +26,7 @@
   border-bottom-right-radius: 10px;
   display: flex;
   align-items: center;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
   font-style: italic;
   font-weight: bold;
   color: white;
@@ -51,7 +51,7 @@
   color: white;
   padding: 2px 10px;
   border-radius: 2px;
-  border: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   max-width: 150px;
   white-space: nowrap;
   overflow: hidden;
@@ -60,7 +60,7 @@
 
 .taskItem.active {
   background: #1e52b7;
-  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* System Tray / Clock */
@@ -72,19 +72,19 @@
   display: flex;
   align-items: center;
   color: white;
-  box-shadow: inset 1px 0 1px rgba(255,255,255,0.3);
+  box-shadow: inset 1px 0 1px rgba(255, 255, 255, 0.3);
 
-  
+
 }
 
 .clock {
   margin-left: 1em;
 }
 
-.xpLogo{
+.xpLogo {
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
-  position: relative;  
+  position: relative;
   aspect-ratio: 1 / 1;
 }

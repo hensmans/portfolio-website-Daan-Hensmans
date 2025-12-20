@@ -1,17 +1,66 @@
-.projectsTree{
-    font-size:  min(2vh, 2vw) !important;
-    color:black;
-}
+.overview {}
 
-.projectsViewcase{
 
-}
 
-*.projectsTreeSummary::before{
-    content:none !important;
-}
-
-.layout{
-    display:flex;
+.layout {
+    display: flex;
     flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+/* Tree */
+
+.tree {
+    font-size: min(2vh, 2vw);
+    color: black;
+    height: 100%;
+    width: 30%;
+    overflow: scroll;
+    margin: 0;
+    padding: 0 1em;
+
+}
+
+/* Remove arrow */
+.tree summary, .tree ul, .tree li {
+    list-style: none;
+}
+
+/* Remove arrow for safari */
+.tree summary::-webkit-details-marker {
+    display: none;
+}
+
+
+.treeView {
+    border: 1px solid #7f9db9;
+    display: block;
+}
+
+
+
+
+
+
+
+.treeView ul details>summary:before {
+    position: relative;
+    z-index: 1
+}
+
+.treeView details>summary:before {
+    text-align: center;
+    display: block;
+    float: left;
+    content: "+";
+    border: 1px solid #00f;
+    width: 1em;
+    height: 1em;
+}
+
+.treeView details[open]>summary:before {
+    content: "-"
 }

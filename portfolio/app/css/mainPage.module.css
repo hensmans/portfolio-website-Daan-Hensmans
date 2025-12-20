@@ -1,34 +1,36 @@
 .content {
   width: 100%;
   height: 100%;
-  display: flex; 
+  display: flex;
   flex-direction: column;
-  justify-content:center; /* center horizontally */
-  align-items: center; /* center vertically */
+  justify-content: center;
+  /* center horizontally */
+  align-items: center;
+  /* center vertically */
 }
 
 
 
 .windowsXPBackground {
-  background-image: url('/windows-xp-background.jpeg'); 
-  height: 100%; 
+  background-image: url('/windows-xp-background.jpeg');
+  height: 100%;
   width: 100%;
-  
-  background-size: cover; 
-  background-position: center; 
+
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
 .screen {
-  height: 100vh; 
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
   /* background-color: black; */
 }
 
 
-.contentLayout{
-  display:flex;
+.contentLayout {
+  display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;

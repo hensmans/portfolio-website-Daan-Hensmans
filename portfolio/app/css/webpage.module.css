@@ -9,13 +9,13 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.webpageBackground{
-  background-image: url('/background-space.gif');
+.webpageBackground {
+    background-image: url('/background-space.gif');
     background-color: rgb(0, 0, 0);
 
 }
 
-.webpageRootMinimized{
+.webpageRootMinimized {
     padding: min(3vh, 3vw);
 }
 
@@ -25,12 +25,12 @@
     padding-right: 20vw;
 }
 
-.textVerySmall{
+.textVerySmall {
     font-size: min(1.5vh, 1.5vw);
 }
 
 .textSmall {
-    font-size: min(2vh, 2vw);   
+    font-size: min(2vh, 2vw);
 }
 
 .textBig {
@@ -44,7 +44,7 @@
 }
 
 .rows {
-    
+
     flex-direction: column;
 }
 
@@ -55,12 +55,12 @@
 
 
 
-.textBox{
+.textBox {
     box-sizing: border-box;
     background-color: rgb(0, 0, 0);
 
     text-align: left;
-    
+
     margin-bottom: min(3vh, 3vw);
     padding: min(3vh, 3vw);
 }
@@ -73,23 +73,24 @@
 }
 
 .leftColumn {
-/* grow: 0 (don't grow), shrink: 0 (don't shrink), basis: 50% (fixed size) */
+    /* grow: 0 (don't grow), shrink: 0 (don't shrink), basis: 50% (fixed size) */
     flex: 0 0 35%;
     margin-right: min(3vh, 3vw);
 }
+
 .rightColumn {
-/* grow: 0 (don't grow), shrink: 0 (don't shrink), basis: 50% (fixed size) */
+    /* grow: 0 (don't grow), shrink: 0 (don't shrink), basis: 50% (fixed size) */
     flex: 0 0 35%;
 }
 
 .textBoxPicure {
     aspect-ratio: 1 / 1;
 }
-.textBoxAboutMe {
-}
 
-.content{
-    flex: 1; 
+.textBoxAboutMe {}
+
+.content {
+    flex: 1;
     width: 100%;
 }
 
@@ -99,6 +100,7 @@
         padding-right: 1em;
     }
 }
+
 @media (min-width: 1500px) {
     .webpageRootMaximized {
         padding-left: clamp(100px, 20%, 1000px);

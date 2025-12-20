@@ -1,7 +1,9 @@
 .content {
-    display:flex;
-    justify-content:center; /* center horizontally */
-    align-items: center; /* center vertically */
+    display: flex;
+    justify-content: center;
+    /* center horizontally */
+    align-items: center;
+    /* center vertically */
     flex-grow: 1;
     min-height: 0;
 }

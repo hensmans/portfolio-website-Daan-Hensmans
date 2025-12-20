@@ -47,7 +47,7 @@ export default function Mainpage() {
         computerNoiseRef.current.currentTime = 0;
         computerNoiseRef.current.play().catch(err => { });
         // Play second noise later so the loop isn't that obvious
-        computerNoiseRef2.current.volume = mutedState ? 0 : soundVolume / 2;
+        computerNoiseRef2.current.volume = mutedState ? 0 : (2 * soundVolume / 3);
         computerNoiseRef2.current.currentTime = 10;
         computerNoiseRef2.current.play().catch(err => { });
       };
