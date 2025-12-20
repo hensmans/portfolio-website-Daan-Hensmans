@@ -42,7 +42,8 @@ export default function Pdf({ maximizeState }: Parameters) {
 
             {/* PDF viewer */}
             <div className={`${pdfStyles.pdfWrapper}`} ref={pdfWrapperRef}>
-                <Document file={pdfUrl} >
+                <Document file={pdfUrl}
+                    loading={<div className={pdfStyles.loadingText}>Loading PDF...  </div>}>
                     <Page key={`page_1`} pageNumber={1} renderTextLayer={false} renderAnnotationLayer={false} width={containerWidth} />
                 </Document>
             </div>

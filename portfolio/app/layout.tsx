@@ -26,7 +26,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head>
+      <head className="rootOfEverything">
         {/* Preload the background image */}
         <link
           rel="preload"

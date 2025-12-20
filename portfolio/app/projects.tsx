@@ -88,7 +88,7 @@ const Projects = () => {
 
     return (
         <div className={`${projectsStyles.layout}`}>
-            <ul className={`${projectsStyles.tree}`}>
+            <ul className={`${projectsStyles.tree} noSelect`}>
                 <li >
                     <details open>
                         <summary>Local Disk (C:)</summary>

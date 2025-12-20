@@ -36,3 +36,13 @@
     width: 100%;
     overflow: scroll;
 }
+
+.loadingText {
+    color: black;
+    align-items: center;
+    padding: 1em;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+
+}
