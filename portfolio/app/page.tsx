@@ -32,7 +32,7 @@ export default function CenteredBox({ setMaximizeState, maximizeState }: Paramet
   function getSelectedPopupComponent() {
     switch (selectedButton) {
       case 'home':
-        return <ButtonSelection setSelectedButton={setSelectedButton}></ButtonSelection>;
+        return null;
       case 'projects':
         return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<Projects />} title={'projects folder'}></Popup>;
       case 'pictures':
@@ -48,7 +48,7 @@ export default function CenteredBox({ setMaximizeState, maximizeState }: Paramet
   }
 
   return <div className={`${pageStyles.content}`}>
-
+    <ButtonSelection setSelectedButton={setSelectedButton}></ButtonSelection>
     {getSelectedPopupComponent()}
   </div>;
 

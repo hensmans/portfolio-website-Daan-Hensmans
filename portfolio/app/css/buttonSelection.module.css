@@ -1,9 +1,12 @@
-
 .buttonsBox {
-  width: min(100vh,100vw);
-  display: flex; 
+  width: min(100vh, 100vw);
+  position: fixed;
+  display: flex;
   flex-direction: row;
-  justify-content: center; /* center horizontally */
-  align-items: center; /* center vertically */
+  justify-content: center;
+  /* center horizontally */
+  align-items: center;
+  /* center vertically */
+  z-index: 1;
 
 }
