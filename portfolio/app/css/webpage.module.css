@@ -1,9 +1,6 @@
 .webpageRoot {
     display: flex;
     flex-direction: column;
-    align-items: center;
-
-
     height: 100%;
     width: 100%;
 
@@ -13,7 +10,7 @@
 }
 
 .webpageBackground{
-    background-image: url('/background-space.gif');
+  background-image: url('/background-space.gif');
     background-color: rgb(0, 0, 0);
 
 }
@@ -92,6 +89,8 @@
 }
 
 .content{
+    flex: 1; 
+    width: 100%;
 }
 
 @media (max-width: 750px) {

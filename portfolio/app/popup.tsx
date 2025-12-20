@@ -1,4 +1,5 @@
 import globalStyles from './css/globals.module.css';
+import './css/global.css';
 import popupStyles from './css/popup.module.css';
 import { Dispatch, SetStateAction } from "react";
 import './css/global.css';
