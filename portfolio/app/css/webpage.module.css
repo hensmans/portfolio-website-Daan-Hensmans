@@ -3,21 +3,29 @@
     flex-direction: column;
     align-items: center;
 
-    background-image: url('/background-space.gif');
-    background-color: rgb(0, 0, 0);
 
     height: 100%;
     width: 100%;
-    padding: min(3vh, 3vw);
 
     color: white;
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.webpageBackground{
+    background-image: url('/background-space.gif');
+    background-color: rgb(0, 0, 0);
+
+}
+
+.webpageRootMinimized{
+    padding: min(3vh, 3vw);
+}
+
 .webpageRootMaximized {
-    padding-left: 15vw;
-    padding-right: 10vw;
+    padding: min(3vh, 3vw);
+    padding-left: 20vw;
+    padding-right: 20vw;
 }
 
 .textVerySmall{
@@ -83,11 +91,18 @@
 .textBoxAboutMe {
 }
 
-@media (max-width: 750px) {
-    
-    .webpageRootMaximized {
-        padding-left: 0;
-        padding-right: 0;
-    }
+.content{
+}
 
+@media (max-width: 750px) {
+    .webpageRootMaximized {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+@media (min-width: 1500px) {
+    .webpageRootMaximized {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
 }
