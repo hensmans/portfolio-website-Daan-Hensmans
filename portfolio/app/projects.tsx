@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import './css/global.css';
 import projectsStyles from './css/projects.module.css';
+import ProjectOverview from './projectOverview';
 
 const Projects = () => {
 
@@ -109,9 +110,7 @@ const Projects = () => {
                     </details>
                 </li>
             </ul>
-            <div className={`${projectsStyles.overview}`}>
-                project view
-            </div>
+            <ProjectOverview />
         </div>
 
     );

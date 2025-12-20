@@ -1,0 +1,41 @@
+.slideshowContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mediaViewport {
+    position: relative;
+    width: 100%;
+    /* This creates a constant 16:9 height based on width */
+    /* Formula: (9 / 16) * 100 = 56.25% */
+    height: 100%;
+    overflow: hidden;
+    /* 16:9 Aspect Ratio */
+    background: #000;
+    aspect-ratio: 1 / 1;
+}
+
+.slideImage, .videoWrapper {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.controls {
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background: #f4f4f4;
+}
+
+.loadingText {
+    color: white;
+    background-color: blue;
+}
