@@ -1,4 +1,3 @@
-
 /* Create CRT lines by using a lineair gradient */
 .crtLines::before {
     content: " ";
@@ -9,15 +8,13 @@
     bottom: 0;
     right: 0;
     /* Create alternating transparent and semi-transparent lines */
-    background: linear-gradient(
-        to bottom, 
-        rgba(18, 16, 16, 0) 70%, 
-        rgba(0, 0, 0, 0.25) 70%
-    );
+    background: linear-gradient(to bottom,
+            rgba(18, 16, 16, 0) 70%,
+            rgba(0, 0, 0, 0.25) 70%);
     /* Size of the repeating gradient pattern */
-    background-size: 100% 4px; 
+    background-size: 100% 4px;
     /* Lines above all elements */
-    z-index: 9999; 
+    z-index: 9999;
     /* Lines are non clickable */
     pointer-events: none;
     /* Make the lines a certain opacity */
@@ -28,72 +25,75 @@
 .crt {
     /* Green colour for the text */
     /* color: #00ff41;  */
-    font-family: 'Courier New', monospace; /* Monospace for that retro look */
-    
+    font-family: 'Courier New', monospace;
+    /* Monospace for that retro look */
+
     /* Create the "glow" effect */
-    text-shadow: 0 0 2px #00ff41;
+    text-shadow: 0 0 1px #00ff41;
     /* Outer screen glow */
-    box-shadow: 0 0 4 rgba(0, 255, 65, 0.5); 
+    box-shadow: 0 0 1 rgba(0, 255, 65, 0.5);
 
-    display:flex;
-    justify-content:center; /* center horizontally */
-    align-items: center; /* center vertically */
+    display: flex;
+    justify-content: center;
+    /* center horizontally */
+    align-items: center;
+    /* center vertically */
 
-    height:100%;
+    height: 100%;
     width: 100%;
     /* Subtle blur for older, less crisp screens */
-    filter: 
-    blur(0.5px) 
-    /* brightness(115%) */
-    ; 
+    filter:
+        blur(0.5px)
+        /* brightness(115%) */
+    ;
 
 
     /* box-shadow: [inset] [offset-x] [offset-y] [blur-radius] [spread-radius] [color]; */
-    box-shadow: inset 0px 2vh min(5vw,10vh) rgba(0, 0, 0, 0.5);
-    
-    
+    box-shadow: inset 0px 2vh min(5vw, 10vh) rgba(0, 0, 0, 0.5);
+
+
 }
 
 
-.crtMainScreen{
+.crtMainScreen {
     /* Transform so it fits in the monitor screen */
-     transform: scaleX(0.858) scaleY(0.833); 
+    transform: scaleX(0.858) scaleY(0.833);
 }
 
 
 /* Distortion for the CRT, it will warp the screen */
-.crtFishEye{
-   
+.crtFishEye {
+
     /* Slight barrel distortion using the skew and scale transforms */
-    transform: perspective(150px) rotateX(1deg) scaleX(1.1) translateY(-24px); 
+    transform: perspective(150px) rotateX(1deg) scaleX(1.1) translateY(-24px);
     /* skewX(1deg) */
-     
+
 }
 
 
-.monitor{
-    pointer-events: none;   
+.monitor {
+    pointer-events: none;
     overflow: hidden;
 }
 
 /* The monitor screen border */
 .monitorScreen {
- position: absolute;
- z-index: 10000;
- transform: translateX(0.2%);
+    position: absolute;
+    z-index: 10000;
+    transform: translateX(0.2%);
 }
 
 .monitorName {
     z-index: 10001;
-    position: fixed;     
-    transform: translateY(47%) scale(0.55); 
-    object-fit: contain; 
+    position: fixed;
+    transform: translateY(47%) scale(0.55);
+    object-fit: contain;
     object-position: center;
     margin-bottom: 20px;
 }
 
 
- 
+
 /* Flicker animation of the screen, not so pretty and annoying */
 .crt::after {
     content: " ";
@@ -103,22 +103,22 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background: rgba(18, 16, 16, 0.14); 
+    background: rgba(18, 16, 16, 0.14);
     z-index: 3;
     pointer-events: none;
-    animation: flicker 0.5s infinite alternate; 
+    animation: flicker 0.5s infinite alternate;
 }
 
 @keyframes flicker {
     0%, 100% {
-        opacity: 0; 
+        opacity: 0;
     }
+
     50% {
         opacity: 0.15;
     }
+
     75% {
         opacity: 0.05;
     }
-} 
-
-
+}

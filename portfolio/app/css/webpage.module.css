@@ -101,7 +101,7 @@
 }
 @media (min-width: 1500px) {
     .webpageRootMaximized {
-        padding-left: 20%;
-        padding-right: 20%;
+        padding-left: clamp(100px, 20%, 1000px);
+        padding-right: clamp(100px, 20%, 1000px);
     }
 }

@@ -4,7 +4,6 @@ import popupStyles from './css/popup.module.css';
 import { Dispatch, SetStateAction } from "react";
 import './css/global.css';
 import crtStyles from './css/crt.module.css';
-
 interface ButtonSelectionProps {
   setSelectedButton: Dispatch<SetStateAction<string>>;
   // For taggling max and min state

@@ -1,0 +1,17 @@
+.projectsTree{
+    font-size:  min(2vh, 2vw) !important;
+    color:black;
+}
+
+.projectsViewcase{
+
+}
+
+*.projectsTreeSummary::before{
+    content:none !important;
+}
+
+.layout{
+    display:flex;
+    flex-direction: row;
+}

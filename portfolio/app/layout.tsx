@@ -5,6 +5,8 @@ import './css/global.css';
 import LoadingStartpage from "./loadingStartpage";
 import MainPage from "./mainPage";
 import './css/global.css';
+
+import './css/windows-xp.css';
 // The Windows XP css
 // https://botoxparty.github.io/XP.css/
 
@@ -25,7 +27,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="https://unpkg.com/xp.css" />
         {/* Preload the background image */}
         <link
           rel="preload"
