@@ -10,18 +10,30 @@
 }
 
 
-
 /* Tree */
 
+.fileActive {
+    background-color: #00f;
+    color: white;
+}
+
 .tree {
-    font-size: min(2vh, 2vw);
+    font-size: clamp(1em, min(2vh, 2vw), 3em);
     color: black;
     height: 100%;
-    width: 30%;
-    overflow: scroll;
-    margin: 0;
-    padding: 0 1em;
+    width: fit-content;
 
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    margin: 0;
+    padding: 0 0.5em;
+
+    border: 1px solid #7f9db9;
+    display: block;
+
+
+    font-family: "Pixelated MS Sans Serif";
 }
 
 /* Remove arrow */
@@ -29,29 +41,27 @@
     list-style: none;
 }
 
+.tree ul {
+    padding-left: 1.3em;
+}
+
+.tree li, .tree summary {
+    padding: max(0.22em, 0.4vw) 0.3em;
+
+
+}
+
+.tree summary {
+    font-family: "Pixelated MS Sans Serif Bold";
+}
+
+
 /* Remove arrow for safari */
 .tree summary::-webkit-details-marker {
     display: none;
 }
 
-
-.treeView {
-    border: 1px solid #7f9db9;
-    display: block;
-}
-
-
-
-
-
-
-
-.treeView ul details>summary:before {
-    position: relative;
-    z-index: 1
-}
-
-.treeView details>summary:before {
+.tree details>summary:before {
     text-align: center;
     display: block;
     float: left;
@@ -59,8 +69,9 @@
     border: 1px solid #00f;
     width: 1em;
     height: 1em;
+    margin-right: 0.3em;
 }
 
-.treeView details[open]>summary:before {
+.tree details[open]>summary:before {
     content: "-"
 }
