@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
 import pictureSlideshowStyles from './css/pictureSlideshow.module.css';
 
-const PictureSlideshow = () => {
+interface Parameters {
+    youtubeId: string | undefined;
+    pictures: string[];
+}
+
+const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const images = [
-        'https://live.staticflickr.com/65535/54979498165_a5d8f4798d_z.jpg',
-        'https://live.staticflickr.com/65535/54958523389_007662b823_z.jpg',
-        'https://live.staticflickr.com/65535/54978316312_3a46944d9c_z.jpg',
-    ];
 
-    const youtubeId = "dQw4w9WgXcQ"; // Replace with your video ID
-    const isVideoSlide = currentIndex === images.length;
+
+    // Define video
+    const youtubeIdDefined = youtubeId ?? "dQw4w9WgXcQ";
+    // Define pictures
+    const picturesDefined = pictures.length == 0 ? ["no_image.png"] : pictures;
+    const isVideoSlide = currentIndex === picturesDefined.length;
 
     const nextSlide = () => {
-        if (currentIndex < images.length) {
+        if (currentIndex < picturesDefined.length) {
             setCurrentIndex(currentIndex + 1);
         }
     };
@@ -31,7 +35,7 @@ const PictureSlideshow = () => {
                 {!isVideoSlide ? (
                     /* Photo Slide */
                     <img
-                        src={images[currentIndex]}
+                        src={`/pictures/${picturesDefined[currentIndex]}`}
                         alt={`Slide ${currentIndex}`}
                         className={`${pictureSlideshowStyles.slideImage}`}
                     />
@@ -41,7 +45,7 @@ const PictureSlideshow = () => {
                         <iframe
                             width="100%"
                             height="100%"
-                            src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
+                            src={`https://www.youtube.com/embed/${youtubeIdDefined}?autoplay=1`}
                             title="YouTube video player"
                             onLoad={() => <p className={pictureSlideshowStyles.loadingText}>loading...</p>}
                             frameBorder="0"

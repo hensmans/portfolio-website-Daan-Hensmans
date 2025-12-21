@@ -10,9 +10,9 @@ interface Parameters {
         tags: string[];
         description: string[];
         bulletPoints: string[];
+        youtubeId: string | undefined;
+        pictures: string[];
     }
-
-
 }
 
 const ProjectOverview = ({ content }: Parameters) => {
@@ -33,9 +33,7 @@ const ProjectOverview = ({ content }: Parameters) => {
                     <div className={`${projectOverviewStyles.tags}`}>
                         {tags.map((tag, index) => (
                             <Fragment key={index}>
-                                <p className={`${projectOverviewStyles.tag}`}>
-                                    {tag}
-                                </p>
+                                <p className={`${projectOverviewStyles.tag}`}>{tag}</p>
                                 {(index < tags.length - 1) && (
                                     <span>&nbsp;·&nbsp;</span>
                                 )}
@@ -48,13 +46,10 @@ const ProjectOverview = ({ content }: Parameters) => {
                         <br />
                         {description.map((subDescription, index) => (
                             < Fragment key={index}>
-                                <p >
-                                    {subDescription}
-                                </p>
+                                <p >{subDescription}</p>
                                 {(index < description.length - 1) && (
                                     <br />
                                 )}
-
                             </ Fragment>
                         ))}
                     </div>
@@ -63,12 +58,11 @@ const ProjectOverview = ({ content }: Parameters) => {
                 <div className={`${projectOverviewStyles.rightArea}`}>
                     {/* Screenshots and videos */}
                     <div className={`${projectOverviewStyles.screenshots}`}>
-                        <PictureSlideshow />
+                        <PictureSlideshow youtubeId={content.youtubeId} pictures={content.pictures} />
                     </div>
                     {/* Bullet points what you learned */}
                     <div className={`${projectOverviewStyles.bulletpoints}`}>
-
-                        <p> Knowledge gained:</p>
+                        <p>Knowledge gained:</p>
                         <ul>
                             {content.bulletPoints.map((subBulletPoint, index) => (
                                 <li key={index}> <p>{subBulletPoint}</p></li>
