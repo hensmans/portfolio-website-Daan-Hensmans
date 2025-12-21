@@ -1,3 +1,5 @@
+@import url('global.css');
+
 .content {
     position: relative;
     display: flex;

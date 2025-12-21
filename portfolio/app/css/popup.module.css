@@ -1,3 +1,5 @@
+@import url('global.css');
+
 .popupBody {
   display: flex;
   flex-direction: column;

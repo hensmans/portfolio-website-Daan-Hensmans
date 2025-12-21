@@ -13,15 +13,21 @@ const ProjectOverview = () => {
                 {/* Left */}
                 <div className={`${projectOverviewStyles.leftArea}`}>
                     {/* Title*/}
-                    <p className={`${projectOverviewStyles.title}`}>
-                        Desert Explorer
-                    </p>
+                    <div className={`${projectOverviewStyles.title}`} >
+                        <p >Desert Explorer</p>
+                    </div>
+
                     {/* Tags */}
                     <div className={`${projectOverviewStyles.tags}`}>
-                        <p> Haskell &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; <a>GitHub</a></p>
+                        <p className={`${projectOverviewStyles.tag}`}> Haskell </p>
+                        &nbsp;·&nbsp;
+                        <p className={`${projectOverviewStyles.tag}`}>2025 </p>
+                        &nbsp;·&nbsp;
+                        <a><p className={`${projectOverviewStyles.tag}`}>GitHub</p></a>
                     </div>
                     {/* Description */}
                     <div className={`${projectOverviewStyles.description}`}>
+                        <br />
                         <p>
                             You are a desert explorer, in search for gold. But you have limited amount of water,
                             and therefore you need to drink something every n amount of steps.. or you will die.
@@ -36,6 +42,7 @@ const ProjectOverview = () => {
                             All the worms are ran on a different threads through Software Transactional Memory.
                             Loading and saving the game is done through a parser and lexer.
                             And the game logic consists heavely on a functional pattern, monads.
+                            BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA
                         </p>
                     </div>
                 </div>

@@ -1,3 +1,5 @@
+@import url('global.css');
+
 /* Create CRT lines by using a lineair gradient */
 .crtLines::before {
     content: " ";

@@ -1,3 +1,52 @@
+/* variables.css */
+:root {
+  --primary-font: "Pixelated MS Sans Serif";
+  --primary-font-bold: "Pixelated MS Sans Serif Bold";
+
+
+
+  /* --- BLUE THEME (Default Luna) --- */
+  --xp-blue-primary: #0054e3;
+  /* Title bars */
+  --xp-blue-taskbar: #245dda;
+  /* Taskbar base */
+  --xp-blue-light: #ece9d8;
+  /* Selected items/backgrounds */
+  --xp-blue-border: #00f;
+  /* Window borders */
+
+  /* --- OLIVE GREEN THEME (Homestead) --- */
+  --xp-green-primary: #738a58;
+  /* Title bars */
+  --xp-green-taskbar: #81c046;
+  /* Taskbar/Start button green */
+  --xp-green-light: #eef3e1;
+  /* Backgrounds */
+  --xp-green-border: #4d5d38;
+  /* Borders */
+
+  /* --- SILVER THEME (Metallic) --- */
+  --xp-silver-primary: #adb2bd;
+  /* Title bars */
+  --xp-silver-taskbar: #d4d0c8;
+  /* Taskbar/Buttons */
+  --xp-silver-light: #f1f1f1;
+  /* Backgrounds */
+  --xp-silver-border: #808080;
+  /* Borders */
+
+  /* --- ACCENT COLORS --- */
+  --xp-orange-close: #e74c3c;
+  /* The 'X' Close button */
+  --xp-yellow-warning: #fccf03;
+  /* Classic warning/folder yellow */
+  --xp-bliss-sky: #64a2d8;
+  /* Background sky blue */
+
+  --base-padding: 1em;
+}
+
+
 @font-face {
   font-family: "Pixelated MS Sans Serif";
   src: url(/fonts/converted/ms_sans_serif.woff) format("woff");
@@ -31,7 +80,7 @@ html, body, #root {
   margin: 0;
   /* Remove default browser margin/padding */
   padding: 0;
-  font-family: "Pixelated MS Sans Serif";
+  font-family: var(--primary-font);
   background-color: rgb(0, 0, 0);
 }
 
