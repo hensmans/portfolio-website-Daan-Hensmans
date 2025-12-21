@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './css/global.css';
 import projectsStyles from './css/projects.module.css';
 import ProjectOverview from './projectOverview';
@@ -54,6 +54,49 @@ const Projects = () => {
         },
     ];
 
+
+    const undefinedProject =
+    {
+        id: 1,
+        content: {
+            title: 'Undefined',
+            tags: ['NaN', 'NaN', 'NaN'],
+            description: [
+                "NaN",
+                "NaN"
+            ],
+            bulletPoints: [
+                "NaN",
+                "NaN",
+                "NaN",
+
+            ],
+        }
+    };
+    const Projects = [
+        {
+            id: 3,
+            content: {
+                title: 'Desert Explorer',
+                tags: ['Haskell', '2025', 'GitHub'],
+                description: [
+                    "You are a desert explorer, in search for gold. But you have limited amount of water, and therefore you need to drink something every n amount of steps.. or you will die. Not only can you die from dehydration, but also from lava and from worms that appear randomly. Once you are satisfied with the amount of gold you gathered, you can enter a portal to end the game. If the player feels tired it can save the game and load it for another play session.",
+                    " The game is fully programmed in Haskell, a pure function programming language. There are many concepts incorperated in this game. To list a few; The map will go to infinity, and with the same seed it will also have the same tiles everytime. All the worms are ran on a different threads through Software Transactional Memory. Loading and saving the game is done through a parser and lexer. And the game logic consists heavely on a functional pattern, monads.",
+
+                ],
+                bulletPoints: [
+                    "All the concepts of a pure functional language",
+                    "Software transactional memory (STM)",
+                    "Writing an parser and lexer to load and save the game state from/to a file",
+                    "Pseudo random generation in a consistent way, given a seed",
+                    "Monads",
+
+                ],
+            }
+        }
+    ]
+
+
     const generateFolderContent = (fileName: string) => {
         const folder = items.find(entry => entry.folderName === fileName);
         return (
@@ -61,7 +104,6 @@ const Projects = () => {
                 <li
                     key={file.id}
                     onClick={() => setSelectedFile(file.id)}
-                    // 2. Conditionally apply the "selected" class
                     className={`${selectedFile === file.id ? `${projectsStyles.fileActive}` : ''}`}
                 >
                     {file.label}
@@ -82,10 +124,20 @@ const Projects = () => {
     }
 
 
-
+    const getContent = (id: number) => {
+        const project = Projects.find(project => project.id === id) ?? undefinedProject;
+        return project.content;
+    }
 
     // Readme is always selected
     const [selectedFile, setSelectedFile] = useState(0);
+
+    const [projectContent, setProjectContent] = useState(getContent(selectedFile));
+
+    useEffect(() => {
+        console.log(" clickecddd ", selectedFile);
+        setProjectContent(getContent(selectedFile));
+    }, [selectedFile]);
 
     return (
         <div className={`${projectsStyles.layout}`}>
@@ -110,7 +162,7 @@ const Projects = () => {
                     </details>
                 </li>
             </ul>
-            <ProjectOverview />
+            <ProjectOverview content={projectContent} />
         </div>
 
     );

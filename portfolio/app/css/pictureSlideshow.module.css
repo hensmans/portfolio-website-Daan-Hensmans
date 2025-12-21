@@ -13,11 +13,8 @@
 .mediaViewport {
     position: relative;
     width: 100%;
-    /* This creates a constant 16:9 height based on width */
-    /* Formula: (9 / 16) * 100 = 56.25% */
     height: 100%;
     overflow: hidden;
-    /* 16:9 Aspect Ratio */
     background: #000;
     aspect-ratio: 1 / 1;
 }
