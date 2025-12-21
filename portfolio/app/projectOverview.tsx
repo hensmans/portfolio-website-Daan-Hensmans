@@ -42,7 +42,6 @@ const ProjectOverview = () => {
                             All the worms are ran on a different threads through Software Transactional Memory.
                             Loading and saving the game is done through a parser and lexer.
                             And the game logic consists heavely on a functional pattern, monads.
-                            BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA BLABLABLA
                         </p>
                     </div>
                 </div>

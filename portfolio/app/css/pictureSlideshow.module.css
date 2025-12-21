@@ -34,10 +34,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 1em;
-    background: #f4f4f4;
+    background: var(--xp-silver-light);
+
 }
 
 .loadingText {
-    color: white;
-    background-color: blue;
+    color: var(--xp-silver-light);
+    ;
+    background-color: var(--xp-blue-primary);
+    ;
 }

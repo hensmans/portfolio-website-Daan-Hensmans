@@ -12,8 +12,8 @@
 /* Tree */
 
 .fileActive {
-    background-color: #00f;
-    color: white;
+    background-color: var(--xp-blue-primary);
+    color: var(--xp-blue-light);
 }
 
 .tree {
@@ -28,7 +28,8 @@
     margin: 0;
     padding: 0 0.5em;
 
-    border: 1px solid #7f9db9;
+    border-right: 1px solid var(--xp-blue-border);
+
     display: block;
 
 
@@ -65,7 +66,8 @@
     display: block;
     float: left;
     content: "+";
-    border: 1px solid #00f;
+    border: 1px solid var(--xp-blue-border);
+    background-color: var(--xp-silver-light);
     width: 1em;
     height: 1em;
     margin-right: 0.3em;
