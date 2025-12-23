@@ -83,7 +83,7 @@
 .monitorScreen {
     position: absolute;
     z-index: 10000;
-    transform: translateX(0.2%);
+    transform: translateX(0.15%) scaleX(1.001);
 }
 
 .monitorName {
