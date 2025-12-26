@@ -30,9 +30,10 @@ const Taskbar = ({ toggleMutedState, mutedState }: ButtonSelectionProps) => {
                         alt={`Windows XP icon`}
                         fill
                         priority // preloads
+                        className={taskBarStyles.image}
                     />
                 </div>
-                <span className={taskBarStyles.startText}>start</span>
+                <span className={taskBarStyles.startText}>&nbsp;start</span>
             </div>
 
             <div className={taskBarStyles.taskItems}>
@@ -41,10 +42,7 @@ const Taskbar = ({ toggleMutedState, mutedState }: ButtonSelectionProps) => {
             </div>
 
             <div className={taskBarStyles.systemTray}>
-                <span className={taskBarStyles.trayIcon} onClick={toggleMutedState}>
-                    {mutedState ? '🔇' : '🔊'}
-                </span>
-                <span className={taskBarStyles.clock}>{time}</span>
+                <span onClick={toggleMutedState}>{mutedState ? '🔇' : '🔊'}&nbsp;&nbsp;&nbsp;{time}</span>
             </div>
         </div>
     );

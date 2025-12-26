@@ -14,10 +14,16 @@
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5);
 
   flex-shrink: 0;
-
-  font-size: 1.5em;
   font-family: "Pixelated MS Sans Serif";
 
+}
+
+.xpLogo{
+  vertical-align: middle;
+}
+
+.xpTaskbar .xpLogo, .xpTaskbar span  {
+   font-size: 2.5em;
 }
 
 /* The Iconic Start Button */
@@ -34,7 +40,9 @@
   font-weight: bold;
   color: white;
   text-shadow: 1px 1px 1px #222;
-  font-size: 1.3em;
+  
+
+
 }
 
 .startButton:hover {
@@ -49,6 +57,8 @@
   padding: 0 10px;
   gap: 5px;
 }
+
+
 
 .taskItem {
   background: #3c81f3;
@@ -75,14 +85,23 @@
   padding: 0 1em;
   display: flex;
   align-items: center;
+  justify-content: center; 
   color: white;
   box-shadow: inset 1px 0 1px rgba(255, 255, 255, 0.3);
 
+  vertical-align: middle;
 
 }
-
+.xpTaskbar span{
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+  text-align: center;
+}
 .clock {
-  margin-left: 1em;
+  margin-left: 0.5em;
+
 }
 
 .xpLogo {
