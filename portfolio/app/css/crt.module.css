@@ -44,8 +44,9 @@
     height: 100%;
     width: 100%;
     /* Subtle blur for older, less crisp screens */
-    filter: blur(0.5px);
-        /* brightness(115%) */
+    filter: blur(0.5px)
+    /* Make screen brighter because CRT lines make it darker */
+        brightness(107%);
     ;
 
 
