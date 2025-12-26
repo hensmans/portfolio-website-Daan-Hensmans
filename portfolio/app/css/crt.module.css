@@ -58,7 +58,7 @@
 
 .crtMainScreen {
     /* Transform so it fits in the monitor screen */
-    transform: scaleX(0.858) scaleY(0.833);
+    transform: scaleX(0.8605) scaleY(0.833);
 
 }
 
@@ -67,7 +67,7 @@
 .crtFishEye {
 
     /* Slight barrel distortion using the skew and scale transforms */
-    transform: perspective(150px) rotateX(1deg) scaleX(1.1) translateY(-3.75vh) scaleY(1.01) ;
+    transform: perspective(150px) rotateX(1deg) scaleX(1.08) translateY(-3.75vh) scaleY(1.01) ;
     /* skewX(1deg) */
 
 
@@ -83,7 +83,7 @@
 .monitorScreen {
     position: absolute;
     z-index: 10000;
-    transform: translateX(0.15%) scaleX(1.001);
+    transform: translateX(0.15%) scaleX(1.005);
 }
 
 .monitorName {

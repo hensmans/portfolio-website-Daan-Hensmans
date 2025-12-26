@@ -37,7 +37,7 @@ export default function Mainpage() {
   const computerNoiseRef2 = useRef<HTMLAudioElement | null>(null);
 
 
-  const soundVolume = 0.3
+  const soundVolume = 1;
   // For mouse clicks
   const handleMouseClick = () => {
     // Start background noise if not started yet
@@ -60,13 +60,7 @@ export default function Mainpage() {
     };
   }
 
-  // For start up sound effect
-  // Doesnt work because user needs to interact with screen before laying sound :(
 
-
-  useEffect(() => {
-
-  }, []);
 
   // Toggle the muted state and change the volumes
   const toggleMutedState = () => {
@@ -86,8 +80,8 @@ export default function Mainpage() {
 
       <main className={`${mainPageStyles.content} `}>
         <div className={`${crtStyles.monitor}`}>
-          <Image className={`${crtStyles.monitorScreen} noMousePointer`} fill priority alt='Monitor border screen' src="/monitor-screen-border-5.png" />
-          <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor-screen-daan-hensmans-9.png" />
+          <Image className={`${crtStyles.monitorScreen} noMousePointer`} fill priority alt='Monitor border screen' src="/monitor-screen-border-15.png" />
+          <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor-screen-daan-hensmans-11.png" />
         </div>
         <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} mousePointer ${mainPageStyles.windowsXPBackground}`}
           onMouseDown={handleMouseClick}>
