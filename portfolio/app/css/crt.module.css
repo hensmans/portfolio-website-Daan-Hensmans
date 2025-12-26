@@ -21,6 +21,8 @@
     pointer-events: none;
     /* Make the lines a certain opacity */
     opacity: 0.9;
+
+    filter: blur(1px);
 }
 
 /* Create a glow effect for the texct*/
@@ -44,7 +46,7 @@
     height: 100%;
     width: 100%;
     /* Subtle blur for older, less crisp screens */
-    filter: blur(0.5px)
+    filter:
     /* Make screen brighter because CRT lines make it darker */
         brightness(107%);
     ;
@@ -68,7 +70,8 @@
 .crtFishEye {
 
     /* Slight barrel distortion using the skew and scale transforms */
-    transform: perspective(150px) rotateX(1deg) scaleX(1.08) translateY(-3.75vh) scaleY(1.01) ;
+    /* transform: perspective(200px) rotateX(0.3deg) scaleX(1.08) translateY(-1.1vh) scaleY(1.01) ; */
+    transform: perspective(500px) rotateX(0.2deg) scaleX(1.015) translateY(-0.5vh) scaleY(1.01) ;
     /* skewX(1deg) */
 
 
