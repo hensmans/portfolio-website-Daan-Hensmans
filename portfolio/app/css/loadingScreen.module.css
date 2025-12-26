@@ -31,7 +31,7 @@
 /* Loading screen fades out after a duration */
 .loadingBackgroundFadeOut {
   /* Set the duration for the whole animation */
-  animation: autoFadeOut 3s forwards;
+  animation: autoFadeOut 4s forwards;
 
   /* Full opcaity at start */
   opacity: 1;
