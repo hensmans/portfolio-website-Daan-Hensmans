@@ -16,6 +16,7 @@ export default function LoadingStartpage() {
         height={1}
         layout="responsive"
         priority
+        unoptimized
       />
     </div>
   );
