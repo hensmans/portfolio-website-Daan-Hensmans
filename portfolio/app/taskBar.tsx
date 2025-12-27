@@ -26,7 +26,7 @@ const Taskbar = ({ toggleMutedState, mutedState }: ButtonSelectionProps) => {
         <div className={`${taskBarStyles.xpTaskbar} noSelect`} >
             <div className={taskBarStyles.startButton}>
                 <div className={`${taskBarStyles.xpLogo}`}>
-                    <Image src={`/icons/windows-xp-logo.ico`}
+                    <Image src={`/icons/Windows-xp-logo.png`}
                         alt={`Windows XP icon`}
                         fill
                         priority // preloads
