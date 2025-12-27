@@ -11,7 +11,7 @@ export default function LoadingStartpage() {
       <Image
         src={'/windows-xp-loading.gif'}
         alt={'loading gif'}
-        className={loadingScreenStyles.loadingGif}
+        className={`${loadingScreenStyles.loadingGif} noSelect`}
         width={1}
         height={1}
         layout="responsive"
