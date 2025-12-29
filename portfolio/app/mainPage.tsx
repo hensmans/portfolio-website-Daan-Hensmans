@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic';
 import { Geist, Geist_Mono } from "next/font/google";
 import LoadingStartpage from './loadingStartpage';
 import Taskbar from './taskBar';
+import MonitorButton from './monitorButton';
 
 
 const geistSans = Geist({
@@ -30,6 +31,7 @@ const PreloadContent = dynamic(() => import('./page'), {
 export default function Mainpage() {
   const [maximizeState, setMaximizeState] = useState(false);
   const [mutedState, setMutedState] = useState(false);
+  const [monitorOnState, setMonitorOnState] = useState(true);
 
   const mouseClickSoundRef = useRef<HTMLAudioElement | null>(null);
   const startUpSoundRef = useRef<HTMLAudioElement | null>(null);
@@ -79,20 +81,35 @@ export default function Mainpage() {
       <audio ref={computerNoiseRef2} autoPlay loop src="/sounds/computer-noise-1.mp3" preload="auto" />
 
       <main className={`${mainPageStyles.content} `}>
+        {/* Monitor Border */}
         <div className={`${crtStyles.monitor}`}>
           <Image className={`${crtStyles.monitorScreen} noMousePointer`} fill priority alt='Monitor border screen' src="/monitor-screen-border-15.png" />
           <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor-screen-daan-hensmans-11.png" />
-        </div>
-        <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} mousePointer ${mainPageStyles.windowsXPBackground}`}
-          onMouseDown={handleMouseClick}>
-          <div className={crtStyles.crtLines} />
-          <div className={mainPageStyles.contentLayout}>
-            <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} />
-            <Taskbar toggleMutedState={toggleMutedState} mutedState={mutedState} />
+          <div className={crtStyles.monitorButton}>
+            <MonitorButton monitorOnState={monitorOnState} setMonitorOnState={setMonitorOnState} />
           </div>
 
-          <LoadingStartpage />
         </div>
+        {/* Monitor content and screen */}
+        {monitorOnState ?
+          // Monitor on
+          <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} mousePointer ${mainPageStyles.windowsXPBackground}`}
+            onMouseDown={handleMouseClick}>
+            {/* CRT lines */}
+            <div className={crtStyles.crtLines} />
+            {/* Monitor content */}
+            <div className={mainPageStyles.contentLayout}>
+              <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} />
+              <Taskbar toggleMutedState={toggleMutedState} mutedState={mutedState} />
+            </div>
+            {/* Loading screen (dissapears after x seconds) */}
+            <LoadingStartpage />
+          </div>
+          :
+          // Monitor off
+          <div />
+        }
+
       </main>
 
     </body >

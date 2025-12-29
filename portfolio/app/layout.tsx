@@ -7,10 +7,9 @@ import MainPage from "./mainPage";
 import './css/global.css';
 
 import './css/windows-xp.css';
+import MonitorButton from "./monitorButton";
 // The Windows XP css
 // https://botoxparty.github.io/XP.css/
-
-import Image from "next/image";
 
 
 export const metadata: Metadata = {

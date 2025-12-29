@@ -47,7 +47,7 @@
     width: 100%;
     /* Subtle blur for older, less crisp screens */
     filter:
-    /* Make screen brighter because CRT lines make it darker */
+        /* Make screen brighter because CRT lines make it darker */
         brightness(107%);
     ;
 
@@ -100,6 +100,14 @@
 }
 
 
+.monitorButton {
+    position: fixed;
+    bottom: 0.5vh;
+    right: 5vw;
+    z-index: 11111;
+
+    pointer-events: visible;
+}
 
 /* Flicker animation of the screen, not so pretty and annoying */
 .crt::after {

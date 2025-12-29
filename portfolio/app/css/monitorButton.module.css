@@ -1,0 +1,54 @@
+/* The machine chassis */
+.panel {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.led {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 3px solid #808080;
+    transition: all 0.1s ease-in-out;
+}
+
+.ledOff {
+    background-color: #4a0000;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.ledOn {
+    background-color: #00ff00;
+    box-shadow:
+        inset -2px -2px 4px rgba(0, 0, 0, 0.5),
+        0 0 15px #00ff00,
+        0 0 30px rgba(0, 255, 0, 0.4);
+}
+
+/* The Heavy Block Button */
+.retroButton {
+    background: #cdc9b6;
+    height: 4vh;
+
+    /* The "Block" Bevel effect */
+    border-top: 4px solid #ffffff;
+    border-left: 4px solid #ffffff;
+    border-right: 4px solid #666666;
+    border-bottom: 4px solid #666666;
+}
+
+.retroButton:focus:not(:focus-visible), .retroButton:hover {
+    outline: none;
+    box-shadow: none;
+}
+
+.retroButton:active {
+    background: #d9d7cb !important;
+    /* Inverts the bevel to look "pushed in" */
+    border-top: 4px solid #666666;
+    border-left: 4px solid #666666;
+    border-right: 4px solid #ffffff;
+    border-bottom: 4px solid #ffffff;
+
+}
