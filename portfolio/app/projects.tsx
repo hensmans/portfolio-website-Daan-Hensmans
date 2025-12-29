@@ -3,7 +3,25 @@ import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import './css/global.css';
 import projectsStyles from './css/projects.module.css';
 import ProjectOverview from './projectOverview';
+import Image from "next/image";
 
+
+const fileIcons = {
+    // Files
+    generic: 'Generic Document',
+    lowLevel: 'project',
+    creative: 'project',
+    picture: 'picture',
+    constructs: 'project',
+    undefined: 'Registry Editor',
+    readme: 'text',
+
+    // Folders
+    folderOpened: 'Folder Closed',
+    localDisk: 'Local Disk',
+    projects: 'projects',
+    pictures: 'pictures',
+}
 
 
 const items = [
@@ -11,7 +29,8 @@ const items = [
         folderName: 'root',
         folderFiles: [
             { id: 0, label: 'README.md' }
-        ]
+        ],
+        icon: fileIcons.readme,
     },
     {
         folderName: 'games',
@@ -21,7 +40,8 @@ const items = [
             { id: 3, label: 'Desert Explorer' },
             { id: 4, label: 'Train App' },
             { id: 5, label: 'Pixel Simulator' }
-        ]
+        ],
+        icon: fileIcons.generic,
     },
     {
         folderName: 'low level',
@@ -31,7 +51,8 @@ const items = [
             { id: 12, label: 'OpenGL' },
             { id: 13, label: 'EmFRP Compiler' },
             { id: 14, label: 'Interpreter' },
-        ]
+        ],
+        icon: fileIcons.generic,
     },
     {
         folderName: 'creative',
@@ -39,7 +60,8 @@ const items = [
             { id: 21, label: 'This Site' },
             { id: 22, label: 'Photography' },
             { id: 23, label: 'YouTube' },
-        ]
+        ],
+        icon: fileIcons.generic,
     },
     {
         folderName: 'constructs',
@@ -48,7 +70,17 @@ const items = [
             { id: 32, label: 'Database' },
             { id: 33, label: 'Multicore' },
             { id: 34, label: 'Web Security' },
-        ]
+        ],
+        icon: fileIcons.generic,
+    },
+
+    {
+        folderName: 'pictures',
+        folderFiles: [
+            { id: 101, label: 'tree.png' },
+            { id: 102, label: 'frog.png' },
+        ],
+        icon: fileIcons.generic,
     },
 ];
 
@@ -361,12 +393,16 @@ const projectsContent = [
             pictures: [],
         }
     },
+
+
 ]
 
 interface Parameters {
     // For taggling max and min state
     setIconName: Dispatch<SetStateAction<string>>;
 }
+
+
 
 const Projects = ({ setIconName }: Parameters) => {
 
@@ -379,19 +415,38 @@ const Projects = ({ setIconName }: Parameters) => {
                 <li
                     key={file.id}
                     onClick={() => setSelectedFile(file.id)}
-                    className={`${selectedFile === file.id ? `${projectsStyles.fileActive}` : ''}`}
+                    className={`${projectsStyles.treeElement} ${selectedFile === file.id ? `${projectsStyles.fileActive}` : ''}`}
                 >
-
+                    <Image src={`/icons/${folder.icon}.png`}
+                        alt={`Popup icon`}
+                        fill
+                        priority // preloads
+                        className={`${projectsStyles.icon}`}
+                    />
                     {file.label}
                 </li>
             ))
         );
     }
 
-    const generateFolder = (openBool: boolean, title: string, fileName: string) => {
+    const generateFolderSummary = (icon: string, title: string) => {
         return (
-            <details open={openBool}>
-                <summary>{title}</summary>
+            <summary className={projectsStyles.treeElement}>
+                <Image src={`/icons/${icon}.png`}
+                    alt={`Popup icon`}
+                    fill
+                    priority // preloads
+                    className={`${projectsStyles.icon}`}
+                />
+                {title}
+            </summary>
+        );
+    }
+
+    const generateFolder = (openBoolInit: boolean, title: string, fileName: string, folderIcon?: string) => {
+        return (
+            <details open={openBoolInit}>
+                {generateFolderSummary(folderIcon ? folderIcon : fileIcons.folderOpened, title)}
                 <ul>
                     {generateFolderContent(fileName)}
                 </ul>
@@ -407,7 +462,6 @@ const Projects = ({ setIconName }: Parameters) => {
 
     // Readme is always selected
     const [selectedFile, setSelectedFile] = useState(0);
-
     const [projectContent, setProjectContent] = useState(getContent(selectedFile));
 
     useEffect(() => {
@@ -419,10 +473,10 @@ const Projects = ({ setIconName }: Parameters) => {
             <ul className={`${projectsStyles.tree} noSelect`}>
                 <li >
                     <details open>
-                        <summary>Local Disk (C:)</summary>
+                        {generateFolderSummary(fileIcons.localDisk, 'Local Disk (C:)')}
                         <ul>
                             <details open>
-                                <summary>projects</summary>
+                                {generateFolderSummary(fileIcons.projects, 'projects')}
                                 <ul>
                                     {generateFolderContent('root')}
                                     <li >
@@ -433,6 +487,11 @@ const Projects = ({ setIconName }: Parameters) => {
                                     </li>
                                 </ul>
                             </details>
+                        </ul>
+                        <ul>
+
+                            {generateFolder(false, 'pictures', 'pictures', fileIcons.pictures)}
+
                         </ul>
                     </details>
                 </li>
