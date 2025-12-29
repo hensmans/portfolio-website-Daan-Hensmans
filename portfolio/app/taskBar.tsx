@@ -42,7 +42,15 @@ const Taskbar = ({ toggleMutedState, mutedState }: ButtonSelectionProps) => {
             </div>
 
             <div className={taskBarStyles.systemTray}>
-                <span onClick={toggleMutedState}>{mutedState ? '🔇' : '🔊'}&nbsp;&nbsp;&nbsp;{time}</span>
+
+                <span onClick={toggleMutedState}>
+                    <Image src={mutedState ? `/icons/Mute.png` : `/icons/Volume.png`}
+                        alt={`Sound mute/unmute icon`}
+                        fill
+                        priority // preloads
+                        className={taskBarStyles.muteIcon}
+                    />
+                    {time}</span>
             </div>
         </div>
     );

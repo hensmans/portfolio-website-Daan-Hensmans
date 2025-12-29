@@ -26,7 +26,7 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
 
   return (
     <div className={`${popupStyles.popupScreen} ${maximizeState ? `${popupStyles.popupScreenMaximized}` : {}} window`}>
-      <div className="title-bar">
+      <div className={`title-bar ${popupStyles.popupuTitleBar}`}>
         <div className="title-bar-text">
           {title}
         </div>
@@ -35,11 +35,11 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
           <button aria-label="Maximize" onClick={() => setMaximizeState(!maximizeState)} />
           <button aria-label="Close" onClick={() => goToHomeScreen()} />
         </div>
-      </div>
+      </div >
       <div className={`window-body ${popupStyles.popupBody}`}>
         {content}
       </div>
-    </div>
+    </div >
   );
 }
 export default Popup;

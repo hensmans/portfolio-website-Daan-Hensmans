@@ -23,7 +23,6 @@
   flex-direction: column;
 
   z-index: 2;
-
 }
 
 .popupScreenMaximized {
@@ -33,4 +32,6 @@
 
 }
 
-.popupBodyInner {}
+.popupuTitleBar {
+  height: 3vh;
+}
