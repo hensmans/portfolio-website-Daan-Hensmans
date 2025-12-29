@@ -5,13 +5,13 @@
   /* position: fixed;
   bottom: 0; */
   width: 100%;
-  height: 6vh;
+  height: 7vh;
   background: linear-gradient(to bottom, var(--xp-blue-taskbar) 0%, var(--xp-bliss-sky) 9%, var(--xp-blue-taskbar) 18%, var(--xp-blue-taskbar) 92%, var(--xp-blue-border) 100%);
   display: flex;
   align-items: center;
   z-index: 999;
 
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  /* box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5); */
 
   flex-shrink: 0;
   font-family: "Pixelated MS Sans Serif";
@@ -24,7 +24,7 @@
 
 .xpTaskbar .xpLogo, .xpTaskbar span {
   text-shadow: 1px 1px 1px #222;
-  font-size: 2.5em;
+  font-size: min(3.5vw, 3.5vh);
 
 }
 
@@ -79,7 +79,9 @@
 
 /* System Tray / Clock */
 .systemTray {
-  background: linear-gradient(to bottom, var(--xp-bliss-sky) 0%, var(--xp-blue-taskbar) 100%);
+  /* background: linear-gradient(to bottom, var(--xp-bliss-sky) 0%, var(--xp-blue-taskbar) 100%);
+   */
+  background: linear-gradient(to bottom, var(--xp-bliss-sky) 0%, #57b8fd 9%, var(--xp-bliss-sky) 18%, var(--xp-bliss-sky) 92%, var(--xp-blue-border) 100%);
   border-left: 1px solid var(--xp-blue-taskbar);
   height: 100%;
   padding: 0 1em;

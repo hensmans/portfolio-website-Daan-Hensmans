@@ -6,8 +6,8 @@
 }
 
 .led {
-    width: 24px;
-    height: 24px;
+    width: min(2vw, 2vh);
+    height: min(2vw, 2vh);
     border-radius: 50%;
     border: 3px solid #808080;
     transition: all 0.1s ease-in-out;
@@ -30,7 +30,11 @@
 .retroButton {
     background: #cdc9b6;
     height: 4vh;
-
+    width: 6vw;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    overflow: hidden;
     /* The "Block" Bevel effect */
     border-top: 4px solid #ffffff;
     border-left: 4px solid #ffffff;
@@ -39,8 +43,8 @@
 }
 
 .retroButton:focus:not(:focus-visible), .retroButton:hover {
-    outline: none;
-    box-shadow: none;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .retroButton:active {
