@@ -25,6 +25,15 @@
     font-size: min(2cqw, 2cqh);
 }
 
+.readMeWrapper {
+    flex: 1;
+    display: flex;
+    height: 100%;
+    font-size: min(2cqw, 2cqh);
+    padding: 1em;
+    overflow: auto;
+}
+
 
 .title {
     text-align: center;
@@ -33,6 +42,14 @@
     margin: 0 0.5em 0.5em 0.5em;
     background-color: var(--xp-blue-primary);
     color: var(--xp-blue-light);
+}
+
+.markdownTitle {
+    font-family: var(--primary-font-bold);
+    font-size: min(4cqw, 4cqh);
+    width: 90%;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid var(--xp-silver-border);
 }
 
 .tags {
@@ -80,6 +97,28 @@
     height: 100%;
 }
 
+.readMeLeftArea {
+    display: flex;
+    flex-direction: column;
+
+    /* margin-right: 1em; */
+    width: 50%;
+    height: fit-content;
+    padding-right: 0.5em;
+
+    border-right: 2px dotted var(--xp-silver-border);
+
+}
+
+.readMeRightArea {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: fit-content;
+
+    padding-left: 1em;
+}
+
 .rightArea {
     display: flex;
     flex-direction: column;
@@ -119,4 +158,8 @@
     justify-content: center;
     text-align: center;
     color: var(--xp-silver-border);
+}
+
+.readmeBackground {
+    background-color: var(--xp-silver-light);
 }

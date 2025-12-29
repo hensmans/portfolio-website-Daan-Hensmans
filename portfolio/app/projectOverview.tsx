@@ -1,7 +1,7 @@
 
 import { Fragment, useState } from 'react';
 import './css/global.css';
-import projectOverviewStyles from './css/projectOverview.module.css';
+import fileOverviewStyles from './css/fileOverview.module.css';
 import PictureSlideshow from './pictureSlideshow';
 
 interface Parameters {
@@ -20,20 +20,20 @@ const ProjectOverview = ({ content }: Parameters) => {
     const description = content.description;
 
     return (
-        <div className={`${projectOverviewStyles.root}`}>
-            <div className={`${projectOverviewStyles.wrapper}`}>
+        <div className={`${fileOverviewStyles.root}`}>
+            <div className={`${fileOverviewStyles.wrapper}`}>
                 {/* Left */}
-                <div className={`${projectOverviewStyles.leftArea}`}>
+                <div className={`${fileOverviewStyles.leftArea}`}>
                     {/* Title*/}
-                    <div className={`${projectOverviewStyles.title}`} >
+                    <div className={`${fileOverviewStyles.title}`} >
                         <p >{content.title}</p>
                     </div>
 
                     {/* Tags */}
-                    <div className={`${projectOverviewStyles.tags}`}>
+                    <div className={`${fileOverviewStyles.tags}`}>
                         {tags.map((tag, index) => (
                             <Fragment key={index}>
-                                <p className={`${projectOverviewStyles.tag}`}>{tag}</p>
+                                <p className={`${fileOverviewStyles.tag}`}>{tag}</p>
                                 {(index < tags.length - 1) && (
                                     <span>&nbsp;·&nbsp;</span>
                                 )}
@@ -42,7 +42,7 @@ const ProjectOverview = ({ content }: Parameters) => {
                         ))}
                     </div>
                     {/* Description */}
-                    < div className={`${projectOverviewStyles.description}`}>
+                    < div className={`${fileOverviewStyles.description}`}>
                         <br />
                         {description.map((subDescription, index) => (
                             < Fragment key={index}>
@@ -55,13 +55,13 @@ const ProjectOverview = ({ content }: Parameters) => {
                     </div>
                 </div>
                 {/* Right area */}
-                <div className={`${projectOverviewStyles.rightArea}`}>
+                <div className={`${fileOverviewStyles.rightArea}`}>
                     {/* Screenshots and videos */}
-                    <div className={`${projectOverviewStyles.screenshots}`}>
+                    <div className={`${fileOverviewStyles.screenshots}`}>
                         <PictureSlideshow youtubeId={content.youtubeId} pictures={content.pictures} />
                     </div>
                     {/* Bullet points what you learned */}
-                    <div className={`${projectOverviewStyles.bulletpoints}`}>
+                    <div className={`${fileOverviewStyles.bulletpoints}`}>
                         <p>Knowledge gained:</p>
                         <ul>
                             {content.bulletPoints.map((subBulletPoint, index) => (

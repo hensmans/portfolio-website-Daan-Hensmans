@@ -1,9 +1,10 @@
 
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import './css/global.css';
-import projectsStyles from './css/projects.module.css';
+import fileExplorerStyles from './css/fileExplorer.module.css';
 import ProjectOverview from './projectOverview';
 import Image from "next/image";
+import ReadMeOverview from './readmeOverview';
 
 
 const fileIcons = {
@@ -106,6 +107,33 @@ const undefinedProject =
     }
 };
 const projectsContent = [
+    // Readme
+    {
+        id: 0,
+        content: {
+            title: 'Projects',
+            tags: [],
+            description: [
+                "Here my most notable projects are shown. Every project will give a quick overview what it was about, what language(s) I used, what I learned, and some pictures and maybe even a video.",
+                "There are multiple folders where the type of the project is grouped. Select any folder to open or close it.",
+                "",
+                "The following folders include:"
+            ],
+            bulletPoints: [
+                "games",
+                "Some fun visual projects where multitude of programming concepts are implemented into games",
+                "low level",
+                "Projects that are about low level code and OS level",
+                "constructs",
+                "Not-so-visual projects that are more focused or certain programming concepts and patterns",
+                "creative",
+                "Creative hobbies that helped develop my creative mind",
+            ],
+            youtubeId: "",
+            pictures: []
+        }
+    },
+
     // Games
     {
         id: 1,
@@ -400,28 +428,37 @@ const projectsContent = [
 interface Parameters {
     // For taggling max and min state
     setIconName: Dispatch<SetStateAction<string>>;
+    setTitleName: Dispatch<SetStateAction<string>>;
+    projectsFolderOpenInit: boolean;
 }
 
 
 
-const Projects = ({ setIconName }: Parameters) => {
+const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Parameters) => {
 
 
+    const handleClick = (id: number, icon: string, title: string) => {
+        setSelectedFile(id);
+        setIconName(icon);
+        setTitleName(title);
+        console.log("Item clicked:", id);
+        // Perform action: e.g., router.push(`/items/${id}`)
+    };
 
-    const generateFolderContent = (fileName: string) => {
-        const folder = items.find(entry => entry.folderName === fileName);
+    const generateFolderContent = (folderName: string) => {
+        const folder = items.find(entry => entry.folderName === folderName);
         return (
             folder?.folderFiles.map((file) => (
                 <li
                     key={file.id}
-                    onClick={() => setSelectedFile(file.id)}
-                    className={`${projectsStyles.treeElement} ${selectedFile === file.id ? `${projectsStyles.fileActive}` : ''}`}
+                    onClick={() => handleClick(file.id, folder.icon, file.label)}
+                    className={`${fileExplorerStyles.treeElement} ${selectedFile === file.id ? `${fileExplorerStyles.fileActive}` : ''}`}
                 >
                     <Image src={`/icons/${folder.icon}.png`}
                         alt={`Popup icon`}
                         fill
                         priority // preloads
-                        className={`${projectsStyles.icon}`}
+                        className={`${fileExplorerStyles.icon}`}
                     />
                     {file.label}
                 </li>
@@ -431,12 +468,12 @@ const Projects = ({ setIconName }: Parameters) => {
 
     const generateFolderSummary = (icon: string, title: string) => {
         return (
-            <summary className={projectsStyles.treeElement}>
+            <summary className={fileExplorerStyles.treeElement}>
                 <Image src={`/icons/${icon}.png`}
                     alt={`Popup icon`}
                     fill
                     priority // preloads
-                    className={`${projectsStyles.icon}`}
+                    className={`${fileExplorerStyles.icon}`}
                 />
                 {title}
             </summary>
@@ -455,6 +492,7 @@ const Projects = ({ setIconName }: Parameters) => {
     }
 
 
+
     const getContent = (id: number) => {
         const project = projectsContent.find(project => project.id === id) ?? undefinedProject;
         return project.content;
@@ -469,13 +507,13 @@ const Projects = ({ setIconName }: Parameters) => {
     }, [selectedFile]);
 
     return (
-        <div className={`${projectsStyles.layout}`}>
-            <ul className={`${projectsStyles.tree} noSelect`}>
+        <div className={`${fileExplorerStyles.layout}`}>
+            <ul className={`${fileExplorerStyles.tree} noSelect`}>
                 <li >
                     <details open>
                         {generateFolderSummary(fileIcons.localDisk, 'Local Disk (C:)')}
                         <ul>
-                            <details open>
+                            <details open={projectsFolderOpenInit}>
                                 {generateFolderSummary(fileIcons.projects, 'projects')}
                                 <ul>
                                     {generateFolderContent('root')}
@@ -488,18 +526,19 @@ const Projects = ({ setIconName }: Parameters) => {
                                 </ul>
                             </details>
                         </ul>
-                        <ul>
-
-                            {generateFolder(false, 'pictures', 'pictures', fileIcons.pictures)}
-
+                        <ul >
+                            {generateFolder(!projectsFolderOpenInit, 'pictures', 'pictures', fileIcons.pictures)}
                         </ul>
                     </details>
                 </li>
             </ul>
-            <ProjectOverview content={projectContent} />
+            {selectedFile == 0
+                ? <ReadMeOverview content={projectContent} />
+                : <ProjectOverview content={projectContent} />}
+
         </div>
 
     );
 }
-export default Projects;
+export default FileExplorer;
 

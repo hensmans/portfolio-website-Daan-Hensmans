@@ -5,7 +5,7 @@ import './css/global.css';
 import ButtonSelection from './buttonSelection';
 import Popup from './popup';
 import './css/global.css';
-import Projects from './projects';
+import FileExplorer from './fileExplorer';
 import AboutMe from './aboutMe';
 import { Dispatch, SetStateAction } from "react";
 import pageStyles from './css/page.module.css';
@@ -26,14 +26,36 @@ interface Parameters {
 
   setIconName: Dispatch<SetStateAction<string>>;
   iconName: string;
+
 }
 
 export default function CenteredBox({ setMaximizeState, maximizeState, setIconName, iconName }: Parameters) {
   const [selectedButton, setSelectedButton] = useState('home');
+  const [titleName, setTitleName] = useState('home');
 
   // Change icon of popup whenever button is pressed
   useEffect(() => {
     setIconName(selectedButton);
+    switch (selectedButton) {
+      case 'home':
+        setTitleName('home');
+        break;
+      case 'projects':
+        setTitleName('readme.md');
+        break;
+      case 'pictures':
+        setTitleName('pictures');
+        break;
+      case 'aboutme':
+        setTitleName('aboutme.html');
+        break;
+      case 'cv':
+        setTitleName('cv.pdf');
+        break;
+      default:
+        setTitleName('NaN');
+    }
+
   }, [selectedButton]);
 
   function getSelectedPopupComponent() {
@@ -42,13 +64,13 @@ export default function CenteredBox({ setMaximizeState, maximizeState, setIconNa
       case 'home':
         return null;
       case 'projects':
-        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<Projects setIconName={setIconName} />} title={'projects folder'} iconName={iconName}></Popup>;
+        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<FileExplorer setIconName={setIconName} setTitleName={setTitleName} projectsFolderOpenInit={true} />} title={titleName} iconName={iconName}></Popup>;
       case 'pictures':
-        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<Projects setIconName={setIconName} />} title={'photos folder'} iconName={iconName}></Popup>;
+        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<FileExplorer setIconName={setIconName} setTitleName={setTitleName} projectsFolderOpenInit={false} />} title={titleName} iconName={iconName}></Popup>;
       case 'aboutme':
-        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<AboutMe maximizeState={maximizeState} />} title={'aboutMe.html'} iconName={iconName}></Popup>;
+        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<AboutMe maximizeState={maximizeState} />} title={titleName} iconName={iconName}></Popup>;
       case 'cv':
-        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<PdfViewer maximizeState={maximizeState} />} title={'cv.pdf'} iconName={iconName}></Popup>;
+        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<PdfViewer maximizeState={maximizeState} />} title={titleName} iconName={iconName}></Popup>;
       default:
         return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<div />} title={'ERROR'} iconName={iconName}></Popup>;
     };
