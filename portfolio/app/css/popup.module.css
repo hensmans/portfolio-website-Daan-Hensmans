@@ -32,6 +32,24 @@
 
 }
 
-.popupuTitleBar {
+.popupTitleBar {
   height: 3vh;
+}
+
+.popupTitleBarIcon {
+  display: inline-block;
+  position: relative !important;
+  aspect-ratio: 1 / 1;
+  width: 1em !important;
+  height: 1em !important;
+
+  margin-left: 0.25em;
+}
+
+.popupTitleBarLeft {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  text-align: center;
 }

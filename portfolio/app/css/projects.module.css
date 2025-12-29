@@ -76,3 +76,13 @@
 .tree details[open]>summary:before {
     content: "-"
 }
+
+.icon {
+    display: inline-block;
+    position: relative !important;
+    aspect-ratio: 1 / 1;
+    width: 1em !important;
+    height: 1em !important;
+
+    margin-left: 0.25em;
+}

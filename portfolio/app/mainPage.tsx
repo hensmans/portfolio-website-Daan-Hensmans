@@ -32,6 +32,7 @@ export default function Mainpage() {
   const [maximizeState, setMaximizeState] = useState(false);
   const [mutedState, setMutedState] = useState(false);
   const [monitorOnState, setMonitorOnState] = useState(true);
+  const [iconName, setIconName] = useState('home');
 
   const mouseClickSoundRef = useRef<HTMLAudioElement | null>(null);
   const startUpSoundRef = useRef<HTMLAudioElement | null>(null);
@@ -99,7 +100,7 @@ export default function Mainpage() {
             <div className={crtStyles.crtLines} />
             {/* Monitor content */}
             <div className={mainPageStyles.contentLayout}>
-              <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} />
+              <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} setIconName={setIconName} iconName={iconName} />
               <Taskbar toggleMutedState={toggleMutedState} mutedState={mutedState} />
             </div>
             {/* Loading screen (dissapears after x seconds) */}

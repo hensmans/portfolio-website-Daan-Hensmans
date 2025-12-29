@@ -50,7 +50,8 @@ const Taskbar = ({ toggleMutedState, mutedState }: ButtonSelectionProps) => {
                         priority // preloads
                         className={taskBarStyles.muteIcon}
                     />
-                    {time}</span>
+                    {time}
+                </span>
             </div>
         </div>
     );

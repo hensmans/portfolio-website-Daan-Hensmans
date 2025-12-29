@@ -28,6 +28,7 @@
 }
 
 .xpTaskbar .systemTray span {
+  font-style: bold;
   font-size: min(3vw, 3vh);
 }
 
