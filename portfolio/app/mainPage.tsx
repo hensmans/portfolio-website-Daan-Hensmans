@@ -50,8 +50,8 @@ export default function Mainpage() {
         computerNoiseRef.current.currentTime = 0;
         computerNoiseRef.current.play().catch(err => { });
         // Play second noise later so the loop isn't that obvious
-        computerNoiseRef2.current.volume = mutedState ? 0 : (2 * soundVolume / 3);
-        computerNoiseRef2.current.currentTime = 10;
+        computerNoiseRef2.current.volume = mutedState ? 0 : soundVolume;
+        computerNoiseRef2.current.currentTime = 5;
         computerNoiseRef2.current.play().catch(err => { });
       };
     }
@@ -63,7 +63,18 @@ export default function Mainpage() {
     };
   }
 
-
+  useEffect(() => {
+    if (monitorOnState && startUpSoundRef.current) {
+      startUpSoundRef.current.currentTime = 0;
+      startUpSoundRef.current.play().catch(err => { });
+      computerNoiseRef.current?.play().catch(err => { });
+      computerNoiseRef2.current?.play().catch(err => { });
+    } else {
+      startUpSoundRef.current?.pause();
+      computerNoiseRef.current?.pause();
+      computerNoiseRef2.current?.pause();
+    }
+  }, [monitorOnState]); // <--- Only runs when 'count' changes
 
   // Toggle the muted state and change the volumes
   const toggleMutedState = () => {
@@ -79,13 +90,13 @@ export default function Mainpage() {
       <audio ref={mouseClickSoundRef} src="/sounds/mouse-click-2.mp3" preload="auto" />
       <audio ref={startUpSoundRef} src="/sounds/windows-xp-startup.mp3" preload="auto" />
       <audio ref={computerNoiseRef} autoPlay loop src="/sounds/computer-noise-1.mp3" preload="auto" />
-      <audio ref={computerNoiseRef2} autoPlay loop src="/sounds/computer-noise-1.mp3" preload="auto" />
+      <audio ref={computerNoiseRef2} autoPlay loop src="/sounds/computer-noise-1-cut.mp3" preload="auto" />
 
       <main className={`${mainPageStyles.content} `}>
         {/* Monitor Border */}
         <div className={`${crtStyles.monitor}`}>
           <Image className={`${crtStyles.monitorScreen} noMousePointer`} fill priority alt='Monitor border screen' src="/monitor-screen-border-15.png" />
-          <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor-screen-daan-hensmans-11.png" />
+          <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor-screen-daan-hensmans-12.png" />
           <div className={crtStyles.monitorButton}>
             <MonitorButton monitorOnState={monitorOnState} setMonitorOnState={setMonitorOnState} />
           </div>
