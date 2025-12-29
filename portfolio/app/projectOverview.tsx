@@ -1,4 +1,3 @@
-
 import { Fragment, useState } from 'react';
 import './css/global.css';
 import fileOverviewStyles from './css/fileOverview.module.css';
@@ -77,4 +76,3 @@ const ProjectOverview = ({ content }: Parameters) => {
     );
 }
 export default ProjectOverview;
-

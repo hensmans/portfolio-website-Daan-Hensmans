@@ -72,7 +72,7 @@ const ReadMeOverview = ({ content }: Parameters) => {
                         ))}
                     </ul>
                     <p>
-                        Most of the projects source code is available at <a href="https://github.com/Daaninator">my GitHub account</a>.
+                        Most of the projects source code is available at <a href="https://github.com/Daaninator" target="_blank">my GitHub account</a>.
                     </p>
                 </div>
             </div>

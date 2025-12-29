@@ -41,7 +41,7 @@ export default function CenteredBox({ setMaximizeState, maximizeState, setIconNa
         setTitleName('home');
         break;
       case 'projects':
-        setTitleName('readme.md');
+        setTitleName('README.md');
         break;
       case 'pictures':
         setTitleName('pictures');

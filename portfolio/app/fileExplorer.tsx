@@ -5,6 +5,7 @@ import fileExplorerStyles from './css/fileExplorer.module.css';
 import ProjectOverview from './projectOverview';
 import Image from "next/image";
 import ReadMeOverview from './readmeOverview';
+import PicturesOverview from './picturesOverview';
 
 
 const fileIcons = {
@@ -498,8 +499,8 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
         return project.content;
     }
 
-    // Readme is always selected
-    const [selectedFile, setSelectedFile] = useState(0);
+    // Readme is selected if projects folder is opened, otherwise the picture folder
+    const [selectedFile, setSelectedFile] = useState(projectsFolderOpenInit ? 0 : 100);
     const [projectContent, setProjectContent] = useState(getContent(selectedFile));
 
     useEffect(() => {
@@ -526,7 +527,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
                                 </ul>
                             </details>
                         </ul>
-                        <ul >
+                        <ul onClick={() => handleClick(100, fileIcons.pictures, 'pictures')}>
                             {generateFolder(!projectsFolderOpenInit, 'pictures', 'pictures', fileIcons.pictures)}
                         </ul>
                     </details>
@@ -534,7 +535,10 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
             </ul>
             {selectedFile == 0
                 ? <ReadMeOverview content={projectContent} />
-                : <ProjectOverview content={projectContent} />}
+                :
+                selectedFile == 100
+                    ? <PicturesOverview content={projectContent} />
+                    : <ProjectOverview content={projectContent} />}
 
         </div>
 
