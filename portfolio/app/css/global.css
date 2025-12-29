@@ -12,17 +12,17 @@
   /* Taskbar base */
   --xp-blue-light: #ece9d8;
   /* Selected items/backgrounds */
-  --xp-blue-border: #001ea0;
+  --xp-blue-border: #1941a5;
   /* Window borders */
 
   /* --- OLIVE GREEN THEME (Homestead) --- */
-  --xp-green-primary: #738a58;
+  --xp-green-primary: #388238;
   /* Title bars */
-  --xp-green-taskbar: #81c046;
+  --xp-green-taskbar: #53a353;
   /* Taskbar/Start button green */
   --xp-green-light: #eef3e1;
   /* Backgrounds */
-  --xp-green-border: #4d5d38;
+  --xp-green-border: #245024;
   /* Borders */
 
   /* --- SILVER THEME (Metallic) --- */
@@ -40,7 +40,7 @@
   /* The 'X' Close button */
   --xp-yellow-warning: #fccf03;
   /* Classic warning/folder yellow */
-  --xp-bliss-sky: #64a2d8;
+  --xp-bliss-sky: #0997ff;
   /* Background sky blue */
 
   --base-padding: 1em;

@@ -3,10 +3,9 @@
   position: fixed;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   /* center horizontally */
-  align-items: center;
+  justify-content: center;
   /* center vertically */
+  align-items: center;
   z-index: 1;
-
 }
