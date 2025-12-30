@@ -46,13 +46,12 @@
 }
 
 .rows {
-
     flex-direction: column;
 }
 
 .centered {
     display: flex;
-    justify-content: center;
+    justify-content: start;
 }
 
 

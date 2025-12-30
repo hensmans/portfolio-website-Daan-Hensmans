@@ -32,8 +32,13 @@
 
 }
 
+.popupScreenMaximized p, .popupScreenMaximized span, .popupScreenMaximized img {
+  font-size: 1.5em;
+}
+
+
 .popupTitleBar {
-  height: 3vh;
+  height: fit-content;
 }
 
 .popupTitleBarIcon {

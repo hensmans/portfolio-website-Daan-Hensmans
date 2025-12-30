@@ -453,7 +453,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
                 <li
                     key={file.id}
                     onClick={() => handleClick(file.id, folder.icon, file.label)}
-                    className={`${fileExplorerStyles.treeElement} ${selectedFile === file.id ? `${fileExplorerStyles.fileActive}` : ''}`}
+                    className={`${fileExplorerStyles.treeElement} clickable ${selectedFile === file.id ? `${fileExplorerStyles.fileActive}` : ''}`}
                 >
                     <Image src={`/icons/${folder.icon}.png`}
                         alt={`Popup icon`}
@@ -461,7 +461,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
                         priority // preloads
                         className={`${fileExplorerStyles.icon}`}
                     />
-                    {file.label}
+                    <span>{file.label}</span>
                 </li>
             ))
         );
@@ -469,14 +469,14 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
 
     const generateFolderSummary = (icon: string, title: string) => {
         return (
-            <summary className={fileExplorerStyles.treeElement}>
+            <summary className={`${fileExplorerStyles.treeElement} clickable`}>
                 <Image src={`/icons/${icon}.png`}
                     alt={`Popup icon`}
                     fill
                     priority // preloads
                     className={`${fileExplorerStyles.icon}`}
                 />
-                {title}
+                <span>{title}</span>
             </summary>
         );
     }
