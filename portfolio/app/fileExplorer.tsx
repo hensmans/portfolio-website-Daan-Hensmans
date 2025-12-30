@@ -11,10 +11,27 @@ import PicturesOverview from './picturesOverview';
 const fileIcons = {
     // Files
     generic: 'Generic Document',
-    lowLevel: 'project',
-    creative: 'project',
+    game_1: 'Registry Editor',
+    game_2: "Game Controller",
+    game_3: "Internet Spades",
+    game_4: 'Internet Backgammon',
+    game_5: 'Minesweeper',
+
+    lowLevel: 'Chip',
+    openGL: 'Disk Defragmenter',
+    openCL: 'Chip',
+    HPC: 'XPS Viewer',
+    compiler: 'Services',
+
+    creative: 'Folder View - Common Tasks',
+    camera: 'Digital Camera',
+    youtube: 'Camcorder',
+
     picture: 'picture',
-    constructs: 'project',
+    constructs: 'XSL',
+    parallelism: "Workgroup",
+    security: "Virus Protection",
+
     undefined: 'Registry Editor',
     readme: 'text',
 
@@ -43,7 +60,7 @@ const items = [
             { id: 4, label: 'Train App' },
             { id: 5, label: 'Pixel Simulator' }
         ],
-        icon: fileIcons.generic,
+        icon: fileIcons.game_1,
     },
     {
         folderName: 'low level',
@@ -54,7 +71,7 @@ const items = [
             { id: 13, label: 'EmFRP Compiler' },
             // { id: 14, label: 'Interpreter' },
         ],
-        icon: fileIcons.generic,
+        icon: fileIcons.lowLevel,
     },
     {
         folderName: 'creative',
@@ -63,7 +80,7 @@ const items = [
             { id: 22, label: 'Photography' },
             { id: 23, label: 'YouTube' },
         ],
-        icon: fileIcons.generic,
+        icon: fileIcons.creative,
     },
     {
         folderName: 'constructs',
@@ -73,7 +90,7 @@ const items = [
             // { id: 33, label: 'Multicore' },
             { id: 34, label: 'Web Security' },
         ],
-        icon: fileIcons.generic,
+        icon: fileIcons.constructs,
     },
 
     {
@@ -82,7 +99,7 @@ const items = [
             { id: 101, label: 'tree.png' },
             { id: 102, label: 'frog.png' },
         ],
-        icon: fileIcons.generic,
+        icon: fileIcons.picture,
     },
 ];
 
@@ -105,6 +122,7 @@ const undefinedProject =
         ],
         youtubeId: undefined,
         pictures: [],
+        icon: fileIcons.picture
     }
 };
 const projectsContent = [
@@ -131,7 +149,8 @@ const projectsContent = [
                 "Creative hobbies that helped develop my creative mind",
             ],
             youtubeId: "",
-            pictures: []
+            pictures: [],
+            icon: fileIcons.generic
         }
     },
 
@@ -154,7 +173,8 @@ const projectsContent = [
                 "Memory optimisations",
             ],
             youtubeId: "10AdEqDX_T8",
-            pictures: ["dr_mario_5.jpeg", "dr_mario_4.jpeg", "dr_mario_3.jpeg"]
+            pictures: ["dr_mario_5.jpeg", "dr_mario_4.jpeg", "dr_mario_3.jpeg"],
+            icon: fileIcons.game_5
         }
     },
     {
@@ -173,6 +193,7 @@ const projectsContent = [
             ],
             youtubeId: "4CJKe73SVr0",
             pictures: ["worm_2.jpeg"],
+            icon: fileIcons.game_2
         }
     },
     {
@@ -193,6 +214,7 @@ const projectsContent = [
             ],
             youtubeId: "WST_O-ba_MI",
             pictures: ["desert_explorer_2.jpeg", "desert_explorer_3.jpeg", "desert_explorer_4.jpeg",],
+            icon: fileIcons.game_3
         }
     },
     {
@@ -212,6 +234,7 @@ const projectsContent = [
             ],
             youtubeId: "PWt333RWpQg",
             pictures: ["train_app_2.jpeg", "train_app_3.jpeg", "train_app_4.jpeg"],
+            icon: fileIcons.game_4
         }
     },
     {
@@ -230,6 +253,7 @@ const projectsContent = [
             ],
             youtubeId: "NaW8FtBX2H8",
             pictures: ["pixel_simulator_1.jpeg", "pixel_simulator_2.jpeg", "pixel_simulator_3.jpeg"],
+            icon: fileIcons.game_1
         }
     },
     // Low level
@@ -252,6 +276,7 @@ const projectsContent = [
             ],
             youtubeId: undefined,
             pictures: ["HPC_2.jpg", "HPC_1.jpg"],
+            icon: fileIcons.HPC
         }
     },
     {
@@ -267,6 +292,7 @@ const projectsContent = [
             ],
             youtubeId: undefined,
             pictures: [],
+            icon: fileIcons.openCL
         }
     },
     {
@@ -282,6 +308,7 @@ const projectsContent = [
             ],
             youtubeId: undefined,
             pictures: [],
+            icon: fileIcons.openGL
         }
     },
     {
@@ -297,6 +324,7 @@ const projectsContent = [
             ],
             youtubeId: undefined,
             pictures: [],
+            icon: fileIcons.compiler
         }
     },
     {
@@ -312,6 +340,7 @@ const projectsContent = [
             ],
             youtubeId: undefined,
             pictures: [],
+            icon: fileIcons.lowLevel
         }
     },
     // Creative
@@ -331,6 +360,7 @@ const projectsContent = [
             ],
             youtubeId: undefined,
             pictures: [],
+            icon: fileIcons.creative
         }
     },
     {
@@ -350,6 +380,7 @@ const projectsContent = [
             ],
             youtubeId: undefined,
             pictures: ["aboutme_2.png"],
+            icon: fileIcons.camera
         }
     },
     {
@@ -372,6 +403,7 @@ const projectsContent = [
             ],
             youtubeId: undefined,
             pictures: ["yt_1.jpg", "yt_3.png", "yt_2.png",],
+            icon: fileIcons.youtube
         }
     },
 
@@ -392,6 +424,7 @@ const projectsContent = [
             ],
             youtubeId: undefined,
             pictures: [],
+            icon: fileIcons.parallelism
         }
     },
     {
@@ -407,6 +440,7 @@ const projectsContent = [
             ],
             youtubeId: undefined,
             pictures: [],
+            icon: fileIcons.constructs
         }
     },
     {
@@ -422,6 +456,7 @@ const projectsContent = [
             ],
             youtubeId: undefined,
             pictures: [],
+            icon: fileIcons.constructs
         }
     },
     {
@@ -437,6 +472,7 @@ const projectsContent = [
             ],
             youtubeId: undefined,
             pictures: [],
+            icon: fileIcons.security
         }
     },
 
@@ -469,10 +505,10 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
             folder?.folderFiles.map((file) => (
                 <li
                     key={file.id}
-                    onClick={() => handleClick(file.id, folder.icon, file.label)}
+                    onClick={() => handleClick(file.id, getContent(file.id).icon, file.label)}
                     className={`${fileExplorerStyles.treeElement} clickable ${selectedFile === file.id ? `${fileExplorerStyles.fileActive}` : ''}`}
                 >
-                    <Image src={`/icons/${folder.icon}.png`}
+                    <Image src={`/icons/${getContent(file.id).icon}.png`}
                         alt={`Popup icon`}
                         fill
                         priority // preloads
