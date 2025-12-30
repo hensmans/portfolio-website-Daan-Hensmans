@@ -16,9 +16,8 @@ const AboutMe = ({ maximizeState }: Parameters) => {
         {/* <img className={aboutMeStyles.blockSize} src="./welcomer.gif" /> */}
         <div className={`${aboutMeStyles.columns} `}>
           <div className={`${aboutMeStyles.rows} ${aboutMeStyles.leftColumn} `}>
-            <div className={`${aboutMeStyles.boxBorder} ${aboutMeStyles.textBoxPicure} `} >
-
-              <PictureSlideshow youtubeId={'x'} pictures={[]} />
+            <div className={`${aboutMeStyles.boxBorder} ${aboutMeStyles.textBoxPicure}`} >
+              <PictureSlideshow youtubeId={undefined} pictures={['aboutme_1.jpg', 'aboutme_2.png', 'aboutme_3.jpg', 'aboutme_4.jpg', 'aboutme_5.jpg']} />
             </div>
             <p className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} ${aboutMeStyles.textVerySmall} `}>
               {currentAge} years old
@@ -29,6 +28,7 @@ const AboutMe = ({ maximizeState }: Parameters) => {
             </p>
           </div>
           <div className={`${aboutMeStyles.rows} `}>
+            <p className={`${aboutMeStyles.title}`}>hey</p>
             <p className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} ${aboutMeStyles.textBig} `}>
               Hey! My name is Daan Hensmans, I'm a software engineer from Belgium and I'm passionate about coding, problem-solving, and emerging technologies. Currently I'm still in University but I'm graduating in June 2026:)
             </p>
