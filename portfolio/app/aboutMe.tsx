@@ -13,34 +13,50 @@ const AboutMe = ({ maximizeState }: Parameters) => {
     <div className={`${aboutMeStyles.webpageRoot}`}>
       <div className={`${aboutMeStyles.rows} ${aboutMeStyles.webpageBackground} ${aboutMeStyles.content}
                     ${(maximizeState) ? aboutMeStyles.webpageRootMaximized : aboutMeStyles.webpageRootMinimized} ${aboutMeStyles.centered}`}>
-        {/* <img className={aboutMeStyles.blockSize} src="./welcomer.gif" /> */}
+
         <div className={`${aboutMeStyles.columns} `}>
           <div className={`${aboutMeStyles.rows} ${aboutMeStyles.leftColumn} `}>
             <div className={`${aboutMeStyles.boxBorder} ${aboutMeStyles.textBoxPicure}`} >
-              <PictureSlideshow youtubeId={undefined} pictures={['aboutme_1.jpg', 'aboutme_2.png', 'aboutme_3.jpg', 'aboutme_4.jpg', 'aboutme_5.jpg']} />
+              <PictureSlideshow youtubeId={undefined} pictures={['aboutme_1.jpg', 'aboutme_7.jpg', 'aboutme_2.png', 'aboutme_4.jpg', 'aboutme_3.jpg']} />
             </div>
-            <p className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} ${aboutMeStyles.textVerySmall} `}>
-              {currentAge} years old
-              <br />
-              From Belgium-Flanders-Leuven
-              <br />
-              Fluent in Dutch and English
-            </p>
+            <div className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} `}>
+              <ul className={`${aboutMeStyles.bulletPoints}`}>
+                <li>
+                  <p>{currentAge} years old</p>
+                </li>
+                <li>
+                  <p>From Belgium (Flemish-Brabant, Leuven)</p>
+                </li>
+                <li>
+                  <p>Fluent in Dutch and English</p>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className={`${aboutMeStyles.rows} `}>
-            <p className={`${aboutMeStyles.title}`}>hey</p>
-            <p className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} ${aboutMeStyles.textBig} `}>
-              Hey! My name is Daan Hensmans, I'm a software engineer from Belgium and I'm passionate about coding, problem-solving, and emerging technologies. Currently I'm still in University but I'm graduating in June 2026:)
-            </p>
-            <p className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} ${aboutMeStyles.textSmall} `}>
-              My specialisation is programming in low-end applications. Like Compilers, low-level code (C, ASM-x86, Java, Haskell, Lisp), extending languages, etc.
-              This is where I also have done a master in, "Software Engineering: Software Languages".
-              Because of this I know the inner workings of all the tpye of languages, and therefore I can program in an efficient and secure way
-              <br />
-              <br />
-              Ofcourse I'm also capable, and already done projects, in many high-end programming languages (Scala, Python, JavaScript, etc).
-              More about all my projects are visible in the 'my projects' folder
-            </p>
+            <div className={`${aboutMeStyles.titleWrapper}`}>
+              <p className={`${aboutMeStyles.title}`}>Hey! My name is<br />Daan Hensmans</p>
+              <img className={aboutMeStyles.titleGif} src="./welcomer.gif" />
+            </div>
+
+            <div className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} `}>
+              <p>
+                Based in Belgium, I specialize in navigating complex software problems with elegant, scalable solutions.
+                <p>
+                  Currently pursuing a Master’s degree in Software Engineering: Software Languages, graduating in June 2026.
+                </p>
+              </p>
+            </div>
+            <div className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} `}>
+              <p>
+                Specialist in Software Languages and Systems Programming.
+                My background in compiler construction and low-level development (C, ASM, Lisp) gives me a unique perspective on software architecture.
+                I don't just use languages; I study their inner workings to ensure my code is as efficient and secure as possible.
+              </p>
+              <p>
+                Browse my 'Projects' folder for a deep dive into my work.
+              </p>
+            </div>
           </div>
         </div>
         {/* <div>i loveeeee coding
