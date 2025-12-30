@@ -52,7 +52,7 @@ const items = [
             { id: 11, label: 'OpenCL' },
             { id: 12, label: 'OpenGL' },
             { id: 13, label: 'EmFRP Compiler' },
-            { id: 14, label: 'Interpreter' },
+            // { id: 14, label: 'Interpreter' },
         ],
         icon: fileIcons.generic,
     },
@@ -69,8 +69,8 @@ const items = [
         folderName: 'constructs',
         folderFiles: [
             { id: 31, label: 'Parallellism' },
-            { id: 32, label: 'Database' },
-            { id: 33, label: 'Multicore' },
+            // { id: 32, label: 'Database' },
+            // { id: 33, label: 'Multicore' },
             { id: 34, label: 'Web Security' },
         ],
         icon: fileIcons.generic,
@@ -237,16 +237,21 @@ const projectsContent = [
         id: 10,
         content: {
             title: 'HPC in C',
-            tags: ['C', '2025', 'GitHub'],
+            tags: ['C', 'ASM x86', '2025'],
             description: [
-                "Optimizing C programs by implementing multiple techniques. like; parallelisation, optimizing the datatypes, changing memory access order, changing sequential code into code that can be ran parallel",
-                "Also debugging in C and Assembly",
+                "Optimising C programs by implementing multiple techniques, such as parallelisation, optimal data types and memory access order, and converting sequential code into code suitable for parallelisation.",
+                "As part of the project, I learnt how to work with the debugger and gained an understanding of how the C compiler's various optimisation settings work. I also learnt how to analyse compiled assembly code and set breakpoints.",
+                "These pictures show one of the sub-projects, in which a mathematical converging algorithm was applied to every pixel to produce the final image. The goal here was to optimise and parallelise this process.",
             ],
             bulletPoints: [
-                "NaN",
+                "Debugging with debugger",
+                "Efficient parallelisation",
+                "Operating system optimisations",
+                "Cache optimisations",
+                "Linux and server terminal commands"
             ],
             youtubeId: undefined,
-            pictures: [],
+            pictures: ["HPC_2.jpg", "HPC_1.jpg"],
         }
     },
     {
@@ -298,7 +303,7 @@ const projectsContent = [
         id: 14,
         content: {
             title: 'Interpreter',
-            tags: ['Scheme', '2024', 'GitHub'],
+            tags: ['Scheme', '2024'],
             description: [
                 "Extending an interpeter that only accepts a functional programming language into an interpreter that accpets an object oriented programming language"
             ],
@@ -314,12 +319,15 @@ const projectsContent = [
         id: 21,
         content: {
             title: 'This Site',
-            tags: ['NextJS', '2025', 'GitHub'],
+            tags: ['NextJS', '2025'],
             description: [
-                "Windows XP inspired website. Created with NextJS from scratch.",
+                "This is the site you are looking at now. It is a Windows XP-inspired website that displays a monitor with a functioning Windows XP operating system.",
+                "Built from scratch using Next.js and CSS."
             ],
             bulletPoints: [
-                "NaN",
+                "NextJS",
+                "Increased HTML and CSS skill",
+                "Design and interaction",
             ],
             youtubeId: undefined,
             pictures: [],
@@ -331,16 +339,17 @@ const projectsContent = [
             title: 'Photography',
             tags: ['2024 - now'],
             description: [
-                "photography. See more in the pictures folder:)",
+                "One of my hobbies is photography, where I explore cities and nature and look for interesting shots. Some of my pictures are displayed in the 'pictures' folder",
+                "This is not only relaxing for the mind, but it also encourages you to think more about composition, colours, coherence and order. This way of thinking helps you to learn what works and what doesn't, and these skills can also be transferred to front-end design."
             ],
             bulletPoints: [
                 "Adobe Lightroom",
-                "Colour theory",
+                "Color theory",
                 "Composition",
                 "Creativity"
             ],
             youtubeId: undefined,
-            pictures: [],
+            pictures: ["aboutme_2.png"],
         }
     },
     {
@@ -349,16 +358,20 @@ const projectsContent = [
             title: 'YouTube',
             tags: ['2013 - 2021'],
             description: [
-                "YouTube account with [REDACTED] subscribers",
+                "When I was younger, a hobby of mine was creating and managing videos for my YouTube channel. I've quit in the meantime, but it shaped me and taught me some important skills.",
+                "The channel's content was about memes that were popular at the time. By engaging with and understanding the community and algorithm, I succeeded in gaining 600K subscribers and over 380 million views. These milestones put me in the top 100 YouTubers in Belgium.",
+                "Thanks to the channel, I was able to build a community of over 4,000 Discord members. This taught me how to manage a large group of people, engage with them and create social bonds to increase activity.",
+                "https://www.youtube.com/@Daaninator"
             ],
             bulletPoints: [
                 "Adobe Premiere Pro",
                 "Adobe Photoshop",
-                "Interpreting audience preference and changing to create better view rate",
+                "Interpreting audience preferences to improve view rates",
                 "Creativity",
+                "Managing a large community"
             ],
             youtubeId: undefined,
-            pictures: [],
+            pictures: ["yt_1.jpg", "yt_3.png", "yt_2.png",],
         }
     },
 
