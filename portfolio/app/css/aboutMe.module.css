@@ -101,10 +101,21 @@
     padding: 1em;
 
 
+
+}
+
+.contactInfo {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+
+.contactInfo a {
+    margin: 0 1em;
+}
+
+.contactInfo a p {
+    pointer-events: none;
 }
 
 .textBox p {
