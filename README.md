@@ -1,8 +1,12 @@
-# Portfolio site for Daan
+# Portfolio site for Daan Hensmans
+
+---
+
 Created in NextJS, hosted on https://vercel.com/
 
 
-## First run
+
+## Install
 ``npm install``
 
 ## Build

@@ -104,6 +104,7 @@
     /* margin-right: 1em; */
     width: 50%;
     height: fit-content;
+    min-height: 100%;
     padding-right: 0.5em;
 
     border-right: 2px dotted var(--xp-silver-border);
@@ -115,6 +116,7 @@
     flex-direction: column;
     width: 50%;
     height: fit-content;
+    min-height: 100%;
 
     padding-left: 1em;
 }

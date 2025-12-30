@@ -3,13 +3,13 @@ import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import Image from "next/image";
 
 
-interface ButtonSelectionProps {
+interface Parameters {
     toggleMutedState: () => void;
     mutedState: boolean;
 }
 
 
-const Taskbar = ({ toggleMutedState, mutedState }: ButtonSelectionProps) => {
+const Taskbar = ({ toggleMutedState, mutedState }: Parameters) => {
     const [time, setTime] = useState('');
     useEffect(() => {
         const updateClock = () => {
@@ -42,14 +42,21 @@ const Taskbar = ({ toggleMutedState, mutedState }: ButtonSelectionProps) => {
             </div>
 
             <div className={taskBarStyles.systemTray}>
-
                 <span onClick={toggleMutedState}>
-                    <Image src={mutedState ? `/icons/Mute.png` : `/icons/Volume.png`}
-                        alt={`Sound mute/unmute icon`}
-                        fill
-                        priority // preloads
-                        className={taskBarStyles.muteIcon}
-                    />
+                    {mutedState
+                        ? <Image src={'/icons/Mute.png'}
+                            alt={`Sound mute icon`}
+                            fill
+                            priority // preloads
+                            className={taskBarStyles.muteIcon}
+                        />
+                        : <Image src={`/icons/Volume.png`}
+                            alt={`Sound unmute icon`}
+                            fill
+                            priority // preloads
+                            className={taskBarStyles.muteIcon}
+                        />
+                    }
                     {time}
                 </span>
             </div>
