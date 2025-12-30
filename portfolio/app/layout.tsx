@@ -1,20 +1,17 @@
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import './css/global.css';
-import LoadingStartpage from "./loadingStartpage";
 import MainPage from "./mainPage";
 import './css/global.css';
 
 import './css/windows-xp.css';
-import MonitorButton from "./monitorButton";
 // The Windows XP css
 // https://botoxparty.github.io/XP.css/
 
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Created by Daan Hensmans",
+  title: "Portfolio | Daan Hensmans",
+  description: "Portfolio of Daan Hensmans, a Dutch Software Engineer located in Belgium.",
 };
 
 export default function RootLayout({
