@@ -140,38 +140,39 @@ const projectsContent = [
         id: 1,
         content: {
             title: 'Dr Mario',
-            tags: ['C', '2022', 'GitHub'],
+            tags: ['C', '2022', 'Embedded'],
             description: [
-                "Multiple viruses have appeared in the screen, and it is your goal to remove them by having four or more colours in a row. Sometimes a bomb drops and that will explode the surounding blocks if it touches something. You win if every virus in the board is gone. But watch out, every next game it becomes more difficult. More viruses will appear, the pills will fall quicker, and the screen becomes larger.",
-                "The high-score will be saved locally and it is possible to select of four gamemodes at the menu. Sounds also have been implemented to have a more enjoyable and engaging experience. The palyer controls the game by tilting the device for horizontal and vertical movement, and the button to rotate the pill.",
-                "This has been made on an embeded device, the m5 stick. This stick has a gyroscope, screen, buttons and a speaker. It is programmed in C with the goal of creating a Dr Mario game where the memory usage is as small as possible ",
+                "Multiple viruses have appeared on the screen and your goal is to remove them by creating groups of four or more of the same colour. Sometimes a bomb will drop, which will explode the surrounding blocks if it touches something. You win if you remove all the viruses on the board. But watch out, it gets more difficult with each subsequent game. More viruses will appear, the pills will fall more quickly and the screen will become expand.",
+                "Your high score will be saved locally, and you can select from four game modes in the menu. Sounds have also been implemented to make the experience more enjoyable and engaging. Players control the game by tilting the device for horizontal and vertical movement and pressing the button to rotate the pill.",
+                "This was created using an embedded device called the M5-Stick. This stick has a gyroscope, a screen, buttons, and a speaker.",
+                "The game has been programmed in C with the aim of keeping memory usage to a minimum."
             ],
             bulletPoints: [
                 "C and its memory properties (pointers, (de-)allocation, stack)",
-                "Programming on embeded devices",
+                "Programming on embedded devices",
                 "Managing physical inputs",
                 "Memory optimisations",
             ],
             youtubeId: "10AdEqDX_T8",
-            pictures: ["dr_mario_2.jpg", "dr_mario_1.jpg"]
+            pictures: ["dr_mario_5.jpeg", "dr_mario_4.jpeg", "dr_mario_3.jpeg"]
         }
     },
     {
         id: 2,
         content: {
             title: 'Worm',
-            tags: ['ASM x86', '2022', 'GitHub'],
+            tags: ['ASM x86', '2022'],
             description: [
-                "You are a worm with an empty stumach. The goal is to eat some yummy yellow food, and if you do, you grow. But watch out you dont eat yourself or hit lava, or you die.",
-                "This game has been fully made in Assembly x86 with the goal of having the memory consumption as small as possible. This is done by only using parts of registers to use the smallest amount of bits. The lava pools, food location and start position are all pseudo randomly generated."
+                'You are a worm with an empty stomach. The goal is to eat some tasty yellow food; if you do, you grow. But watch out; if you eat yourself or touch lava, you die.',
+                "This game has been fully created in Assembly x86 with the aim of using as little memory as possible. This is achieved by using only parts of the registers to use the smallest possible number of bits. The lava pools, food location and start position are all pseudo-randomly generated.",
             ],
             bulletPoints: [
                 "Programming in Assembly x86",
-                "Working with registers and CPU instructions",
-                "Low level memory management",
+                "Working with Registers and CPU Instructions",
+                "Low-Level Memory Management",
             ],
             youtubeId: "4CJKe73SVr0",
-            pictures: ["worm_1.jpg"],
+            pictures: ["worm_2.jpeg"],
         }
     },
     {
@@ -181,7 +182,7 @@ const projectsContent = [
             tags: ['Haskell', '2025', 'GitHub'],
             description: [
                 "You are a desert explorer, in search for gold. But you have limited amount of water, and therefore you need to drink something every n amount of steps.. or you will die. Not only can you die from dehydration, but also from lava and from worms that appear randomly. Once you are satisfied with the amount of gold you gathered, you can enter a portal to end the game. If the player feels tired it can save the game and load it for another play session.",
-                " The game is fully programmed in Haskell, a pure function programming language. There are many concepts incorperated in this game. To list a few; The map will go to infinity, and with the same seed it will also have the same tiles everytime. All the worms are ran on a different threads through Software Transactional Memory. Loading and saving the game is done through a parser and lexer. And the game logic consists heavely on a functional pattern, monads.",
+                "The game is fully programmed in Haskell, a pure function programming language. There are many concepts incorperated in this game. To list a few; The map will go to infinity, and with the same seed it will also have the same tiles everytime. All the worms are ran on a different threads through Software Transactional Memory. Loading and saving the game is done through a parser and lexer. And the game logic consists heavely on a functional pattern, monads.",
             ],
             bulletPoints: [
                 "All the concepts of a pure functional language",
@@ -191,7 +192,7 @@ const projectsContent = [
                 "Monads",
             ],
             youtubeId: "WST_O-ba_MI",
-            pictures: ["desert_explorer_1.jpg"],
+            pictures: ["desert_explorer_2.jpeg", "desert_explorer_3.jpeg", "desert_explorer_4.jpeg",],
         }
     },
     {
@@ -200,32 +201,35 @@ const projectsContent = [
             title: 'Train App',
             tags: ['Scheme', '2023', 'GitHub'],
             description: [
-                "There are train tracks and trains. The tracks has switches and detectionblocks. The user is in possession of an app where it can control the train its speed and direction. With this app it is also possible to change the switches and see what trains are on what detectionblocks. The user can also say a location the train needs to go to. If this happens, then the train calculates a path and will go there, even if it needs to change its direction multiple times",
-                "This back-end and fron-end is fully made in Scheme and works on a real life track and on a train simulation. The front-end was the client and GUI, while the back-end was to calculate the path algorithm, abd store states of the trains and tracks. The communication between the two happens through a TPC connection. The clients will run asynchrounously, and all the clients will update automatically if one client changes states or values."
+                "There are train tracks and trains. The tracks have switches and detection blocks. The user has an app that controls the train's speed and direction. The app also allows the user to change the switches and see which trains are on which detection blocks. The user can also specify a destination for the train. The train will then calculate a path and go there, even if it needs to change direction multiple times.",
+                "The back-end and front-end are fully made in Scheme and work on a real-life track and a train simulation. The front end was the client and GUI, while the back end calculated the path algorithm and stored the states of the trains and tracks. Communication between the two happens through a TCP connection. Clients run asynchronously and all clients update automatically if one client's state or values change.",
             ],
             bulletPoints: [
-                "Back-end and front-end seperation",
+                "Back-end and front-end separation",
                 "Client synchronisation",
                 "GUI construction",
                 "TPC",
             ],
             youtubeId: "PWt333RWpQg",
-            pictures: ["train_app_1.jpg"],
+            pictures: ["train_app_2.jpeg", "train_app_3.jpeg", "train_app_4.jpeg"],
         }
     },
     {
         id: 5,
         content: {
             title: 'Pixel Simulator',
-            tags: ['Scheme', '2025', 'GitHub'],
+            tags: ['Scheme', '2025'],
             description: [
-                "Pixel phsycis simulator where it is possible to draw glass, sand, lava, wood, ,acid, steam, water, and stone on a GUI. The elements will interact with eacherother. For example, lava can melt stone and after a while it becomes stone again. Acid can melt through certain materials, and the speed depends on what materials. Sand turns into glass if it touches lava, and water into steam. Water and lava will flow in different speeds.",
+                "This is a pixel physics simulator where you can draw glass, sand, lava, wood, acid, steam, water and stone on a GUI. These elements will interact with each other. For example, lava can melt stone, which then reforms over time. Acid can melt certain materials, and the speed depends on the material. Sand turns into glass when it touches lava and water turns into steam. Water and lava flow at different speeds.",
+                "Scheme (Lisp variant) was used to create it, but it was also recreated in C (this is not shown here)."
             ],
             bulletPoints: [
-                "NaN",
+                "Physics simulation",
+                "Relation-based interactions",
+                "Optimisation of large-scale interactions"
             ],
-            youtubeId: undefined,
-            pictures: [],
+            youtubeId: "NaW8FtBX2H8",
+            pictures: ["pixel_simulator_1.jpeg", "pixel_simulator_2.jpeg", "pixel_simulator_3.jpeg"],
         }
     },
     // Low level
