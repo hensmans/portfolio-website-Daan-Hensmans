@@ -24,48 +24,51 @@ const AboutMe = ({ maximizeState }: Parameters) => {
                 <li>
                   <p>{currentAge} years old</p>
                 </li>
+                <br />
                 <li>
                   <p>From Belgium (Flemish-Brabant, Leuven)</p>
                 </li>
+                <br />
                 <li>
                   <p>Fluent in Dutch and English</p>
                 </li>
               </ul>
             </div>
+
           </div>
           <div className={`${aboutMeStyles.rows} `}>
             <div className={`${aboutMeStyles.titleWrapper}`}>
               <p className={`${aboutMeStyles.title}`}>Hey! My name is<br />Daan Hensmans</p>
               <img className={aboutMeStyles.titleGif} src="./welcomer.gif" />
             </div>
-
             <div className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} `}>
-              <p>
-                Based in Belgium, I specialize in navigating complex software problems with elegant, scalable solutions.
-                <p>
-                  Currently pursuing a Master’s degree in Software Engineering: Software Languages, graduating in June 2026.
-                </p>
-              </p>
+              <p>Based in Belgium, I specialize in navigating complex software problems with elegant, scalable solutions.</p>
+              <p><br /></p>
+              <p>Currently pursuing a Master’s degree in Software Engineering: Software Languages, graduating in June 2026.</p>
             </div>
             <div className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} `}>
+              <p>Specialist in Software Languages and Systems Programming.</p>
+              <p><br /></p>
               <p>
-                Specialist in Software Languages and Systems Programming.
                 My background in compiler construction and low-level development (C, ASM, Lisp) gives me a unique perspective on software architecture.
-                I don't just use languages; I study their inner workings to ensure my code is as efficient and secure as possible.
+                I don't just use lan  guages; I study their inner workings to ensure my code is as efficient and secure as possible.
               </p>
-              <p>
-                Browse my 'Projects' folder for a deep dive into my work.
-              </p>
+              <p><br /></p>
+              <p>Browse my 'projects' folder for a deep dive into my work.</p>
             </div>
           </div>
         </div>
+        <div className={aboutMeStyles.computerGif} >
+          <img src="./Computer.gif" />
+        </div>
+
         {/* <div>i loveeeee coding
           <img src="./Computer.gif" />
         </div>
         <div className={`${ aboutMeStyles.small } ${ aboutMeStyles.smallPaddingVert } `}>i need money pls hire me</div>
         <div className={aboutMeStyles.paddingVert} /> */}
       </div>
-    </div>
+    </div >
 
   );
 }

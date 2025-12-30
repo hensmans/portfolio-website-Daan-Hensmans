@@ -9,7 +9,7 @@
     color: white;
     text-align: center;
     font-family: "Pixelated MS Sans Serif";
-    font-size: 1.5em;
+    font-size: 1.75em;
 }
 
 
@@ -28,22 +28,37 @@
 
 
 .title {
-    font-size: 2.5em;
+    font-size: 2.0em;
     text-align: left;
-    padding: 0;
+    padding: 0.5em;
     margin: 0;
     font-weight: bolder;
     /* font-family: "Pixelated MS Sans Serif Bold"; */
+    background-color: var(--xp-blue-primary);
 
 }
 
 .bulletPoints {
     padding-left: 1em;
+    margin: 0;
 }
 
+
 .titleGif {
-    width: 25%;
+    flex: 1;
+    margin-left: 1em;
     aspect-ratio: 5/3;
+}
+
+.computerGif {
+    width: 100%;
+    margin: 3em 0;
+}
+
+.computerGif img {
+    width: 30%;
+    aspect-ratio: 8/3;
+
 }
 
 .webpageRootMinimized {
@@ -52,16 +67,13 @@
 
 .webpageRootMaximized {
     padding: min(3vh, 3vw) 15vw;
-}
 
-.webpageRootMaximized p {
-    font-size: 1.5em;
+    font-size: 1.0em;
 }
 
 .webpageRootMaximized .title {
-    font-size: 3em;
+    font-size: 2.5em;
 }
-
 
 .columns {
     width: 100%;
@@ -85,12 +97,23 @@
 
     text-align: left;
 
-    margin: min(3vh, 3vw) 0;
-    padding: 0 min(3vh, 3vw);
+    margin: 1em 0;
+    padding: 1em;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textBox p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .boxBorder {
-
     border-style: dashed;
     border-radius: 0;
     border-color: var(--xp-blue-primary);
@@ -99,7 +122,7 @@
 .leftColumn {
     /* grow: 0 (don't grow), shrink: 0 (don't shrink), basis: 50% (fixed size) */
     flex: 0 0 35%;
-    margin-right: min(3vh, 3vw);
+    margin-right: 1em;
 }
 
 .rightColumn {
@@ -109,7 +132,11 @@
 
 .textBoxPicure {
     aspect-ratio: 3/4;
-    color: black;
+    color: white;
+}
+
+.textBoxPicure div {
+    background-color: var(--xp-blue-primary);
 }
 
 
@@ -117,6 +144,7 @@
     flex: 1;
     width: 100%;
 }
+
 
 
 
