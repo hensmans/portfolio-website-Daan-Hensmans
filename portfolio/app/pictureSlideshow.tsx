@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import pictureSlideshowStyles from './css/pictureSlideshow.module.css';
 
 interface Parameters {
@@ -8,7 +8,6 @@ interface Parameters {
 
 const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-
 
 
     // Define video
@@ -28,6 +27,10 @@ const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
             setCurrentIndex(currentIndex - 1);
         }
     };
+
+    useEffect(() => {
+        setCurrentIndex(0);
+    }, [pictures]);
 
     return (
         <div className={`${pictureSlideshowStyles.slideshowContainer}`}>

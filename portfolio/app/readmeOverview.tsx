@@ -25,7 +25,6 @@ const ReadMeOverview = ({ content }: Parameters) => {
             <div className={`${fileOverviewStyles.readMeWrapper}`}>
                 <div className={`${fileOverviewStyles.readMeLeftArea}`}>
                     {/* Markdown Description */}
-                    <p><br /></p>
                     <p># {content.title}</p>
                     <p><br /></p>
                     <p>---</p>
@@ -45,13 +44,12 @@ const ReadMeOverview = ({ content }: Parameters) => {
                         </p>
                     ))}
                     <p><br /></p>
-                    <p>Most of the projects source code is available at [my GitHub account](https://github.com/Daaninator).</p>
+                    <p>Most of the projects source code is available at [my GitHub account](https://github.com/hensmans).</p>
 
 
                 </div >
                 <div className={` ${fileOverviewStyles.readMeRightArea}`}>
                     {/* Description */}
-                    <p><br /></p>
                     <div className={`${fileOverviewStyles.markdownTitle}`} >
                         <p >{content.title}</p>
 
@@ -72,7 +70,7 @@ const ReadMeOverview = ({ content }: Parameters) => {
                         ))}
                     </ul>
                     <p>
-                        Most of the projects source code is available at <a href="https://github.com/Daaninator" target="_blank">my GitHub account</a>.
+                        Most of the projects source code is available at <a href="https://github.com/hensmans" target="_blank">my GitHub account</a>.
                     </p>
                 </div>
             </div>

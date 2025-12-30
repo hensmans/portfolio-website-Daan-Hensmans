@@ -27,7 +27,6 @@ const ProjectOverview = ({ content }: Parameters) => {
                     <div className={`${fileOverviewStyles.title}`} >
                         <p >{content.title}</p>
                     </div>
-
                     {/* Tags */}
                     <div className={`${fileOverviewStyles.tags}`}>
                         {tags.map((tag, index) => (
@@ -69,7 +68,6 @@ const ProjectOverview = ({ content }: Parameters) => {
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div >
 

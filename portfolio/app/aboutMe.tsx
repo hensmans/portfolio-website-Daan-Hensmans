@@ -51,7 +51,7 @@ const AboutMe = ({ maximizeState }: Parameters) => {
               <p><br /></p>
               <p>
                 My background in compiler construction and low-level development (C, ASM, Lisp) gives me a unique perspective on software architecture.
-                I don't just use lan  guages; I study their inner workings to ensure my code is as efficient and secure as possible.
+                I don't just use languages; I study their inner workings to ensure my code is as efficient and secure as possible.
               </p>
               <p><br /></p>
               <p>Browse my 'projects' folder for a deep dive into my work.</p>
