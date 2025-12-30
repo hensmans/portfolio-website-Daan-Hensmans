@@ -57,9 +57,9 @@ const AboutMe = ({ maximizeState }: Parameters) => {
               <p>Browse my 'projects' folder for a deep dive into my work.</p>
             </div>
             <div className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} ${aboutMeStyles.contactInfo}`}>
-              <a href="https://www.linkedin.com/in/hensmans/" target="_blank"><p>Linkedin</p></a>
+              <a href="https://www.linkedin.com/in/hensmans/" target="_blank"><p>LinkedIn</p></a>
               <a href="mailto:Daan.Hensmans@gmail.com" target="_blank" rel="noopener"><p>Email</p></a>
-              <a href="https://github.com/hensmans" target="_blank"><p>Github</p></a>
+              <a href="https://github.com/hensmans" target="_blank"><p>GitHub</p></a>
             </div>
           </div>
         </div>

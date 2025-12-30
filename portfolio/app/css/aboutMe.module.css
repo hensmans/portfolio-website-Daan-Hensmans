@@ -9,7 +9,7 @@
     color: white;
     text-align: center;
     font-family: "Pixelated MS Sans Serif";
-    font-size: 1.75em;
+    font-size: 1.9em;
 }
 
 
@@ -28,7 +28,7 @@
 
 
 .title {
-    font-size: 2.0em;
+    font-size: 2.3em;
     text-align: left;
     padding: 0.5em;
     margin: 0;
@@ -47,12 +47,12 @@
 .titleGif {
     flex: 1;
     margin-left: 1em;
-    aspect-ratio: 5/3;
+    width: 35%;
 }
 
 .computerGif {
     width: 100%;
-    margin: 3em 0;
+    margin: 1.5em 0;
 }
 
 .computerGif img {
@@ -62,7 +62,7 @@
 }
 
 .webpageRootMinimized {
-    padding: min(3vh, 3vw);
+    padding: 1.5em;
 }
 
 .webpageRootMaximized {
@@ -97,7 +97,7 @@
 
     text-align: left;
 
-    margin: 1em 0;
+    margin: 1.5em 0;
     padding: 1em;
 
 
@@ -116,6 +116,8 @@
 
 .contactInfo a p {
     pointer-events: none;
+
+    font-family: "Pixelated MS Sans Serif Bold";
 }
 
 .textBox p {
@@ -133,7 +135,7 @@
 .leftColumn {
     /* grow: 0 (don't grow), shrink: 0 (don't shrink), basis: 50% (fixed size) */
     flex: 0 0 35%;
-    margin-right: 1em;
+    margin-right: 1.5em;
 }
 
 .rightColumn {

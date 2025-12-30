@@ -40,17 +40,18 @@ export default function Mainpage() {
   const computerNoiseRef2 = useRef<HTMLAudioElement | null>(null);
 
 
-  const soundVolume = 1;
+  const soundVolume = 0.8;
+  const soundVolumeNoise = soundVolume / 3;
   // For mouse clicks
   const handleMouseClick = () => {
     // Start background noise if not started yet
     if (computerNoiseRef.current && computerNoiseRef2.current) {
       if (computerNoiseRef.current.paused) {
-        computerNoiseRef.current.volume = mutedState ? 0 : soundVolume;
+        computerNoiseRef.current.volume = mutedState ? 0 : soundVolumeNoise;
         computerNoiseRef.current.currentTime = 0;
         computerNoiseRef.current.play().catch(err => { });
         // Play second noise later so the loop isn't that obvious
-        computerNoiseRef2.current.volume = mutedState ? 0 : soundVolume;
+        computerNoiseRef2.current.volume = mutedState ? 0 : soundVolumeNoise;
         computerNoiseRef2.current.currentTime = 5;
         computerNoiseRef2.current.play().catch(err => { });
       };
@@ -80,8 +81,8 @@ export default function Mainpage() {
   const toggleMutedState = () => {
     (mouseClickSoundRef.current) ? mouseClickSoundRef.current.volume = mutedState ? soundVolume : 0 : {};
     (startUpSoundRef.current) ? startUpSoundRef.current.volume = mutedState ? soundVolume : 0 : {};
-    (computerNoiseRef.current) ? computerNoiseRef.current.volume = mutedState ? soundVolume : 0 : {};
-    (computerNoiseRef2.current) ? computerNoiseRef2.current.volume = mutedState ? soundVolume : 0 : {};
+    (computerNoiseRef.current) ? computerNoiseRef.current.volume = mutedState ? soundVolumeNoise : 0 : {};
+    (computerNoiseRef2.current) ? computerNoiseRef2.current.volume = mutedState ? soundVolumeNoise : 0 : {};
     setMutedState(!mutedState);
   }
 

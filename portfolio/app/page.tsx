@@ -47,7 +47,7 @@ export default function CenteredBox({ setMaximizeState, maximizeState, setIconNa
         setTitleName('pictures');
         break;
       case 'aboutme':
-        setTitleName('aboutme.html');
+        setTitleName('aboutMe.html');
         break;
       case 'cv':
         setTitleName('cv.pdf');

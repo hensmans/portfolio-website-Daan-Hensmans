@@ -36,7 +36,6 @@ const ProjectOverview = ({ content }: Parameters) => {
                                     <span>&nbsp;·&nbsp;</span>
                                 )}
                             </ Fragment>
-
                         ))}
                     </div>
                     {/* Description */}
