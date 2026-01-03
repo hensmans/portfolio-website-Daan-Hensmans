@@ -672,9 +672,9 @@ menu[role=tablist].justified button {
     border-right: 1px solid #001ea0;
     border-top-left-radius: 8px;
     border-top-right-radius: 7px;
-    font-size: 13px;
+    /* font-size: 13px; */
     text-shadow: 1px 1px #0f1089;
-    height: 21px
+    /* height: 21px */
 }
 
 .title-bar-text {
