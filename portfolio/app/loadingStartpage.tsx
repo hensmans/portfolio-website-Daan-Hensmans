@@ -9,7 +9,7 @@ export default function LoadingStartpage() {
   return (
     <div className={`${loadingScreenStyles.loadingBackground} ${loadingScreenStyles.loadingBackgroundFadeOut} waitingPointer noSelect`}>
       <Image
-        src={'/windows-xp-loading.gif'}
+        src={'/windows-xp-loading-compressed.gif'}
         alt={'loading gif'}
         className={`${loadingScreenStyles.loadingGif} noSelect`}
         width={1}

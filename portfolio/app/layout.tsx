@@ -26,9 +26,9 @@ export default function RootLayout({
         {/* Preload the background image */}
         <link
           rel="preload"
-          href={'windows-xp-background.jpg'}
+          href={'windows-xp-background.jpeg'}
           as="image"
-          type="image/jpg"
+          type="image/jpeg"
           crossOrigin="anonymous"
         />
       </head>
