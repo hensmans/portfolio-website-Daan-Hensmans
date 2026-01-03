@@ -43,11 +43,11 @@
 }
 
 .tree ul {
-    padding-left: 1.3em;
+    padding-left: 2em;
 }
 
 .tree summary {
-    padding: max(0.22em, 0.4vw) 0.3em;
+    padding: 0.5em 0.3em;
 
 
 }
