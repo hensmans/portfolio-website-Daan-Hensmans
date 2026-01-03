@@ -14,7 +14,7 @@
   /* box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5); */
 
   flex-shrink: 0;
-  font-family: "Pixelated MS Sans Serif";
+  font-family: var(--primary-font);
 
 }
 
@@ -35,7 +35,7 @@
 /* The Iconic Start Button */
 .startButton {
   height: 100%;
-  padding: 0.25em 1em;
+  padding: 0.25rem 1rem;
   padding-bottom: 0;
   background: linear-gradient(to bottom, var(--xp-green-primary) 0%, var(--xp-green-taskbar) 10%, var(--xp-green-primary) 20%, var(--xp-green-primary) 90%, var(--xp-green-border) 100%);
   border-top-right-radius: 10px;
@@ -89,8 +89,8 @@
   background: linear-gradient(to bottom, var(--xp-bliss-sky) 0%, #57b8fd 9%, var(--xp-bliss-sky) 18%, var(--xp-bliss-sky) 92%, var(--xp-blue-border) 100%);
   border-left: 1px solid var(--xp-blue-taskbar);
   height: 100%;
-  padding: 0 1em;
-  padding-top: 0.25em;
+  padding: 0 1rem;
+  padding-top: 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,7 +110,7 @@
 }
 
 .clock {
-  margin-left: 0.5em;
+  margin-left: 0.5rem;
 
 }
 
@@ -118,15 +118,15 @@
   display: inline-block;
   position: relative;
   aspect-ratio: 1 / 1;
-  width: 1.1em !important;
-  height: 1.1em !important;
+  width: 2.25rem !important;
+  height: 2.25rem !important;
 }
 
 .muteIcon {
   display: inline-block;
   position: relative !important;
   aspect-ratio: 1 / 1;
-  width: 1em !important;
-  height: 1em !important;
-  margin-right: 0.4em;
+  width: 1.75rem !important;
+  height: 1.75rem !important;
+  margin-right: 1rem;
 }

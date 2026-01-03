@@ -53,6 +53,6 @@
 }
 
 .loadingGif {
-  max-width: min(50vh, 50vw);
-  max-height: min(50vh, 50vw);
+  max-width: min(60vh, 60vw);
+  max-height: min(60vh, 60vw);
 }

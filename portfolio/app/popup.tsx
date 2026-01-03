@@ -27,7 +27,7 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
 
 
   return (
-    <div className={`${popupStyles.popupScreen} ${maximizeState ? `${popupStyles.popupScreenMaximized}` : {}} window`}>
+    <div className={`${popupStyles.popupScreen} ${maximizeState ? `${popupStyles.popupScreenMaximized}` : `${popupStyles.popupScreenMinimized}`} window`}>
       <div className={`title-bar ${popupStyles.popupTitleBar}`}>
         <div className={`${popupStyles.popupTitleBarLeft}`}>
           <Image src={`/icons/${iconName}.webp`}

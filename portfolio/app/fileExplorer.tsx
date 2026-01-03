@@ -6,7 +6,7 @@ import ProjectOverview from './projectOverview';
 import Image from "next/image";
 import ReadMeOverview from './readmeOverview';
 import PicturesOverview from './picturesOverview';
-
+import popupStyles from './css/popup.module.css';
 
 const fileIcons = {
     // Files
@@ -581,7 +581,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
 
     return (
         <div className={`${fileExplorerStyles.layout}`}>
-            <ul className={`${fileExplorerStyles.tree} noSelect`}>
+            <ul className={`${fileExplorerStyles.tree} noSelect  ${popupStyles.popupBodyFiles}`}>
                 <li >
                     <details open>
                         {generateFolderSummary(fileIcons.localDisk, 'Local Disk (C:)')}

@@ -2,7 +2,7 @@
 .panel {
     display: flex;
     align-items: center;
-    gap: 2em;
+    gap: 2rem;
 }
 
 .led {

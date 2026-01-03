@@ -32,34 +32,44 @@
 
 }
 
-/* Sizes of text when minimize and maximize */
-.popupBody p, .popupBody span, .popupBody img {
-  font-size: 1.2em;
+
+
+
+.popupScreenMinimized p, .popupScreenMinimized span, .popupScreenMinimized img {
+  font-size: 1.25rem;
+}
+
+.popupBodyFiles p, .popupBodyFiles span, .popupBodyFiles img {
+  font-size: 1rem;
 }
 
 .popupScreenMaximized p, .popupScreenMaximized span, .popupScreenMaximized img {
-  font-size: 1.4em;
+  font-size: 1.5rem;
+}
+
+.popupScreenMaximized .popupBodyFiles p, .popupScreenMaximized .popupBodyFiles span, .popupScreenMaximized .popupBodyFiles img {
+  font-size: 1.5rem;
 }
 
 
 .popupTitleBar {
   height: fit-content;
-  font-size: 1.6em;
+  font-size: 1.5rem;
 }
 
 .popupTitleBarIcon {
   display: inline-block;
   position: relative !important;
   aspect-ratio: 1 / 1;
-  width: 1.3em !important;
-  height: 1.3em !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
 
-  margin-left: 0.25em;
+  margin-left: 0.25rem;
 }
 
 .popupBarIcon {
-  width: 2.6em;
-  height: 2.5em;
+  width: 2.05rem;
+  height: 2rem;
 }
 
 .popupTitleBarLeft {

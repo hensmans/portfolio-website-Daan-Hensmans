@@ -14,11 +14,13 @@
 .fileActive {
     background-color: var(--xp-blue-primary);
     color: var(--xp-blue-light);
-    border-radius: 0.25em;
+    border-radius: 0.5rem;
 }
 
+
+
+
 .tree {
-    font-size: clamp(1em, min(2vh, 2vw), 3em);
     color: black;
     height: 100%;
     width: fit-content;
@@ -27,14 +29,15 @@
     overflow-x: hidden;
 
     margin: 0;
-    padding: 0 0.5em;
+    padding: 0rem;
+    padding-right: 0.5rem;
 
     border-right: 1px solid var(--xp-blue-border);
 
     display: block;
 
 
-    font-family: "Pixelated MS Sans Serif";
+    font-family: var(--primary-font);
 }
 
 /* Remove arrow */
@@ -43,17 +46,17 @@
 }
 
 .tree ul {
-    padding-left: 2em;
+    padding-left: 1.4rem;
 }
 
 .tree summary {
-    padding: 0.5em 0.3em;
+    padding: 0.5rem 0.5rem;
 
 
 }
 
 .tree summary {
-    font-family: "Pixelated MS Sans Serif Bold";
+    font-family: var(--primary-font-bold);
 }
 
 
@@ -69,9 +72,10 @@
     content: "+";
     border: 1px solid var(--xp-blue-border);
     background-color: var(--xp-silver-light);
-    width: 1em;
-    height: 1em;
-    margin-right: 0.3em;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.3rem;
+    margin-left: 0.15rem;
 }
 
 .tree details[open]>summary:before {
@@ -82,10 +86,10 @@
     display: inline-block;
     position: relative !important;
     aspect-ratio: 1 / 1;
-    width: 1em !important;
-    height: 1em !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
 
-    margin-right: 0.25em;
+    margin-right: 0.3rem;
 }
 
 .treeElement {
@@ -95,5 +99,5 @@
     align-items: center;
     text-align: center;
 
-    padding: 0.5em 0.5em;
+    padding: 0.5rem 0.5rem;
 }

@@ -9,7 +9,7 @@
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
-    border-radius: 0.4em;
+    border-radius: 0.5rem;
 
 }
 
@@ -30,12 +30,10 @@
 }
 
 .controls {
-    height: 3em;
+    height: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em;
-    font-size: 1em;
     background: var(--xp-silver-light);
 
 
@@ -43,8 +41,8 @@
 }
 
 .controls button {
-    font-size: 0.8em;
-    padding: 0.5em 1.5em;
+    padding: 1em 2rem;
+    margin: 0 1em;
 }
 
 .loadingText {

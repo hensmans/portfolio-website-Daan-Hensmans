@@ -2,21 +2,21 @@
 
 .downloadButton {
     position: absolute;
-    bottom: 1em;
-    right: 1em;
+    bottom: 1rem;
+    right: 1rem;
     z-index: 2;
 
 
 }
 
 .downloadButtonSmall {
-    padding: 1em;
-    font-size: 1.2em;
+    padding: 1rem;
+    font-size: 1.5rem;
 }
 
 .downloadButtonBig {
-    padding: 1.5em;
-    font-size: 1.6em;
+    padding: 1.25rem;
+    font-size: 1.6rem;
 }
 
 .pdfWrapper {
@@ -25,11 +25,10 @@
     justify-content: center;
     height: 100%;
     /* background-color: gray; */
-    padding: 0em;
+    padding: 0rem;
 }
 
 .pdf {
-
     width: 50%;
 }
 
@@ -42,8 +41,8 @@
 .loadingText {
     color: black;
     align-items: center;
-    padding: 1em;
-    font-size: 2em;
+    padding: 1rem;
+    font-size: 2rem;
     display: flex;
     justify-content: center;
 
