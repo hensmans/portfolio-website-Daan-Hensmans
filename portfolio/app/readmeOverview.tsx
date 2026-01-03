@@ -50,6 +50,7 @@ const ReadMeOverview = ({ content }: Parameters) => {
                             <p>
                                 Most of the projects source code is available at <a href="https://github.com/hensmans" target="_blank">my GitHub account</a>.
                             </p>
+                            <p><br /></p>
                         </div>
                         : <div>
                             <p># {content.title}</p>
@@ -72,6 +73,7 @@ const ReadMeOverview = ({ content }: Parameters) => {
                             ))}
                             <p><br /></p>
                             <p>Most of the projects source code is available at [my GitHub account](https://github.com/hensmans).</p>
+                            <p><br /></p>
                         </div>
                     }
                 </div>
