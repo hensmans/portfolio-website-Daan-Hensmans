@@ -45,7 +45,7 @@
     padding-left: 1.3em;
 }
 
-.tree li, .tree summary {
+.tree summary {
     padding: max(0.22em, 0.4vw) 0.3em;
 
 
@@ -93,4 +93,6 @@
 
     align-items: center;
     text-align: center;
+
+    padding: 0.5em 0.5em;
 }
