@@ -96,8 +96,8 @@ export default function Mainpage() {
       <main className={`${mainPageStyles.content} `}>
         {/* Monitor Border */}
         <div className={`${crtStyles.monitor}`}>
-          <Image className={`${crtStyles.monitorScreen} noMousePointer`} fill priority alt='Monitor border screen' src="/monitor-screen-border-15.png" />
-          <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor-screen-daan-hensmans-13.png" />
+          <Image className={`${crtStyles.monitorScreen} noMousePointer`} fill priority alt='Monitor border screen' src="/monitor/monitor-screen-border-15.webp" />
+          <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor/monitor-screen-daan-hensmans-13.webp" />
           <div className={crtStyles.monitorButton}>
             <MonitorButton monitorOnState={monitorOnState} setMonitorOnState={setMonitorOnState} />
           </div>

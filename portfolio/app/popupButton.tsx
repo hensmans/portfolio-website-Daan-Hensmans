@@ -13,7 +13,7 @@ const PopupButton = ({ setSelectedButton, iconName, title }: ButtonSelectionProp
     return (
         <div className={`${popupButtonStyles.buttonBox} xp-icon-label noSelect clickable`} onClick={() => setSelectedButton(iconName)}>
             <div className={`${popupButtonStyles.iconBox}`}>
-                <Image src={`/icons/${iconName}.png`}
+                <Image src={`/icons/${iconName}.webp`}
                     alt={`Button to ${iconName}`}
                     fill
                     className={`${popupButtonStyles.clickableImage}`}

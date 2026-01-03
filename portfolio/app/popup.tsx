@@ -30,7 +30,7 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
     <div className={`${popupStyles.popupScreen} ${maximizeState ? `${popupStyles.popupScreenMaximized}` : {}} window`}>
       <div className={`title-bar ${popupStyles.popupTitleBar}`}>
         <div className={`${popupStyles.popupTitleBarLeft}`}>
-          <Image src={`/icons/${iconName}.png`}
+          <Image src={`/icons/${iconName}.webp`}
             alt={`Popup icon`}
             fill
             priority // preloads

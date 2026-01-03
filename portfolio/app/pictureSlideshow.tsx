@@ -13,7 +13,7 @@ const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
     // Define video
     const youtubeIdDefined = youtubeId ?? false;
     // Define pictures
-    const picturesDefined = pictures.length == 0 ? ["no_image.png"] : pictures;
+    const picturesDefined = pictures.length == 0 ? ["no_image.webp"] : pictures;
     const isVideoSlide = currentIndex === (youtubeIdDefined ? picturesDefined.length : picturesDefined.length - 1);
 
     const nextSlide = () => {
@@ -45,7 +45,9 @@ const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
                                 height="100%"
                                 src={`https://www.youtube.com/embed/${youtubeIdDefined}?autoplay=1`}
                                 title="YouTube video player"
-                                onLoad={() => <p className={pictureSlideshowStyles.loadingText}>loading...</p>}
+                                onLoad={() => <p
+                                // className={pictureSlideshowStyles.loadingText}
+                                > loading...</p>}
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
                             />
@@ -55,7 +57,7 @@ const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
                     : (
                         /* Photo Slide */
                         <img
-                            src={`/pictures/${picturesDefined[currentIndex]}`}
+                            src={`/pictures/${picturesDefined[currentIndex]}.webp`}
                             alt={`Slide ${currentIndex}`}
                             className={`${pictureSlideshowStyles.slideImage}`}
                         />

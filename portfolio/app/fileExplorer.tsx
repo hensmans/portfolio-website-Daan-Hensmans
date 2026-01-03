@@ -173,7 +173,7 @@ const projectsContent = [
                 "Memory optimisations",
             ],
             youtubeId: "10AdEqDX_T8",
-            pictures: ["dr_mario_5.jpeg", "dr_mario_4.jpeg", "dr_mario_3.jpeg"],
+            pictures: ["dr_mario_5", "dr_mario_4", "dr_mario_3"],
             icon: fileIcons.game_5
         }
     },
@@ -192,7 +192,7 @@ const projectsContent = [
                 "Low-Level Memory Management",
             ],
             youtubeId: "4CJKe73SVr0",
-            pictures: ["worm_2.jpeg"],
+            pictures: ["worm_2"],
             icon: fileIcons.game_2
         }
     },
@@ -213,7 +213,7 @@ const projectsContent = [
                 "Monads",
             ],
             youtubeId: "WST_O-ba_MI",
-            pictures: ["desert_explorer_2.jpeg", "desert_explorer_3.jpeg", "desert_explorer_4.jpeg",],
+            pictures: ["desert_explorer_2", "desert_explorer_3", "desert_explorer_4",],
             icon: fileIcons.game_3
         }
     },
@@ -233,7 +233,7 @@ const projectsContent = [
                 "TPC",
             ],
             youtubeId: "PWt333RWpQg",
-            pictures: ["train_app_2.jpeg", "train_app_3.jpeg", "train_app_4.jpeg"],
+            pictures: ["train_app_2", "train_app_3", "train_app_4"],
             icon: fileIcons.game_4
         }
     },
@@ -252,7 +252,7 @@ const projectsContent = [
                 "Optimisation of large-scale interactions"
             ],
             youtubeId: "NaW8FtBX2H8",
-            pictures: ["pixel_simulator_1.jpeg", "pixel_simulator_2.jpeg", "pixel_simulator_3.jpeg"],
+            pictures: ["pixel_simulator_1", "pixel_simulator_2", "pixel_simulator_3"],
             icon: fileIcons.game_1
         }
     },
@@ -275,7 +275,7 @@ const projectsContent = [
                 "Linux and server terminal commands"
             ],
             youtubeId: undefined,
-            pictures: ["HPC_2.jpg", "HPC_1.jpg"],
+            pictures: ["HPC_2", "HPC_1"],
             icon: fileIcons.HPC
         }
     },
@@ -298,7 +298,7 @@ const projectsContent = [
                 "Measure execution time and derive for optimisations."
             ],
             youtubeId: undefined,
-            pictures: ["opencl_1.png", "opencl_2.png"],
+            pictures: ["opencl_1", "opencl_2"],
             icon: fileIcons.openCL
         }
     },
@@ -317,7 +317,7 @@ const projectsContent = [
                 "Understanding different views, such as the model view and the world view."
             ],
             youtubeId: undefined,
-            pictures: ["opengl_2.png", "opengl_1.png"],
+            pictures: ["opengl_2", "opengl_1"],
             icon: fileIcons.openGL
         }
     },
@@ -342,7 +342,7 @@ const projectsContent = [
 
             ],
             youtubeId: undefined,
-            pictures: ["compiler_1.jpg"],
+            pictures: ["compiler_1"],
             icon: fileIcons.compiler
         }
     },
@@ -398,7 +398,7 @@ const projectsContent = [
                 "Creativity"
             ],
             youtubeId: undefined,
-            pictures: ["aboutme_2.png"],
+            pictures: ["aboutme_2"],
             icon: fileIcons.camera
         }
     },
@@ -421,7 +421,7 @@ const projectsContent = [
                 "Managing a large community"
             ],
             youtubeId: undefined,
-            pictures: ["yt_1.jpg", "yt_3.png", "yt_2.png",],
+            pictures: ["yt_1", "yt_3", "yt_2",],
             icon: fileIcons.youtube
         }
     },
@@ -527,7 +527,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
                     onClick={() => handleClick(file.id, getContent(file.id).icon, file.label)}
                     className={`${fileExplorerStyles.treeElement} clickable ${selectedFile === file.id ? `${fileExplorerStyles.fileActive}` : ''}`}
                 >
-                    <Image src={`/icons/${getContent(file.id).icon}.png`}
+                    <Image src={`/icons/${getContent(file.id).icon}.webp`}
                         alt={`Popup icon`}
                         fill
                         priority // preloads
@@ -542,7 +542,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
     const generateFolderSummary = (icon: string, title: string) => {
         return (
             <summary className={`${fileExplorerStyles.treeElement} clickable`}>
-                <Image src={`/icons/${icon}.png`}
+                <Image src={`/icons/${icon}.webp`}
                     alt={`Popup icon`}
                     fill
                     priority // preloads

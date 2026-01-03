@@ -26,7 +26,7 @@ const Taskbar = ({ toggleMutedState, mutedState }: Parameters) => {
         <div className={`${taskBarStyles.xpTaskbar} noSelect`} >
             <div className={taskBarStyles.startButton}>
                 <div className={`${taskBarStyles.xpLogo}`}>
-                    <Image src={`/icons/Windows-xp-logo.png`}
+                    <Image src={`/icons/Windows-xp-logo.webp`}
                         alt={`Windows XP icon`}
                         fill
                         priority // preloads
@@ -44,13 +44,13 @@ const Taskbar = ({ toggleMutedState, mutedState }: Parameters) => {
             <div className={taskBarStyles.systemTray}>
                 <span onClick={toggleMutedState}>
                     {mutedState
-                        ? <Image src={'/icons/Mute.png'}
+                        ? <Image src={'/icons/Mute.webp'}
                             alt={`Sound mute icon`}
                             fill
                             priority // preloads
                             className={taskBarStyles.muteIcon}
                         />
-                        : <Image src={`/icons/Volume.png`}
+                        : <Image src={`/icons/Volume.webp`}
                             alt={`Sound unmute icon`}
                             fill
                             priority // preloads
