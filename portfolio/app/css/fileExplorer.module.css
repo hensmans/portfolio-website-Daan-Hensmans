@@ -14,6 +14,7 @@
 .fileActive {
     background-color: var(--xp-blue-primary);
     color: var(--xp-blue-light);
+    border-radius: 0.25em;
 }
 
 .tree {

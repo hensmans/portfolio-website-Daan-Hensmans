@@ -22,14 +22,6 @@
     font-size: min(2cqw, 2cqh);
 }
 
-.readMeWrapper {
-    flex: 1;
-    display: flex;
-    height: 100%;
-    font-size: 1.9em;
-    padding: 1em;
-    overflow: auto;
-}
 
 
 .title {
@@ -39,6 +31,8 @@
     margin: 0 0.5em 0.5em 0.5em;
     background-color: var(--xp-blue-primary);
     color: var(--xp-blue-light);
+    border-radius: 0.25em;
+    padding: 0.25em;
 }
 
 .markdownTitle {
@@ -47,6 +41,7 @@
     width: 90%;
     padding-bottom: 0.5em;
     border-bottom: 2px solid var(--xp-silver-border);
+
 }
 
 .tags {
@@ -63,7 +58,7 @@
 
 .tags p {
     margin: 0;
-    padding: 0 0.5em;
+    padding: 0.20em 0.5em;
 
     color: black;
     background-color: var(--xp-silver-light);
@@ -72,6 +67,7 @@
 
 .tag {
     border: 2px solid var(--xp-blue-primary);
+    border-radius: 0.25em;
     color: black;
 }
 
@@ -94,30 +90,6 @@
     height: 100%;
 }
 
-.readMeLeftArea {
-    display: flex;
-    flex-direction: column;
-
-    /* margin-right: 1em; */
-    width: 50%;
-    height: fit-content;
-    min-height: 100%;
-    padding-right: 0.5em;
-
-    border-right: 2px dotted var(--xp-silver-border);
-
-}
-
-.readMeRightArea {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: fit-content;
-    min-height: 100%;
-
-    padding-left: 1em;
-
-}
 
 .rightArea {
     display: flex;
@@ -132,6 +104,7 @@
 .screenshots {
     max-height: 50%;
     border: 2px solid var(--xp-blue-primary);
+    border-radius: 0.5em;
 }
 
 
@@ -162,4 +135,30 @@
 
 .readmeBackground {
     background-color: var(--xp-silver-light);
+    border-radius: 0.5em;
+
+
+}
+
+.readMeWrapper {
+    display: flex;
+    height: 100%;
+    font-size: 1.6em;
+    padding: 1em;
+    overflow: auto;
+
+}
+
+.readMeRoot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.readmeSwitchButton {
+    padding: 1em;
+    font-size: 2em;
+    margin-top: 1em;
 }

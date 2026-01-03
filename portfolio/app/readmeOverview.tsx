@@ -2,7 +2,6 @@
 import { Fragment, useState } from 'react';
 import './css/global.css';
 import fileOverviewStyles from './css/fileOverview.module.css';
-import PictureSlideshow from './pictureSlideshow';
 
 interface Parameters {
     content: {
@@ -16,67 +15,75 @@ interface Parameters {
 }
 
 const ReadMeOverview = ({ content }: Parameters) => {
+    const [markdownTransformedState, setMarkdownTransformedState] = useState(true);
     const tags = content.tags;
     const description = content.description;
     const bulletPoints = content.bulletPoints;
 
     return (
-        <div className={`${fileOverviewStyles.root} ${fileOverviewStyles.readmeBackground}`}>
-            <div className={`${fileOverviewStyles.readMeWrapper}`}>
-                <div className={`${fileOverviewStyles.readMeLeftArea}`}>
-                    {/* Markdown Description */}
-                    <p># {content.title}</p>
-                    <p><br /></p>
-                    <p>---</p>
-                    <p><br /></p>
-                    {description.map((subDescription, index) => (
-                        < Fragment key={index}>
-                            <p >{subDescription}</p>
-                            {(index < description.length - 1) && (
-                                <p><br /></p>
-                            )}
-                        </ Fragment>
-                    ))}
-                    {Array.from({ length: bulletPoints.length / 2 }).map((subBulletPoint, index) => (
-                        <p key={index}>
-                            <br />
-                            -&nbsp;&nbsp;**{bulletPoints[index * 2]}** &nbsp; -&gt; &nbsp; {bulletPoints[index * 2 + 1]}
-                        </p>
-                    ))}
-                    <p><br /></p>
-                    <p>Most of the projects source code is available at [my GitHub account](https://github.com/hensmans).</p>
+        <div className={`${fileOverviewStyles.root}`}>
+            <div className={`${fileOverviewStyles.readMeRoot}`}>
+                <div className={`${fileOverviewStyles.readMeWrapper}  ${fileOverviewStyles.readmeBackground}`}>
+                    {markdownTransformedState
+                        ? <div>
+                            <div className={`${fileOverviewStyles.markdownTitle}`} >
+                                <p >{content.title}</p>
 
-
-                </div >
-                <div className={` ${fileOverviewStyles.readMeRightArea}`}>
-                    {/* Description */}
-                    <div className={`${fileOverviewStyles.markdownTitle}`} >
-                        <p >{content.title}</p>
-
-                    </div>
-                    <p><br /></p>
-                    {description.map((subDescription, index) => (
-                        < Fragment key={index}>
-                            <p >{subDescription}</p>
-                            {(index < description.length - 1) && (
-                                <p><br /></p>
-                            )}
-                        </ Fragment>
-                    ))}
-                    <ul>
-                        {Array.from({ length: bulletPoints.length / 2 }).map((subBulletPoint, index) => (
-                            <li key={index}>
-                                <p><strong>{bulletPoints[index * 2]}</strong>&nbsp;&rarr; &nbsp; {bulletPoints[index * 2 + 1]}</p></li>
-                        ))}
-                    </ul>
-                    <p>
-                        Most of the projects source code is available at <a href="https://github.com/hensmans" target="_blank">my GitHub account</a>.
-                    </p>
+                            </div>
+                            <p><br /></p>
+                            {description.map((subDescription, index) => (
+                                < Fragment key={index}>
+                                    <p >{subDescription}</p>
+                                    {(index < description.length - 1) && (
+                                        <p><br /></p>
+                                    )}
+                                </ Fragment>
+                            ))}
+                            <ul>
+                                {Array.from({ length: bulletPoints.length / 2 }).map((subBulletPoint, index) => (
+                                    <li key={index}>
+                                        <p><strong>{bulletPoints[index * 2]}</strong>&nbsp;&rarr; &nbsp; {bulletPoints[index * 2 + 1]}
+                                            <br />
+                                            <br /></p></li>
+                                ))}
+                            </ul>
+                            <p>
+                                Most of the projects source code is available at <a href="https://github.com/hensmans" target="_blank">my GitHub account</a>.
+                            </p>
+                        </div>
+                        : <div>
+                            <p># {content.title}</p>
+                            <p><br /></p>
+                            <p>---</p>
+                            <p><br /></p>
+                            {description.map((subDescription, index) => (
+                                < Fragment key={index}>
+                                    <p >{subDescription}</p>
+                                    {(index < description.length - 1) && (
+                                        <p><br /></p>
+                                    )}
+                                </ Fragment>
+                            ))}
+                            {Array.from({ length: bulletPoints.length / 2 }).map((subBulletPoint, index) => (
+                                <p key={index}>
+                                    <br />
+                                    -&nbsp;&nbsp;**{bulletPoints[index * 2]}** &nbsp; -&gt; &nbsp; {bulletPoints[index * 2 + 1]}
+                                </p>
+                            ))}
+                            <p><br /></p>
+                            <p>Most of the projects source code is available at [my GitHub account](https://github.com/hensmans).</p>
+                        </div>
+                    }
                 </div>
+
+                {/* Switch button */}
+                <button className={`${fileOverviewStyles.readmeSwitchButton}`} onClick={() => setMarkdownTransformedState(!markdownTransformedState)}>
+                    {markdownTransformedState ? "Disable markdown" : "Enable markdown"}
+                </button>
             </div>
 
 
-        </div>
+        </div >
 
 
     );
