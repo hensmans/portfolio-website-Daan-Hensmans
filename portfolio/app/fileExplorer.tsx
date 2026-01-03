@@ -159,7 +159,7 @@ const projectsContent = [
         id: 1,
         content: {
             title: 'Dr Mario',
-            tags: ['C', '2022', 'Embedded'],
+            tags: ['C', 'Embedded', '2022',],
             description: [
                 "Multiple viruses have appeared on the screen and your goal is to remove them by creating groups of four or more of the same colour. Sometimes a bomb will drop, which will explode the surrounding blocks if it touches something. You win if you remove all the viruses on the board. But watch out, it gets more difficult with each subsequent game. More viruses will appear, the pills will fall more quickly and the screen will become expand.",
                 "Your high score will be saved locally, and you can select from four game modes in the menu. Sounds have also been implemented to make the experience more enjoyable and engaging. Players control the game by tilting the device for horizontal and vertical movement and pressing the button to rotate the pill.",
@@ -200,7 +200,7 @@ const projectsContent = [
         id: 3,
         content: {
             title: 'Desert Explorer',
-            tags: ['Haskell', '2025', 'GitHub'],
+            tags: ['Haskell', '2025'],
             description: [
                 "You are a desert explorer, in search for gold. But you have limited amount of water, and therefore you need to drink something every n amount of steps.. or you will die. Not only can you die from dehydration, but also from lava and from worms that appear randomly. Once you are satisfied with the amount of gold you gathered, you can enter a portal to end the game. If the player feels tired it can save the game and load it for another play session.",
                 "The game is fully programmed in Haskell, a pure function programming language. There are many concepts incorperated in this game. To list a few; The map will go to infinity, and with the same seed it will also have the same tiles everytime. All the worms are ran on a different threads through Software Transactional Memory. Loading and saving the game is done through a parser and lexer. And the game logic consists heavely on a functional pattern, monads.",
@@ -221,7 +221,7 @@ const projectsContent = [
         id: 4,
         content: {
             title: 'Train App',
-            tags: ['Scheme', '2023', 'GitHub'],
+            tags: ['Scheme', '2023'],
             description: [
                 "There are train tracks and trains. The tracks have switches and detection blocks. The user has an app that controls the train's speed and direction. The app also allows the user to change the switches and see which trains are on which detection blocks. The user can also specify a destination for the train. The train will then calculate a path and go there, even if it needs to change direction multiple times.",
                 "The back-end and front-end are fully made in Scheme and work on a real-life track and a train simulation. The front end was the client and GUI, while the back end calculated the path algorithm and stored the states of the trains and tracks. Communication between the two happens through a TCP connection. Clients run asynchronously and all clients update automatically if one client's state or values change.",
@@ -283,15 +283,22 @@ const projectsContent = [
         id: 11,
         content: {
             title: 'OpenCL',
-            tags: ['C', '2025', 'GitHub'],
+            tags: ['C', 'OpenCL', '2025'],
             description: [
-                "Executing kernels on the CPU"
+                "You are given an image of blood cells and the goal is to count the number of cells. This is achieved by first converting the image to black and white, then applying the 'Union Find' algorithm, and finally assigning colours to each cell and outputting the final image showing the number of cells counted.",
+                "Both converting the image and executing the 'Union Find' algorithm lend themselves well to parallelisation. Therefore, kernels are created for these steps to drastically improve the program's speed.",
+                "Also, the execution time of the kernels and the data transfer to the GPU are measured to determine the optimal workgroup size and data type.",
+                "Some other optimisation steps are also taken into account to minimise execution time. For example, the workgroup layout becomes square instead of linear (if you look at the 2D image). Or using the same data that is already loaded in the GPU to minimize data transfer.",
             ],
             bulletPoints: [
-                "NaN",
+                "GPU kernels",
+                "Kernel optimisation",
+                "Data transfer and data type optimisation",
+                "Transforming a sequential algorithm into a parallel algorithm.",
+                "Measure execution time and derive for optimisations."
             ],
             youtubeId: undefined,
-            pictures: [],
+            pictures: ["opencl_1.png", "opencl_2.png"],
             icon: fileIcons.openCL
         }
     },
@@ -299,31 +306,43 @@ const projectsContent = [
         id: 12,
         content: {
             title: 'OpenGL',
-            tags: ['C++', '2025', 'GitHub'],
+            tags: ['C++', 'OpenGL', '2025'],
             description: [
-                "Creatign shaders, working on the GPU"
-            ],
+                "The goal was to implement shaders, textures, movement, and particles on a spaceship model. This was achieved step by step in OpenGL.",
+                "Shaders are implemented using a shading algorithm that calculates the radiance and irradiance of each pixel. Textures are loaded and applied using texture maps. Particles have a spawn point and die after a certain time. Each particle has a 2D texture that imitates a fire effect. You can control the movement of the spaceship using the arrow keys. This is achieved by applying translation matrices to the model in its world view."],
             bulletPoints: [
-                "NaN",
+                "Implementing reflections, shaders, textures, matrix transformations, and particles.",
+                "Creating vertex and fragment shaders.",
+                "Working and understanding Visual Studio.",
+                "Understanding different views, such as the model view and the world view."
             ],
             youtubeId: undefined,
-            pictures: [],
+            pictures: ["opengl_2.png", "opengl_1.png"],
             icon: fileIcons.openGL
         }
     },
     {
         id: 13,
         content: {
-            title: 'EmFRP Compilter',
-            tags: ['Scheme', '2024', 'GitHub'],
+            title: 'EmFRP Compiler',
+            tags: ['Compiler', '2024'],
             description: [
-                "Bachelor thesis where the goal was to create a compiler for the reactive programming language EmFRP. The compiler would compile source code into  byte-code for the virtual machine Remus"
+                "My bachelor's thesis focused on creating a compiler for a programming language called EmFRP. This language is reactive, meaning there is code that reacts to changes in external values. It is mainly used for research and embedded devices.",
+                "The compiler will compile the code into a sequence of bytecode for the Remus virtual machine. This VM is used to execute a different reactive programming language, and the aim of the thesis was to establish whether it could also execute another reactive language.",
+                "This is achieved by creating all the steps of the compiler: These include the parser, the lexer and the dependency graph constructor, which translates the AST (Abstract Syntax Tree) into a dependency graph. The compiler then compiles this dependency graph into a sequence of Remus bytecode.",
+                "Optimilisations in the compiler are implemented to make it faster on the VM, like removing code duplication.",
+                "After my bachelor's thesis, I took a course called 'Compilers' which taught me even more about compilers and all the important optimisation steps. The course involved a major project in which you had to implement a dozen of these compiler steps to create a simple functional programming language that was then compiled into Assembly x86."
             ],
             bulletPoints: [
-                "NaN",
+                "Creating a compiler from scratch.",
+                "Researching and finding information.",
+                "Writing a clear, and detailed report.",
+                "Compiler optimisations.",
+                "Creating an assembler.",
+
             ],
             youtubeId: undefined,
-            pictures: [],
+            pictures: ["compiler_1.jpg"],
             icon: fileIcons.compiler
         }
     },
