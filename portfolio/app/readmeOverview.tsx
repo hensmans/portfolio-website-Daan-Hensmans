@@ -42,9 +42,15 @@ const ReadMeOverview = ({ content }: Parameters) => {
                             <ul>
                                 {Array.from({ length: bulletPoints.length / 2 }).map((subBulletPoint, index) => (
                                     <li key={index}>
-                                        <p><strong>{bulletPoints[index * 2]}</strong>&nbsp;&rarr; &nbsp; {bulletPoints[index * 2 + 1]}
+                                        <div>
+                                            <div className={`${fileOverviewStyles.markdownBulletpoint}`}>
+                                                <p><strong>{bulletPoints[index * 2]}</strong>&nbsp;&rarr;&nbsp;</p>
+                                                <p className={`${fileOverviewStyles.markdownBulletpointText}`} >{bulletPoints[index * 2 + 1]}</p>
+                                            </div>
                                             <br />
-                                            <br /></p></li>
+                                            <br />
+                                        </div>
+                                    </li>
                                 ))}
                             </ul>
                             <p>

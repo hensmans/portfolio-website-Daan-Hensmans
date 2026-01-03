@@ -135,7 +135,6 @@ const projectsContent = [
             description: [
                 "Here my most notable projects are shown. Every project will give a quick overview what it was about, what language(s) I used, what I learned, and some pictures and maybe even a video.",
                 "There are multiple folders where the type of the project is grouped. Select any folder to open or close it.",
-                "",
                 "The following folders include:"
             ],
             bulletPoints: [

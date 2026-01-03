@@ -49,6 +49,14 @@
     font-size: 2rem !important;
 }
 
+.markdownBulletpoint {
+    display: flex;
+}
+
+.markdownBulletpointText {
+    margin-left: 0.25rem;
+}
+
 .tags {
     font-family: var(--primary-font-bold);
     display: flex;
@@ -91,7 +99,7 @@
     flex-direction: column;
 
     /* margin-right: 1rem; */
-    width: 50%;
+    width: 70%;
     height: 100%;
 }
 
