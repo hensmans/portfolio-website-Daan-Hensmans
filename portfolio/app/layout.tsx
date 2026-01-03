@@ -10,7 +10,7 @@ import './css/windows-xp.css';
 
 
 export const metadata: Metadata = {
-  title: "Portfolio | Daan Hensmans",
+  title: "Daan Hensmans | Portfolio",
   description: "Portfolio of Daan Hensmans, a Dutch Software Engineer located in Belgium.",
 };
 

@@ -33,22 +33,28 @@
 }
 
 .popupScreenMaximized p, .popupScreenMaximized span, .popupScreenMaximized img {
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 
 .popupTitleBar {
   height: fit-content;
+  font-size: 1.6em;
 }
 
 .popupTitleBarIcon {
   display: inline-block;
   position: relative !important;
   aspect-ratio: 1 / 1;
-  width: 1em !important;
-  height: 1em !important;
+  width: 1.3em !important;
+  height: 1.3em !important;
 
   margin-left: 0.25em;
+}
+
+.popupBarIcon {
+  width: 2.6em;
+  height: 2.5em;
 }
 
 .popupTitleBarLeft {

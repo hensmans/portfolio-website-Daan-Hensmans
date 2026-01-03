@@ -41,10 +41,10 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
           </div>
         </div>
 
-        <div className="title-bar-controls">
-          <button aria-label="Minimize" onClick={() => goToHomeScreen()} />
-          <button aria-label="Maximize" onClick={() => setMaximizeState(!maximizeState)} />
-          <button aria-label="Close" onClick={() => goToHomeScreen()} />
+        <div className={` title-bar-controls `}>
+          <button className={`${popupStyles.popupBarIcon}`} aria-label="Minimize" onClick={() => goToHomeScreen()} />
+          <button className={`${popupStyles.popupBarIcon}`} aria-label="Maximize" onClick={() => setMaximizeState(!maximizeState)} />
+          <button className={`${popupStyles.popupBarIcon}`} aria-label="Close" onClick={() => goToHomeScreen()} />
         </div>
       </div >
       <div className={`window-body ${popupStyles.popupBody}`}>
