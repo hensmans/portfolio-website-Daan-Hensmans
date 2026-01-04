@@ -1,5 +1,5 @@
 .buttonsBox {
-  width: min(100vh, 100vw);
+  width: 80vw;
   position: fixed;
   display: flex;
   flex-direction: row;

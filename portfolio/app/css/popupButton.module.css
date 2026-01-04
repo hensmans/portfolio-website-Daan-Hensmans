@@ -2,7 +2,7 @@
 
 .iconFont {
   font-family: var(--primary-font);
-  font-size: 1.75rem;
+  font-size: min(4vh, 4vw);
   /* Standard size */
   color: white;
   /* White text is key */
@@ -23,8 +23,8 @@
 
 .buttonBox {
   text-align: center;
-  width: min(20vh, 20vw);
-  height: min(20vh, 20vw);
+  width: min(23vh, 23vw);
+  height: min(23vh, 23vw);
 
   background-color: transparent;
 
