@@ -2,7 +2,7 @@
 
 .iconFont {
   font-family: var(--primary-font);
-  font-size: min(4vh, 4vw);
+  font-size: min(3.5vh, 3.5vw);
   /* Standard size */
   color: white;
   /* White text is key */

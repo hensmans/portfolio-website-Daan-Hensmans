@@ -6,10 +6,10 @@
     height: 100%;
     width: 100%;
 
-    color: white;
+    color: var(--xp-silver-light);
     text-align: center;
     font-family: var(--primary-font);
-    font-size: 1.9rem;
+
 }
 
 
@@ -28,9 +28,9 @@
 
 
 .title {
-    font-size: 2.5rem !important;
+    font-size: 2rem !important;
     text-align: left;
-    padding: 1.5rem;
+    padding: var(--padding-aboutme);
     margin: 0;
     font-weight: bolder;
     /* font-family: "Pixelated MS Sans Serif Bold"; */
@@ -40,20 +40,23 @@
 }
 
 .bulletPoints {
-    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0;
+    gap: 0.5rem;
 }
 
 
 .titleGif {
     max-width: 40%;
-    padding-left: 1.5rem;
+    padding-left: var(--padding-aboutme);
     flex: 1;
 }
 
 .computerGif {
     width: 100%;
-    margin: 1.5rem 0;
+    margin: var(--padding-aboutme) 0;
 }
 
 .computerGif img {
@@ -73,7 +76,7 @@
 .webpageRootMaximized .title {}
 
 .webpageRootMaximized p {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
 }
 
 .columns {
@@ -98,8 +101,8 @@
 
     text-align: left;
 
-    margin: 2rem 0;
-    padding: 1.5rem;
+    margin: var(--padding-aboutme) 0;
+    padding: var(--padding-aboutme);
 
 
 
@@ -112,7 +115,7 @@
 }
 
 .contactInfo a {
-    margin: 0 2rem;
+    margin: 0 var(--padding-aboutme);
 }
 
 .contactInfo a p {
@@ -135,12 +138,15 @@
 .leftColumn {
     /* grow: 0 (don't grow), shrink: 0 (don't shrink), basis: 50% (fixed size) */
     flex: 0 0 35%;
-    margin-right: 2rem;
+    margin-right: var(--padding-aboutme);
+    width: 50%;
 }
 
 .rightColumn {
     /* grow: 0 (don't grow), shrink: 0 (don't shrink), basis: 50% (fixed size) */
     /* flex: 0 0 35%; */
+    width: 50%;
+    flex: 1;
 }
 
 .textBoxPicture {
@@ -151,8 +157,6 @@
 .textBoxPicture div {
     background-color: var(--xp-blue-primary);
 }
-
-
 
 .content {
     flex: 1;

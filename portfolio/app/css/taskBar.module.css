@@ -24,12 +24,12 @@
 
 .xpTaskbar .xpLogo, .xpTaskbar span {
   text-shadow: 1px 1px 1px #222;
-  font-size: min(3.5vw, 3.5vh);
+  font-size: 1.5rem
 }
 
 .xpTaskbar .systemTray span {
   font-style: bold;
-  font-size: min(3vw, 3vh);
+  font-size: 1.5rem;
 }
 
 /* The Iconic Start Button */
