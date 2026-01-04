@@ -497,6 +497,12 @@ const projectsContent = [
 
 ]
 
+const photographyPics = [
+    "alley", "amusement", "angle", "artic", 'aurora', 'balloons', "bench_fall", "bench_winter",
+    "boots", "cabin", "copenhagen", "crane", "doozy", "ferry", "gothenburg", "house", "icy",
+    "lapland", "moon", "night", "sunset", "tunnel",
+]
+
 interface Parameters {
     // For taggling max and min state
     setIconName: Dispatch<SetStateAction<string>>;
@@ -608,7 +614,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
                 ? <ReadMeOverview content={projectContent} />
                 :
                 selectedFile == 100
-                    ? <PicturesOverview content={projectContent} />
+                    ? <PicturesOverview pics={photographyPics} />
                     : <ProjectOverview content={projectContent} />}
 
         </div>

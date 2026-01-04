@@ -3,10 +3,11 @@ import pictureSlideshowStyles from './css/pictureSlideshow.module.css';
 
 interface Parameters {
     youtubeId: string | undefined;
+    folder: string;
     pictures: string[];
 }
 
-const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
+const PictureSlideshow = ({ youtubeId, folder, pictures }: Parameters) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
 
@@ -57,7 +58,7 @@ const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
                     : (
                         /* Photo Slide */
                         <img
-                            src={`/pictures/${picturesDefined[currentIndex]}.webp`}
+                            src={`${folder}${picturesDefined[currentIndex]}.webp`}
                             alt={`Slide ${currentIndex}`}
                             className={`${pictureSlideshowStyles.slideImage}`}
                         />

@@ -1,28 +1,28 @@
-
-import { Fragment, useState } from 'react';
 import './css/global.css';
 import fileOverviewStyles from './css/fileOverview.module.css';
-import PictureSlideshow from './pictureSlideshow';
+import Image from "next/image";
 
 interface Parameters {
-    content: {
-        title: string;
-        tags: string[];
-        description: string[];
-        bulletPoints: string[];
-        youtubeId: string | undefined;
-        pictures: string[];
-    }
+    pics: string[];
 }
 
-const PicturesOverview = ({ content }: Parameters) => {
-    const tags = content.tags;
-    const description = content.description;
-    const bulletPoints = content.bulletPoints;
+const PicturesOverview = ({ pics }: Parameters) => {
 
     return (
-        <div className={`${fileOverviewStyles.root} ${fileOverviewStyles.readmeBackground}`}>
-            TODO picture gallery
+        <div className={`${fileOverviewStyles.root} ${fileOverviewStyles.pics}`}>
+            {pics.map((picName) => (
+                <a className={`${fileOverviewStyles.picWrap}`} key={picName}>
+                    <Image src={`/pictures/photography/${picName}.webp`}
+                        alt={`${picName} preview`}
+                        fill
+                        priority
+                        className={fileOverviewStyles.pic}
+                        style={{ objectFit: 'cover' }}
+                    />
+                </a>
+
+
+            ))}
         </div>
 
 

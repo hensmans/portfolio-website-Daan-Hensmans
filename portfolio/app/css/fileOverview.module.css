@@ -174,3 +174,27 @@
     margin-top: 1rem;
     font-size: 1.5rem;
 }
+
+.pics {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow-y: auto;
+    align-items: center;
+    gap: 0.5rem;
+
+
+}
+
+.picWrap {
+    position: relative;
+    background-color: aquamarine;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.pic, .picWrap {
+    border-radius: 0.25rem;
+}
