@@ -599,7 +599,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
 
     return (
         <div className={`${fileExplorerStyles.layout}`}>
-            <ul className={`${fileExplorerStyles.tree} noSelect  ${popupStyles.popupBodyFiles}`}>
+            <ul className={`${fileExplorerStyles.tree} noSelect ${popupStyles.popupBodyFiles}`}>
                 <li >
                     <details open>
                         {generateFolderSummary(fileIcons.localDisk, 'Local Disk (C:)')}

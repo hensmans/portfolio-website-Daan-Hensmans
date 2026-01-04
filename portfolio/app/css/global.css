@@ -1,9 +1,6 @@
 /* variables.css */
 :root {
-  font-size: clamp(0.5rem, 0.5rem + 1vh, 1.25rem);
-
-
-
+  font-size: clamp(1rem, 0.5vw + 1rem, 1.25rem);
   --primary-font: "Pixelated MS Sans Serif";
   --primary-font-bold: "Pixelated MS Sans Serif Bold";
 

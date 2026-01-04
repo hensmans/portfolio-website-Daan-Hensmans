@@ -106,6 +106,7 @@ const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictu
                         <Image src={`/pictures/photography/${picName}.webp`}
                             alt={`${picName} preview`}
                             fill
+                            priority
                             className={fileOverviewStyles.pic}
                             style={{ objectFit: 'cover' }}
                         />
