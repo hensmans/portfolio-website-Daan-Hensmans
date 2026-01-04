@@ -1,7 +1,7 @@
 import './css/global.css';
 import fileOverviewStyles from './css/fileOverview.module.css';
 import Image from "next/image";
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
 
 
@@ -9,14 +9,23 @@ interface Parameters {
     pics: string[];
     setIconName: Dispatch<SetStateAction<string>>;
     setTitleName: Dispatch<SetStateAction<string>>;
+    setSelectedFile: Dispatch<SetStateAction<number>>;
+    selectedFile: number;
     picturesIcon: string;
     pictureIcon: string;
 }
 
 
-const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictureIcon }: Parameters) => {
-    const [previewActiveState, setPreviewActiveState] = useState(false);
-    const [currentIndexState, setCurrentIndexState] = useState(0);
+const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictureIcon, setSelectedFile, selectedFile }: Parameters) => {
+    const fileIndex = 100;
+    const picsStartIndex = fileIndex + 1;
+    const [previewActiveState, setPreviewActiveState] = useState(selectedFile > fileIndex);
+    const [currentIndexState, setCurrentIndexState] = useState(selectedFile - picsStartIndex);
+
+    useEffect(() => {
+        setPreviewActiveState(selectedFile > fileIndex);
+        setCurrentIndexState(selectedFile - picsStartIndex);
+    }, [selectedFile]);
 
     const createAndSetTitleName = (title: string) => {
         setTitleName(`${title}.png`);
@@ -28,6 +37,7 @@ const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictu
         setCurrentIndexState(index)
         createAndSetTitleName(pics[index])
         setIconName(pictureIcon);
+        setSelectedFile(picsStartIndex + index);
 
     }
 
@@ -39,6 +49,7 @@ const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictu
                 const newIndex = currentIndexState + 1;
                 setCurrentIndexState(newIndex);
                 createAndSetTitleName(pics[newIndex])
+                setSelectedFile(picsStartIndex + newIndex);
             }
         };
 
@@ -46,14 +57,16 @@ const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictu
             if (currentIndexState > 0) {
                 const newIndex = currentIndexState - 1;
                 setCurrentIndexState(newIndex);
-                createAndSetTitleName(pics[newIndex])
+                createAndSetTitleName(pics[newIndex]);
+                setSelectedFile(picsStartIndex + newIndex);
             }
         };
 
         const goBack = () => {
             setPreviewActiveState(false);
             setIconName(picturesIcon);
-            createAndSetTitleName('pictures')
+            setTitleName('pictures');
+            setSelectedFile(fileIndex);
         };
 
         return (

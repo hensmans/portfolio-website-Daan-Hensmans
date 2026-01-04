@@ -43,9 +43,16 @@ const fileIcons = {
 }
 
 
+const photographyPics = [
+    "alley", "amusement", "angle", "artic", 'aurora', 'balloons', "bench_fall", "bench_winter",
+    "boots", "cabin", "copenhagen", "crane", "doozy", "ferry", "gothenburg", "house", "icy",
+    "lapland", "moon", "night", "sunset", "tunnel",
+]
+
 const items = [
     {
         folderName: 'root',
+        id: undefined,
         folderFiles: [
             { id: 0, label: 'README.md' }
         ],
@@ -53,6 +60,7 @@ const items = [
     },
     {
         folderName: 'games',
+        id: undefined,
         folderFiles: [
             { id: 1, label: 'Dr Mario' },
             { id: 2, label: 'Worm' },
@@ -64,6 +72,7 @@ const items = [
     },
     {
         folderName: 'low level',
+        id: undefined,
         folderFiles: [
             { id: 10, label: 'HPC in C' },
             { id: 11, label: 'OpenCL' },
@@ -75,6 +84,7 @@ const items = [
     },
     {
         folderName: 'creative',
+        id: undefined,
         folderFiles: [
             { id: 21, label: 'This Site' },
             { id: 22, label: 'Photography' },
@@ -84,6 +94,7 @@ const items = [
     },
     {
         folderName: 'constructs',
+        id: undefined,
         folderFiles: [
             { id: 31, label: 'Parallellism' },
             // { id: 32, label: 'Database' },
@@ -95,10 +106,13 @@ const items = [
 
     {
         folderName: 'pictures',
-        folderFiles: [
-            { id: 101, label: 'tree.png' },
-            { id: 102, label: 'frog.png' },
-        ],
+        id: 100,
+        folderFiles:
+            photographyPics.map((pic, i) => ({
+                id: 101 + i,
+                label: `${pic}.png`
+            })),
+
         icon: fileIcons.picture,
     },
 ];
@@ -497,11 +511,6 @@ const projectsContent = [
 
 ]
 
-const photographyPics = [
-    "alley", "amusement", "angle", "artic", 'aurora', 'balloons', "bench_fall", "bench_winter",
-    "boots", "cabin", "copenhagen", "crane", "doozy", "ferry", "gothenburg", "house", "icy",
-    "lapland", "moon", "night", "sunset", "tunnel",
-]
 
 interface Parameters {
     // For taggling max and min state
@@ -545,8 +554,10 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
     }
 
     const generateFolderSummary = (icon: string, title: string) => {
+        const folder = items.find(entry => entry.folderName === title);
         return (
-            <summary className={`${fileExplorerStyles.treeElement} clickable`}>
+            <summary className={`${fileExplorerStyles.treeElement} clickable`}
+                onClick={() => folder && folder.id ? handleClick(folder.id, fileIcons.pictures, 'pictures') : null}>
                 <Image src={`/icons/${icon}.webp`}
                     alt={`Popup icon`}
                     fill
@@ -568,6 +579,8 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
             </details>
         );
     }
+
+
 
 
 
@@ -604,7 +617,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
                                 </ul>
                             </details>
                         </ul>
-                        <ul onClick={() => handleClick(100, fileIcons.pictures, 'pictures')}>
+                        <ul>
                             {generateFolder(!projectsFolderOpenInit, 'pictures', 'pictures', fileIcons.pictures)}
                         </ul>
                     </details>
@@ -613,8 +626,8 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
             {selectedFile == 0
                 ? <ReadMeOverview content={projectContent} />
                 :
-                selectedFile == 100
-                    ? <PicturesOverview pics={photographyPics} setTitleName={setTitleName} setIconName={setIconName} picturesIcon={fileIcons.pictures} pictureIcon={fileIcons.picture} />
+                selectedFile >= 100
+                    ? <PicturesOverview pics={photographyPics} setTitleName={setTitleName} setIconName={setIconName} picturesIcon={fileIcons.pictures} pictureIcon={fileIcons.picture} setSelectedFile={setSelectedFile} selectedFile={selectedFile} />
                     : <ProjectOverview content={projectContent} />}
 
         </div>
