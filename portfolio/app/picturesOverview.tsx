@@ -1,22 +1,33 @@
 import './css/global.css';
 import fileOverviewStyles from './css/fileOverview.module.css';
 import Image from "next/image";
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 
 
 
 interface Parameters {
     pics: string[];
+    setIconName: Dispatch<SetStateAction<string>>;
+    setTitleName: Dispatch<SetStateAction<string>>;
+    picturesIcon: string;
+    pictureIcon: string;
 }
 
 
-const PicturesOverview = ({ pics }: Parameters) => {
+const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictureIcon }: Parameters) => {
     const [previewActiveState, setPreviewActiveState] = useState(false);
     const [currentIndexState, setCurrentIndexState] = useState(0);
 
+    const createAndSetTitleName = (title: string) => {
+        setTitleName(`${title}.png`);
+    }
+
     const handlePicClick = (picName: string) => {
         setPreviewActiveState(true);
-        setCurrentIndexState(pics.findIndex(pic => pic === picName))
+        const index = pics.findIndex(pic => pic === picName);
+        setCurrentIndexState(index)
+        createAndSetTitleName(pics[index])
+        setIconName(pictureIcon);
 
     }
 
@@ -25,18 +36,24 @@ const PicturesOverview = ({ pics }: Parameters) => {
 
         const nextSlide = () => {
             if (currentIndexState < pics.length) {
-                setCurrentIndexState(currentIndexState + 1);
+                const newIndex = currentIndexState + 1;
+                setCurrentIndexState(newIndex);
+                createAndSetTitleName(pics[newIndex])
             }
         };
 
         const prevSlide = () => {
             if (currentIndexState > 0) {
-                setCurrentIndexState(currentIndexState - 1);
+                const newIndex = currentIndexState - 1;
+                setCurrentIndexState(newIndex);
+                createAndSetTitleName(pics[newIndex])
             }
         };
 
         const goBack = () => {
             setPreviewActiveState(false);
+            setIconName(picturesIcon);
+            createAndSetTitleName('pictures')
         };
 
         return (

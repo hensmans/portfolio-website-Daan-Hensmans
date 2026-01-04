@@ -614,7 +614,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
                 ? <ReadMeOverview content={projectContent} />
                 :
                 selectedFile == 100
-                    ? <PicturesOverview pics={photographyPics} />
+                    ? <PicturesOverview pics={photographyPics} setTitleName={setTitleName} setIconName={setIconName} picturesIcon={fileIcons.pictures} pictureIcon={fileIcons.picture} />
                     : <ProjectOverview content={projectContent} />}
 
         </div>
