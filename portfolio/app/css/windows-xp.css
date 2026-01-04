@@ -396,7 +396,7 @@ input[type=range].has-box-indicator::-moz-range-thumb {
 }
 
 .window {
-    font-size: 11px;
+    /* font-size: 11px; */
     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
     background: #ece9d8;
     padding: 3px
