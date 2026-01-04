@@ -9,3 +9,12 @@
   align-items: center;
   z-index: 1;
 }
+
+/* Phone settings */
+@media screen and (max-width: 800px) {
+  .buttonsBox {
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+  }
+}

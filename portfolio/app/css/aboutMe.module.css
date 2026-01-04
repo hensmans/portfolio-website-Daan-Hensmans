@@ -140,7 +140,7 @@
 
 .rightColumn {
     /* grow: 0 (don't grow), shrink: 0 (don't shrink), basis: 50% (fixed size) */
-    flex: 0 0 35%;
+    /* flex: 0 0 35%; */
 }
 
 .textBoxPicture {
@@ -171,4 +171,17 @@
 
 @media (min-width: 1500px) {
     .webpageRootMaximized {}
+}
+
+/* Phone settings */
+@media screen and (max-width: 800px) {
+    .webpageRoot {
+        font-size: 0.5rem;
+        flex-direction: row;
+    }
+
+    .leftColumn, .rightColumn {
+        width: 100%;
+    }
+
 }

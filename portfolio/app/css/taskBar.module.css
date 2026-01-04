@@ -130,3 +130,10 @@
   height: 1.75rem !important;
   margin-right: 1rem;
 }
+
+/* Phone settings */
+@media screen and (max-width: 800px) {
+  .xpTaskbar, .systemTray {
+    display: none;
+  }
+}

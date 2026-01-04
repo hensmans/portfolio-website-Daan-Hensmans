@@ -150,3 +150,10 @@ p {
 p:active {
   cursor: url('/mouse_pointers/xp_mouse_text_small.cur'), auto;
 }
+
+
+@media screen and (max-width: 800px) {
+  :root {
+    font-size: 1rem;
+  }
+}

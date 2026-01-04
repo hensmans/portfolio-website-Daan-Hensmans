@@ -1,9 +1,27 @@
 import globalStyles from './css/globals.module.css';
 import './css/global.css';
 import popupStyles from './css/popup.module.css';
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import './css/global.css';
 import Image from "next/image";
+
+
+export function useIsMobile(query: string = '(max-width: 800px)') {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    setIsMobile(media.matches);
+
+    // Watch for changes
+    const listener = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }, [query]);
+
+  return isMobile;
+}
+
 
 interface ButtonSelectionProps {
   setSelectedButton: Dispatch<SetStateAction<string>>;
@@ -17,13 +35,15 @@ interface ButtonSelectionProps {
 }
 
 const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, title, iconName }: ButtonSelectionProps) => {
-
+  // Is true if user is on mobile
+  const isMobile = useIsMobile();
   function goToHomeScreen() {
     // Go to home screen
     setSelectedButton('home');
     // Unmaximize
     setMaximizeState(false);
   }
+
 
 
   return (
@@ -42,13 +62,17 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
         </div>
 
         <div className={` title-bar-controls `}>
-          <button className={`${popupStyles.popupBarIcon}`} aria-label="Minimize" onClick={() => goToHomeScreen()} />
-          <button className={`${popupStyles.popupBarIcon}`} aria-label="Maximize" onClick={() => setMaximizeState(!maximizeState)} />
+
+          {isMobile ? <></> : <button className={`${popupStyles.popupBarIcon}`} aria-label="Minimize" onClick={() => goToHomeScreen()} />}
+          {isMobile ? <></> : <button className={`${popupStyles.popupBarIcon}`} aria-label="Maximize" onClick={() => setMaximizeState(!maximizeState)} />}
           <button className={`${popupStyles.popupBarIcon}`} aria-label="Close" onClick={() => goToHomeScreen()} />
         </div>
       </div >
       <div className={`window-body ${popupStyles.popupBody}`}>
-        {content}
+        {isMobile
+          ? <div className={`${popupStyles.popupBodyPhone}`}>Please use a PC or laptop to view the site. Sorry for the inconvenience</div>
+          : content}
+
       </div>
     </div >
   );

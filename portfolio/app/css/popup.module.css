@@ -79,3 +79,8 @@
   align-items: center;
   text-align: center;
 }
+
+.popupBodyPhone {
+  font-size: 3em;
+  font-weight: bold;
+}

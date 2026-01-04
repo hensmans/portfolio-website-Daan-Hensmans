@@ -101,3 +101,10 @@
 
     padding: 0.5rem 0.5rem;
 }
+
+/* Phone settings */
+@media screen and (max-width: 800px) {
+    .tree p {
+        font-size: 0.4rem;
+    }
+}
