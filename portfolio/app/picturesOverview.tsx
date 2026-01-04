@@ -35,6 +35,10 @@ const PicturesOverview = ({ pics }: Parameters) => {
             }
         };
 
+        const goBack = () => {
+            setPreviewActiveState(false);
+        };
+
         return (
             <div className={`${fileOverviewStyles.previewRoot}`}>
                 <button className={`${fileOverviewStyles.controls}`} onClick={prevSlide} disabled={currentIndexState === 0}>
@@ -52,6 +56,10 @@ const PicturesOverview = ({ pics }: Parameters) => {
                 <button className={`${fileOverviewStyles.controls}`} onClick={nextSlide} disabled={currentIndexState === pics.length - 1}>
                     {">"}
                 </button>
+                <button className={`${fileOverviewStyles.goBackButton}`}
+                    onClick={goBack} >
+                    go back
+                </button>
             </div>
         )
     };
@@ -60,22 +68,20 @@ const PicturesOverview = ({ pics }: Parameters) => {
 
     return (
         <div className={`${fileOverviewStyles.root} `} >
-            {previewActiveState
-                ? generatePictureOverview()
-                : <div className={`${fileOverviewStyles.pics}`}>
-                    {pics.map((picName) => (
-                        <a className={`${fileOverviewStyles.picWrap}`} key={picName}
-                            onClick={() => handlePicClick(picName)}>
-                            <Image src={`/pictures/photography/${picName}.webp`}
-                                alt={`${picName} preview`}
-                                fill
-                                className={fileOverviewStyles.pic}
-                                style={{ objectFit: 'cover' }}
-                            />
-                        </a>
-                    ))}
-                </div>
-            }
+            {previewActiveState ? generatePictureOverview() : <></>}
+            <div className={`${fileOverviewStyles.pics}`}>
+                {pics.map((picName) => (
+                    <a className={`${fileOverviewStyles.picWrap}`} key={picName}
+                        onClick={() => handlePicClick(picName)}>
+                        <Image src={`/pictures/photography/${picName}.webp`}
+                            alt={`${picName} preview`}
+                            fill
+                            className={fileOverviewStyles.pic}
+                            style={{ objectFit: 'cover' }}
+                        />
+                    </a>
+                ))}
+            </div>
 
         </div >
 
