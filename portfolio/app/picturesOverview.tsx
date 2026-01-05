@@ -100,20 +100,22 @@ const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictu
 
     return (
         <div className={`${fileOverviewStyles.root} `} >
-            {previewActiveState ? generatePictureOverview() : <></>}
-            <div className={`${fileOverviewStyles.pics}`}>
-                {pics.map((picName) => (
-                    <a className={`${fileOverviewStyles.picWrap}`} key={picName}
-                        onClick={() => handlePicClick(picName)}>
-                        <Image src={`/pictures/photography/${picName}.webp`}
-                            alt={`${picName} preview`}
-                            fill
-                            priority
-                            className={fileOverviewStyles.pic}
-                            style={{ objectFit: 'cover' }}
-                        />
-                    </a>
-                ))}
+            <div className={fileOverviewStyles.picsOuter}>
+                {previewActiveState ? generatePictureOverview() : <></>}
+                <div className={`${fileOverviewStyles.pics}`}>
+                    {pics.map((picName) => (
+                        <a className={`${fileOverviewStyles.picWrap}`} key={picName}
+                            onClick={() => handlePicClick(picName)}>
+                            <Image src={`/pictures/photography/${picName}.webp`}
+                                alt={`${picName} preview`}
+                                fill
+                                priority
+                                className={fileOverviewStyles.pic}
+                                style={{ objectFit: 'cover' }}
+                            />
+                        </a>
+                    ))}
+                </div>
             </div>
 
         </div >

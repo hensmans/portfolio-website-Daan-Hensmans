@@ -44,9 +44,11 @@
     flex-direction: column;
     justify-content: center;
     margin: 0;
-    gap: 0.5rem;
 }
 
+.bulletPoints li {
+    margin: 0.25rem;
+}
 
 .titleGif {
     max-width: 30%;

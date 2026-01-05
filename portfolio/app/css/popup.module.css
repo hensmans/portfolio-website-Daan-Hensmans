@@ -1,7 +1,6 @@
 @import url('global.css');
 
 .popupBody {
-  display: flex;
   flex-direction: column;
   overflow: auto;
   height: 100%;
