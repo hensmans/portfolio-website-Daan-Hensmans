@@ -93,6 +93,9 @@ export default function Mainpage() {
       <audio ref={computerNoiseRef} autoPlay loop src="/sounds/computer-noise-1.mp3" preload="auto" />
       <audio ref={computerNoiseRef2} autoPlay loop src="/sounds/computer-noise-1-cut.mp3" preload="auto" />
 
+
+
+
       <main className={`${mainPageStyles.content} `}>
         {/* Monitor Border */}
         <div className={`${crtStyles.monitor}`}>
@@ -113,7 +116,7 @@ export default function Mainpage() {
             {/* Monitor content */}
             <div className={mainPageStyles.contentLayout}>
               <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} setIconName={setIconName} iconName={iconName} />
-              <Taskbar toggleMutedState={toggleMutedState} mutedState={mutedState} />
+              <Taskbar toggleMutedState={toggleMutedState} mutedState={mutedState} setMonitorOnState={setMonitorOnState} />
             </div>
             {/* Loading screen (dissapears after x seconds) */}
             <LoadingStartpage />
