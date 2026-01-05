@@ -64,9 +64,9 @@ export default function CenteredBox({ setMaximizeState, maximizeState, setIconNa
       case 'home':
         return null;
       case 'projects':
-        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<FileExplorer setIconName={setIconName} setTitleName={setTitleName} projectsFolderOpenInit={true} />} title={titleName} iconName={iconName}></Popup>;
+        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<FileExplorer setIconName={setIconName} setTitleName={setTitleName} projectsFolderOpenInit={true} maximizeState={maximizeState} />} title={titleName} iconName={iconName}></Popup>;
       case 'pictures':
-        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<FileExplorer setIconName={setIconName} setTitleName={setTitleName} projectsFolderOpenInit={false} />} title={titleName} iconName={iconName}></Popup>;
+        return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<FileExplorer setIconName={setIconName} setTitleName={setTitleName} projectsFolderOpenInit={false} maximizeState={maximizeState} />} title={titleName} iconName={iconName}></Popup>;
       case 'aboutme':
         return <Popup setSelectedButton={setSelectedButton} setMaximizeState={setMaximizeState} maximizeState={maximizeState} content={<AboutMe maximizeState={maximizeState} />} title={titleName} iconName={iconName}></Popup>;
       case 'cv':

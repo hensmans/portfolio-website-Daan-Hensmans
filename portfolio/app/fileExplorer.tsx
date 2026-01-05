@@ -517,11 +517,13 @@ interface Parameters {
     setIconName: Dispatch<SetStateAction<string>>;
     setTitleName: Dispatch<SetStateAction<string>>;
     projectsFolderOpenInit: boolean;
+    maximizeState: boolean;
 }
 
 
 
-const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Parameters) => {
+
+const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maximizeState }: Parameters) => {
 
 
     const handleClick = (id: number, icon: string, title: string) => {
@@ -598,7 +600,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit }: Par
     }, [selectedFile]);
 
     return (
-        <div className={`${fileExplorerStyles.layout}`}>
+        <div className={`${fileExplorerStyles.layout} ${maximizeState ? fileExplorerStyles.maximize : {}}`}>
             <ul className={`${fileExplorerStyles.tree} noSelect ${popupStyles.popupBodyFiles}`}>
                 <li >
                     <details open>
