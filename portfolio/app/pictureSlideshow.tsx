@@ -9,6 +9,7 @@ interface Parameters {
 
 const PictureSlideshow = ({ youtubeId, folder, pictures }: Parameters) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [videoLoaded, setVideoLoaded] = useState(false);
 
 
     // Define video
@@ -33,27 +34,27 @@ const PictureSlideshow = ({ youtubeId, folder, pictures }: Parameters) => {
         setCurrentIndex(0);
     }, [pictures]);
 
+    useEffect(() => {
+        setVideoLoaded(false);
+    }, [currentIndex]);
+
     return (
         <div className={`${pictureSlideshowStyles.slideshowContainer}`}>
             <div className={`${pictureSlideshowStyles.mediaViewport}`}>
                 {isVideoSlide && youtubeIdDefined ?
-
                     /* YouTube Video Slide */
-                    ((youtubeIdDefined)
-                        ? < div className={`${pictureSlideshowStyles.videoWrapper}`}>
-                            <iframe
-                                width="100%"
-                                height="100%"
-                                src={`https://www.youtube.com/embed/${youtubeIdDefined}?autoplay=1`}
-                                title="YouTube video player"
-                                onLoad={() => <p
-                                // className={pictureSlideshowStyles.loadingText}
-                                > loading...</p>}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
-                        </div>
-                        : <></>)
+                    <div className={`${pictureSlideshowStyles.videoWrapper}`}>
+                        <p id={"videoLoader"} className={`${pictureSlideshowStyles.loadingText}`}>Loading video...</p>
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src={`https://www.youtube.com/embed/${youtubeIdDefined}?autoplay=1`}
+                            title="YouTube video player"
+                            onLoad={() => document.getElementById('videoLoader')!.style.display = 'none'}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        />
+                    </div>
 
                     : (
                         /* Photo Slide */

@@ -7,7 +7,7 @@
     font-family: var(--primary-font);
     margin: 0.5rem;
     /* background-color: #bbbebf; */
-
+    overflow-x: scroll;
 }
 
 .root p {
@@ -20,8 +20,6 @@
     display: flex;
     height: 100%;
 }
-
-
 
 .title {
     text-align: center;
@@ -123,9 +121,10 @@
 
 
 .bulletpoints {
-    margin: 1rem 1rem 0 0;
+    display: block;
+    margin: 1rem 0 0 0;
+    padding: 0;
     padding-left: 0.5rem;
-    width: 100%;
     height: 50%;
     overflow-y: scroll;
 
@@ -174,6 +173,8 @@
     font-family: var(--primary-font-bold);
     margin-top: 1rem;
     font-size: 1.5rem;
+    display: flex;
+    align-items: center;
 }
 
 /* Preview pic small */
@@ -206,41 +207,65 @@
 }
 
 /* Preview pic big */
+
 .previewRoot {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
     height: 100%;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 2;
-    padding: 1rem;
+    display: block;
 
     /* Blur */
     background: rgba(236, 233, 216, 0.75);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(1rem);
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
-
-
-.previewPicWrapper {
-    position: relative;
-    height: 100%;
-    aspect-ratio: 3/4;
+.previewRootWrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 95%;
+
+
+
+
+
 }
 
+
+
+.previewRoot .previewPicWrapper {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 3/4;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.previewPicWrapper img {}
 
 .previewPic {
     object-fit: contain;
     aspect-ratio: 3/4;
     height: 100%;
+    max-height: 60vw;
     width: 100%;
     border-radius: 0.5rem;
 }
@@ -259,8 +284,8 @@
     position: absolute;
     font-size: 1rem;
     font-weight: bold;
-    top: 1rem;
-    left: 1rem;
+    top: 2.5%;
+    left: 2.5%;
     padding: 1rem 1rem;
     z-index: 3;
 }

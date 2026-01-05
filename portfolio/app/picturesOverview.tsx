@@ -71,25 +71,27 @@ const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictu
 
         return (
             <div className={`${fileOverviewStyles.previewRoot}`}>
-                <button className={`${fileOverviewStyles.controls}`} onClick={prevSlide} disabled={currentIndexState === 0}>
-                    {"<"}
-                </button>
-                {/* The image */}
-                <div className={`${fileOverviewStyles.previewPicWrapper}`}>
-                    <Image src={`/pictures/photography/${pics[currentIndexState]}.webp`}
-                        alt={`Picture ${pics[currentIndexState]} preview`}
-                        width={0} height={0} sizes="100vw"
-                        priority
-                        className={fileOverviewStyles.previewPic}
-                    />
+                <div className={`${fileOverviewStyles.previewRootWrapper}`}>
+                    <button className={`${fileOverviewStyles.controls}`} onClick={prevSlide} disabled={currentIndexState === 0}>
+                        {"<"}
+                    </button>
+                    {/* The image */}
+                    <div className={`${fileOverviewStyles.previewPicWrapper}`}>
+                        <Image src={`/pictures/photography/${pics[currentIndexState]}.webp`}
+                            alt={`Picture ${pics[currentIndexState]} preview`}
+                            width={0} height={0} sizes="100vw"
+                            priority
+                            className={fileOverviewStyles.previewPic}
+                        />
+                    </div>
+                    <button className={`${fileOverviewStyles.controls}`} onClick={nextSlide} disabled={currentIndexState === pics.length - 1}>
+                        {">"}
+                    </button>
+                    <button className={`${fileOverviewStyles.goBackButton}`}
+                        onClick={goBack} >
+                        To overview
+                    </button>
                 </div>
-                <button className={`${fileOverviewStyles.controls}`} onClick={nextSlide} disabled={currentIndexState === pics.length - 1}>
-                    {">"}
-                </button>
-                <button className={`${fileOverviewStyles.goBackButton}`}
-                    onClick={goBack} >
-                    go back
-                </button>
             </div>
         )
     };

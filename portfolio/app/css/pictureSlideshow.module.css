@@ -35,17 +35,34 @@
     justify-content: space-between;
     align-items: center;
     background: var(--xp-silver-light);
-
+    padding: 0 1rem;
 
 
 }
 
+.controls span {
+    font-size: 1rem;
+    display: none;
+}
+
 .controls button {
-    padding: 1em 2rem;
-    margin: 0 1em;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+
 }
 
 .loadingText {
     color: var(--xp-silver-light);
-    background-color: var(--xp-blue-primary);
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
 }
