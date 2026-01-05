@@ -172,7 +172,7 @@ const projectsContent = [
         id: 1,
         content: {
             title: 'Dr Mario',
-            tags: ['C', 'Embedded', '2022',],
+            tags: ['C', 'Embedded Device', '2022',],
             description: [
                 "Multiple viruses have appeared on the screen and your goal is to remove them by creating groups of four or more of the same colour. Sometimes a bomb will drop, which will explode the surrounding blocks if it touches something. You win if you remove all the viruses on the board. But watch out, it gets more difficult with each subsequent game. More viruses will appear, the pills will fall more quickly and the screen will become expand.",
                 "Your high score will be saved locally, and you can select from four game modes in the menu. Sounds have also been implemented to make the experience more enjoyable and engaging. Players control the game by tilting the device for horizontal and vertical movement and pressing the button to rotate the pill.",
@@ -213,7 +213,7 @@ const projectsContent = [
         id: 3,
         content: {
             title: 'Desert Explorer',
-            tags: ['Haskell', '2025'],
+            tags: ['Haskell', 'Parallelisation', '2025'],
             description: [
                 "You are a desert explorer, in search for gold. But you have limited amount of water, and therefore you need to drink something every n amount of steps.. or you will die. Not only can you die from dehydration, but also from lava and from worms that appear randomly. Once you are satisfied with the amount of gold you gathered, you can enter a portal to end the game. If the player feels tired it can save the game and load it for another play session.",
                 "The game is fully programmed in Haskell, a pure function programming language. There are many concepts incorperated in this game. To list a few; The map will go to infinity, and with the same seed it will also have the same tiles everytime. All the worms are ran on a different threads through Software Transactional Memory. Loading and saving the game is done through a parser and lexer. And the game logic consists heavely on a functional pattern, monads.",
@@ -234,9 +234,9 @@ const projectsContent = [
         id: 4,
         content: {
             title: 'Train App',
-            tags: ['Scheme', '2023'],
+            tags: ['Scheme', 'Full Stack', '2023'],
             description: [
-                "There are train tracks and trains. The tracks have switches and detection blocks. The user has an app that controls the train's speed and direction. The app also allows the user to change the switches and see which trains are on which detection blocks. The user can also specify a destination for the train. The train will then calculate a path and go there, even if it needs to change direction multiple times.",
+                "There are tra,in tracks and trains. The tracks have switches and detection blocks. The user has an app that controls the train's speed and direction. The app also allows the user to change the switches and see which trains are on which detection blocks. The user can also specify a destination for the train. The train will then calculate a path and go there, even if it needs to change direction multiple times.",
                 "The back-end and front-end are fully made in Scheme and work on a real-life track and a train simulation. The front end was the client and GUI, while the back end calculated the path algorithm and stored the states of the trains and tracks. Communication between the two happens through a TCP connection. Clients run asynchronously and all clients update automatically if one client's state or values change.",
             ],
             bulletPoints: [
@@ -254,7 +254,7 @@ const projectsContent = [
         id: 5,
         content: {
             title: 'Pixel Simulator',
-            tags: ['Scheme', '2025'],
+            tags: ['Scheme', 'C', '2025'],
             description: [
                 "This is a pixel physics simulator where you can draw glass, sand, lava, wood, acid, steam, water and stone on a GUI. These elements will interact with each other. For example, lava can melt stone, which then reforms over time. Acid can melt certain materials, and the speed depends on the material. Sand turns into glass when it touches lava and water turns into steam. Water and lava flow at different speeds.",
                 "Scheme (Lisp variant) was used to create it, but it was also recreated in C (this is not shown here)."
@@ -338,7 +338,7 @@ const projectsContent = [
         id: 13,
         content: {
             title: 'EmFRP Compiler',
-            tags: ['Compiler', '2024'],
+            tags: ['Compiler', 'Reactive Programming', '2024'],
             description: [
                 "My bachelor's thesis focused on creating a compiler for a programming language called EmFRP. This language is reactive, meaning there is code that reacts to changes in external values. It is mainly used for research and embedded devices.",
                 "The compiler will compile the code into a sequence of bytecode for the Remus virtual machine. This VM is used to execute a different reactive programming language, and the aim of the thesis was to establish whether it could also execute another reactive language.",
@@ -380,18 +380,19 @@ const projectsContent = [
         id: 21,
         content: {
             title: 'This Site',
-            tags: ['NextJS', '2025'],
+            tags: ['NextJS', 'CSS', 'HTML', '2025'],
             description: [
-                "This is the site you are looking at now. It is a Windows XP-inspired website that displays a monitor with a functioning Windows XP operating system.",
-                "Built from scratch using Next.js and CSS."
+                "This is the site you are looking at now. It is a Windows XP-inspired website displaying a monitor with a functioning Windows XP operating system. With as goal to get hired :-)",
+                "Multiple optimisation techniques are used to load the site more quickly. Shaders and effects are used to create the unique Windows XP look and feel.",
+                "The site has been built from scratch using Next.js and CSS, without the use of a template.",
             ],
             bulletPoints: [
                 "NextJS",
-                "Increased HTML and CSS skill",
-                "Design and interaction",
+                "HTML and CSS",
+                "Interaction design",
             ],
             youtubeId: undefined,
-            pictures: [],
+            pictures: ["site_2"],
             icon: fileIcons.creative
         }
     },
@@ -411,7 +412,7 @@ const projectsContent = [
                 "Creativity"
             ],
             youtubeId: undefined,
-            pictures: ["aboutme_2"],
+            pictures: ["photo"],
             icon: fileIcons.camera
         }
     },
