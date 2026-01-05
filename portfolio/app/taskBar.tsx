@@ -52,7 +52,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                 </div>
                 <div className={`${taskBarStyles.popupContent}`}>
                     <div className={`${taskBarStyles.popupContentElement} clickable`} onClick={() => onPopupClick('aboutme')}>
-                        <Image src={`/icons/aboutMe.webp`}
+                        <Image src={`/icons/aboutme.webp`}
                             alt={`aboutMe icon`}
                             fill
                             priority // preloads
