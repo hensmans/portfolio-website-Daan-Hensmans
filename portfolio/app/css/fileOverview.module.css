@@ -59,6 +59,8 @@
 .tags {
     font-family: var(--primary-font-bold);
     display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0;
     align-items: center;
     justify-content: center;
     /* Centers horizontally */

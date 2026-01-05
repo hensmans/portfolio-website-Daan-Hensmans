@@ -444,18 +444,25 @@ const projectsContent = [
         id: 31,
         content: {
             title: 'Parallelism',
-            tags: ['C', '2024'],
+            tags: ['C', 'Java', 'Erlang', '2024'],
             description: [
-                "Creating a parallel program given a sequential program. This is then ran on a super computer through a server on different amount of threads and cutoffs. The times are measured, analysed and a result is concluded"
+                "Over the years, I have created many applications that execute tasks in parallel or concurrently. Some of these programs include:",
+                "The goal was to parallelise the execution of a query over a very large dataset (over 100 GB). A sequential query program was provided and the objective was to parallelise this algorithm efficiently. After creation, measurements were taken on different amounts of threads to decide the best sequential cutoff.",
+                "Another project involved creating a Wikipedia server to which multiple user clients could connect and change or retrieve information simultaneously. Here, concurrency is applied to make server responses quicker. This is achieved by dividing Wikipedia articles into tupple spaces and allocating a thread to each tupple space.",
+                "A third project involved constructing a scalable key-value store architecture. Clients can then make requests to the server regarding these key-values. This program is made scalable by allocating the keys to buckets that run on separate threads. Other optimisations used include creating new buckets automatically, load balancing and message forwarding. Experiments were conducted to determine optimal values, such as the ideal number of keys per bucket.",
+                "Another notable project involved creating a concurrent flight booking app using Software Transactional Memory (STM). Execution times were again measured and statistics were used to improve speed.",
             ],
+
             bulletPoints: [
-                "Analysing data for better optimisations and refining parameters",
+                "Analysing data for better optimisation and refining parameters",
+                "Software Transactional Memory (STM)",
                 "Parallelisation",
                 "Concurrency",
+                "Scalability techniques",
                 "Servers",
             ],
             youtubeId: undefined,
-            pictures: [],
+            pictures: ['parallel_1', 'parallel_2', 'parallel_3'],
             icon: fileIcons.parallelism
         }
     },
@@ -495,15 +502,19 @@ const projectsContent = [
         id: 34,
         content: {
             title: 'Web Security',
-            tags: ['React', '2024'],
+            tags: ['React', 'E2EE', '2024'],
             description: [
-                "Transforming an unsecure web chat application into a secure one through multiple security patterns. The chat application also got transformed into an End-to-end encryption (E2EE)."
+                "Given a Slack-like chat application (server and client) that is highly insecure, the goal is to make it secure by implementing various web security measures and E2EE. The goal is to secure it by implementing various web security measures and end-to-end encryption (E2EE).",
+                "Some of the security measures involved preventing script injection, activating and implementing security policies, establishing a secure connection with the server and removing possible NoSQL injections.",
+                "End-to-end encryption is achieved by storing only encrypted chat messages in the server database and using symmetric and asymmetric keys for encryption on the client side. Each message is encrypted using a symmetric key, and only users on the same chat server have access to this key. If a user leaves the chat server, they will be unable to read future messages.",
             ],
             bulletPoints: [
-                "NaN",
+                "End-to-end encryption",
+                "Web security",
+                "Implementing chat application with a server, database, and clients."
             ],
             youtubeId: undefined,
-            pictures: [],
+            pictures: ["e2ee_1", "e2ee_2"],
             icon: fileIcons.security
         }
     },
