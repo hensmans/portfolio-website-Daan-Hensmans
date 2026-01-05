@@ -42,8 +42,8 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
             <div className={`${taskBarStyles.popup} ${isStartOpen ? {} : taskBarStyles.startPopupClosed}`}
             >
                 <div className={`${taskBarStyles.popupTopBar} ${taskBarStyles.popupText}`}>
-                    <Image src={`/icons/Starfield.ico`}
-                        alt={`windows xp icon`}
+                    <Image src={`/icons/My Computer.webp`}
+                        alt={`my computer icon`}
                         fill
                         priority // preloads
                         className={`${taskBarStyles.popupContentLogo}`}
@@ -119,7 +119,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                             className={taskBarStyles.image}
                         />
                     </div>
-                    <span className={taskBarStyles.startText}>&nbsp;start</span>
+                    <span className={taskBarStyles.startText}>start</span>
                 </div>
             </div>
 
