@@ -197,15 +197,25 @@
 
 }
 
+
 .popupBottomBar {
-  width: 100%;
   padding-right: 1rem;
   background: linear-gradient(to bottom, var(--xp-blue-taskbar) 0%, var(--xp-bliss-sky) 5%, var(--xp-blue-taskbar) 70%);
 
 }
 
 .popupTurnoffField {
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.popupTurnoffFieldInner {
+  display: flex;
+  align-items: center;
+}
+
+.popupCloseButtonWrap {
   display: flex;
   align-items: center;
   justify-content: flex-end;

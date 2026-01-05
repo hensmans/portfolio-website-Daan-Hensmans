@@ -6,11 +6,12 @@ import Image from "next/image";
 interface Parameters {
     toggleMutedState: () => void;
     setMonitorOnState: Dispatch<SetStateAction<boolean>>;
+    setSelectedButton: Dispatch<SetStateAction<string>>;
     mutedState: boolean;
 }
 
 
-const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState }: Parameters) => {
+const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedButton }: Parameters) => {
     const [time, setTime] = useState('');
     const [isStartOpen, setIsStartOpen] = useState(false);
     const [isOnStartPopup, setIsOnStartPopup] = useState(false);
@@ -30,24 +31,36 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState }: Parameters
         setIsStartOpen(isOnStartPopup);
     }, [isOnStartPopup]);
 
+    const onPopupClick = (name: string) => {
+        setSelectedButton(name);
+
+    }
 
 
     const generatePopupButton = () => {
         return (
             <div className={`${taskBarStyles.popup} ${isStartOpen ? {} : taskBarStyles.startPopupClosed}`}
             >
-                <div className={`${taskBarStyles.popupTopBar} ${taskBarStyles.popupText}`}>Daan Hensmans Portfolio</div>
+                <div className={`${taskBarStyles.popupTopBar} ${taskBarStyles.popupText}`}>
+                    <Image src={`/icons/Starfield.ico`}
+                        alt={`windows xp icon`}
+                        fill
+                        priority // preloads
+                        className={`${taskBarStyles.popupContentLogo}`}
+                    />
+                    Daan Hensmans Portfolio
+                </div>
                 <div className={`${taskBarStyles.popupContent}`}>
-                    <div className={`${taskBarStyles.popupContentElement} clickable`}>
+                    <div className={`${taskBarStyles.popupContentElement} clickable`} onClick={() => onPopupClick('aboutme')}>
                         <Image src={`/icons/aboutMe.webp`}
-                            alt={`aboutMe icon  `}
+                            alt={`aboutMe icon`}
                             fill
                             priority // preloads
                             className={taskBarStyles.popupContentLogo}
                         />
                         aboutMe.html
                     </div>
-                    <div className={`${taskBarStyles.popupContentElement} clickable`}>
+                    <div className={`${taskBarStyles.popupContentElement} clickable`} onClick={() => onPopupClick('cv')}>
                         <Image src={`/icons/cv.webp`}
                             alt={`CV icon`}
                             fill
@@ -56,7 +69,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState }: Parameters
                         />
                         cv.pdf
                     </div>
-                    <div className={`${taskBarStyles.popupContentElement} clickable`}>
+                    <div className={`${taskBarStyles.popupContentElement} clickable`} onClick={() => onPopupClick('projects')}>
                         <Image src={`/icons/projects.webp`}
                             alt={`Projects icon`}
                             fill
@@ -65,7 +78,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState }: Parameters
                         />
                         projects
                     </div>
-                    <div className={`${taskBarStyles.popupContentElement} clickable`}>
+                    <div className={`${taskBarStyles.popupContentElement} clickable`} onClick={() => onPopupClick('pictures')}>
                         <Image src={`/icons/pictures.webp`}
                             alt={`Pictures icon`}
                             fill
@@ -75,13 +88,18 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState }: Parameters
                         pictures
                     </div>
                 </div>
-                <div className={`${taskBarStyles.popupBottomBar}`}>
-                    <div className={`${taskBarStyles.popupTurnoffField}`}>
-                        <button onClick={() => setMonitorOnState(false)} className={`${taskBarStyles.popupTurnoffButton}`}></button>
+                <div className={`${taskBarStyles.popupBottomBar} ${taskBarStyles.popupTurnoffField} `} >
+                    <div className={` ${taskBarStyles.popupTurnoffFieldInner} clickable`} onClick={() => setMonitorOnState(false)}>
+                        <Image src={`/icons/shut_down.webp`}
+                            alt={`shut down icon`}
+                            fill
+                            priority // preloads
+                            className={`${taskBarStyles.popupContentLogo} clickable`}
+                        />
                         <div className={`${taskBarStyles.popupText}`}>Turn Computer Off</div>
                     </div>
-
                 </div>
+
             </div >
         );
     }

@@ -86,13 +86,40 @@ export default function Mainpage() {
     setMutedState(!mutedState);
   }
 
+  const [selectedButton, setSelectedButton] = useState('home');
+  const [titleName, setTitleName] = useState('home');
+
+  // Change icon of popup whenever button is pressed
+  useEffect(() => {
+    setIconName(selectedButton);
+    switch (selectedButton) {
+      case 'home':
+        setTitleName('home');
+        break;
+      case 'projects':
+        setTitleName('README.md');
+        break;
+      case 'pictures':
+        setTitleName('pictures');
+        break;
+      case 'aboutme':
+        setTitleName('aboutMe.html');
+        break;
+      case 'cv':
+        setTitleName('cv.pdf');
+        break;
+      default:
+        setTitleName('NaN');
+    }
+
+  }, [selectedButton]);
+
   return (
     <body className={`${mainPageStyles.screen} ${crtStyles.crtFishEye}`}>
       <audio ref={mouseClickSoundRef} src="/sounds/mouse-click-2.mp3" preload="auto" />
       <audio ref={startUpSoundRef} src="/sounds/windows-xp-startup.mp3" preload="auto" />
       <audio ref={computerNoiseRef} autoPlay loop src="/sounds/computer-noise-1.mp3" preload="auto" />
       <audio ref={computerNoiseRef2} autoPlay loop src="/sounds/computer-noise-1-cut.mp3" preload="auto" />
-
 
 
 
@@ -115,8 +142,9 @@ export default function Mainpage() {
             <div className={crtStyles.crtLines} />
             {/* Monitor content */}
             <div className={mainPageStyles.contentLayout}>
-              <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} setIconName={setIconName} iconName={iconName} />
-              <Taskbar toggleMutedState={toggleMutedState} mutedState={mutedState} setMonitorOnState={setMonitorOnState} />
+              <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} setIconName={setIconName} iconName={iconName}
+                selectedButton={selectedButton} setSelectedButton={setSelectedButton} titleName={titleName} setTitleName={setTitleName} />
+              <Taskbar toggleMutedState={toggleMutedState} mutedState={mutedState} setMonitorOnState={setMonitorOnState} setSelectedButton={setSelectedButton} />
             </div>
             {/* Loading screen (dissapears after x seconds) */}
             <LoadingStartpage />

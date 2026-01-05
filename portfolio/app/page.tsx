@@ -27,36 +27,15 @@ interface Parameters {
   setIconName: Dispatch<SetStateAction<string>>;
   iconName: string;
 
+  selectedButton: string;
+  setSelectedButton: Dispatch<SetStateAction<string>>;
+  titleName: string;
+  setTitleName: Dispatch<SetStateAction<string>>
+
 }
 
-export default function CenteredBox({ setMaximizeState, maximizeState, setIconName, iconName }: Parameters) {
-  const [selectedButton, setSelectedButton] = useState('home');
-  const [titleName, setTitleName] = useState('home');
+export default function CenteredBox({ setMaximizeState, maximizeState, setIconName, iconName, selectedButton, setSelectedButton, titleName, setTitleName }: Parameters) {
 
-  // Change icon of popup whenever button is pressed
-  useEffect(() => {
-    setIconName(selectedButton);
-    switch (selectedButton) {
-      case 'home':
-        setTitleName('home');
-        break;
-      case 'projects':
-        setTitleName('README.md');
-        break;
-      case 'pictures':
-        setTitleName('pictures');
-        break;
-      case 'aboutme':
-        setTitleName('aboutMe.html');
-        break;
-      case 'cv':
-        setTitleName('cv.pdf');
-        break;
-      default:
-        setTitleName('NaN');
-    }
-
-  }, [selectedButton]);
 
   function getSelectedPopupComponent() {
 
