@@ -685,10 +685,6 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
         );
     }
 
-
-
-
-
     const getContent = (id: number) => {
         const project = projectsContent.find(project => project.id === id) ?? undefinedProject;
         return project.content;
@@ -701,6 +697,10 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
     useEffect(() => {
         setProjectContent(getContent(selectedFile));
     }, [selectedFile]);
+
+    useEffect(() => {
+        setSelectedFile(projectsFolderOpenInit ? 0 : 100);
+    }, [projectsFolderOpenInit]);
 
     return (
         <div className={`${fileExplorerStyles.layout} ${maximizeState ? fileExplorerStyles.maximize : {}}`}>
