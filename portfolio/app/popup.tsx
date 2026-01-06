@@ -4,23 +4,8 @@ import popupStyles from './css/popup.module.css';
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import './css/global.css';
 import Image, { StaticImageData } from "next/image";
+import { useIsMobile } from './isMobileFunction'
 
-
-export function useIsMobile(query: string = '(max-width: 800px)') {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia(query);
-    setIsMobile(media.matches);
-
-    // Watch for changes
-    const listener = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    media.addEventListener('change', listener);
-    return () => media.removeEventListener('change', listener);
-  }, [query]);
-
-  return isMobile;
-}
 
 
 interface ButtonSelectionProps {
@@ -44,10 +29,8 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
     setMaximizeState(false);
   }
 
-
-
   return (
-    <div className={`${popupStyles.popupScreen} ${maximizeState ? `${popupStyles.popupScreenMaximized}` : `${popupStyles.popupScreenMinimized}`} window`}>
+    <div className={`${popupStyles.popupScreen} ${maximizeState || isMobile ? `${popupStyles.popupScreenMaximized}` : `${popupStyles.popupScreenMinimized}`} window`}>
       <div className={`title-bar ${popupStyles.popupTitleBar}`}>
         <div className={`${popupStyles.popupTitleBarLeft}`}>
           <Image src={iconName}

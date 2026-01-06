@@ -9,6 +9,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import LoadingStartpage from './loadingStartpage';
 import Taskbar from './taskBar';
 import MonitorButton from './monitorButton';
+import { useIsMobile } from './isMobileFunction'
 
 
 // Icons
@@ -192,6 +193,14 @@ export default function Mainpage() {
 
   const [selectedButton, setSelectedButton] = useState('home');
   const [titleName, setTitleName] = useState('home');
+
+  const isMobile = useIsMobile();
+
+  useEffect(() => {
+    setSelectedButton('home');
+  }, [isMobile]);
+
+
 
   // Change icon of popup whenever button is pressed
   useEffect(() => {
