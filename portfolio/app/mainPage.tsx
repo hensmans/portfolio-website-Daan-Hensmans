@@ -44,56 +44,105 @@ export default function Mainpage() {
   const [mutedState, setMutedState] = useState(false);
   const [monitorOnState, setMonitorOnState] = useState(true);
   const [iconName, setIconName] = useState(noImagePic);
+  const [firstTimeClickState, setFirstTimeClickState] = useState(false);
 
   const mouseClickSoundRef = useRef<HTMLAudioElement | null>(null);
   const startUpSoundRef = useRef<HTMLAudioElement | null>(null);
   const computerNoiseRef = useRef<HTMLAudioElement | null>(null);
   const computerNoiseRef2 = useRef<HTMLAudioElement | null>(null);
 
-
   const soundVolume = 0.8;
   const soundVolumeNoise = soundVolume / 3;
-  // For mouse clicks
-  const handleMouseClick = () => {
-    // Start background noise if not started yet
-    if (computerNoiseRef.current && computerNoiseRef2.current) {
-      if (computerNoiseRef.current.paused) {
-        computerNoiseRef.current.volume = mutedState ? 0 : soundVolumeNoise;
-        computerNoiseRef.current.currentTime = 0;
-        computerNoiseRef.current.play().catch(err => { });
-        // Play second noise later so the loop isn't that obvious
-        computerNoiseRef2.current.volume = mutedState ? 0 : soundVolumeNoise;
-        computerNoiseRef2.current.currentTime = 5;
-        computerNoiseRef2.current.play().catch(err => { });
-      };
-    }
 
-    if (mouseClickSoundRef.current) {
-      mouseClickSoundRef.current.volume = mutedState ? 0 : soundVolume;
-      mouseClickSoundRef.current.currentTime = 0;
-      mouseClickSoundRef.current.play().catch(err => { });
-    };
+  const turnOnSound = () => {
+    mouseClickSoundRef.current!.volume = soundVolume;
+    startUpSoundRef.current!.volume = soundVolume;
+    computerNoiseRef.current!.volume = soundVolumeNoise;
+    computerNoiseRef2.current!.volume = soundVolumeNoise;
   }
 
+  const turnOffSound = () => {
+    mouseClickSoundRef.current!.volume = 0;
+    startUpSoundRef.current!.volume = 0;
+    computerNoiseRef.current!.volume = 0;
+    computerNoiseRef2.current!.volume = 0;
+  }
+
+  const playBackgroundNoise = () => {
+
+    computerNoiseRef.current!.play().catch(err => { });
+    computerNoiseRef2.current!.play().catch(err => { });
+  }
+
+
+  // Activated at the very first user click (this is necessairy because of browser permissions)
+  useEffect(() => {
+    // Start background noise if not started yet
+    if (!mutedState) {
+      // Start background 
+      // Play second noise later so the loop isn't that obvious
+      computerNoiseRef.current!.currentTime = 0;
+      computerNoiseRef2.current!.currentTime = 5;
+      playBackgroundNoise();
+      turnOnSound();
+    }
+  }, [firstTimeClickState]);
+
+  // For mouse clicks
+  // Event listener
+  useEffect(() => {
+    const startComputerNoise = () => {
+      // Start background noise if not started yet
+      if (!mutedState && computerNoiseRef.current && computerNoiseRef2.current) {
+        if (computerNoiseRef.current.paused) {
+          computerNoiseRef.current.currentTime = 0;
+          computerNoiseRef.current.play().catch(err => { });
+          // Play second noise later so the loop isn't that obvious
+          computerNoiseRef2.current.currentTime = 5;
+          computerNoiseRef2.current.play().catch(err => { });
+        };
+      }
+    }
+    const playClick = () => {
+      if (mouseClickSoundRef.current) {
+        mouseClickSoundRef.current.currentTime = 0;
+        mouseClickSoundRef.current.play().catch(() => { });
+        // Start background noise if didn't happen yet
+        startComputerNoise();
+
+        if (!firstTimeClickState) {
+          setFirstTimeClickState(true);
+        }
+      }
+    };
+    window.addEventListener('mousedown', playClick);
+    return () => window.removeEventListener('mousedown', playClick);
+  }, []);
+
+
+  // <when monitor is switched on or off
   useEffect(() => {
     if (monitorOnState && startUpSoundRef.current) {
       startUpSoundRef.current.currentTime = 0;
       startUpSoundRef.current.play().catch(err => { });
-      computerNoiseRef.current?.play().catch(err => { });
-      computerNoiseRef2.current?.play().catch(err => { });
+      playBackgroundNoise();
     } else {
       startUpSoundRef.current?.pause();
       computerNoiseRef.current?.pause();
       computerNoiseRef2.current?.pause();
     }
-  }, [monitorOnState]); // <--- Only runs when 'count' changes
+  }, [monitorOnState]);
+
+  // (un)mute sounds
+  useEffect(() => {
+    mutedState ? turnOffSound() : turnOnSound;
+    computerNoiseRef.current?.play().catch(err => { });
+    computerNoiseRef2.current?.play().catch(err => { });
+  }, [mutedState]);
+
 
   // Toggle the muted state and change the volumes
   const toggleMutedState = () => {
-    (mouseClickSoundRef.current) ? mouseClickSoundRef.current.volume = mutedState ? soundVolume : 0 : {};
-    (startUpSoundRef.current) ? startUpSoundRef.current.volume = mutedState ? soundVolume : 0 : {};
-    (computerNoiseRef.current) ? computerNoiseRef.current.volume = mutedState ? soundVolumeNoise : 0 : {};
-    (computerNoiseRef2.current) ? computerNoiseRef2.current.volume = mutedState ? soundVolumeNoise : 0 : {};
     setMutedState(!mutedState);
   }
 
@@ -153,8 +202,7 @@ export default function Mainpage() {
         {/* Monitor content and screen */}
         {monitorOnState ?
           // Monitor on
-          <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} mousePointer ${mainPageStyles.windowsXPBackground}`}
-            onMouseDown={handleMouseClick}>
+          <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} mousePointer ${mainPageStyles.windowsXPBackground}`}>
             {/* CRT lines */}
             <div className={crtStyles.crtLines} />
             {/* Monitor content */}

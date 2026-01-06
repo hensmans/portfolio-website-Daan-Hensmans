@@ -74,12 +74,6 @@ const AboutMe = ({ maximizeState }: Parameters) => {
         <div className={aboutMeStyles.computerGif} >
           <img src="./Computer.gif" />
         </div>
-
-        {/* <div>i loveeeee coding
-          <img src="./Computer.gif" />
-        </div>
-        <div className={`${ aboutMeStyles.small } ${ aboutMeStyles.smallPaddingVert } `}>i need money pls hire me</div>
-        <div className={aboutMeStyles.paddingVert} /> */}
       </div>
     </div >
 
