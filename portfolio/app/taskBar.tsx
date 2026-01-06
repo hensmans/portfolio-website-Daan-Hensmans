@@ -151,8 +151,8 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                 <div className={taskBarStyles.taskItem}>Internet Explorer</div> */}
             </div>
 
-            <div className={`${taskBarStyles.systemTray} clickable`}>
-                <span onClick={toggleMutedState} >
+            <div className={`${taskBarStyles.systemTray} clickable`} onClick={toggleMutedState} >
+                <span>
                     {mutedState
                         ? muteIcon
                         : volumeIcon

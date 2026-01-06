@@ -7,10 +7,9 @@ import './css/windows-xp.css';
 // The Windows XP css
 // https://botoxparty.github.io/XP.css/
 
-
 export const metadata: Metadata = {
   title: "Daan Hensmans | Portfolio",
-  description: "Portfolio of Daan Hensmans, a Dutch Software Engineer located in Belgium.",
+  description: "Portfolio of Daan Hensmans, a Dutch-English Software Engineer located in Belgium.",
 };
 
 export default function RootLayout({

@@ -10,6 +10,7 @@ import LoadingStartpage from './loadingStartpage';
 import Taskbar from './taskBar';
 import MonitorButton from './monitorButton';
 
+
 // Icons
 import noImagePic from '../assets/pictures/projects/no-image.webp';
 import cvPic from '../assets/icons/cv.webp';
@@ -37,7 +38,46 @@ const PreloadContent = dynamic(() => import('./page'), {
   loading: () => null,
 });
 
+export function useAudioBuffer(audioName: string) {
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const bufferRef = useRef<AudioBuffer | null>(null);
 
+  useEffect(() => {
+    audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+
+    fetch(`/sounds/${audioName}.mp3`)
+      .then(response => response.arrayBuffer())
+      .then(data => audioContextRef.current!.decodeAudioData(data))
+      .then(buffer => {
+        bufferRef.current = buffer;
+      });
+  }, []);
+
+
+  const play = (volume: number) => {
+    if (!bufferRef.current || !audioContextRef.current) return;
+
+
+
+    const source = audioContextRef.current.createBufferSource();
+    source.buffer = bufferRef.current;
+
+    const gainNode = audioContextRef.current.createGain();
+    gainNode.gain.value = volume;
+
+    // Connect: Source -> Volume -> Speakers
+    source.connect(gainNode);
+    gainNode.connect(audioContextRef.current.destination);
+
+    // Resume context (browsers require a user gesture)
+    if (audioContextRef.current.state === 'suspended') {
+      audioContextRef.current.resume();
+    }
+    source.start(0);
+  };
+
+  return play;
+}
 
 export default function Mainpage() {
   const [maximizeState, setMaximizeState] = useState(false);
@@ -46,7 +86,7 @@ export default function Mainpage() {
   const [iconName, setIconName] = useState(noImagePic);
   const [firstTimeClickState, setFirstTimeClickState] = useState(false);
 
-  const mouseClickSoundRef = useRef<HTMLAudioElement | null>(null);
+  const mouseClickPlay = useAudioBuffer('mouse-click-2');
   const startUpSoundRef = useRef<HTMLAudioElement | null>(null);
   const computerNoiseRef = useRef<HTMLAudioElement | null>(null);
   const computerNoiseRef2 = useRef<HTMLAudioElement | null>(null);
@@ -55,27 +95,23 @@ export default function Mainpage() {
   const soundVolumeNoise = soundVolume / 3;
 
   const turnOnSound = () => {
-    mouseClickSoundRef.current!.volume = soundVolume;
     startUpSoundRef.current!.volume = soundVolume;
     computerNoiseRef.current!.volume = soundVolumeNoise;
     computerNoiseRef2.current!.volume = soundVolumeNoise;
   }
 
   const turnOffSound = () => {
-    mouseClickSoundRef.current!.volume = 0;
     startUpSoundRef.current!.volume = 0;
     computerNoiseRef.current!.volume = 0;
     computerNoiseRef2.current!.volume = 0;
   }
 
   const playBackgroundNoise = () => {
-
     computerNoiseRef.current!.play().catch(err => { });
     computerNoiseRef2.current!.play().catch(err => { });
   }
 
-
-  // Activated at the very first user click (this is necessairy because of browser permissions)
+  // Activated at the very first user click (this is necessary because of browser permissions)
   useEffect(() => {
     // Start background noise if not started yet
     if (!mutedState) {
@@ -88,39 +124,39 @@ export default function Mainpage() {
     }
   }, [firstTimeClickState]);
 
-  // For mouse clicks
-  // Event listener
-  useEffect(() => {
-    const startComputerNoise = () => {
-      // Start background noise if not started yet
-      if (!mutedState && computerNoiseRef.current && computerNoiseRef2.current) {
-        if (computerNoiseRef.current.paused) {
-          computerNoiseRef.current.currentTime = 0;
-          computerNoiseRef.current.play().catch(err => { });
-          // Play second noise later so the loop isn't that obvious
-          computerNoiseRef2.current.currentTime = 5;
-          computerNoiseRef2.current.play().catch(err => { });
-        };
-      }
+  // Starts computer backgrund noise
+  const startComputerNoise = () => {
+    // Start background noise if not started yet
+    if (!mutedState && computerNoiseRef.current && computerNoiseRef2.current) {
+      if (computerNoiseRef.current.paused) {
+        computerNoiseRef.current.currentTime = 0;
+        computerNoiseRef.current.play().catch(err => { });
+        // Play second noise later so the loop isn't that obvious
+        computerNoiseRef2.current.currentTime = 5;
+        computerNoiseRef2.current.play().catch(err => { });
+      };
     }
-    const playClick = () => {
-      if (mouseClickSoundRef.current) {
-        mouseClickSoundRef.current.currentTime = 0;
-        mouseClickSoundRef.current.play().catch(() => { });
-        // Start background noise if didn't happen yet
-        startComputerNoise();
+  }
 
-        if (!firstTimeClickState) {
-          setFirstTimeClickState(true);
-        }
+  // For mouse click
+  useEffect(() => {
+    const playClick = () => {
+      mouseClickPlay(mutedState ? 0 : soundVolume);
+      // Start background noise if didn't happen yet
+      startComputerNoise();
+
+      if (!firstTimeClickState) {
+        setFirstTimeClickState(true);
       }
     };
     window.addEventListener('mousedown', playClick);
     return () => window.removeEventListener('mousedown', playClick);
-  }, []);
+
+  }, [mutedState]); // Mutedstate dependency because new listener 
 
 
-  // <when monitor is switched on or off
+
+  // When monitor is switched on or off
   useEffect(() => {
     if (monitorOnState && startUpSoundRef.current) {
       startUpSoundRef.current.currentTime = 0;
@@ -135,7 +171,7 @@ export default function Mainpage() {
 
   // (un)mute sounds
   useEffect(() => {
-    mutedState ? turnOffSound() : turnOnSound;
+    mutedState ? turnOffSound() : turnOnSound();
     computerNoiseRef.current?.play().catch(err => { });
     computerNoiseRef2.current?.play().catch(err => { });
   }, [mutedState]);
@@ -182,7 +218,6 @@ export default function Mainpage() {
 
   return (
     <body className={`${mainPageStyles.screen} ${crtStyles.crtFishEye}`}>
-      <audio ref={mouseClickSoundRef} src="/sounds/mouse-click-2.mp3" preload="auto" />
       <audio ref={startUpSoundRef} src="/sounds/windows-xp-startup.mp3" preload="auto" />
       <audio ref={computerNoiseRef} autoPlay loop src="/sounds/computer-noise-1.mp3" preload="auto" />
       <audio ref={computerNoiseRef2} autoPlay loop src="/sounds/computer-noise-1-cut.mp3" preload="auto" />
