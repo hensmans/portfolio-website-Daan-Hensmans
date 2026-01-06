@@ -9,6 +9,7 @@ import aboutme_7Pic from '../assets/pictures/aboutme/aboutme_7.webp';
 import aboutme_2Pic from '../assets/pictures/aboutme/aboutme_2.webp';
 import aboutme_4Pic from '../assets/pictures/aboutme/aboutme_4.webp';
 import aboutme_3Pic from '../assets/pictures/aboutme/aboutme_3.webp';
+import aboutme_8Pic from '../assets/pictures/aboutme/aboutme_8.webp';
 
 interface Parameters {
   maximizeState: boolean;
@@ -25,7 +26,7 @@ const AboutMe = ({ maximizeState }: Parameters) => {
         <div className={`${aboutMeStyles.columns} `}>
           <div className={`${aboutMeStyles.rows} ${aboutMeStyles.leftColumn} `}>
             <div className={`${aboutMeStyles.boxBorder} ${aboutMeStyles.textBoxPicture}`} >
-              <PictureSlideshow youtubeId={undefined} pictures={[aboutme_1Pic, aboutme_7Pic, aboutme_2Pic, aboutme_4Pic, aboutme_3Pic]} />
+              <PictureSlideshow youtubeId={undefined} pictures={[aboutme_8Pic, aboutme_7Pic, aboutme_2Pic, aboutme_4Pic, aboutme_3Pic]} />
             </div>
             <div className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} `}>
               <ul className={`${aboutMeStyles.bulletPoints}`}>
