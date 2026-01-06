@@ -41,6 +41,7 @@ const PreloadContent = dynamic(() => import('./page'), {
 export function useAudioBuffer(audioName: string) {
   const audioContextRef = useRef<AudioContext | null>(null);
   const bufferRef = useRef<AudioBuffer | null>(null);
+  const activeSourceRef = useRef<AudioBufferSourceNode | null>(null);
 
   useEffect(() => {
     audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
@@ -74,9 +75,19 @@ export function useAudioBuffer(audioName: string) {
       audioContextRef.current.resume();
     }
     source.start(0);
+
+    // Save source if you want to stop it later
+    activeSourceRef.current = source;
   };
 
-  return play;
+  const stop = () => {
+    if (activeSourceRef.current) {
+      activeSourceRef.current.stop();
+      activeSourceRef.current = null;
+    }
+  };
+
+  return { play, stop };
 }
 
 export default function Mainpage() {
@@ -87,7 +98,7 @@ export default function Mainpage() {
   const [firstTimeClickState, setFirstTimeClickState] = useState(false);
 
   const mouseClickPlay = useAudioBuffer('mouse-click-2');
-  const startUpSoundRef = useRef<HTMLAudioElement | null>(null);
+  const startupSoundPlay = useAudioBuffer('windows-xp-startup');
   const computerNoiseRef = useRef<HTMLAudioElement | null>(null);
   const computerNoiseRef2 = useRef<HTMLAudioElement | null>(null);
 
@@ -95,13 +106,11 @@ export default function Mainpage() {
   const soundVolumeNoise = soundVolume / 3;
 
   const turnOnSound = () => {
-    startUpSoundRef.current!.volume = soundVolume;
     computerNoiseRef.current!.volume = soundVolumeNoise;
     computerNoiseRef2.current!.volume = soundVolumeNoise;
   }
 
   const turnOffSound = () => {
-    startUpSoundRef.current!.volume = 0;
     computerNoiseRef.current!.volume = 0;
     computerNoiseRef2.current!.volume = 0;
   }
@@ -141,7 +150,7 @@ export default function Mainpage() {
   // For mouse click
   useEffect(() => {
     const playClick = () => {
-      mouseClickPlay(mutedState ? 0 : soundVolume);
+      mouseClickPlay.play(mutedState ? 0 : soundVolume);
       // Start background noise if didn't happen yet
       startComputerNoise();
 
@@ -158,12 +167,11 @@ export default function Mainpage() {
 
   // When monitor is switched on or off
   useEffect(() => {
-    if (monitorOnState && startUpSoundRef.current) {
-      startUpSoundRef.current.currentTime = 0;
-      startUpSoundRef.current.play().catch(err => { });
+    startupSoundPlay.stop();
+    if (monitorOnState) {
+      startupSoundPlay.play(mutedState ? 0 : soundVolume);
       playBackgroundNoise();
     } else {
-      startUpSoundRef.current?.pause();
       computerNoiseRef.current?.pause();
       computerNoiseRef2.current?.pause();
     }
@@ -218,7 +226,6 @@ export default function Mainpage() {
 
   return (
     <body className={`${mainPageStyles.screen} ${crtStyles.crtFishEye}`}>
-      <audio ref={startUpSoundRef} src="/sounds/windows-xp-startup.mp3" preload="auto" />
       <audio ref={computerNoiseRef} autoPlay loop src="/sounds/computer-noise-1.mp3" preload="auto" />
       <audio ref={computerNoiseRef2} autoPlay loop src="/sounds/computer-noise-1-cut.mp3" preload="auto" />
 
