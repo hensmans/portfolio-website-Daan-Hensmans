@@ -619,10 +619,7 @@ const projectsContent = [
             icon: fileIcons.security
         }
     },
-
-
 ]
-
 
 interface Parameters {
     // For taggling max and min state
@@ -632,18 +629,12 @@ interface Parameters {
     maximizeState: boolean;
 }
 
-
-
-
 const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maximizeState }: Parameters) => {
-
 
     const handleClick = (id: number, icon: StaticImageData, title: string) => {
         setSelectedFile(id);
         setIconName(icon);
         setTitleName(title);
-        console.log("Item clicked:", id);
-        // Perform action: e.g., router.push(`/items/${id}`)
     };
 
     const generateFolderContent = (folderName: string) => {
