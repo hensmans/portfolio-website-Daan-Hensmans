@@ -343,7 +343,7 @@ const projectsContent = [
             title: 'Train App',
             tags: ['Scheme', 'Full Stack', '2023'],
             description: [
-                "There are tra,in tracks and trains. The tracks have switches and detection blocks. The user has an app that controls the train's speed and direction. The app also allows the user to change the switches and see which trains are on which detection blocks. The user can also specify a destination for the train. The train will then calculate a path and go there, even if it needs to change direction multiple times.",
+                "There are train tracks and trains. The tracks have switches and detection blocks. The user has an app that controls the train's speed and direction. The app also allows the user to change the switches and see which trains are on which detection blocks. The user can also specify a destination for the train. The train will then calculate a path and go there, even if it needs to change direction multiple times.",
                 "The back-end and front-end are fully made in Scheme and work on a real-life track and a train simulation. The front end was the client and GUI, while the back end calculated the path algorithm and stored the states of the trains and tracks. Communication between the two happens through a TCP connection. Clients run asynchronously and all clients update automatically if one client's state or values change.",
             ],
             bulletPoints: [
