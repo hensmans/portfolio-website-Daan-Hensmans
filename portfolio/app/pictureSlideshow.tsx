@@ -72,10 +72,23 @@ const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
                         </div>
                     ) : (
                         /* Photo Slide */
-                        imageComponents[currentIndex]
-                    )
 
-                }
+                        picturesDefined.map((image, i) => (
+                            <div
+                                key={i} className={`${pictureSlideshowStyles.slideImageWrapper}`}
+                                style={{ display: !isVideoSlide && currentIndex === i ? '' : 'none' }}>
+
+                                <Image
+                                    src={image}
+                                    alt={`Slide ${i}`}
+                                    className={pictureSlideshowStyles.slideImage}
+                                    placeholder="blur"
+                                    priority={i === 0} // Only prioritize the first image
+                                />
+                            </div>
+                        ))
+                    )}
+
             </div>
 
             {/* Navigation Controls */}

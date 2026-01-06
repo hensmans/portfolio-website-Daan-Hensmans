@@ -42,26 +42,26 @@ import e2ee_1 from '../assets/pictures/projects/e2ee_1.webp';
 import e2ee_2 from '../assets/pictures/projects/e2ee_2.webp';
 
 // Icons
-import Generic_Document from '../assets/icons/Generic Document.webp';
-import Registry_Editor from '../assets/icons/Registry Editor.webp';
-import Game_Controller from '../assets/icons/Game Controller.webp';
-import Internet_Spades from '../assets/icons/Internet Spades.webp';
-import Internet_Backgammon from '../assets/icons/Internet Backgammon.webp';
+import Generic_Document from '../assets/icons/Generic+Document.webp';
+import Registry_Editor from '../assets/icons/Registry+Editor.webp';
+import Game_Controller from '../assets/icons/Game+Controller.webp';
+import Internet_Spades from '../assets/icons/Internet+Spades.webp';
+import Internet_Backgammon from '../assets/icons/Internet+Backgammon.webp';
 import Minesweeper from '../assets/icons/Minesweeper.webp';
 import Chip from '../assets/icons/Chip.webp';
 import Disk_Defragmenter from '../assets/icons/Disk Defragmenter.webp';
-import XPS_Viewer from '../assets/icons/XPS Viewer.webp';
+import XPS_Viewer from '../assets/icons/XPS+Viewer.webp';
 import Services from '../assets/icons/Services.webp';
-import Folder_View from '../assets/icons/Folder View - Common Tasks.webp';
+import Folder_View from '../assets/icons/Folder+View+-+Common+Tasks.webp';
 import Digital_Camera from '../assets/icons/Digital Camera.webp';
 import Camcorder from '../assets/icons/Camcorder.webp';
 import picture from '../assets/icons/picture.webp';
 import XSL from '../assets/icons/XSL.webp';
 import Workgroup from '../assets/icons/Workgroup.webp';
-import Virus_Protection from '../assets/icons/Virus Protection.webp';
+import Virus_Protection from '../assets/icons/Virus+Protection.webp';
 import text from '../assets/icons/text.webp';
-import Folder_Closed from '../assets/icons/Folder Closed.webp';
-import Local_Disk from '../assets/icons/Local Disk.webp';
+import Folder_Closed from '../assets/icons/Folder+Closed.webp';
+import Local_Disk from '../assets/icons/Local+Disk.webp';
 import projects from '../assets/icons/projects.webp';
 import pictures from '../assets/icons/pictures.webp';
 
@@ -659,7 +659,6 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
                         alt={`Popup icon`}
                         fill
                         priority={true}
-                        placeholder="blur"
                         className={`${fileExplorerStyles.icon}`}
                     />
                     <span>{file.label}</span>
@@ -677,7 +676,6 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
                     alt={`Popup icon`}
                     fill
                     priority={true}
-                    placeholder="blur"
                     className={`${fileExplorerStyles.icon}`}
                 />
                 <span>{title}</span>

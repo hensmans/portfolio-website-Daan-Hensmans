@@ -3,10 +3,10 @@ import PopupButton from './popupButton';
 import './css/global.css';
 import buttonSelectionStyles from './css/buttonSelection.module.css';
 
-import projects from '../assets/icons/projects.webp';
-import pictures from '../assets/icons/pictures.webp';
-import aboutme from '../assets/icons/aboutme.webp';
-import cv from '../assets/icons/cv.webp';
+import projects from '../assets/icons/projects_big.webp';
+import pictures from '../assets/icons/pictures_big.webp';
+import aboutme from '../assets/icons/aboutme_big.webp';
+import cv from '../assets/icons/cv_big.webp';
 
 interface ButtonSelectionProps {
   setSelectedButton: Dispatch<SetStateAction<string>>;

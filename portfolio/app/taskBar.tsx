@@ -1,10 +1,11 @@
 import taskBarStyles from './css/taskBar.module.css';
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import Image from "next/image";
+
 // Pics
 import mutePic from '../assets/icons/Mute.webp';
 import volumePic from '../assets/icons/Volume.webp';
-import myComputerPic from '../assets/icons/My Computer.webp';
+import myComputerPic from '../assets/icons/My+Computer.webp';
 import aboutmePic from '../assets/icons/aboutme.webp';
 import cvPic from '../assets/icons/cv.webp';
 import projectsPic from '../assets/icons/projects.webp';
