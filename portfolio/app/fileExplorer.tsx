@@ -8,6 +8,38 @@ import ReadMeOverview from './readmeOverview';
 import PicturesOverview from './picturesOverview';
 import popupStyles from './css/popup.module.css';
 
+// Pictures and icons
+import dr_mario_5 from '../assets/pictures/projects/dr_mario_5.webp';
+import dr_mario_4 from '../assets/pictures/projects/dr_mario_4.webp';
+import dr_mario_3 from '../assets/pictures/projects/dr_mario_3.webp';
+import worm_2 from '../assets/pictures/projects/worm_2.webp';
+import desert_explorer_2 from '../assets/pictures/projects/desert_explorer_2.webp';
+import desert_explorer_3 from '../assets/pictures/projects/desert_explorer_3.webp';
+import desert_explorer_4 from '../assets/pictures/projects/desert_explorer_4.webp';
+import train_app_2 from '../assets/pictures/projects/train_app_2.webp';
+import train_app_3 from '../assets/pictures/projects/train_app_3.webp';
+import train_app_4 from '../assets/pictures/projects/train_app_4.webp';
+import pixel_simulator_1 from '../assets/pictures/projects/pixel_simulator_1.webp';
+import pixel_simulator_2 from '../assets/pictures/projects/pixel_simulator_2.webp';
+import pixel_simulator_3 from '../assets/pictures/projects/pixel_simulator_3.webp';
+import HPC_2 from '../assets/pictures/projects/HPC_2.webp';
+import HPC_1 from '../assets/pictures/projects/HPC_1.webp';
+import opencl_1 from '../assets/pictures/projects/opencl_1.webp';
+import opencl_2 from '../assets/pictures/projects/opencl_2.webp';
+import opengl_1 from '../assets/pictures/projects/opengl_1.webp';
+import opengl_2 from '../assets/pictures/projects/opengl_2.webp';
+import compiler_1 from '../assets/pictures/projects/compiler_1.webp';
+import site_2 from '../assets/pictures/projects/site_2.webp';
+import photo from '../assets/pictures/projects/photo.webp';
+import yt_1 from '../assets/pictures/projects/yt_1.webp';
+import yt_2 from '../assets/pictures/projects/yt_2.webp';
+import yt_3 from '../assets/pictures/projects/yt_3.webp';
+import parallel_1 from '../assets/pictures/projects/parallel_1.webp';
+import parallel_2 from '../assets/pictures/projects/parallel_2.webp';
+import parallel_3 from '../assets/pictures/projects/parallel_3.webp';
+import e2ee_1 from '../assets/pictures/projects/e2ee_1.webp';
+import e2ee_2 from '../assets/pictures/projects/e2ee_2.webp';
+
 const fileIcons = {
     // Files
     generic: 'Generic Document',
@@ -186,7 +218,7 @@ const projectsContent = [
                 "Memory optimisations",
             ],
             youtubeId: "10AdEqDX_T8",
-            pictures: ["dr_mario_5", "dr_mario_4", "dr_mario_3"],
+            pictures: [dr_mario_5, dr_mario_4, dr_mario_3],
             icon: fileIcons.game_5
         }
     },
@@ -205,7 +237,7 @@ const projectsContent = [
                 "Low-Level Memory Management",
             ],
             youtubeId: "4CJKe73SVr0",
-            pictures: ["worm_2"],
+            pictures: [worm_2],
             icon: fileIcons.game_2
         }
     },
@@ -226,7 +258,7 @@ const projectsContent = [
                 "Monads",
             ],
             youtubeId: "WST_O-ba_MI",
-            pictures: ["desert_explorer_2", "desert_explorer_3", "desert_explorer_4",],
+            pictures: [desert_explorer_2, desert_explorer_3, desert_explorer_4],
             icon: fileIcons.game_3
         }
     },
@@ -246,7 +278,7 @@ const projectsContent = [
                 "TPC",
             ],
             youtubeId: "PWt333RWpQg",
-            pictures: ["train_app_2", "train_app_3", "train_app_4"],
+            pictures: [train_app_2, train_app_3, train_app_4],
             icon: fileIcons.game_4
         }
     },
@@ -265,7 +297,7 @@ const projectsContent = [
                 "Optimisation of large-scale interactions"
             ],
             youtubeId: "NaW8FtBX2H8",
-            pictures: ["pixel_simulator_1", "pixel_simulator_2", "pixel_simulator_3"],
+            pictures: [pixel_simulator_1, pixel_simulator_2, pixel_simulator_3],
             icon: fileIcons.game_1
         }
     },
@@ -288,7 +320,7 @@ const projectsContent = [
                 "Linux and server terminal commands"
             ],
             youtubeId: undefined,
-            pictures: ["HPC_2", "HPC_1"],
+            pictures: [HPC_2, HPC_1],
             icon: fileIcons.HPC
         }
     },
@@ -311,7 +343,7 @@ const projectsContent = [
                 "Measure execution time and derive for optimisations."
             ],
             youtubeId: undefined,
-            pictures: ["opencl_1", "opencl_2"],
+            pictures: [opencl_1, opencl_2],
             icon: fileIcons.openCL
         }
     },
@@ -330,7 +362,7 @@ const projectsContent = [
                 "Understanding different views, such as the model view and the world view."
             ],
             youtubeId: undefined,
-            pictures: ["opengl_2", "opengl_1"],
+            pictures: [opengl_2, opengl_1],
             icon: fileIcons.openGL
         }
     },
@@ -355,7 +387,7 @@ const projectsContent = [
 
             ],
             youtubeId: undefined,
-            pictures: ["compiler_1"],
+            pictures: [compiler_1],
             icon: fileIcons.compiler
         }
     },
@@ -392,7 +424,7 @@ const projectsContent = [
                 "Interaction design",
             ],
             youtubeId: undefined,
-            pictures: ["site_2"],
+            pictures: [site_2],
             icon: fileIcons.creative
         }
     },
@@ -412,7 +444,7 @@ const projectsContent = [
                 "Creativity"
             ],
             youtubeId: undefined,
-            pictures: ["photo"],
+            pictures: [photo],
             icon: fileIcons.camera
         }
     },
@@ -435,7 +467,7 @@ const projectsContent = [
                 "Managing a large community"
             ],
             youtubeId: undefined,
-            pictures: ["yt_1", "yt_3", "yt_2",],
+            pictures: [yt_1, yt_3, yt_2,],
             icon: fileIcons.youtube
         }
     },
@@ -463,7 +495,7 @@ const projectsContent = [
                 "Servers",
             ],
             youtubeId: undefined,
-            pictures: ['parallel_1', 'parallel_2', 'parallel_3'],
+            pictures: [parallel_1, parallel_2, parallel_3],
             icon: fileIcons.parallelism
         }
     },
@@ -515,7 +547,7 @@ const projectsContent = [
                 "Implementing chat application with a server, database, and clients."
             ],
             youtubeId: undefined,
-            pictures: ["e2ee_1", "e2ee_2"],
+            pictures: [e2ee_1, e2ee_2],
             icon: fileIcons.security
         }
     },
@@ -549,7 +581,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
     const generateFolderContent = (folderName: string) => {
         const folder = items.find(entry => entry.folderName === folderName);
         return (
-            folder?.folderFiles.map((file) => (
+            folder?.folderFiles.map((file, index) => (
                 <li
                     key={file.id}
                     onClick={() => handleClick(file.id, getContent(file.id).icon, file.label)}
@@ -558,7 +590,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
                     <Image src={`/icons/${getContent(file.id).icon}.webp`}
                         alt={`Popup icon`}
                         fill
-                        priority // preloads
+                        priority={true}
                         className={`${fileExplorerStyles.icon}`}
                     />
                     <span>{file.label}</span>
@@ -575,7 +607,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
                 <Image src={`/icons/${icon}.webp`}
                     alt={`Popup icon`}
                     fill
-                    priority // preloads
+                    priority={true}
                     className={`${fileExplorerStyles.icon}`}
                 />
                 <span>{title}</span>

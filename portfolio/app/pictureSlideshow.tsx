@@ -3,6 +3,7 @@ import pictureSlideshowStyles from './css/pictureSlideshow.module.css';
 import { StaticImageData } from 'next/image';
 import Image from 'next/image';
 
+import noImagePic from '../assets/pictures/projects/no-image.webp';
 
 interface Parameters {
     youtubeId: string | undefined;
@@ -15,14 +16,16 @@ const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
     const [videoLoaded, setVideoLoaded] = useState(false);
 
 
+
+
     // Define video
     const youtubeIdDefined = youtubeId ?? false;
     // Define pictures
-    const picturesDefined = pictures.length == 0 ? [] : pictures;
+    const picturesDefined = pictures.length == 0 ? [noImagePic] : pictures;
     const isVideoSlide = currentIndex === (youtubeIdDefined ? picturesDefined.length : picturesDefined.length - 1);
 
     const nextSlide = () => {
-        if (currentIndex < picturesDefined.length) {
+        if (currentIndex < picturesDefined.length - (youtubeIdDefined ? 0 : 1)) {
             setCurrentIndex(currentIndex + 1);
         }
     };
@@ -44,27 +47,30 @@ const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
     return (
         <div className={`${pictureSlideshowStyles.slideshowContainer}`}>
             <div className={`${pictureSlideshowStyles.mediaViewport}`}>
-                {isVideoSlide && youtubeIdDefined ?
-                    /* YouTube Video Slide */
-                    <div className={`${pictureSlideshowStyles.videoWrapper}`}>
-                        <p id={"videoLoader"} className={`${pictureSlideshowStyles.loadingText}`}>Loading video...</p>
-                        <iframe
-                            width="100%"
-                            height="100%"
-                            src={`https://www.youtube.com/embed/${youtubeIdDefined}?autoplay=1`}
-                            title="YouTube video player"
-                            onLoad={() => document.getElementById('videoLoader')!.style.display = 'none'}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        />
-                    </div>
-
-                    : (
+                {isVideoSlide && youtubeIdDefined
+                    ? (
+                        /* YouTube Video Slide */
+                        <div className={`${pictureSlideshowStyles.videoWrapper}`}>
+                            <p id={"videoLoader"} className={`${pictureSlideshowStyles.loadingText}`}>Loading video...</p>
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                src={`https://www.youtube.com/embed/${youtubeIdDefined}?autoplay=1`}
+                                title="YouTube video player"
+                                onLoad={() => document.getElementById('videoLoader')!.style.display = 'none'}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
+                        </div>
+                    ) : (
                         /* Photo Slide */
                         <Image
-                            src={picturesDefined[currentIndex]}
+                            src={picturesDefined[currentIndex] ? picturesDefined[currentIndex] : noImagePic}
                             alt={`Slide ${currentIndex}`}
                             className={`${pictureSlideshowStyles.slideImage}`}
+                            placeholder="blur"
+                            blurDataURL="data:image/png;base64,..."
+                            priority={currentIndex < 2}
                         />
                     )
 

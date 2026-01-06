@@ -2,6 +2,7 @@
 import { Fragment, useState } from 'react';
 import './css/global.css';
 import fileOverviewStyles from './css/fileOverview.module.css';
+import { StaticImageData } from 'next/image';
 
 interface Parameters {
     content: {
@@ -10,7 +11,7 @@ interface Parameters {
         description: string[];
         bulletPoints: string[];
         youtubeId: string | undefined;
-        pictures: string[];
+        pictures: StaticImageData[];
     }
 }
 

@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react';
 import './css/global.css';
 import fileOverviewStyles from './css/fileOverview.module.css';
 import PictureSlideshow from './pictureSlideshow';
+import { StaticImageData } from 'next/image';
 
 interface Parameters {
     content: {
@@ -10,7 +11,7 @@ interface Parameters {
         description: string[];
         bulletPoints: string[];
         youtubeId: string | undefined;
-        pictures: string[];
+        pictures: StaticImageData[];
     }
 }
 
@@ -55,7 +56,7 @@ const ProjectOverview = ({ content }: Parameters) => {
                 <div className={`${fileOverviewStyles.rightArea}`}>
                     {/* Screenshots and videos */}
                     <div className={`${fileOverviewStyles.screenshots}`}>
-                        <PictureSlideshow youtubeId={content.youtubeId} folder={"/pictures/projects/"} pictures={content.pictures} />
+                        <PictureSlideshow youtubeId={content.youtubeId} folder={''} pictures={content.pictures} />
                     </div>
                     {/* Bullet points what you learned */}
                     <div className={`${fileOverviewStyles.bulletpoints}`}>

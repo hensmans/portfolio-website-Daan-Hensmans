@@ -31,6 +31,9 @@ export default function RootLayout({
           type="image/jpeg"
           crossOrigin="anonymous"
         />
+        <link rel="preload" href="/pictures/aboutme/aboutme_1.html" as="image" />
+        <link rel="preload" href="/pictures/aboutme/aboutme_7.html" as="image" />
+        <link rel="preload" href="/pictures/aboutme/aboutme_3.html" as="image" />
       </head>
       <MainPage />
     </html >
