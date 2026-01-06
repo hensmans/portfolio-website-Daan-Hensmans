@@ -154,7 +154,7 @@ const items = [
         folderName: 'root',
         id: undefined,
         folderFiles: [
-            { id: 0, label: 'README.md' }
+            { id: 99, label: 'README.md' }
         ],
         icon: fileIcons.readme,
     },
@@ -215,6 +215,13 @@ const items = [
 
         icon: fileIcons.picture,
     },
+
+    {
+        folderName: 'projects',
+        id: undefined, // 99 // If you want projects to always open README when clicked on it
+        folderFiles: [],
+        icon: fileIcons.projects,
+    },
 ];
 
 // If project hasn't been declared yet
@@ -242,7 +249,7 @@ const undefinedProject =
 const projectsContent = [
     // Readme
     {
-        id: 0,
+        id: 99,
         content: {
             title: 'Projects',
             tags: [],
@@ -662,7 +669,8 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
         const folder = items.find(entry => entry.folderName === title);
         return (
             <summary className={`${fileExplorerStyles.treeElement} clickable`}
-                onClick={() => folder && folder.id ? handleClick(folder.id, fileIcons.pictures, 'pictures') : null}>
+                onClick={() => folder && folder.id ? handleClick(folder.id, fileIcons.pictures, folder.id === 100 ? 'pictures' : 'README.md') : null}
+            >
                 <Image src={icon}
                     alt={`Popup icon`}
                     fill
@@ -691,7 +699,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
     }
 
     // Readme is selected if projects folder is opened, otherwise the picture folder
-    const [selectedFile, setSelectedFile] = useState(projectsFolderOpenInit ? 0 : 100);
+    const [selectedFile, setSelectedFile] = useState(projectsFolderOpenInit ? 99 : 100);
     const [projectContent, setProjectContent] = useState(getContent(selectedFile));
 
     useEffect(() => {
@@ -699,7 +707,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
     }, [selectedFile]);
 
     useEffect(() => {
-        setSelectedFile(projectsFolderOpenInit ? 0 : 100);
+        setSelectedFile(projectsFolderOpenInit ? 99 : 100);
     }, [projectsFolderOpenInit]);
 
     return (
@@ -728,7 +736,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
                     </details>
                 </li>
             </ul>
-            {selectedFile == 0
+            {selectedFile == 99
                 ? <ReadMeOverview content={projectContent} />
                 :
                 selectedFile >= 100
