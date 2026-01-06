@@ -195,12 +195,10 @@ export default function Mainpage() {
   const [titleName, setTitleName] = useState('home');
 
   const isMobile = useIsMobile();
-
+  // Close popup if screen becomes: mobile <-> desktop
   useEffect(() => {
     setSelectedButton('home');
   }, [isMobile]);
-
-
 
   // Change icon of popup whenever button is pressed
   useEffect(() => {

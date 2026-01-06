@@ -10,6 +10,8 @@ import AboutMe from './aboutMe';
 import { Dispatch, SetStateAction } from "react";
 import pageStyles from './css/page.module.css';
 import Pdf from './pdf';
+import { useIsMobile } from './isMobileFunction'
+
 
 import dynamic from 'next/dynamic';
 import { StaticImageData } from 'next/image';
@@ -37,6 +39,7 @@ interface Parameters {
 
 export default function CenteredBox({ setMaximizeState, maximizeState, setIconName, iconName, selectedButton, setSelectedButton, titleName, setTitleName }: Parameters) {
 
+  const isMobile = useIsMobile();
 
   function getSelectedPopupComponent() {
 
@@ -60,6 +63,11 @@ export default function CenteredBox({ setMaximizeState, maximizeState, setIconNa
   return <div className={`${pageStyles.content}`}>
     <ButtonSelection setSelectedButton={setSelectedButton}></ButtonSelection>
     {getSelectedPopupComponent()}
+    {isMobile ? <div className={`${pageStyles.mobileWarningPopup}`}>
+      This project has not yet been optimised for small screens. Please use a larger screen to view the site. I apologise for the inconvenience.
+    </div>
+      : <div />
+    }
   </div>;
 
 }

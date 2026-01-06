@@ -10,3 +10,18 @@
     flex-grow: 1;
     min-height: 0;
 }
+
+.mobileWarningPopup {
+    position: absolute;
+    top: 3rem;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    color: var(--xp-silver-light);
+    font-family: var(--primary-font-bold);
+    border: 0.2rem solid black;
+    background-color: var(--xp-orange-close);
+    text-align: center;
+
+}

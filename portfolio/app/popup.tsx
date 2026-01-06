@@ -53,12 +53,7 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
         </div>
       </div >
       <div className={`window-body ${popupStyles.popupBody}`}>
-        {isMobile
-          ? <div className={`${popupStyles.popupBodyPhone}`}>
-            <p>This project has not yet been optimised for small screens. Please use a larger screen to view the site. I apologise for the inconvenience.</p>
-          </div>
-          : content}
-
+        {content}
       </div>
     </div >
   );
