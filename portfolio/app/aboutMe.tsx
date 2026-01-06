@@ -2,6 +2,14 @@ import './css/global.css';
 import aboutMeStyles from './css/aboutMe.module.css';
 import { differenceInYears } from "date-fns";
 import PictureSlideshow from './pictureSlideshow';
+
+// Pictures
+import aboutme_1Pic from '../assets/pictures/aboutme/aboutme_1.webp';
+import aboutme_7Pic from '../assets/pictures/aboutme/aboutme_7.webp';
+import aboutme_2Pic from '../assets/pictures/aboutme/aboutme_2.webp';
+import aboutme_4Pic from '../assets/pictures/aboutme/aboutme_4.webp';
+import aboutme_3Pic from '../assets/pictures/aboutme/aboutme_3.webp';
+
 interface Parameters {
   maximizeState: boolean;
 }
@@ -17,7 +25,7 @@ const AboutMe = ({ maximizeState }: Parameters) => {
         <div className={`${aboutMeStyles.columns} `}>
           <div className={`${aboutMeStyles.rows} ${aboutMeStyles.leftColumn} `}>
             <div className={`${aboutMeStyles.boxBorder} ${aboutMeStyles.textBoxPicture}`} >
-              <PictureSlideshow youtubeId={undefined} folder={"/pictures/aboutme/"} pictures={['aboutme_1', 'aboutme_7', 'aboutme_2', 'aboutme_4', 'aboutme_3']} />
+              <PictureSlideshow youtubeId={undefined} folder={''} pictures={[aboutme_1Pic, aboutme_7Pic, aboutme_2Pic, aboutme_4Pic, aboutme_3Pic]} />
             </div>
             <div className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} `}>
               <ul className={`${aboutMeStyles.bulletPoints}`}>

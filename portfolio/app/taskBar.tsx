@@ -1,7 +1,16 @@
 import taskBarStyles from './css/taskBar.module.css';
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import Image from "next/image";
-
+// Pics
+import mutePic from '../assets/icons/Mute.webp';
+import volumePic from '../assets/icons/Volume.webp';
+import myComputerPic from '../assets/icons/My Computer.webp';
+import aboutmePic from '../assets/icons/aboutme.webp';
+import cvPic from '../assets/icons/cv.webp';
+import projectsPic from '../assets/icons/projects.webp';
+import picturesPic from '../assets/icons/pictures.webp';
+import shutDownPic from '../assets/icons/shut_down.webp';
+import windowsXPLogoPic from '../assets/icons/Windows-xp-logo.webp';
 
 interface Parameters {
     toggleMutedState: () => void;
@@ -42,7 +51,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
             <div className={`${taskBarStyles.popup} ${isStartOpen ? {} : taskBarStyles.startPopupClosed}`}
             >
                 <div className={`${taskBarStyles.popupTopBar} ${taskBarStyles.popupText}`}>
-                    <Image src={`/icons/My Computer.webp`}
+                    <Image src={myComputerPic}
                         alt={`my computer icon`}
                         fill
                         priority // preloads
@@ -52,7 +61,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                 </div>
                 <div className={`${taskBarStyles.popupContent}`}>
                     <div className={`${taskBarStyles.popupContentElement} clickable`} onClick={() => onPopupClick('aboutme')}>
-                        <Image src={`/icons/aboutme.webp`}
+                        <Image src={aboutmePic}
                             alt={`aboutMe icon`}
                             fill
                             priority // preloads
@@ -61,7 +70,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                         aboutMe.html
                     </div>
                     <div className={`${taskBarStyles.popupContentElement} clickable`} onClick={() => onPopupClick('cv')}>
-                        <Image src={`/icons/cv.webp`}
+                        <Image src={cvPic}
                             alt={`CV icon`}
                             fill
                             priority // preloads
@@ -70,7 +79,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                         cv.pdf
                     </div>
                     <div className={`${taskBarStyles.popupContentElement} clickable`} onClick={() => onPopupClick('projects')}>
-                        <Image src={`/icons/projects.webp`}
+                        <Image src={projectsPic}
                             alt={`Projects icon`}
                             fill
                             priority // preloads
@@ -79,7 +88,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                         projects
                     </div>
                     <div className={`${taskBarStyles.popupContentElement} clickable`} onClick={() => onPopupClick('pictures')}>
-                        <Image src={`/icons/pictures.webp`}
+                        <Image src={picturesPic}
                             alt={`Pictures icon`}
                             fill
                             priority // preloads
@@ -90,7 +99,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                 </div>
                 <div className={`${taskBarStyles.popupBottomBar} ${taskBarStyles.popupTurnoffField} `} >
                     <div className={` ${taskBarStyles.popupTurnoffFieldInner} clickable`} onClick={() => setMonitorOnState(false)}>
-                        <Image src={`/icons/shut_down.webp`}
+                        <Image src={shutDownPic}
                             alt={`shut down icon`}
                             fill
                             priority // preloads
@@ -112,7 +121,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                 {generatePopupButton()}
                 <div className={`${taskBarStyles.startButton} clickable`} >
                     <div className={`${taskBarStyles.xpLogo}`} onClick={() => setIsStartOpen(true)}>
-                        <Image src={`/icons/Windows-xp-logo.webp`}
+                        <Image src={windowsXPLogoPic}
                             alt={`Windows XP icon`}
                             fill
                             priority // preloads
@@ -132,13 +141,13 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
             <div className={`${taskBarStyles.systemTray} clickable`}>
                 <span onClick={toggleMutedState} >
                     {mutedState
-                        ? <Image src={'/icons/Mute.webp'}
+                        ? <Image src={mutePic}
                             alt={`Sound mute icon`}
                             fill
                             priority // preloads
                             className={taskBarStyles.muteIcon}
                         />
-                        : <Image src={`/icons/Volume.webp`}
+                        : <Image src={volumePic}
                             alt={`Sound unmute icon`}
                             fill
                             priority // preloads

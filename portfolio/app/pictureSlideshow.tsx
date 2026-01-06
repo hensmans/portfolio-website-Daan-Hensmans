@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import pictureSlideshowStyles from './css/pictureSlideshow.module.css';
+import { StaticImageData } from 'next/image';
+import Image from 'next/image';
+
 
 interface Parameters {
     youtubeId: string | undefined;
     folder: string;
-    pictures: string[];
+    pictures: StaticImageData[];
 }
 
-const PictureSlideshow = ({ youtubeId, folder, pictures }: Parameters) => {
+const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [videoLoaded, setVideoLoaded] = useState(false);
 
@@ -15,7 +18,7 @@ const PictureSlideshow = ({ youtubeId, folder, pictures }: Parameters) => {
     // Define video
     const youtubeIdDefined = youtubeId ?? false;
     // Define pictures
-    const picturesDefined = pictures.length == 0 ? ["no_image.webp"] : pictures;
+    const picturesDefined = pictures.length == 0 ? [] : pictures;
     const isVideoSlide = currentIndex === (youtubeIdDefined ? picturesDefined.length : picturesDefined.length - 1);
 
     const nextSlide = () => {
@@ -58,8 +61,8 @@ const PictureSlideshow = ({ youtubeId, folder, pictures }: Parameters) => {
 
                     : (
                         /* Photo Slide */
-                        <img
-                            src={`${folder}${picturesDefined[currentIndex]}.webp`}
+                        <Image
+                            src={picturesDefined[currentIndex]}
                             alt={`Slide ${currentIndex}`}
                             className={`${pictureSlideshowStyles.slideImage}`}
                         />
