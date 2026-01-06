@@ -2,9 +2,8 @@
 import type { Metadata } from "next";
 import './css/global.css';
 import MainPage from "./mainPage";
-import './css/global.css';
-
 import './css/windows-xp.css';
+
 // The Windows XP css
 // https://botoxparty.github.io/XP.css/
 
@@ -31,9 +30,8 @@ export default function RootLayout({
           type="image/jpeg"
           crossOrigin="anonymous"
         />
-        <link rel="preload" href="/pictures/aboutme/aboutme_1.html" as="image" />
-        <link rel="preload" href="/pictures/aboutme/aboutme_7.html" as="image" />
-        <link rel="preload" href="/pictures/aboutme/aboutme_3.html" as="image" />
+        <link rel="preload" href="/cv_old.pdf" as="fetch" crossOrigin="anonymous" />
+        <link rel="preload" href="/windows-xp-loading-compressed.gif" as="fetch" crossOrigin="anonymous" />
       </head>
       <MainPage />
     </html >

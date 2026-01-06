@@ -1,18 +1,18 @@
 import './css/global.css';
 import fileOverviewStyles from './css/fileOverview.module.css';
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
 
 
 interface Parameters {
-    pics: string[];
-    setIconName: Dispatch<SetStateAction<string>>;
+    pics: { name: string, picture: StaticImageData }[];
+    setIconName: Dispatch<SetStateAction<StaticImageData>>;
     setTitleName: Dispatch<SetStateAction<string>>;
     setSelectedFile: Dispatch<SetStateAction<number>>;
     selectedFile: number;
-    picturesIcon: string;
-    pictureIcon: string;
+    picturesIcon: StaticImageData;
+    pictureIcon: StaticImageData;
 }
 
 
@@ -33,9 +33,9 @@ const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictu
 
     const handlePicClick = (picName: string) => {
         setPreviewActiveState(true);
-        const index = pics.findIndex(pic => pic === picName);
-        setCurrentIndexState(index)
-        createAndSetTitleName(pics[index])
+        const index = pics.findIndex(pic => pic.name === picName);
+        setCurrentIndexState(index);
+        createAndSetTitleName(pics[index].name);
         setIconName(pictureIcon);
         setSelectedFile(picsStartIndex + index);
 
@@ -48,7 +48,7 @@ const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictu
             if (currentIndexState < pics.length) {
                 const newIndex = currentIndexState + 1;
                 setCurrentIndexState(newIndex);
-                createAndSetTitleName(pics[newIndex])
+                createAndSetTitleName(pics[newIndex].name)
                 setSelectedFile(picsStartIndex + newIndex);
             }
         };
@@ -57,7 +57,7 @@ const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictu
             if (currentIndexState > 0) {
                 const newIndex = currentIndexState - 1;
                 setCurrentIndexState(newIndex);
-                createAndSetTitleName(pics[newIndex]);
+                createAndSetTitleName(pics[newIndex].name);
                 setSelectedFile(picsStartIndex + newIndex);
             }
         };
@@ -77,10 +77,9 @@ const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictu
                     </button>
                     {/* The image */}
                     <div className={`${fileOverviewStyles.previewPicWrapper}`}>
-                        <Image src={`/pictures/photography/${pics[currentIndexState]}.webp`}
+                        <Image src={pics[currentIndexState].picture}
                             alt={`Picture ${pics[currentIndexState]} preview`}
                             width={0} height={0} sizes="100vw"
-                            priority
                             className={fileOverviewStyles.previewPic}
                         />
                     </div>
@@ -103,13 +102,12 @@ const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictu
             <div className={fileOverviewStyles.picsOuter}>
                 {previewActiveState ? generatePictureOverview() : <></>}
                 <div className={`${fileOverviewStyles.pics}`}>
-                    {pics.map((picName) => (
-                        <a className={`${fileOverviewStyles.picWrap}`} key={picName}
-                            onClick={() => handlePicClick(picName)}>
-                            <Image src={`/pictures/photography/${picName}.webp`}
-                                alt={`${picName} preview`}
+                    {pics.map((pic, index) => (
+                        <a className={`${fileOverviewStyles.picWrap}`} key={index}
+                            onClick={() => handlePicClick(pic.name)}>
+                            <Image src={pic.picture}
+                                alt={`${pic.name} preview`}
                                 fill
-                                priority
                                 className={fileOverviewStyles.pic}
                                 style={{ objectFit: 'cover' }}
                             />

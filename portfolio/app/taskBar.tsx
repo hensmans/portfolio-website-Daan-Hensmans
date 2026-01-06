@@ -45,6 +45,18 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
 
     }
 
+    const muteIcon = <Image src={mutePic}
+        alt={`Sound mute icon`}
+        fill
+        priority // preloads
+        className={taskBarStyles.muteIcon}
+    />
+    const volumeIcon = <Image src={volumePic}
+        alt={`Sound unmute icon`}
+        fill
+        priority // preloads
+        className={taskBarStyles.muteIcon}
+    />
 
     const generatePopupButton = () => {
         return (
@@ -141,18 +153,8 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
             <div className={`${taskBarStyles.systemTray} clickable`}>
                 <span onClick={toggleMutedState} >
                     {mutedState
-                        ? <Image src={mutePic}
-                            alt={`Sound mute icon`}
-                            fill
-                            priority // preloads
-                            className={taskBarStyles.muteIcon}
-                        />
-                        : <Image src={volumePic}
-                            alt={`Sound unmute icon`}
-                            fill
-                            priority // preloads
-                            className={taskBarStyles.muteIcon}
-                        />
+                        ? muteIcon
+                        : volumeIcon
                     }
                     {time}
                 </span>

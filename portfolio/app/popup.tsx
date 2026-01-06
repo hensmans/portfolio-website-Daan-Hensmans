@@ -3,7 +3,7 @@ import './css/global.css';
 import popupStyles from './css/popup.module.css';
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import './css/global.css';
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 
 export function useIsMobile(query: string = '(max-width: 800px)') {
@@ -31,7 +31,7 @@ interface ButtonSelectionProps {
   // Will be HTML content for the body of the popup
   content: any;
   title: string;
-  iconName: string;
+  iconName: StaticImageData;
 }
 
 const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, title, iconName }: ButtonSelectionProps) => {
@@ -50,7 +50,7 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
     <div className={`${popupStyles.popupScreen} ${maximizeState ? `${popupStyles.popupScreenMaximized}` : `${popupStyles.popupScreenMinimized}`} window`}>
       <div className={`title-bar ${popupStyles.popupTitleBar}`}>
         <div className={`${popupStyles.popupTitleBarLeft}`}>
-          <Image src={`/icons/${iconName}.webp`}
+          <Image src={iconName}
             alt={`Popup icon`}
             fill
             priority // preloads

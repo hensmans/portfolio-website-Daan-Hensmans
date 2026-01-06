@@ -7,6 +7,7 @@ import Image from "next/image";
 import ReadMeOverview from './readmeOverview';
 import PicturesOverview from './picturesOverview';
 import popupStyles from './css/popup.module.css';
+import { StaticImageData } from 'next/image';
 
 // Pictures and icons
 import dr_mario_5 from '../assets/pictures/projects/dr_mario_5.webp';
@@ -40,45 +41,112 @@ import parallel_3 from '../assets/pictures/projects/parallel_3.webp';
 import e2ee_1 from '../assets/pictures/projects/e2ee_1.webp';
 import e2ee_2 from '../assets/pictures/projects/e2ee_2.webp';
 
+// Icons
+import Generic_Document from '../assets/icons/Generic Document.webp';
+import Registry_Editor from '../assets/icons/Registry Editor.webp';
+import Game_Controller from '../assets/icons/Game Controller.webp';
+import Internet_Spades from '../assets/icons/Internet Spades.webp';
+import Internet_Backgammon from '../assets/icons/Internet Backgammon.webp';
+import Minesweeper from '../assets/icons/Minesweeper.webp';
+import Chip from '../assets/icons/Chip.webp';
+import Disk_Defragmenter from '../assets/icons/Disk Defragmenter.webp';
+import XPS_Viewer from '../assets/icons/XPS Viewer.webp';
+import Services from '../assets/icons/Services.webp';
+import Folder_View from '../assets/icons/Folder View - Common Tasks.webp';
+import Digital_Camera from '../assets/icons/Digital Camera.webp';
+import Camcorder from '../assets/icons/Camcorder.webp';
+import picture from '../assets/icons/picture.webp';
+import XSL from '../assets/icons/XSL.webp';
+import Workgroup from '../assets/icons/Workgroup.webp';
+import Virus_Protection from '../assets/icons/Virus Protection.webp';
+import text from '../assets/icons/text.webp';
+import Folder_Closed from '../assets/icons/Folder Closed.webp';
+import Local_Disk from '../assets/icons/Local Disk.webp';
+import projects from '../assets/icons/projects.webp';
+import pictures from '../assets/icons/pictures.webp';
+
+// Photography pics
+import alley from '../assets/pictures/photography/alley.webp';
+import amusement from '../assets/pictures/photography/amusement.webp';
+import balloons from '../assets/pictures/photography/balloons.webp';
+import bench_fall from '../assets/pictures/photography/bench_fall.webp';
+import bench_winter from '../assets/pictures/photography/bench_winter.webp';
+import angle from '../assets/pictures/photography/angle.webp';
+import house from '../assets/pictures/photography/house.webp';
+import icy from '../assets/pictures/photography/icy.webp';
+import ferry from '../assets/pictures/photography/ferry.webp';
+import cabin from '../assets/pictures/photography/cabin.webp';
+import boots from '../assets/pictures/photography/boots.webp';
+import artic from '../assets/pictures/photography/artic.webp';
+import crane from '../assets/pictures/photography/crane.webp';
+import doozy from '../assets/pictures/photography/doozy.webp';
+import moon from '../assets/pictures/photography/moon.webp';
+import sunset from '../assets/pictures/photography/sunset.webp';
+import gothenburg from '../assets/pictures/photography/gothenburg.webp';
+import tunnel from '../assets/pictures/photography/tunnel.webp';
+import copenhagen from '../assets/pictures/photography/copenhagen.webp';
+import aurora from '../assets/pictures/photography/aurora.webp';
+import night from '../assets/pictures/photography/night.webp';
+import lapland from '../assets/pictures/photography/lapland.webp';
+
 const fileIcons = {
     // Files
-    generic: 'Generic Document',
-    game_1: 'Registry Editor',
-    game_2: "Game Controller",
-    game_3: "Internet Spades",
-    game_4: 'Internet Backgammon',
-    game_5: 'Minesweeper',
+    generic: Generic_Document,
+    game_1: Registry_Editor,
+    game_2: Game_Controller,
+    game_3: Internet_Spades,
+    game_4: Internet_Backgammon,
+    game_5: Minesweeper,
 
-    lowLevel: 'Chip',
-    openGL: 'Disk Defragmenter',
-    openCL: 'Chip',
-    HPC: 'XPS Viewer',
-    compiler: 'Services',
+    lowLevel: Chip,
+    openGL: Disk_Defragmenter,
+    openCL: Chip,
+    HPC: XPS_Viewer,
+    compiler: Services,
 
-    creative: 'Folder View - Common Tasks',
-    camera: 'Digital Camera',
-    youtube: 'Camcorder',
+    creative: Folder_View,
+    camera: Digital_Camera,
+    youtube: Camcorder,
 
-    picture: 'picture',
-    constructs: 'XSL',
-    parallelism: "Workgroup",
-    security: "Virus Protection",
+    picture: picture,
+    constructs: XSL,
+    parallelism: Workgroup,
+    security: Virus_Protection,
 
-    undefined: 'Registry Editor',
-    readme: 'text',
+    undefined: Registry_Editor,
+    readme: text,
 
     // Folders
-    folderOpened: 'Folder Closed',
-    localDisk: 'Local Disk',
-    projects: 'projects',
-    pictures: 'pictures',
+    folderOpened: Folder_Closed,
+    localDisk: Local_Disk,
+    projects: projects,
+    pictures: pictures,
 }
 
 
-const photographyPics = [
-    "alley", "amusement", "angle", "artic", 'aurora', 'balloons', "bench_fall", "bench_winter",
-    "boots", "cabin", "copenhagen", "crane", "doozy", "ferry", "gothenburg", "house", "icy",
-    "lapland", "moon", "night", "sunset", "tunnel",
+const photographyPics: { name: string, picture: StaticImageData }[] = [
+    { name: "alley", picture: alley },
+    { name: "amusement", picture: amusement },
+    { name: "angle", picture: angle },
+    { name: "artic", picture: artic },
+    { name: "aurora", picture: aurora },
+    { name: "balloons", picture: balloons },
+    { name: "bench_fall", picture: bench_fall },
+    { name: "bench_winter", picture: bench_winter },
+    { name: "boots", picture: boots },
+    { name: "copenhagen", picture: copenhagen },
+    { name: "crane", picture: crane },
+    { name: "icy", picture: icy },
+    { name: "gothenburg", picture: gothenburg },
+    { name: "house", picture: house },
+    { name: "tunnel", picture: tunnel },
+    { name: "cabin", picture: cabin },
+    { name: "ferry", picture: ferry },
+    { name: "doozy", picture: doozy },
+    { name: "sunset", picture: sunset },
+    { name: "moon", picture: moon },
+    { name: "night", picture: night },
+    { name: "lapland", picture: lapland }
 ]
 
 const items = [
@@ -142,7 +210,7 @@ const items = [
         folderFiles:
             photographyPics.map((pic, i) => ({
                 id: 101 + i,
-                label: `${pic}.png`
+                label: `${pic.name}.png`
             })),
 
         icon: fileIcons.picture,
@@ -558,7 +626,7 @@ const projectsContent = [
 
 interface Parameters {
     // For taggling max and min state
-    setIconName: Dispatch<SetStateAction<string>>;
+    setIconName: Dispatch<SetStateAction<StaticImageData>>;
     setTitleName: Dispatch<SetStateAction<string>>;
     projectsFolderOpenInit: boolean;
     maximizeState: boolean;
@@ -570,7 +638,7 @@ interface Parameters {
 const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maximizeState }: Parameters) => {
 
 
-    const handleClick = (id: number, icon: string, title: string) => {
+    const handleClick = (id: number, icon: StaticImageData, title: string) => {
         setSelectedFile(id);
         setIconName(icon);
         setTitleName(title);
@@ -587,7 +655,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
                     onClick={() => handleClick(file.id, getContent(file.id).icon, file.label)}
                     className={`${fileExplorerStyles.treeElement} clickable ${selectedFile === file.id ? `${fileExplorerStyles.fileActive}` : ''}`}
                 >
-                    <Image src={`/icons/${getContent(file.id).icon}.webp`}
+                    <Image src={getContent(file.id).icon}
                         alt={`Popup icon`}
                         fill
                         priority={true}
@@ -599,12 +667,12 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
         );
     }
 
-    const generateFolderSummary = (icon: string, title: string) => {
+    const generateFolderSummary = (icon: StaticImageData, title: string) => {
         const folder = items.find(entry => entry.folderName === title);
         return (
             <summary className={`${fileExplorerStyles.treeElement} clickable`}
                 onClick={() => folder && folder.id ? handleClick(folder.id, fileIcons.pictures, 'pictures') : null}>
-                <Image src={`/icons/${icon}.webp`}
+                <Image src={icon}
                     alt={`Popup icon`}
                     fill
                     priority={true}
@@ -615,7 +683,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
         );
     }
 
-    const generateFolder = (openBoolInit: boolean, title: string, fileName: string, folderIcon?: string) => {
+    const generateFolder = (openBoolInit: boolean, title: string, fileName: string, folderIcon?: StaticImageData) => {
         return (
             <details open={openBoolInit}>
                 {generateFolderSummary(folderIcon ? folderIcon : fileIcons.folderOpened, title)}

@@ -12,6 +12,7 @@ import pageStyles from './css/page.module.css';
 import Pdf from './pdf';
 
 import dynamic from 'next/dynamic';
+import { StaticImageData } from 'next/image';
 
 // This tells Next.js: "Only load this component in the browser"
 const PdfViewer = dynamic(() => import('./pdf'), {
@@ -24,8 +25,8 @@ interface Parameters {
   setMaximizeState: Dispatch<SetStateAction<boolean>>;
   maximizeState: boolean;
 
-  setIconName: Dispatch<SetStateAction<string>>;
-  iconName: string;
+  setIconName: Dispatch<SetStateAction<StaticImageData>>;
+  iconName: StaticImageData;
 
   selectedButton: string;
   setSelectedButton: Dispatch<SetStateAction<string>>;

@@ -7,21 +7,30 @@ import noImagePic from '../assets/pictures/projects/no-image.webp';
 
 interface Parameters {
     youtubeId: string | undefined;
-    folder: string;
     pictures: StaticImageData[];
 }
 
 const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [videoLoaded, setVideoLoaded] = useState(false);
+    // Define pictures
+    const picturesDefined = pictures.length == 0 ? [noImagePic] : pictures;
 
-
-
+    const imageComponents = picturesDefined.map((image, i) => (
+        <Image
+            key={i}
+            src={image}
+            alt={`Slide ${i}`}
+            className={`${pictureSlideshowStyles.slideImage}`}
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,..."
+            priority={i < 2}
+        />
+    ));
 
     // Define video
     const youtubeIdDefined = youtubeId ?? false;
-    // Define pictures
-    const picturesDefined = pictures.length == 0 ? [noImagePic] : pictures;
+
     const isVideoSlide = currentIndex === (youtubeIdDefined ? picturesDefined.length : picturesDefined.length - 1);
 
     const nextSlide = () => {
@@ -64,14 +73,7 @@ const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
                         </div>
                     ) : (
                         /* Photo Slide */
-                        <Image
-                            src={picturesDefined[currentIndex] ? picturesDefined[currentIndex] : noImagePic}
-                            alt={`Slide ${currentIndex}`}
-                            className={`${pictureSlideshowStyles.slideImage}`}
-                            placeholder="blur"
-                            blurDataURL="data:image/png;base64,..."
-                            priority={currentIndex < 2}
-                        />
+                        imageComponents[currentIndex]
                     )
 
                 }

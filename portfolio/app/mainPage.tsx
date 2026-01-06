@@ -10,6 +10,13 @@ import LoadingStartpage from './loadingStartpage';
 import Taskbar from './taskBar';
 import MonitorButton from './monitorButton';
 
+// Icons
+import noImagePic from '../assets/pictures/projects/no-image.webp';
+import cvPic from '../assets/icons/cv.webp';
+import aboutmePic from '../assets/icons/aboutme.webp';
+import picturesPic from '../assets/icons/pictures.webp';
+import projectsPic from '../assets/icons/projects.webp';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +39,7 @@ export default function Mainpage() {
   const [maximizeState, setMaximizeState] = useState(false);
   const [mutedState, setMutedState] = useState(false);
   const [monitorOnState, setMonitorOnState] = useState(true);
-  const [iconName, setIconName] = useState('home');
+  const [iconName, setIconName] = useState(noImagePic);
 
   const mouseClickSoundRef = useRef<HTMLAudioElement | null>(null);
   const startUpSoundRef = useRef<HTMLAudioElement | null>(null);
@@ -91,24 +98,30 @@ export default function Mainpage() {
 
   // Change icon of popup whenever button is pressed
   useEffect(() => {
-    setIconName(selectedButton);
+
     switch (selectedButton) {
       case 'home':
+        setIconName(noImagePic);
         setTitleName('home');
         break;
       case 'projects':
+        setIconName(projectsPic);
         setTitleName('README.md');
         break;
       case 'pictures':
+        setIconName(picturesPic);
         setTitleName('pictures');
         break;
       case 'aboutme':
+        setIconName(aboutmePic);
         setTitleName('aboutMe.html');
         break;
       case 'cv':
+        setIconName(cvPic);
         setTitleName('cv.pdf');
         break;
       default:
+        setIconName(noImagePic);
         setTitleName('NaN');
     }
 
