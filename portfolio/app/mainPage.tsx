@@ -121,19 +121,6 @@ export default function Mainpage() {
     computerNoiseRef2.current!.play().catch(err => { });
   }
 
-  // Activated at the very first user click (this is necessary because of browser permissions)
-  useEffect(() => {
-    // Start background noise if not started yet
-    if (!mutedState) {
-      // Start background 
-      // Play second noise later so the loop isn't that obvious
-      computerNoiseRef.current!.currentTime = 0;
-      computerNoiseRef2.current!.currentTime = 5;
-      playBackgroundNoise();
-      turnOnSound();
-    }
-  }, [firstTimeClickState]);
-
   // Starts computer backgrund noise
   const startComputerNoise = () => {
     // Start background noise if not started yet
@@ -146,23 +133,41 @@ export default function Mainpage() {
         computerNoiseRef2.current.play().catch(err => { });
       };
     }
+
+    // Activated at the very first user click (this is necessary because of browser permissions)
+    useEffect(() => {
+      // Start background noise if not started yet
+      if (!mutedState) {
+        // Start background 
+        // Play second noise later so the loop isn't that obvious
+        computerNoiseRef.current!.currentTime = 0;
+        computerNoiseRef2.current!.currentTime = 5;
+        playBackgroundNoise();
+        turnOnSound();
+      }
+    }, [firstTimeClickState]);
+
+
   }
 
   // For mouse click
   useEffect(() => {
     const playClick = () => {
-      mouseClickPlay.play(mutedState ? 0 : soundVolume);
-      // Start background noise if didn't happen yet
-      startComputerNoise();
+      if (monitorOnState && !mutedState) {
+        mouseClickPlay.play(soundVolume);
 
-      if (!firstTimeClickState) {
-        setFirstTimeClickState(true);
+
+        // Start background noise if didn't happen yet
+        if (!firstTimeClickState) {
+          startComputerNoise();
+          setFirstTimeClickState(true);
+        }
       }
     };
     window.addEventListener('mousedown', playClick);
     return () => window.removeEventListener('mousedown', playClick);
 
-  }, [mutedState]); // Mutedstate dependency because new listener 
+  }, [mutedState, monitorOnState]); // Mutedstate dependency because new listener 
 
 
 
