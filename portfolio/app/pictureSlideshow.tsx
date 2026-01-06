@@ -71,7 +71,7 @@ const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
                                     alt={`Slide ${i}`}
                                     className={pictureSlideshowStyles.slideImage}
                                     placeholder="blur"
-                                    priority={i === 0}
+                                    priority
                                 />
                             </div>
                         ))
