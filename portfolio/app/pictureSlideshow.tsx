@@ -16,21 +16,11 @@ const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
     // Define pictures
     const picturesDefined = pictures.length == 0 ? [noImagePic] : pictures;
 
-    const imageComponents = picturesDefined.map((image, i) => (
-        <Image
-            key={i}
-            src={image}
-            alt={`Slide ${i}`}
-            className={`${pictureSlideshowStyles.slideImage}`}
-            placeholder="blur"
-            priority
-        />
-    ));
-
     // Define video
     const youtubeIdDefined = youtubeId ?? false;
 
-    const isVideoSlide = currentIndex === (youtubeIdDefined ? picturesDefined.length : picturesDefined.length - 1);
+    const isVideoSlide = currentIndex === picturesDefined.length;
+    const isLastPictureSlide = currentIndex === picturesDefined.length - 1;
 
     const nextSlide = () => {
         if (currentIndex < picturesDefined.length - (youtubeIdDefined ? 0 : 1)) {
@@ -95,7 +85,7 @@ const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
                     Back
                 </button>
                 <span>{(isVideoSlide && youtubeIdDefined) ? 'Video' : `Image ${currentIndex + 1}`}</span>
-                <button onClick={nextSlide} disabled={isVideoSlide}>
+                <button onClick={nextSlide} disabled={isVideoSlide || youtubeIdDefined == false && isLastPictureSlide}>
                     Next
                 </button>
             </div>
