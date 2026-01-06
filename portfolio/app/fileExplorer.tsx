@@ -658,7 +658,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
                     <Image src={getContent(file.id).icon}
                         alt={`Popup icon`}
                         fill
-                        priority={true}
+                        priority
                         className={`${fileExplorerStyles.icon}`}
                     />
                     <span>{file.label}</span>
@@ -675,7 +675,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
                 <Image src={icon}
                     alt={`Popup icon`}
                     fill
-                    priority={true}
+                    priority
                     className={`${fileExplorerStyles.icon}`}
                 />
                 <span>{title}</span>

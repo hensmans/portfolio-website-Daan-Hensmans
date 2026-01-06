@@ -76,13 +76,17 @@ const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictu
                         {"<"}
                     </button>
                     {/* The image */}
-                    <div className={`${fileOverviewStyles.previewPicWrapper}`}>
-                        <Image src={pics[currentIndexState].picture}
-                            alt={`Picture ${pics[currentIndexState]} preview`}
-                            width={0} height={0} sizes="100vw"
-                            className={fileOverviewStyles.previewPic}
-                        />
-                    </div>
+                    {pics.map((pic, i) => (
+                        <div
+                            key={i} className={`${fileOverviewStyles.previewPicWrapper}`}
+                            style={{ display: currentIndexState === i ? '' : 'none' }}>
+                            <Image src={pic.picture}
+                                alt={`Picture ${pic.name} preview`}
+                                width={0} height={0} sizes="100vw"
+                                className={fileOverviewStyles.previewPic}
+                            />
+                        </div>
+                    ))}
                     <button className={`${fileOverviewStyles.controls}`} onClick={nextSlide} disabled={currentIndexState === pics.length - 1}>
                         {">"}
                     </button>
