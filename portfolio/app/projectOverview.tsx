@@ -56,7 +56,7 @@ const ProjectOverview = ({ content }: Parameters) => {
                 <div className={`${fileOverviewStyles.rightArea}`}>
                     {/* Screenshots and videos */}
                     <div className={`${fileOverviewStyles.screenshots}`}>
-                        <PictureSlideshow youtubeId={content.youtubeId} folder={''} pictures={content.pictures} />
+                        <PictureSlideshow youtubeId={content.youtubeId} pictures={content.pictures} />
                     </div>
                     {/* Bullet points what you learned */}
                     <div className={`${fileOverviewStyles.bulletpoints}`}>
