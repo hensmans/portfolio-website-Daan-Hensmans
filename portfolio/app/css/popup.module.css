@@ -50,22 +50,22 @@
 
 .popupTitleBar {
   height: fit-content;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .popupTitleBarIcon {
   display: inline-block;
   position: relative !important;
   aspect-ratio: 1 / 1;
-  width: 1.25rem !important;
-  height: 1.25rem !important;
+  width: 1.4rem !important;
+  height: 1.4rem !important;
 
   margin-left: 0.25rem;
 }
 
 .popupBarIcon {
-  width: 1.55rem;
-  height: 1.5rem;
+  width: 1.85rem;
+  height: 1.8rem;
 }
 
 .popupTitleBarLeft {
