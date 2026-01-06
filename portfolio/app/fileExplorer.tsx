@@ -659,6 +659,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
                         alt={`Popup icon`}
                         fill
                         priority={true}
+                        placeholder="blur"
                         className={`${fileExplorerStyles.icon}`}
                     />
                     <span>{file.label}</span>
@@ -676,6 +677,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
                     alt={`Popup icon`}
                     fill
                     priority={true}
+                    placeholder="blur"
                     className={`${fileExplorerStyles.icon}`}
                 />
                 <span>{title}</span>

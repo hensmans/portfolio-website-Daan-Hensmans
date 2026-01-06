@@ -53,7 +53,8 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
           <Image src={iconName}
             alt={`Popup icon`}
             fill
-            priority // preloads
+            priority
+            placeholder="blur"
             className={`${popupStyles.popupTitleBarIcon}`}
           />
           <div className="title-bar-text">

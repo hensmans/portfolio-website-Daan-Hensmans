@@ -17,6 +17,10 @@ import aboutmePic from '../assets/icons/aboutme.webp';
 import picturesPic from '../assets/icons/pictures.webp';
 import projectsPic from '../assets/icons/projects.webp';
 
+// Monitor
+
+import monitorBorder from '../assets/monitor/monitor-screen-border-15.webp';
+import monitorName from '../assets/monitor/monitor-screen-daan-hensmans-13.webp';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -139,8 +143,8 @@ export default function Mainpage() {
       <main className={`${mainPageStyles.content} `}>
         {/* Monitor Border */}
         <div className={`${crtStyles.monitor}`}>
-          <Image className={`${crtStyles.monitorScreen} noMousePointer`} fill priority alt='Monitor border screen' src="/monitor/monitor-screen-border-15.webp" />
-          <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src="/monitor/monitor-screen-daan-hensmans-13.webp" />
+          <Image className={`${crtStyles.monitorScreen} noMousePointer`} fill priority alt='Monitor border screen' src={monitorBorder} placeholder="blur" />
+          <Image className={crtStyles.monitorName} fill priority alt='Monitor border screen' src={monitorName} />
           <div className={crtStyles.monitorButton}>
             <MonitorButton monitorOnState={monitorOnState} setMonitorOnState={setMonitorOnState} />
           </div>

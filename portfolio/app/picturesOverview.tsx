@@ -109,6 +109,7 @@ const PicturesOverview = ({ pics, setIconName, setTitleName, picturesIcon, pictu
                                 alt={`${pic.name} preview`}
                                 fill
                                 className={fileOverviewStyles.pic}
+                                placeholder="blur"
                                 style={{ objectFit: 'cover' }}
                             />
                         </a>

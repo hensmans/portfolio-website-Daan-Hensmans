@@ -23,7 +23,6 @@ const PictureSlideshow = ({ youtubeId, pictures }: Parameters) => {
             alt={`Slide ${i}`}
             className={`${pictureSlideshowStyles.slideImage}`}
             placeholder="blur"
-            blurDataURL="data:image/png;base64,..."
             priority={i < 2}
         />
     ));
