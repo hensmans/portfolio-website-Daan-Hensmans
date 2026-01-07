@@ -26,7 +26,7 @@ const AboutMe = ({ maximizeState }: Parameters) => {
         <div className={`${aboutMeStyles.columns} `}>
           <div className={`${aboutMeStyles.rows} ${aboutMeStyles.leftColumn} `}>
             <div className={`${aboutMeStyles.boxBorder} ${aboutMeStyles.textBoxPicture}`} >
-              <PictureSlideshow youtubeId={undefined} pictures={[aboutme_1Pic, aboutme_7Pic, aboutme_2Pic, aboutme_4Pic, aboutme_3Pic]} />
+              <PictureSlideshow youtubeId={undefined} pictures={[aboutme_1Pic, aboutme_7Pic, aboutme_2Pic, aboutme_4Pic]} />
             </div>
             <div className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} `}>
               <ul className={`${aboutMeStyles.bulletPoints}`}>
