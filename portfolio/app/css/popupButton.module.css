@@ -23,13 +23,12 @@
 
 .buttonBox {
   text-align: center;
-  width: 13rem;
-  height: 13rem;
+  width: 12rem;
+  height: 12rem;
 
   background-color: transparent;
 
-  margin-left: 1vw;
-  margin-right: 1vw;
+  margin: 0 0.3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
