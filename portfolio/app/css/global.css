@@ -120,7 +120,7 @@ html, body, #root {
   cursor: url('/mouse_pointers/xp_mouse_arrow_large.cur'), pointer;
 }
 
-.mousePointer:active, .mousePointer:active {
+.mousePointer:active {
   /* Using the classic XP finger pointer */
   cursor: url('/mouse_pointers/xp_mouse_arrow.cur'), pointer;
 }
@@ -140,7 +140,7 @@ button, a, .clickable {
 }
 
 /* While clicking, change to smaller */
-button:active, a:active .clickable:active {
+button:active, a:active, .clickable:active {
   cursor: url('/mouse_pointers/xp_mouse_link.cur'), auto;
 }
 
