@@ -22,7 +22,7 @@ const PopupButton = ({ setSelectedButton, iconName, title, icon }: Parameters) =
                     priority
                 />
             </div>
-            <p className={`${popupButtonStyles.iconFont}`}>{title}</p>
+            <div className={`${popupButtonStyles.iconFont} `}>{title}</div>
         </div>
 
 
