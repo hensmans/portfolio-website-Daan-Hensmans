@@ -140,7 +140,7 @@ button, a, .clickable {
 }
 
 /* While clicking, change to smaller */
-button:active, a:active .clickable {
+button:active, a:active .clickable:active {
   cursor: url('/mouse_pointers/xp_mouse_link.cur'), auto;
 }
 

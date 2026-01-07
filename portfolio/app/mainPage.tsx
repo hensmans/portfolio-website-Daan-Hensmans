@@ -156,7 +156,6 @@ export default function Mainpage() {
       if (monitorOnState && !mutedState) {
         mouseClickPlay.play(soundVolume);
 
-
         // Start background noise if didn't happen yet
         if (!firstTimeClickState) {
           startComputerNoise();
