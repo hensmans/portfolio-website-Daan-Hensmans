@@ -20,9 +20,11 @@ import picturesPic from '../assets/icons/pictures.webp';
 import projectsPic from '../assets/icons/projects.webp';
 
 // Monitor
-
 import monitorBorder from '../assets/monitor/monitor-screen-border-15.webp';
 import monitorName from '../assets/monitor/monitor-screen-daan-hensmans-13.webp';
+
+// Background
+import windowsXPBackground from '../assets/rest//windows-xp-background.jpeg';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -255,7 +257,14 @@ export default function Mainpage() {
         {/* Monitor content and screen */}
         {monitorOnState ?
           // Monitor on
-          <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} ${globalStyles.mousePointer} ${mainPageStyles.windowsXPBackground}`}>
+          <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} ${globalStyles.mousePointer}`}>
+            <Image
+              src={windowsXPBackground}
+              alt="Windows XP Background"
+              fill
+              priority
+              className={mainPageStyles.windowsXPBackground}
+            />
             {/* CRT lines */}
             <div className={crtStyles.crtLines} />
             {/* Monitor content */}

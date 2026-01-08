@@ -1,7 +1,7 @@
 
 import type { Metadata } from "next";
 import globalStyles from './css/global.module.css';
-
+import Image from 'next/image';
 import MainPage from "./mainPage";
 import './css/windows-xp.css';
 
@@ -22,14 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={` rootOfEverything`} >
       <head >
-        {/* Preload the background image */}
-        <link
-          rel="preload"
-          href={'windows-xp-background.jpeg'}
-          as="image"
-          type="image/jpeg"
-          crossOrigin="anonymous"
-        />
         <link rel="preload" href="/cv_old.pdf" as="fetch" crossOrigin="anonymous" />
         <link rel="preload" href="/windows-xp-loading-compressed.gif" as="fetch" crossOrigin="anonymous" />
       </head>
