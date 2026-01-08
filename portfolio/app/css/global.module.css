@@ -141,7 +141,7 @@ html p {
   cursor: url('/mouse_pointers/xp_mouse_text_large.cur'), auto;
 }
 
-html p {
+html p:active {
   cursor: url('/mouse_pointers/xp_mouse_text_small.cur'), auto;
 }
 
