@@ -1,6 +1,7 @@
 import taskBarStyles from './css/taskBar.module.css';
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import Image from "next/image";
+import globalStyles from './css/global.module.css';
 
 // Pics
 import mutePic from '../assets/icons/Mute.webp';
@@ -43,7 +44,6 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
 
     const onPopupClick = (name: string) => {
         setSelectedButton(name);
-
     }
 
     const muteIcon = <Image src={mutePic}
@@ -73,7 +73,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                     Daan Hensmans Portfolio
                 </div>
                 <div className={`${taskBarStyles.popupContent}`}>
-                    <div className={`${taskBarStyles.popupContentElement} clickable`} onClick={() => onPopupClick('aboutme')}>
+                    <div className={`${taskBarStyles.popupContentElement} ${globalStyles.clickable}`} onClick={() => onPopupClick('aboutme')}>
                         <Image src={aboutmePic}
                             alt={`aboutMe icon`}
                             fill
@@ -82,7 +82,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                         />
                         aboutMe.html
                     </div>
-                    <div className={`${taskBarStyles.popupContentElement} clickable`} onClick={() => onPopupClick('cv')}>
+                    <div className={`${taskBarStyles.popupContentElement} ${globalStyles.clickable}`} onClick={() => onPopupClick('cv')}>
                         <Image src={cvPic}
                             alt={`CV icon`}
                             fill
@@ -91,7 +91,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                         />
                         cv.pdf
                     </div>
-                    <div className={`${taskBarStyles.popupContentElement} clickable`} onClick={() => onPopupClick('projects')}>
+                    <div className={`${taskBarStyles.popupContentElement} ${globalStyles.clickable}`} onClick={() => onPopupClick('projects')}>
                         <Image src={projectsPic}
                             alt={`Projects icon`}
                             fill
@@ -100,7 +100,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                         />
                         projects
                     </div>
-                    <div className={`${taskBarStyles.popupContentElement} clickable`} onClick={() => onPopupClick('pictures')}>
+                    <div className={`${taskBarStyles.popupContentElement} ${globalStyles.clickable}`} onClick={() => onPopupClick('pictures')}>
                         <Image src={picturesPic}
                             alt={`Pictures icon`}
                             fill
@@ -111,12 +111,12 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                     </div>
                 </div>
                 <div className={`${taskBarStyles.popupBottomBar} ${taskBarStyles.popupTurnoffField} `} >
-                    <div className={` ${taskBarStyles.popupTurnoffFieldInner} clickable`} onClick={() => setMonitorOnState(false)}>
+                    <div className={` ${taskBarStyles.popupTurnoffFieldInner} ${globalStyles.clickable}`} onClick={() => setMonitorOnState(false)}>
                         <Image src={shutDownPic}
                             alt={`shut down icon`}
                             fill
                             priority // preloads
-                            className={`${taskBarStyles.popupContentLogo} clickable`}
+                            className={`${taskBarStyles.popupContentLogo} ${globalStyles.clickable}`}
                         />
                         <div className={`${taskBarStyles.popupText}`}>Turn Computer Off</div>
                     </div>
@@ -127,12 +127,12 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
     }
 
     return (
-        <div className={`${taskBarStyles.xpTaskbar} noSelect`} >
+        <div className={`${taskBarStyles.xpTaskbar} ${globalStyles.noSelect}`} >
             <div className={`${taskBarStyles.startButtonWrapped}`}
                 onMouseLeave={() => setIsOnStartPopup(false)}
                 onMouseEnter={() => setIsOnStartPopup(true)}>
                 {generatePopupButton()}
-                <div className={`${taskBarStyles.startButton} clickable`} >
+                <div className={`${taskBarStyles.startButton} ${globalStyles.clickable}`} >
                     <div className={`${taskBarStyles.xpLogo}`} onClick={() => setIsStartOpen(true)}>
                         <Image src={windowsXPLogoPic}
                             alt={`Windows XP icon`}
@@ -151,7 +151,7 @@ const Taskbar = ({ toggleMutedState, mutedState, setMonitorOnState, setSelectedB
                 <div className={taskBarStyles.taskItem}>Internet Explorer</div> */}
             </div>
 
-            <div className={`${taskBarStyles.systemTray} clickable`} onClick={toggleMutedState} >
+            <div className={`${taskBarStyles.systemTray} ${globalStyles.clickable}`} onClick={toggleMutedState} >
                 <span>
                     {mutedState
                         ? muteIcon

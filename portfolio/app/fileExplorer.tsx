@@ -1,6 +1,6 @@
 
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
-import './css/global.css';
+import globalStyles from './css/global.module.css';
 import fileExplorerStyles from './css/fileExplorer.module.css';
 import ProjectOverview from './projectOverview';
 import Image from "next/image";
@@ -651,7 +651,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
                 <li
                     key={file.id}
                     onClick={() => handleClick(file.id, getContent(file.id).icon, file.label)}
-                    className={`${fileExplorerStyles.treeElement} clickable ${selectedFile === file.id ? `${fileExplorerStyles.fileActive}` : ''}`}
+                    className={`${fileExplorerStyles.treeElement} ${globalStyles.clickable} ${selectedFile === file.id ? `${fileExplorerStyles.fileActive}` : ''}`}
                 >
                     <Image src={getContent(file.id).icon}
                         alt={`Popup icon`}
@@ -668,7 +668,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
     const generateFolderSummary = (icon: StaticImageData, title: string) => {
         const folder = items.find(entry => entry.folderName === title);
         return (
-            <summary className={`${fileExplorerStyles.treeElement} clickable`}
+            <summary className={`${fileExplorerStyles.treeElement} ${globalStyles.clickable}`}
                 onClick={() => folder && folder.id ? handleClick(folder.id, fileIcons.pictures, folder.id === 100 ? 'pictures' : 'README.md') : null}
             >
                 <Image src={icon}
@@ -712,7 +712,7 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
 
     return (
         <div className={`${fileExplorerStyles.layout} ${maximizeState ? fileExplorerStyles.maximize : {}}`}>
-            <ul className={`${fileExplorerStyles.tree} noSelect ${popupStyles.popupBodyFiles}`}>
+            <ul className={`${fileExplorerStyles.tree} ${globalStyles.noSelect} ${popupStyles.popupBodyFiles}`}>
                 <li >
                     <details open>
                         {generateFolderSummary(fileIcons.localDisk, 'Local Disk (C:)')}

@@ -4,8 +4,6 @@
   --primary-font: "Pixelated MS Sans Serif";
   --primary-font-bold: "Pixelated MS Sans Serif Bold";
 
-
-
   /* --- BLUE THEME (Default Luna) --- */
   --xp-blue-primary: #0050ee;
   /* Title bars */
@@ -112,7 +110,7 @@ html, body, #root {
 
 
 /* Apply the border-box model globally */
-*, *::before, *::after {
+html *, html *::before, html *::after {
   box-sizing: border-box;
 }
 
@@ -139,21 +137,21 @@ html, body, #root {
 }
 
 /* When something is clickable */
-button, a, .clickable {
+.clickable, html button, html a {
   cursor: url('/mouse_pointers/xp_mouse_link_large.cur'), auto;
 }
 
 /* While clicking, change to smaller */
-button:active, a:active, .clickable:active {
+.clickable:active, html button:active, html a:active {
   cursor: url('/mouse_pointers/xp_mouse_link.cur'), auto;
 }
 
 /* While hovering over text */
-p {
+html p {
   cursor: url('/mouse_pointers/xp_mouse_text_large.cur'), auto;
 }
 
-p:active {
+html p {
   cursor: url('/mouse_pointers/xp_mouse_text_small.cur'), auto;
 }
 

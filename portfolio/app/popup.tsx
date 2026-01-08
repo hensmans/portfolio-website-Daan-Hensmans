@@ -1,8 +1,6 @@
 import globalStyles from './css/globals.module.css';
-import './css/global.css';
 import popupStyles from './css/popup.module.css';
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import './css/global.css';
+import { Dispatch, SetStateAction, useEffect, useState } from "react";;
 import Image, { StaticImageData } from "next/image";
 import { useIsMobile } from './isMobileFunction'
 

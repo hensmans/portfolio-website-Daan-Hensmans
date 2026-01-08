@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import PopupButton from './popupButton';
-import './css/global.css';
+import './css/global.module.css';
 import buttonSelectionStyles from './css/buttonSelection.module.css';
 
 import projects from '../assets/icons/projects_big.webp';

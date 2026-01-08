@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
-import './css/global.css';
+import globalStyles from './css/global.module.css';
+
 import MainPage from "./mainPage";
 import './css/windows-xp.css';
 
@@ -19,8 +20,8 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en">
-      <head className="rootOfEverything">
+    <html lang="en" className={` rootOfEverything`} >
+      <head >
         {/* Preload the background image */}
         <link
           rel="preload"

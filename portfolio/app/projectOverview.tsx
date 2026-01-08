@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import './css/global.css';
+import globalStyles from './css/global.module.css';
 import fileOverviewStyles from './css/fileOverview.module.css';
 import PictureSlideshow from './pictureSlideshow';
 import { StaticImageData } from 'next/image';
@@ -26,13 +26,13 @@ const ProjectOverview = ({ content }: Parameters) => {
                 <div className={`${fileOverviewStyles.leftArea}`}>
                     {/* Title*/}
                     <div className={`${fileOverviewStyles.title}`} >
-                        <p >{content.title}</p>
+                        <p>{content.title}</p>
                     </div>
                     {/* Tags */}
                     <div className={`${fileOverviewStyles.tags}`}>
                         {tags.map((tag, index) => (
                             <Fragment key={index}>
-                                <p className={`${fileOverviewStyles.tag}`}>{tag}</p>
+                                <p className={`${fileOverviewStyles.tag} `}>{tag}</p>
                                 {(index < tags.length - 1) && (
                                     <span>&nbsp;·&nbsp;</span>
                                 )}
@@ -63,7 +63,7 @@ const ProjectOverview = ({ content }: Parameters) => {
                         <p>Knowledge gained:</p>
                         <ul>
                             {content.bulletPoints.map((subBulletPoint, index) => (
-                                <li key={index}> <p>{subBulletPoint}</p></li>
+                                <li key={index}> <p >{subBulletPoint}</p></li>
                             ))}
                         </ul>
                     </div>

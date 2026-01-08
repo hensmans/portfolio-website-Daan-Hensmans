@@ -1,4 +1,4 @@
-import './css/global.css';
+import globalStyles from './css/global.module.css';
 import aboutMeStyles from './css/aboutMe.module.css';
 import { differenceInYears } from "date-fns";
 import PictureSlideshow from './pictureSlideshow';

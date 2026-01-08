@@ -1,4 +1,4 @@
-@import url('global.css');
+@import url('global.module.css');
 
 .loadingBackground {
   position: absolute;

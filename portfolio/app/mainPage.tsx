@@ -1,7 +1,7 @@
 'use client';
 import mainPageStyles from './css/mainPage.module.css';
 import crtStyles from './css/crt.module.css';
-import './css/global.css';
+import globalStyles from './css/global.module.css';
 import React, { useState, useEffect, Dispatch, SetStateAction, useRef } from 'react';
 import Image from "next/image";
 import dynamic from 'next/dynamic';
@@ -255,11 +255,11 @@ export default function Mainpage() {
         {/* Monitor content and screen */}
         {monitorOnState ?
           // Monitor on
-          <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} mousePointer ${mainPageStyles.windowsXPBackground}`}>
+          <div className={` ${crtStyles.crt}  ${crtStyles.crtMainScreen} ${globalStyles.mousePointer} ${mainPageStyles.windowsXPBackground}`}>
             {/* CRT lines */}
             <div className={crtStyles.crtLines} />
             {/* Monitor content */}
-            <div className={mainPageStyles.contentLayout}>
+            <div className={`${mainPageStyles.contentLayout} `}>
               <PreloadContent setMaximizeState={setMaximizeState} maximizeState={maximizeState} setIconName={setIconName} iconName={iconName}
                 selectedButton={selectedButton} setSelectedButton={setSelectedButton} titleName={titleName} setTitleName={setTitleName} />
               <Taskbar toggleMutedState={toggleMutedState} mutedState={mutedState} setMonitorOnState={setMonitorOnState} setSelectedButton={setSelectedButton} />

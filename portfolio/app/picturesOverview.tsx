@@ -1,4 +1,4 @@
-import './css/global.css';
+import globalStyles from './css/global.module.css';
 import fileOverviewStyles from './css/fileOverview.module.css';
 import Image, { StaticImageData } from "next/image";
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
