@@ -24,7 +24,7 @@ import monitorBorder from '../assets/monitor/monitor-screen-border-15.webp';
 import monitorName from '../assets/monitor/monitor-screen-daan-hensmans-13.webp';
 
 // Background
-import windowsXPBackground from '../assets/rest//windows-xp-background.jpeg';
+import windowsXPBackground from '../assets/rest//windows-xp-background.webp';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

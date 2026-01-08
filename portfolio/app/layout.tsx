@@ -22,6 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={` rootOfEverything`} >
       <head >
+        {/* Fonts */}
+        <link rel="preload" href="/_next/static/css/converted/ms_sans_serif.woff" as="font" type="font/woff" />
+        <link rel="preload" href="/_next/static/css/converted/ms_sans_serif.woff2" as="font" type="font/woff2" />
+        <link rel="preload" href="/_next/static/css/converted/ms_sans_serif_bold.woff" as="font" type="font/woff" />
+        <link rel="preload" href="/_next/static/css/converted/ms_sans_serif_bold.woff2" as="font" type="font/woff2" />
+
         <link rel="preload" href="/cv_old.pdf" as="fetch" crossOrigin="anonymous" />
         <link rel="preload" href="/windows-xp-loading-compressed.gif" as="fetch" crossOrigin="anonymous" />
       </head>
