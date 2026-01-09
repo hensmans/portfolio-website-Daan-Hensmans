@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import MainPage from "./mainPage";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // The Windows XP css
 // https://botoxparty.github.io/XP.css/
@@ -26,6 +27,7 @@ export default function RootLayout({
         <link rel="preload" href="/cv_old.pdf" as="fetch" crossOrigin="anonymous" fetchPriority="high" />
         <link rel="preload" href="/windows-xp-loading-compressed.gif" as="fetch" crossOrigin="anonymous" fetchPriority="high" />
       </head>
+      <SpeedInsights />
       <MainPage />
     </html >
   );
