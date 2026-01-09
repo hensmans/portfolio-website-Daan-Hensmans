@@ -110,12 +110,12 @@ html *, html *::before, html *::after {
 /* Mouse arrow */
 /* https://www.rw-designer.com/cursor-set/windows-xp-1 */
 /* Smaller mouse arrow when clicked */
-.mousePointer {
+.mousePointer, html button:disabled {
   /* Using the classic XP finger pointer */
   cursor: url('/mouse_pointers/xp_mouse_arrow_large.cur'), pointer;
 }
 
-.mousePointer:active {
+.mousePointer:active, html button:disabled:active {
   /* Using the classic XP finger pointer */
   cursor: url('/mouse_pointers/xp_mouse_arrow.cur'), pointer;
 }
