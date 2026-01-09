@@ -1,9 +1,6 @@
 
 import type { Metadata } from "next";
-import globalStyles from './css/global.module.css';
-import Image from 'next/image';
 import MainPage from "./mainPage";
-import './css/windows-xp.css';
 
 // The Windows XP css
 // https://botoxparty.github.io/XP.css/

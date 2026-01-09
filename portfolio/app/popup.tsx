@@ -1,10 +1,8 @@
-import globalStyles from './css/globals.module.css';
 import popupStyles from './css/popup.module.css';
 import { Dispatch, SetStateAction, useEffect, useState } from "react";;
 import Image, { StaticImageData } from "next/image";
 import { useIsMobile } from './isMobileFunction'
-
-
+import windowsXPStyles from './css/windows-xp.module.css';
 
 interface ButtonSelectionProps {
   setSelectedButton: Dispatch<SetStateAction<string>>;
@@ -28,8 +26,8 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
   }
 
   return (
-    <div className={`${popupStyles.popupScreen} ${maximizeState || isMobile ? `${popupStyles.popupScreenMaximized}` : `${popupStyles.popupScreenMinimized}`} window`}>
-      <div className={`title-bar ${popupStyles.popupTitleBar}`}>
+    <div className={`${popupStyles.popupScreen} ${maximizeState || isMobile ? `${popupStyles.popupScreenMaximized}` : `${popupStyles.popupScreenMinimized}`} ${windowsXPStyles.window}`}>
+      <div className={`${windowsXPStyles.titleBar} ${popupStyles.popupTitleBar}`}>
         <div className={`${popupStyles.popupTitleBarLeft}`}>
           <Image src={iconName}
             alt={`Popup icon`}
@@ -38,19 +36,18 @@ const Popup = ({ setSelectedButton, setMaximizeState, maximizeState, content, ti
             placeholder="blur"
             className={`${popupStyles.popupTitleBarIcon}`}
           />
-          <div className="title-bar-text">
+          <div className={`${windowsXPStyles.titleBarText}`}>
             {title}
           </div>
         </div>
 
-        <div className={` title-bar-controls `}>
-
+        <div className={` ${windowsXPStyles.titleBarControls} `}>
           {isMobile ? <></> : <button className={`${popupStyles.popupBarIcon}`} aria-label="Minimize" onClick={() => goToHomeScreen()} />}
           {isMobile ? <></> : <button className={`${popupStyles.popupBarIcon}`} aria-label="Maximize" onClick={() => setMaximizeState(!maximizeState)} />}
           <button className={`${popupStyles.popupBarIcon}`} aria-label="Close" onClick={() => goToHomeScreen()} />
         </div>
       </div >
-      <div className={`window-body ${popupStyles.popupBody}`}>
+      <div className={`${windowsXPStyles.windowBody} ${popupStyles.popupBody}`}>
         {content}
       </div>
     </div >

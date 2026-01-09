@@ -4,6 +4,8 @@
   --primary-font: "Pixelated MS Sans Serif";
   --primary-font-bold: "Pixelated MS Sans Serif Bold";
 
+  -webkit-font-smoothing: antialiased;
+
   /* --- BLUE THEME (Default Luna) --- */
   --xp-blue-primary: #0050ee;
   /* Title bars */
@@ -145,12 +147,27 @@ html p:active {
   cursor: url('/mouse_pointers/xp_mouse_text_small.cur'), auto;
 }
 
+
+html button {
+  font-family: var(--primary-font);
+  /* font-size: 11px; */
+  box-sizing: border-box;
+  border: 1px solid #003c74;
+  background: linear-gradient(180deg, #fff, #ecebe5 86%, #d8d0c4);
+  box-shadow: none;
+  border-radius: 3px;
+}
+
 /* Change button focus color */
 html button:hover, html button:focus {
-  box-shadow: inset 0 0 0 1px var(--xp-blue-border) !important;
+  box-shadow: none;
   outline: none;
 }
 
+html button:not(:disabled):hover, html button:not(:disabled):focus {
+
+  box-shadow: inset 0px 0px 0px 1px var(--xp-blue-primary) !important;
+}
 
 
 @media screen and (max-width: 800px) {
