@@ -44,10 +44,11 @@ const ProjectOverview = ({ content }: Parameters) => {
                         <br />
                         {description.map((subDescription, index) => (
                             < Fragment key={index}>
-                                <p >{subDescription}</p>
-                                {(index < description.length - 1) && (
-                                    <br />
-                                )}
+                                <p >{subDescription}
+                                    {(index < description.length - 1) && (
+                                        <>   <br /><br /></>
+                                    )}</p>
+
                             </ Fragment>
                         ))}
                     </div>
@@ -59,7 +60,7 @@ const ProjectOverview = ({ content }: Parameters) => {
                         <PictureSlideshow youtubeId={content.youtubeId} pictures={content.pictures} />
                     </div>
                     {/* Bullet points what you learned */}
-                    <div className={`${fileOverviewStyles.bulletpoints}`}>
+                    <div className={`${fileOverviewStyles.bulletpoints} globalStyles`}>
                         <p>Knowledge gained:</p>
                         <ul>
                             {content.bulletPoints.map((subBulletPoint, index) => (
