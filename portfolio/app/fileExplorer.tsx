@@ -445,7 +445,7 @@ const projectsContent = [
         id: 13,
         content: {
             title: 'EmFRP Compiler',
-            tags: ['Compiler', 'Reactive Programming', '2024'],
+            tags: ['Compiler', 'Bachelor Thesis', '2024'],
             description: [
                 "My bachelor's thesis focused on creating a compiler for a programming language called EmFRP. This language is reactive, meaning there is code that reacts to changes in external values. It is mainly used for research and embedded devices.",
                 "The compiler will compile the code into a sequence of bytecode for the Remus virtual machine. This VM is used to execute a different reactive programming language, and the aim of the thesis was to establish whether it could also execute another reactive language.",
