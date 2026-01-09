@@ -21,7 +21,7 @@ const AboutMe = ({ maximizeState }: Parameters) => {
   return (
     <div className={`${aboutMeStyles.webpageRoot}`}>
       <div className={`${aboutMeStyles.rows} ${aboutMeStyles.webpageBackground} ${aboutMeStyles.content}
-                    ${(maximizeState) ? aboutMeStyles.webpageRootMaximized : aboutMeStyles.webpageRootMinimized} ${aboutMeStyles.centered}`}>
+                    ${(maximizeState) ? aboutMeStyles.webpageRootMaximized : aboutMeStyles.webpageRootMinimized}`}>
 
         <div className={`${aboutMeStyles.columns} `}>
           <div className={`${aboutMeStyles.rows} ${aboutMeStyles.leftColumn} `}>
