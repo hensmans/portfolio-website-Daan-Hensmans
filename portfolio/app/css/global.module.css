@@ -145,6 +145,13 @@ html p:active {
   cursor: url('/mouse_pointers/xp_mouse_text_small.cur'), auto;
 }
 
+/* Change button focus color */
+html button:hover, html button:focus {
+  box-shadow: inset 0 0 0 1px var(--xp-blue-border) !important;
+  outline: none;
+}
+
+
 
 @media screen and (max-width: 800px) {
   :root {
