@@ -15,7 +15,9 @@ export default function MonitorButton({ monitorOnState, setMonitorOnState }: Par
             <div className={`${monitorButtonStyles.led} ${monitorOnState ? monitorButtonStyles.ledOn : monitorButtonStyles.ledOff}`} />
             {/* The Block Button */}
             <button className={monitorButtonStyles.retroButton}
-                onClick={() => setMonitorOnState(!monitorOnState)} />
+                onClick={() => setMonitorOnState(!monitorOnState)} >
+                <span>turn off</span>
+            </button>
         </div>
     );
 }
