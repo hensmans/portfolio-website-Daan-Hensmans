@@ -120,12 +120,15 @@
 
 .contactInfo a {
     margin: 0 var(--padding-aboutme);
+    color: blue;
 }
 
 .contactInfo a p {
     pointer-events: none;
     font-family: var(--primary-font-bold);
 }
+
+
 
 .textBox p {
     width: 100%;

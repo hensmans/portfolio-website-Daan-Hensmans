@@ -11,15 +11,25 @@
 
 /* Tree */
 
+.treeElementChild:hover {
+    margin-left: 1rem;
+
+    color: var(--xp-blue-primary);
+}
+
+.treeElement {
+
+    transition: color 125ms ease-out;
+    transition: margin-left 125ms ease-out;
+}
+
 .fileActive {
-    background-color: var(--xp-blue-primary);
-    color: var(--xp-blue-light);
+    background-color: var(--xp-blue-primary) !important;
+    color: var(--xp-blue-light) !important;
     border-radius: 0.5rem;
 
     margin-right: 0.5rem;
 }
-
-
 
 
 .tree {
