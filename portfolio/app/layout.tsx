@@ -21,9 +21,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={``} >
       <head >
-        {/* Fonts */}
-        <link rel="preload" href="/fonts/converted/ms_sans_serif.woff2" as="font" type="font/woff2" fetchPriority="high" />
-        <link rel="preload" href="/fonts/converted/ms_sans_serif_bold.woff2" as="font" type="font/woff2" fetchPriority="high" />
         {/* PDF */}
         <link rel="preload" href="/cv_old.pdf" as="fetch" crossOrigin="anonymous" fetchPriority="high" />
         {/* Loading gif */}
