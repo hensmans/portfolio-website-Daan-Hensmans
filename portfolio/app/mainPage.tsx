@@ -2,10 +2,9 @@
 import mainPageStyles from './css/mainPage.module.css';
 import crtStyles from './css/crt.module.css';
 import globalStyles from './css/global.module.css';
-import React, { useState, useEffect, Dispatch, SetStateAction, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from "next/image";
 import dynamic from 'next/dynamic';
-import { Geist, Geist_Mono } from "next/font/google";
 import LoadingStartpage from './loadingStartpage';
 import Taskbar from './taskBar';
 import MonitorButton from './monitorButton';
@@ -25,16 +24,6 @@ import monitorName from '../assets/monitor/monitor-screen-daan-hensmans-13.webp'
 
 // Background
 import windowsXPBackground from '../assets/rest//windows-xp-background.webp';
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 // Once the DOM is loaded, render the actual content
 const PreloadContent = dynamic(() => import('./page'), {

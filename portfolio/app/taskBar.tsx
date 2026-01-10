@@ -1,5 +1,5 @@
 import taskBarStyles from './css/taskBar.module.css';
-import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
+import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import Image from "next/image";
 import globalStyles from './css/global.module.css';
 

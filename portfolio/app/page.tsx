@@ -1,16 +1,11 @@
 'use client';
-import { useEffect, useState } from 'react';
-import globalStyles from './css/globals.module.css';
 import ButtonSelection from './buttonSelection';
 import Popup from './popup';
 import FileExplorer from './fileExplorer';
 import AboutMe from './aboutMe';
 import { Dispatch, SetStateAction } from "react";
-import pageStyles from './css/page.module.css';
-import Pdf from './pdf';
+import pageStyles from './css/page.module.css';;
 import { useIsMobile } from './isMobileFunction'
-
-
 import dynamic from 'next/dynamic';
 import { StaticImageData } from 'next/image';
 

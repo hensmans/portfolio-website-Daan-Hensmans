@@ -1,5 +1,5 @@
 import popupStyles from './css/popup.module.css';
-import { Dispatch, SetStateAction, useEffect, useState } from "react";;
+import { Dispatch, SetStateAction } from "react";;
 import Image, { StaticImageData } from "next/image";
 import { useIsMobile } from './isMobileFunction'
 import windowsXPStyles from './css/windows-xp.module.css';

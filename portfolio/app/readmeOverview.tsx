@@ -1,6 +1,5 @@
 
 import { Fragment, useState } from 'react';
-import globalStyles from './css/global.module.css';
 import fileOverviewStyles from './css/fileOverview.module.css';
 import { StaticImageData } from 'next/image';
 
