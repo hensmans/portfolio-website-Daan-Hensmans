@@ -109,45 +109,46 @@ html *, html *::before, html *::after {
 
 /* Mouse arrow */
 /* https://www.rw-designer.com/cursor-set/windows-xp-1 */
+/* Encoded through https://yoksel.github.io/url-encoder/ */
 /* Smaller mouse arrow when clicked */
 .mousePointer, html button:disabled {
   /* Using the classic XP finger pointer */
-  cursor: url('/mouse_pointers/cur/xp_mouse_arrow_large.cur'), pointer;
+  cursor: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='32px' height='32px' viewBox='0 0 32 32' enable-background='new 0 0 32 32' xml:space='preserve'%3E%3Cimage id='image0' width='32' height='32' x='0' y='0' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJN%0AAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElN%0ARQfqAQoAIwnuo5RVAAAAmUlEQVRIx7WRSRLAIAgEoSv//7K5xGyoYal40hlpBhUpr1Yrp4pApJUQ%0AHFOkEZwPkUTQN1kE1zaH4H7IIHge4wjeQhSBlWIIRmIEwVj2I5gZXgRzy4dgZXoQrO1vxGYltRR1%0AAfRqtiiYjqAiqu7JDUBDXQ3gLE9koNK9J7iXhzNQ6S4yDt9atxxwvq/EE4Qy/JSg/0HxgV1rB9lI%0ALSf9AcmnAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDI2LTAxLTEwVDAwOjM1OjA5KzAwOjAwxHqf/wAA%0AACV0RVh0ZGF0ZTptb2RpZnkAMjAyNi0wMS0xMFQwMDozNTowOSswMDowMLUnJ0MAAAAodEVYdGRh%0AdGU6dGltZXN0YW1wADIwMjYtMDEtMTBUMDA6MzU6MDkrMDA6MDDiMgacAAAAAElFTkSuQmCC' /%3E%3C/svg%3E%0A"), auto;
 }
 
 .mousePointer:active, html button:disabled:active {
   /* Using the classic XP finger pointer */
-  cursor: url('/mouse_pointers/cur/xp_mouse_arrow.cur'), pointer;
+  cursor: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='32px' height='32px' viewBox='0 0 32 32' enable-background='new 0 0 32 32' xml:space='preserve'%3E%3Cimage id='image0' width='32' height='32' x='0' y='0' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJN%0AAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElN%0ARQfqAQoAIwZ+HInEAAAAiklEQVRIx+2SwQ7AIAhDodn//zI7LE5x6ijLDkvGSYo8ilHkjyMs34qn%0ACJz9SURxkEagHnMItEkGAZ/yCPQCi8BV4hAYiQwCYzmOwKwQRWBeiiGwKkYQ20hUT9EwQOvAZdNk%0ABRVRJbbvAEpMva5rjWkzCggHSjvwQXnA/RXeAeXhJQflH6Sf9lOxAxiTJh25QU6HAAAAJXRFWHRk%0AYXRlOmNyZWF0ZQAyMDI2LTAxLTEwVDAwOjM1OjA2KzAwOjAwMjLvFgAAACV0RVh0ZGF0ZTptb2Rp%0AZnkAMjAyNi0wMS0xMFQwMDozNTowNiswMDowMENvV6oAAAAodEVYdGRhdGU6dGltZXN0YW1wADIw%0AMjYtMDEtMTBUMDA6MzU6MDYrMDA6MDAUenZ1AAAAAElFTkSuQmCC' /%3E%3C/svg%3E%0A") 2 4, auto;
 }
 
 /* While on waiting screen, put waiting pointer */
 .waitingPointer {
-  cursor: url('/mouse_pointers/cur/xp_mouse_busy_large.cur'), pointer;
+  cursor: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='32px' height='32px' viewBox='0 0 32 32' enable-background='new 0 0 32 32' xml:space='preserve'%3E%3Cimage id='image0' width='32' height='32' x='0' y='0' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJN%0AAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElN%0ARQfqAQoAIxMTwW0vAAAArUlEQVRIx72V0Q6AIAhFvcz//2V7qJnKBXS03GyzOGdIYaUkB6ZVO+ck%0Am0Fdb8RJwFntbmKg0hmka/C9AP3Kpi4alLLddUBpaj7h8AWmguFcQBUctwRKYeG2YFLYuCfoCg//%0A40NCVhD1RljEIYzGSoTjzYMmAx+/Q7x3gQhXwQshHj73Id+IePjYTJZCZcDxRRG/BXYa8HrLPs4V%0A6WNd/do2j/XOVfr4YKTbOT0uJzVKObf0sMcAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjYtMDEtMTBU%0AMDA6MzU6MTkrMDA6MDAI0J9hAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDI2LTAxLTEwVDAwOjM1OjE5%0AKzAwOjAweY0n3QAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyNi0wMS0xMFQwMDozNToxOSswMDow%0AMC6YBgIAAAAASUVORK5CYII=' /%3E%3C/svg%3E%0A") 16 16, wait;
 }
 
 .waitingPointer:active {
-  cursor: url('/mouse_pointers/cur/xp_mouse_busy.cur'), pointer;
+  cursor: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='32px' height='32px' viewBox='0 0 32 32' enable-background='new 0 0 32 32' xml:space='preserve'%3E%3Cimage id='image0' width='32' height='32' x='0' y='0' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJN%0AAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElN%0ARQfqAQoAIxCKyDyVAAAAlElEQVRIx+1Uyw6AMAhrF///l/HgdD6AsRAzD3IwG2kbLAzgDyo5GWGU%0AbAWLntaLYFyAiIaOFLOCBz7twVsCPL683KIeALJ1ghCwnnS0bfdJwqb7/ZJ9Hugg/YYLIC79w22M%0AR9rE0qMTVcbYEp1BugEVdOnR2VJqFcYvNLpcJQY8QHsJntMlQvck0lt5/lJNj/L8WAGamCU2vmrZ%0AYAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyNi0wMS0xMFQwMDozNToxNiswMDowMP6Y74gAAAAldEVY%0AdGRhdGU6bW9kaWZ5ADIwMjYtMDEtMTBUMDA6MzU6MTYrMDA6MDCPxVc0AAAAKHRFWHRkYXRlOnRp%0AbWVzdGFtcAAyMDI2LTAxLTEwVDAwOjM1OjE2KzAwOjAw2NB26wAAAABJRU5ErkJggg==' /%3E%3C/svg%3E%0A") 16 16, auto;
 }
 
 /* When something is clickable */
 .clickable, html button, html a,
 ::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb {
-  cursor: url('/mouse_pointers/cur/xp_mouse_link_large.cur'), auto;
+  cursor: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='32px' height='32px' viewBox='0 0 32 32' enable-background='new 0 0 32 32' xml:space='preserve'%3E%3Cimage id='image0' width='32' height='32' x='0' y='0' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJN%0AAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElN%0ARQfqAQoAIyHbFjyvAAAAk0lEQVRIx+2VwQ7AIAhDwfj/v9wddC4uSAq627iYGX22jUOVuSAiIip0%0AzUsx9tOIwp/1Az4D1MU8fR+qux/9U8MAE2RiyAwguGk5QFeDLcAqAyMovEavSvMHdzV8gOeQUsCc%0A4wE00H4WCgYio6FZ2FBx7HdOawgosHv1A0hq2M7AfFh4A8ebaiIHUsH6tTzf1qMmLk4yG0mJhjBt%0AAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDI2LTAxLTEwVDAwOjM1OjMzKzAwOjAw7oXHUgAAACV0RVh0%0AZGF0ZTptb2RpZnkAMjAyNi0wMS0xMFQwMDozNTozMyswMDowMJ/Yf+4AAAAodEVYdGRhdGU6dGlt%0AZXN0YW1wADIwMjYtMDEtMTBUMDA6MzU6MzMrMDA6MDDIzV4xAAAAAElFTkSuQmCC' /%3E%3C/svg%3E%0A") 8 0, pointer;
 }
 
 /* While clicking, change to smaller */
 .clickable:active, html button:active, html a:active,
 ::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active {
-  cursor: url('/mouse_pointers/cur/xp_mouse_link.cur'), auto;
+  cursor: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='32px' height='32px' viewBox='0 0 32 32' enable-background='new 0 0 32 32' xml:space='preserve'%3E%3Cimage id='image0' width='32' height='32' x='0' y='0' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJN%0AAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElN%0ARQfqAQoAIxpqHdWLAAAAiUlEQVRIx+2UwQ6AIAxDO8P//3K9IAoZUAcnY28Y9qgVa6hFAIBBVr2V%0AZV5GHPpZnwWkznP5a6ThPPPSXgNckIsRMyB40WKA7IZLgH4GQlRjQJt5IVIAPF6hv50TgIW8Vw4y%0AQrHc6j6cs3G/JTb+jcEklh24nagnsL2RAjmIDvpFv78TV671r6BOrNAZP4T3Xm8AAAAldEVYdGRh%0AdGU6Y3JlYXRlADIwMjYtMDEtMTBUMDA6MzU6MjYrMDA6MDBwF+hrAAAAJXRFWHRkYXRlOm1vZGlm%0AeQAyMDI2LTAxLTEwVDAwOjM1OjI2KzAwOjAwAUpQ1wAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAy%0ANi0wMS0xMFQwMDozNToyNiswMDowMFZfcQgAAAAASUVORK5CYII=' /%3E%3C/svg%3E%0A") 8 0, pointer;
 }
 
 /* While hovering over text */
 html p {
-  cursor: url('/mouse_pointers/cur/xp_mouse_text_large.cur'), auto;
+  cursor: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='32px' height='32px' viewBox='0 0 32 32' enable-background='new 0 0 32 32' xml:space='preserve'%3E%3Cimage id='image0' width='32' height='32' x='0' y='0' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJN%0AAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElN%0ARQfqAQoAIycydZmaAAAAVklEQVRIx+3VQQrAIAxE0bH0/lf+bopVSCLoppbMKig+XY3S8SnWIjyb%0AZZyt3JELbXJf4AA0xj86DQjBRLjWL0gggQQS+BoQ17reUl2rde3Wevex/DgVVUAXMECFuLsAAAAl%0AdEVYdGRhdGU6Y3JlYXRlADIwMjYtMDEtMTBUMDA6MzU6MzkrMDA6MDBK9ZgcAAAAJXRFWHRkYXRl%0AOm1vZGlmeQAyMDI2LTAxLTEwVDAwOjM1OjM5KzAwOjAwO6ggoAAAACh0RVh0ZGF0ZTp0aW1lc3Rh%0AbXAAMjAyNi0wMS0xMFQwMDozNTozOSswMDowMGy9AX8AAAAASUVORK5CYII=' /%3E%3C/svg%3E%0A") 16 16, auto;
 }
 
 html p:active {
-  cursor: url('/mouse_pointers/cur/xp_mouse_text_small.cur'), auto;
+  cursor: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='32px' height='32px' viewBox='0 0 32 32' enable-background='new 0 0 32 32' xml:space='preserve'%3E%3Cimage id='image0' width='32' height='32' x='0' y='0' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJN%0AAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElN%0ARQfqAQoOBBEtlJNsAAAAUElEQVRIx+2Tuw4AEAwAW/H/v3yWhkVVWER6C/E4lhNJPkDny2DbOmbz%0Ak3VtBhvdH7gCTONf3QAEAkO5eSAFKXhHEOXcYzrNWW5z1qjG5AsadhcWIVWsb5MAAAAldEVYdGRh%0AdGU6Y3JlYXRlADIwMjYtMDEtMTBUMTQ6MDQ6MTcrMDA6MDBzeWLjAAAAJXRFWHRkYXRlOm1vZGlm%0AeQAyMDI2LTAxLTEwVDE0OjA0OjE3KzAwOjAwAiTaXwAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAy%0ANi0wMS0xMFQxNDowNDoxNyswMDowMFUx+4AAAAAASUVORK5CYII=' /%3E%3C/svg%3E%0A") 16 16, auto;
 }
 
 
