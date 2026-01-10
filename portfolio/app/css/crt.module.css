@@ -109,6 +109,12 @@
     pointer-events: visible;
 }
 
+.monitorButton button:not(:disabled):hover, .monitorButton button:not(:disabled):focus {
+
+    box-shadow: inset 0px 0px 0px 1px var(--xp-silver-border) !important;
+}
+
+
 /* Flicker animation of the screen, not so pretty and annoying */
 .crt::after {
     content: " ";
