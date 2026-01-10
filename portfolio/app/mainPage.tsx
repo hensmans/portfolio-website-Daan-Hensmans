@@ -17,6 +17,7 @@ import cvPic from '../assets/icons/cv.webp';
 import aboutmePic from '../assets/icons/aboutme.webp';
 import picturesPic from '../assets/icons/pictures.webp';
 import projectsPic from '../assets/icons/projects.webp';
+import readmePic from '../assets/icons/text.webp';
 
 // Monitor
 import monitorBorder from '../assets/monitor/monitor-screen-border-15.webp';
@@ -204,7 +205,7 @@ export default function Mainpage() {
         setTitleName('home');
         break;
       case 'projects':
-        setIconName(projectsPic);
+        setIconName(readmePic);
         setTitleName('README.md');
         break;
       case 'pictures':
