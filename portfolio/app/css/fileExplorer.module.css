@@ -11,24 +11,38 @@
 
 /* Tree */
 
-.treeElementChild:hover {
-    margin-left: 1rem;
+.treeElement {
+    display: flex;
+    flex-direction: row;
 
-    color: var(--xp-blue-primary);
+    align-items: center;
+    text-align: center;
 }
 
-.treeElement {
+.treeElement:hover .treeElementChild {
+    color: var(--xp-blue-primary);
+    margin-left: 1rem;
+}
 
+
+
+.treeElementChild {
+    padding: 0.5rem 0.5rem;
+    width: 100%;
+    height: 100%;
+    text-align: left;
     transition: color 125ms ease-out;
     transition: margin-left 125ms ease-out;
 }
 
 .fileActive {
-    background-color: var(--xp-blue-primary) !important;
-    color: var(--xp-blue-light) !important;
+    background-color: var(--xp-blue-primary);
     border-radius: 0.5rem;
-
     margin-right: 0.5rem;
+}
+
+.fileActive span {
+    color: var(--xp-blue-light);
 }
 
 
@@ -110,15 +124,7 @@
     margin-right: 0.3rem;
 }
 
-.treeElement {
-    display: flex;
-    flex-direction: row;
 
-    align-items: center;
-    text-align: center;
-
-    padding: 0.5rem 0.5rem;
-}
 
 /* Phone settings */
 @media screen and (max-width: 800px) {
