@@ -112,42 +112,42 @@ html *, html *::before, html *::after {
 /* Smaller mouse arrow when clicked */
 .mousePointer, html button:disabled {
   /* Using the classic XP finger pointer */
-  cursor: url('/mouse_pointers/xp_mouse_arrow_large.svg'), pointer;
+  cursor: url('/mouse_pointers/xp_mouse_arrow_large.cur'), pointer;
 }
 
 .mousePointer:active, html button:disabled:active {
   /* Using the classic XP finger pointer */
-  cursor: url('/mouse_pointers/xp_mouse_arrow.svg'), pointer;
+  cursor: url('/mouse_pointers/xp_mouse_arrow.cur'), pointer;
 }
 
 /* While on waiting screen, put waiting pointer */
 .waitingPointer {
-  cursor: url('/mouse_pointers/xp_mouse_busy_large.svg'), pointer;
+  cursor: url('/mouse_pointers/xp_mouse_busy_large.cur'), pointer;
 }
 
 .waitingPointer:active {
-  cursor: url('/mouse_pointers/xp_mouse_busy.svg'), pointer;
+  cursor: url('/mouse_pointers/xp_mouse_busy.cur'), pointer;
 }
 
 /* When something is clickable */
 .clickable, html button, html a,
 ::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb {
-  cursor: url('/mouse_pointers/xp_mouse_link_large.svg'), auto;
+  cursor: url('/mouse_pointers/xp_mouse_link_large.cur'), auto;
 }
 
 /* While clicking, change to smaller */
 .clickable:active, html button:active, html a:active,
 ::-webkit-scrollbar-button:active, ::-webkit-scrollbar-thumb:active {
-  cursor: url('/mouse_pointers/xp_mouse_link.svg'), auto;
+  cursor: url('/mouse_pointers/xp_mouse_link.cur'), auto;
 }
 
 /* While hovering over text */
 html p {
-  cursor: url('/mouse_pointers/xp_mouse_text_large.svg'), auto;
+  cursor: url('/mouse_pointers/xp_mouse_text_large.cur'), auto;
 }
 
 html p:active {
-  cursor: url('/mouse_pointers/xp_mouse_text_small.svg'), auto;
+  cursor: url('/mouse_pointers/xp_mouse_text_small.cur'), auto;
 }
 
 

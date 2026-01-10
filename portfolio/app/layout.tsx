@@ -22,14 +22,15 @@ export default function RootLayout({
     <html lang="en" className={` rootOfEverything`} >
       <head >
         {/* Mouse pointers */}
-        <link rel="preload" href="/mouse_pointers/xp_mouse_arrow.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/mouse_pointers/xp_mouse_arrow_large.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/mouse_pointers/xp_mouse_busy.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/mouse_pointersxp_mouse_busy_large.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/mouse_pointers/xp_mouse_link.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/mouse_pointers/xp_mouse_link_large.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/mouse_pointers/xp_mouse_text.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/mouse_pointers/xp_mouse_text_large.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/mouse_pointers/xp_mouse_arrow.cur" as="image" type="image/x-icon" />
+        <link rel="preload" href="/mouse_pointers/xp_mouse_arrow_large.cur" as="image" type="image/x-icon" />
+        <link rel="preload" href="/mouse_pointers/xp_mouse_busy.cur" as="image" type="image/x-icon" />
+        <link rel="preload" href="/mouse_pointersxp_mouse_busy_large.cur" as="image" type="image/x-icon" />
+        <link rel="preload" href="/mouse_pointers/xp_mouse_link.cur" as="image" type="image/x-icon" />
+        <link rel="preload" href="/mouse_pointers/xp_mouse_link_large.cur" as="image" type="image/x-icon" />
+        <link rel="preload" href="/mouse_pointers/xp_mouse_text.cur" as="image" type="image/x-icon" />
+        <link rel="preload" href="/mouse_pointers/xp_mouse_text_large.cur" as="image" type="image/x-icon" />
+
         {/* Fonts */}
         <link rel="preload" href="/fonts/converted/ms_sans_serif.woff2" as="font" type="font/woff2" fetchPriority="high" />
         <link rel="preload" href="/fonts/converted/ms_sans_serif_bold.woff2" as="font" type="font/woff2" fetchPriority="high" />
