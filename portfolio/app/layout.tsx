@@ -13,15 +13,16 @@ export const metadata: Metadata = {
   description: "Daan Hensmans - Bilingual Software Engineer based in Belgium. Specializing in low-level systems and performance optimization.",
 };
 
+// Fonts
 const pixelatedSans = localFont({
   src: [
     {
-      path: '../public/fonts/converted/ms_sans_serif.woff2', // Controleer dit pad!
+      path: '../public/fonts/converted/ms_sans_serif.woff2',
       weight: '400',
       style: 'normal',
     }
   ],
-  variable: '--primary-font', // Optioneel: gebruik een CSS variabele
+  variable: '--primary-font',
   display: 'swap',
 });
 
@@ -33,7 +34,7 @@ const pixelatedSansBold = localFont({
       style: 'normal',
     },
   ],
-  variable: '--primary-font-bold', // Optioneel: gebruik een CSS variabele
+  variable: '--primary-font-bold',
   display: 'swap',
 });
 

@@ -12,7 +12,7 @@ export default function LoadingStartpage() {
       <Image
         src={loadingGIf}
         alt={'loading gif'}
-        className={`${loadingScreenStyles.loadingGif} ${globalStyles.noSelect}`}
+        className={`${loadingScreenStyles.loadingGif}`}
         width={1}
         height={1}
         layout="responsive"

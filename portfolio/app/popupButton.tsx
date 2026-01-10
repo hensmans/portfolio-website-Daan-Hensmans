@@ -13,7 +13,7 @@ interface Parameters {
 
 const PopupButton = ({ setSelectedButton, iconName, title, icon }: Parameters) => {
     return (
-        <div className={`${popupButtonStyles.buttonBox} xp-icon-label ${globalStyles.noSelect} ${globalStyles.clickable}`} onClick={() => setSelectedButton(iconName)}>
+        <div className={`${popupButtonStyles.buttonBox} ${globalStyles.noSelect} ${globalStyles.clickable}`} onClick={() => setSelectedButton(iconName)}>
             <div className={`${popupButtonStyles.iconBox}`}>
                 <Image src={icon}
                     alt={`Button to ${iconName}`}
