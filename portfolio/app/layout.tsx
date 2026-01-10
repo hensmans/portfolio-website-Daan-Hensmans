@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import MainPage from "./mainPage";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next"
+import localFont from 'next/font/local';
 
 // The Windows XP css
 // https://botoxparty.github.io/XP.css/
@@ -12,6 +13,30 @@ export const metadata: Metadata = {
   description: "Daan Hensmans - Bilingual Software Engineer based in Belgium. Specializing in low-level systems and performance optimization.",
 };
 
+const pixelatedSans = localFont({
+  src: [
+    {
+      path: '../public/fonts/converted/ms_sans_serif.woff2', // Controleer dit pad!
+      weight: '400',
+      style: 'normal',
+    }
+  ],
+  variable: '--primary-font', // Optioneel: gebruik een CSS variabele
+  display: 'swap',
+});
+
+const pixelatedSansBold = localFont({
+  src: [
+    {
+      path: '../public/fonts/converted/ms_sans_serif_bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--primary-font-bold', // Optioneel: gebruik een CSS variabele
+  display: 'swap',
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -19,7 +44,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" className={``} >
+    <html lang="en" className={`${pixelatedSans.variable} ${pixelatedSansBold.variable}`} >
       <head >
         {/* PDF */}
         <link rel="preload" href="/cv_old.pdf" as="fetch" crossOrigin="anonymous" fetchPriority="high" />
