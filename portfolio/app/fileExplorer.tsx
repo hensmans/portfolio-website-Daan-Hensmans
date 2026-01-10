@@ -651,15 +651,17 @@ const FileExplorer = ({ setIconName, setTitleName, projectsFolderOpenInit, maxim
                 <li
                     key={file.id}
                     onClick={() => handleClick(file.id, getContent(file.id).icon, file.label)}
-                    className={`${fileExplorerStyles.treeElement} ${globalStyles.clickable} ${fileExplorerStyles.treeElementChild}  ${selectedFile === file.id ? `${fileExplorerStyles.fileActive}` : ''}`}
+                    className={`${fileExplorerStyles.treeElement} ${globalStyles.clickable} ${selectedFile === file.id ? `${fileExplorerStyles.fileActive}` : ''}`}
                 >
-                    <Image src={getContent(file.id).icon}
-                        alt={`Popup icon`}
-                        fill
-                        priority
-                        className={`${fileExplorerStyles.icon}`}
-                    />
-                    <span>{file.label}</span>
+                    <div className={`${fileExplorerStyles.treeElementChild}`}>
+                        <Image src={getContent(file.id).icon}
+                            alt={`Popup icon`}
+                            fill
+                            priority
+                            className={`${fileExplorerStyles.icon}`}
+                        />
+                        <span>{file.label}</span>
+                    </div>
                 </li>
             ))
         );

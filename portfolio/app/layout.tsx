@@ -19,13 +19,13 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" className={` rootOfEverything`} >
+    <html lang="en" className={``} >
       <head >
         {/* Mouse pointers */}
         <link rel="preload" href="/mouse_pointers/xp_mouse_arrow.cur" as="image" type="image/x-icon" />
         <link rel="preload" href="/mouse_pointers/xp_mouse_arrow_large.cur" as="image" type="image/x-icon" />
         <link rel="preload" href="/mouse_pointers/xp_mouse_busy.cur" as="image" type="image/x-icon" />
-        <link rel="preload" href="/mouse_pointersxp_mouse_busy_large.cur" as="image" type="image/x-icon" />
+        <link rel="preload" href="/mouse_pointers/xp_mouse_busy_large.cur" as="image" type="image/x-icon" />
         <link rel="preload" href="/mouse_pointers/xp_mouse_link.cur" as="image" type="image/x-icon" />
         <link rel="preload" href="/mouse_pointers/xp_mouse_link_large.cur" as="image" type="image/x-icon" />
         <link rel="preload" href="/mouse_pointers/xp_mouse_text.cur" as="image" type="image/x-icon" />
