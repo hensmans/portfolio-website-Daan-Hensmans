@@ -13,7 +13,7 @@ interface Parameters {
 
 
 export default function Pdf({ maximizeState }: Parameters) {
-    const pdfUrl = "/cv_old.pdf";
+    const pdfUrl = "/Hensmans-Daan-CV.pdf";
 
     const pdfWrapperRef = useRef<HTMLDivElement | null>(null);
     const [containerWidth, setContainerWidth] = useState(0);
