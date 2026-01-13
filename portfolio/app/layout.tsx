@@ -48,7 +48,7 @@ export default function RootLayout({
     <html lang="en" className={`${pixelatedSans.variable} ${pixelatedSansBold.variable}`} >
       <head >
         {/* PDF */}
-        <link rel="preload" href="/cv_old.pdf" as="fetch" crossOrigin="anonymous" fetchPriority="high" />
+        <link rel="preload" href="/Hensmans-Daan-CV.pdf" as="fetch" crossOrigin="anonymous" fetchPriority="high" />
         {/* Loading gif */}
         <link rel="preload" href="/windows-xp-loading-compressed.gif" as="fetch" crossOrigin="anonymous" fetchPriority="high" />
       </head>
