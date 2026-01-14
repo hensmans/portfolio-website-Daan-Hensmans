@@ -14,15 +14,15 @@
             rgba(18, 16, 16, 0) 70%,
             rgba(0, 0, 0, 0.25) 70%);
     /* Size of the repeating gradient pattern */
-    background-size: 100% 4px;
+    background-size: 100% 0.75%;
     /* Lines above all elements */
     z-index: 9999;
     /* Lines are non clickable */
     pointer-events: none;
     /* Make the lines a certain opacity */
-    opacity: 0.9;
+    opacity: 0.05;
 
-    filter: blur(1px);
+    /* filter: blur(0.03vh); */
 }
 
 /* Create a glow effect for the texct*/
@@ -46,7 +46,7 @@
     height: 100%;
     width: 100%;
     /* Subtle blur for older, less crisp screens */
-    filter: brightness(105%);
+    /* filter: brightness(105%); */
     /* Make screen brighter because CRT lines make it darker */
 
     ;
