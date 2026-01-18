@@ -43,7 +43,8 @@
 
 }
 
-.markdownTitle p {
+.markdownTitle h1 {
+    all: unset;
     font-family: var(--primary-font-bold);
     font-size: 2rem !important;
 }
@@ -152,16 +153,13 @@
 .readmeBackground {
     background-color: var(--xp-silver-light);
     border-radius: 0.5rem;
-
-
 }
-
 
 
 .readMeWrapper {
     height: 100%;
     padding: 1rem;
-    padding-bottom: 10rem;
+    padding-bottom: 1rem;
     overflow-y: auto;
 
 }

@@ -27,8 +27,7 @@ const ReadMeOverview = ({ content }: Parameters) => {
                     {markdownTransformedState
                         ? <div>
                             <div className={`${fileOverviewStyles.markdownTitle}`} >
-                                <p >{content.title}</p>
-
+                                <h1>{content.title}</h1>
                             </div>
                             <p><br /></p>
                             {description.map((subDescription, index) => (

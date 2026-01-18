@@ -229,8 +229,8 @@ export default function Mainpage() {
 
   return (
     <body className={`${mainPageStyles.screen} ${crtStyles.crtFishEye}`}>
-      <audio ref={computerNoiseRef} autoPlay loop src="/sounds/computer-noise-1.mp3" preload="auto" />
-      <audio ref={computerNoiseRef2} autoPlay loop src="/sounds/computer-noise-1-cut.mp3" preload="auto" />
+      <audio ref={computerNoiseRef} autoPlay loop src="/sounds/computer-noise-1.mp3" preload="auto" crossOrigin="anonymous" />
+      <audio ref={computerNoiseRef2} autoPlay loop src="/sounds/computer-noise-1-cut.mp3" preload="auto" crossOrigin="anonymous" />
 
 
 

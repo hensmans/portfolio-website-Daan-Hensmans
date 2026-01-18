@@ -46,7 +46,7 @@ const AboutMe = ({ maximizeState }: Parameters) => {
           </div>
           <div className={`${aboutMeStyles.rows} ${aboutMeStyles.rightColumn}`}>
             <div className={`${aboutMeStyles.titleWrapper}`}>
-              <p className={`${aboutMeStyles.title}`}>Hey! My name is<br />Daan Hensmans</p>
+              <h1 className={`${aboutMeStyles.title}`}>Hey! My name is<br />Daan Hensmans</h1>
               <img className={aboutMeStyles.titleGif} src="./welcomer.gif" />
             </div>
             <div className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} `}>

@@ -121,7 +121,8 @@
 
 .contactInfo a p {
     pointer-events: none;
-    font-family: var(--primary-font-bold);
+    font-size: 1.5rem;
+    /* font-family: var(--primary-font-bold); */
 }
 
 
