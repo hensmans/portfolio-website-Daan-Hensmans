@@ -23,7 +23,7 @@ const ReadMeOverview = ({ content }: Parameters) => {
     return (
         <div className={`${fileOverviewStyles.root}`}>
             <div className={`${fileOverviewStyles.readMeRoot}`}>
-                <div className={`${fileOverviewStyles.readMeWrapper}  ${fileOverviewStyles.readmeBackground}`}>
+                <div className={`${fileOverviewStyles.readMeWrapper}  ${fileOverviewStyles.readmeBackground} ${fileOverviewStyles.projectsBox}`}>
                     {markdownTransformedState
                         ? <div>
                             <div className={`${fileOverviewStyles.markdownTitle}`} >

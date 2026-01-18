@@ -23,14 +23,15 @@
 
 .title {
     text-align: center;
-    margin: 0 1rem 1rem 1rem;
+    margin: 0 0 1rem 0;
     background-color: var(--xp-blue-primary);
     color: var(--xp-blue-light);
     border-radius: 0.5rem;
     padding: 1rem;
 }
 
-.title p {
+.title h1 {
+    all: unset;
     font-size: 2rem !important;
     font-family: var(--primary-font-bold);
 }
@@ -67,7 +68,6 @@
     /* Centers horizontally */
     text-align: center;
     padding-bottom: 1rem;
-    margin: 0 1rem;
     border-bottom: 2px dotted var(--xp-silver-border);
 }
 
@@ -88,13 +88,22 @@
 
 .description {
     flex: 1;
-    width: 100%;
     overflow: auto;
+
+    margin-top: 1rem;
 
 }
 
+.projectsBox {
+    background-color: var(--xp-silver-light);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: 2px solid var(--xp-blue-primary);
+}
+
 .description p {
-    margin: 0 0.5rem;
+    margin: 0;
+
 }
 
 .leftArea {
@@ -104,6 +113,7 @@
     /* margin-right: 1rem; */
     width: 70%;
     height: 100%;
+    margin: 0 1rem 0 0.5rem;
 }
 
 
@@ -113,24 +123,23 @@
     width: 50%;
     max-height: 100%;
 
-    padding-left: 0.5rem;
+    padding-left: 1rem;
     border-left: 2px dotted var(--xp-silver-border);
 }
 
 .screenshots {
-    max-height: 50%;
-    border: 2px solid var(--xp-blue-primary);
-    border-radius: 0.5rem;
+
+    height: 50%;
+    padding: 0rem;
 }
 
 
 .bulletpoints {
     display: block;
     margin: 1rem 0 0 0;
-    padding: 0;
-    padding-left: 0.5rem;
     height: 50%;
     overflow-y: auto;
+    overflow-x: clip;
 
 }
 
@@ -196,8 +205,6 @@
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
     gap: 0.5rem;
-
-
 }
 
 .picWrap {
@@ -248,11 +255,6 @@
     justify-content: center;
     width: 100%;
     height: 95%;
-
-
-
-
-
 }
 
 
@@ -263,7 +265,6 @@
     aspect-ratio: 3/4;
 
     display: flex;
-
     justify-content: center;
     align-items: center;
     justify-content: center;

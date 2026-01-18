@@ -26,7 +26,7 @@ const ProjectOverview = ({ content }: Parameters) => {
                 <div className={`${fileOverviewStyles.leftArea}`}>
                     {/* Title*/}
                     <div className={`${fileOverviewStyles.title}`} >
-                        <p>{content.title}</p>
+                        <h1>{content.title}</h1>
                     </div>
                     {/* Tags */}
                     <div className={`${fileOverviewStyles.tags}`}>
@@ -40,8 +40,7 @@ const ProjectOverview = ({ content }: Parameters) => {
                         ))}
                     </div>
                     {/* Description */}
-                    < div className={`${fileOverviewStyles.description}`}>
-                        <br />
+                    < div className={`${fileOverviewStyles.description} ${fileOverviewStyles.projectsBox}`}>
                         {description.map((subDescription, index) => (
                             < Fragment key={index}>
                                 <p >{subDescription}
@@ -56,11 +55,11 @@ const ProjectOverview = ({ content }: Parameters) => {
                 {/* Right area */}
                 <div className={`${fileOverviewStyles.rightArea}`}>
                     {/* Screenshots and videos */}
-                    <div className={`${fileOverviewStyles.screenshots}`}>
+                    <div className={`${fileOverviewStyles.screenshots}  ${fileOverviewStyles.projectsBox}`}>
                         <PictureSlideshow youtubeId={content.youtubeId} pictures={content.pictures} />
                     </div>
                     {/* Bullet points what you learned */}
-                    <div className={`${fileOverviewStyles.bulletpoints} globalStyles`}>
+                    <div className={`${fileOverviewStyles.bulletpoints} ${fileOverviewStyles.projectsBox}`}>
                         <p>Knowledge gained:</p>
                         <ul>
                             {content.bulletPoints.map((subBulletPoint, index) => (
