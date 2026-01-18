@@ -11,6 +11,11 @@ import localFont from 'next/font/local';
 export const metadata: Metadata = {
   title: "Daan Hensmans | Portfolio",
   description: "Daan Hensmans - Bilingual Software Engineer based in Belgium. Specializing in low-level systems and performance optimization.",
+  icons: {
+    icon: '/icon-48px.png',
+    shortcut: '/icon.ico',
+    apple: '/apple-touch-icon-180x180.png',
+  },
 };
 
 // Fonts
@@ -47,6 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${pixelatedSans.variable} ${pixelatedSansBold.variable}`} >
       <head >
+        {/* Preloading */}
         {/* PDF */}
         <link rel="preload" href="/Hensmans-Daan-CV.pdf" as="fetch" crossOrigin="anonymous" fetchPriority="high" />
         {/* Loading gif */}
