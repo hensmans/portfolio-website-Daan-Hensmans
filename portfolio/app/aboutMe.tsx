@@ -50,19 +50,19 @@ const AboutMe = ({ maximizeState }: Parameters) => {
               <img className={aboutMeStyles.titleGif} src="./welcomer.gif" />
             </div>
             <div className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} `}>
-              <p>Based in Belgium, I specialize in navigating complex software problems with elegant, scalable solutions.</p>
+              <p>Based in Belgium, I specialize in navigating complex software in low-level environments problems with elegant, scalable solutions.</p>
               <p><br /></p>
               <p>Currently pursuing a Master’s degree in Software Engineering: Software Languages, graduating in June 2026.</p>
             </div>
             <div className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} `}>
-              <p>Specialist in Software Languages and Systems Programming.</p>
+              <p>Specialist in bridging the gap between hardware and software through software optimization, OS internals, and hardware-level performance tuning.</p>
               <p><br /></p>
               <p>
                 My background in compiler construction and low-level development (C, ASM, Lisp) gives me a unique perspective on software architecture.
                 I don't just use languages; I study their inner workings to ensure my code is as efficient and secure as possible.
               </p>
               <p><br /></p>
-              <p>Browse my 'projects' folder for a deep dive into my work.</p>
+              <p>To see an overview of my projects, check the 'Projects' folder. And for my favourite pictured I took, take a look in the 'Pictures' folder.</p>
             </div>
             <div className={`${aboutMeStyles.textBox} ${aboutMeStyles.boxBorder} ${aboutMeStyles.contactInfo}`}>
               <a href="https://www.linkedin.com/in/hensmans/" target="_blank"><p>LinkedIn</p></a>

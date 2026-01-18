@@ -13,7 +13,7 @@ interface Parameters {
 
 
 export default function Pdf({ maximizeState }: Parameters) {
-    const pdfUrl = "/Hensmans-Daan-CV.pdf";
+    const pdfUrl = "/CV-Hensmans-Daan.pdf";
 
     const pdfWrapperRef = useRef<HTMLDivElement | null>(null);
     const [containerWidth, setContainerWidth] = useState(0);
@@ -21,7 +21,7 @@ export default function Pdf({ maximizeState }: Parameters) {
     useEffect(() => {
         if (pdfWrapperRef.current) {
             const width = pdfWrapperRef.current.getBoundingClientRect().width;
-            setContainerWidth(maximizeState ? (2 * width / 3) : width);
+            setContainerWidth(maximizeState ? width : width);
         }
     }, [maximizeState]);
 
