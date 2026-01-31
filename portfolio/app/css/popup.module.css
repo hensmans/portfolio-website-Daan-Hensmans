@@ -16,7 +16,7 @@
 
 .popupScreen {
   box-sizing: border-box;
-  width: clamp(500px, 80%, 1400px);
+  width: clamp(500px, 80%, 1200px);
   height: clamp(500px, 90%, 1200px);
 
   display: flex;
