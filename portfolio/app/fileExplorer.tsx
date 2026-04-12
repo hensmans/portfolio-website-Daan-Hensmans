@@ -88,6 +88,14 @@ import copenhagen from '../assets/pictures/photography/copenhagen.webp';
 import aurora from '../assets/pictures/photography/aurora.webp';
 import night from '../assets/pictures/photography/night.webp';
 import lapland from '../assets/pictures/photography/lapland.webp';
+import bench_winter_2 from '../assets/pictures/photography/bench_winter_2.webp';
+import dijk from '../assets/pictures/photography/dijk.webp';
+import gent from '../assets/pictures/photography/gent.webp';
+import hospital from '../assets/pictures/photography/hospital.webp';
+import midieval from '../assets/pictures/photography/midieval.webp';
+import sncb from '../assets/pictures/photography/sncb.webp';
+
+import tervuren from '../assets/pictures/photography/tervuren.webp';
 
 const fileIcons = {
     // Files
@@ -133,6 +141,7 @@ const photographyPics: { name: string, picture: StaticImageData }[] = [
     { name: "balloons", picture: balloons },
     { name: "bench_fall", picture: bench_fall },
     { name: "bench_winter", picture: bench_winter },
+    { name: "bench_winter_2", picture: bench_winter_2 },
     { name: "boots", picture: boots },
     { name: "copenhagen", picture: copenhagen },
     { name: "crane", picture: crane },
@@ -146,7 +155,13 @@ const photographyPics: { name: string, picture: StaticImageData }[] = [
     { name: "sunset", picture: sunset },
     { name: "moon", picture: moon },
     { name: "night", picture: night },
-    { name: "lapland", picture: lapland }
+    { name: "lapland", picture: lapland },
+    { name: "dijk", picture: dijk },
+    { name: "gent", picture: gent },
+    { name: "hospital", picture: hospital },
+    { name: "midieval", picture: midieval },
+    { name: "sncb", picture: sncb },
+    { name: "tervuren", picture: tervuren },
 ]
 
 const items = [
